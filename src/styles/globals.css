@@ -7,8 +7,14 @@
 body {
   overflow-x: hidden;
   width: 100%;
-  background-color: #fffdf6;
-  color: #2e2d2b;
+  background-color: #0E0E0E;
+  color: white;
+}
+.bgred{
+  background-color: #D70000;
+}
+.red{
+  color: #D70000;
 }
 body::-webkit-scrollbar {
   display: none;
@@ -23,4 +29,21 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.another-circle {
+  stroke-dasharray: 227;
+  stroke-dashoffset: 227;
+  transition: stroke-dashoffset .5s linear;
+}
+.scroll-btn:hover .another-circle {
+  stroke-dashoffset: 0;
+}
+
+[data-aos="clip"] {
+  clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  transition: clip-path 2s cubic-bezier(0.83,0,0.17,1);
+}
+
+[data-aos="clip"].aos-animate {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }

@@ -1,92 +1,36 @@
-/* @font-face {
-  font-family: "Ivy";
-  src: url("../../public/fonts/ivy/IvyMode-Thin.woff2");
-  font-weight: 100;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Ivy";
-  src: url("../../public/fonts/ivy/IvyMode-Light.woff2");
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Ivy";
-  src: url("../../public/fonts/ivy/IvyMode-Regular.woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Ivy";
-  src: url("../../public/fonts/ivy/IvyMode-SemiBold.woff2");
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Ivy";
-  src: url("../../public/fonts/ivy/IvyMode-Bold.woff2");
-  font-weight: 700;
-  font-style: normal;
+ @font-face {
+  font-family: "suisseIntl";
+  src: url("../../public/fonts/SuisseIntl-Light.woff2");
 }
 
 @font-face {
-  font-family: "Lato";
-  src: url("../../public/fonts/lato/Lato-Hairline.woff2");
-  font-weight: 100;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Lato";
-  src: url("../../public/fonts/lato/Lato-Thin.woff2");
+  font-family: "Archivo";
+  src: url("../../public/fonts/Archivo-Medium.ttf");
   font-weight: 200;
   font-style: normal;
 }
 @font-face {
-  font-family: "Lato";
-  src: url("../../public/fonts/lato/Lato-Light.woff2");
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Lato";
-  src: url("../../public/fonts/lato/Lato-Regular.woff2");
+  font-family: "Archivo";
+  src: url("../../public/fonts/Archivo-Regular.ttf");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "Lato";
-  src: url("../../public/fonts/lato/Lato-Medium.woff2");
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Lato";
-  src: url("../../public/fonts/lato/Lato-Semibold.woff2");
+  font-family: "Archivo";
+  src: url("../../public/fonts/Archivo-SemiBold.ttf");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
-  font-family: "Lato";
-  src: url("../../public/fonts/lato/Lato-Bold.woff2");
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Lato";
-  src: url("../../public/fonts/lato/Lato-Heavy.woff2");
+  font-family: "Archivo";
+  src: url("../../public/fonts/Archivo-Bold.ttf");
   font-weight: 800;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Lato";
-  src: url("../../public/fonts/lato/Lato-Black.woff2");
-  font-weight: 900;
   font-style: normal;
 }
 
 p{
-  font-family: Lato;
+  font-family: suisseIntl;
 }
 h2{
-  font-family: Ivy;
-} */
+  font-family: Archivo;
+}
