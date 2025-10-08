@@ -28,7 +28,7 @@ const Hero = () => {
                 </div>
                 <div
                     style={{ clipPath: "polygon(15% 20%, 85% 20%, 85% 90%, 15% 90%)" }}
-                    className="hero_video w-full h-full bg-red-500">
+                    className="hero_video w-full h-full ">
                     <video loop autoPlay muted playsInline className='w-full h-full object-cover' src="/video/hero_video.mp4"></video>
                 </div>
             </div>
