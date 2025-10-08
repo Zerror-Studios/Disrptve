@@ -114,7 +114,7 @@ const ShowReel = () => {
                     <RiCloseLine size={16} />
                     <p className="capitalize font-semibold">close reel</p>
                 </motion.div>
-                <video ref={videoRef} className="w-[80%] h-[90%] object-cover brightness-[.8]" loop autoPlay controls src="/video/show_reel.mp4"></video>
+                <video ref={videoRef} className="w-[80%] h-[90%] object-cover brightness-[.8]" loop autoPlay muted controls src="/video/show_reel.mp4"></video>
             </div>
 
 

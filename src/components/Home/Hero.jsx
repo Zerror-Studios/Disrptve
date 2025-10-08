@@ -37,13 +37,13 @@ const Hero = () => {
 
             <div className="w-full px-5 py-32 items-center flex ">
                 <div className="w-[60%] uppercase text-7xl font-semibold ">
-                    <p>a strategy-led </p>
-                    <p className='red'>
+                    <h2>a strategy-led </h2>
+                    <h2 className='red'>
                         marketing
-                    </p>
-                    <p className='red'>
+                    </h2>
+                    <h2 className='red'>
                         agency.
-                    </p>
+                    </h2>
                 </div>
                 <div className="w-[40%] ">
                 <p className='text-xl leading-tight'>Our process blends rigorous research, bold creativity, and precise execution. From brand strategy to campaigns, digital growth, and even AI - powered agents — we build the next generation of market leaders.</p>

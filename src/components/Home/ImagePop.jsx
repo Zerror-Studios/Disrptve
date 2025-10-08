@@ -102,10 +102,10 @@ const ImagePop = () => {
                 ))}
             </AnimatePresence>
 
-            <p>Explore our</p>
-            <p>case credentials,</p>
-            <p>studies, and</p>
-            <p>capabilities in detail.</p>
+            <h2>Explore our</h2>
+            <h2>case credentials,</h2>
+            <h2>studies, and</h2>
+            <h2>capabilities in detail.</h2>
 
             <button className="mt-12 group px-4 py-2 border center border-white">
                 <div className="relative flex items-center gap-1">

@@ -7,6 +7,13 @@ import React from 'react'
 
 gsap.registerPlugin(CustomEase, SplitText);
 
+const menuItems = [
+  { name: "About", href: "/about" },
+  { name: "Services", href: "/services" },
+  { name: "Work", href: "/work" },
+  { name: "Ventures", href: "/ventures" },
+  { name: "Contact", href: "/contact" },
+];
 const Footer = () => {
   CustomEase.create("in-out-quint", "0.83,0,0.17,1");
 
@@ -85,11 +92,11 @@ const Footer = () => {
           <div className="w-[70%] h-full flex ">
             <div className="w-[70%] flex flex-col justify-between h-full">
               <div className="">
-                <p className='font-semibold uppercase mb-3 '>Location</p>
+                <h2 className='font-semibold uppercase mb-3 '>Location</h2>
                 <p>Mumbai, India</p>
               </div>
               <div className="">
-                <p className='font-semibold uppercase mb-3 '>contact</p>
+                <h2 className='font-semibold uppercase mb-3 '>contact</h2>
                 <p>
                   team@disrptve.com
                 </p>
@@ -103,42 +110,20 @@ const Footer = () => {
             </div>
             <div className="w-[30%] h-full flex flex-col justify-between">
               <div className="">
-                <p className='font-semibold uppercase mb-3 '>Links</p>
+                <h2 className='font-semibold uppercase mb-3 '>Links</h2>
                 <div className="grid grid-cols-2 space-y-1 capitalize">
-                  <div className=' group  cursor-pointer w-fit hover:opacity-50 relative'>
+                  {menuItems.map((item, index) => (
+                  <a href={item.href} key={index} className=' group  cursor-pointer w-fit hover:opacity-50 relative'>
                     <div className="w-0 h-[1px] bg-white absolute group-hover:w-full left-0 bottom-0 transition-all duration-300"></div>
                     <p>
-                      About
+                      {item.name}
                     </p>
-                  </div>
-                  <div className=' group  cursor-pointer w-fit hover:opacity-50 relative'>
-                    <div className="w-0 h-[1px] bg-white absolute group-hover:w-full left-0 bottom-0 transition-all duration-300"></div>
-                    <p>
-                      Services
-                    </p>
-                  </div>
-                  <div className=' group  cursor-pointer w-fit hover:opacity-50 relative'>
-                    <div className="w-0 h-[1px] bg-white absolute group-hover:w-full left-0 bottom-0 transition-all duration-300"></div>
-                    <p>
-                      work
-                    </p>
-                  </div>
-                  <div className=' group  cursor-pointer w-fit hover:opacity-50 relative'>
-                    <div className="w-0 h-[1px] bg-white absolute group-hover:w-full left-0 bottom-0 transition-all duration-300"></div>
-                    <p>
-                      ventures
-                    </p>
-                  </div>
-                  <div className=' group  cursor-pointer w-fit hover:opacity-50 relative'>
-                    <div className="w-0 h-[1px] bg-white absolute group-hover:w-full left-0 bottom-0 transition-all duration-300"></div>
-                    <p>
-                      contact
-                    </p>
-                  </div>
+                  </a>
+                  ))}
                 </div>
               </div>
               <div className="">
-                <p className='font-semibold uppercase mb-3'>Socials</p>
+                <h2 className='font-semibold uppercase mb-3'>Socials</h2>
                 <div className="flex gap-4">
                   <div className="size-14 group hover:bg-white transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
                     <RiFacebookLine className='group-hover:opacity-0 transition-all duration-300  ' />

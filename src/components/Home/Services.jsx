@@ -77,8 +77,8 @@ const Services = () => {
                 <div className="h-full w-[20vw] flex items-center absolute px-5 top-0 left-0">
                     <div className=" w-full right_serv   flex flex-col justify-between h-[65%] ">
                         <div className="text-4xl font-semibold uppercase">
-                            <p>Our</p>
-                            <p className='red'>services</p>
+                            <h2>Our</h2>
+                            <h2 className='red'>services</h2>
                         </div>
                         <button className=' h-fit w-fit group mt-5 relative flex items-center gap-1'>
                             <div className="w-0 group-hover:w-[97%] transition-all duration-300  h-[1px] bg-white absolute bottom-0 left-0"></div>
