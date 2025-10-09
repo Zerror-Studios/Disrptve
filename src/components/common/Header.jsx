@@ -2,6 +2,14 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import React from 'react'
 
+const menuItems = [
+  { name: "About", href: "/about" },
+  { name: "culture", href: "/culture" },
+  { name: "case studies", href: "/case_studies" },
+  { name: "Ventures", href: "/ventures" },
+  { name: "career", href: "/career" },
+];
+
 const Header = () => {
 
   const openMenu = () => {
@@ -60,10 +68,9 @@ const Header = () => {
         </div>
         <div className="w-full flex justify-between">
           <div className=" flex capitalize text-lg  gap-20">
-            <h2 className=' w-fit hover:text-[#D70000] transition-all duration-300 cursor-pointer'  >culture</h2>
-            <h2 className=' w-fit hover:text-[#D70000] transition-all duration-300 cursor-pointer'  >case studies</h2>
-            <h2 className=' w-fit hover:text-[#D70000] transition-all duration-300 cursor-pointer'  >career</h2>
-            <h2 className=' w-fit hover:text-[#D70000] transition-all duration-300 cursor-pointer'  >ventures</h2>
+            {menuItems.map((item , i)=>(
+              <h2 key={i} className=' w-fit hover:text-[#D70000] transition-all duration-300 capitalize cursor-pointer'  >{item.name}</h2>
+            ))}
           </div>
           <button className='px-6 py-1.5 bgred uppercase '>
             <p className='font-medium hover:underline decoration-1 decoration-white underline-offset-4  '>

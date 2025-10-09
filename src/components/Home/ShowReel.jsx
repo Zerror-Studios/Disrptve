@@ -49,24 +49,35 @@ const ShowReel = () => {
 
     const openVideo = () => {
         const video = videoRef.current;
-        gsap.to(".show_reel_video",{
-            filter: "brightness(0.2)",
-            duration: 1.2,
+        gsap.to(".show_reel_video", {
+            filter: "brightness(0.1)",
+            duration: 1,
+        })
+        gsap.to(".reel_txt", {
+            y: -100,
+            duration: 1,
+            onComplete: () => {
+                gsap.set(".reel_txt", {
+                    y: 100,
+                    duration: 1,
+                }
+                )
+            }
         })
         gsap.fromTo(".play_vid_sec", {
             rotate: -20,
-            autoAlpha:0,
+            autoAlpha: 0,
             scale: .2,
             clipPath: " polygon(35% 30%, 65% 30%, 65% 60%, 35% 60%)",
         }, {
             scale: 1,
-            autoAlpha:1,
+            autoAlpha: 1,
             rotate: 0,
             ease: "expo.inOut",
             duration: 1.5,
             clipPath: " polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
             onStart: () => {
-                if(window.lenis) lenis.stop();
+                if (window.lenis) lenis.stop();
                 if (video) {
                     video.currentTime = 0;
                     video.muted = false;
@@ -77,19 +88,24 @@ const ShowReel = () => {
     }
     const closeVideo = () => {
         const video = videoRef.current;
-        gsap.to(".show_reel_video",{
+        gsap.to(".show_reel_video", {
             filter: "brightness(0.7)",
             duration: 1.2,
+        })
+        gsap.to(".reel_txt", {
+            delay:.5,
+            y: 0,
+            duration: 1,
         })
         gsap.to(".play_vid_sec", {
             rotate: -20,
             scale: .2,
-            autoAlpha:0,
+            autoAlpha: 0,
             ease: "expo.inOut",
             duration: 1.5,
             clipPath: "polygon(35% 30%, 65% 30%, 65% 60%, 35% 60%)",
             onComplete: () => {
-                if(window.lenis) lenis.start();
+                if (window.lenis) lenis.start();
                 if (video) {
                     video.pause();
                     video.currentTime = 0;
@@ -132,8 +148,9 @@ const ShowReel = () => {
                     <RiPlayFill size={16} />
                     <p className="capitalize font-semibold">play reel</p>
                 </motion.div>
-
-                <p className="uppercase text-5xl absolute z-[1]">Showreel</p>
+                <div className="block absolute z-[1] overflow-hidden">
+                    <p className=" reel_txt uppercase text-5xl ">Showreel</p>
+                </div>
 
                 <video
                     className="show_reel_video brightness-[.7]"
