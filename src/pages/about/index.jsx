@@ -3,6 +3,9 @@ import gsap from 'gsap';
 import AOS from "aos";
 import React, { useEffect } from 'react'
 import Marquee from 'react-fast-marquee'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { RiArrowRightUpLine } from '@remixicon/react';
+gsap.registerPlugin(ScrollTrigger);
 
 const clientsData = [
     {
@@ -31,114 +34,164 @@ const clientsData = [
     },
 ]
 
+const flipImg=[
+    "https://images.prismic.io/inertia-website/Z73zTZ7c43Q3gNtv_BC20240408-05-0731.jpg?auto=format%2Ccompress&rect=0%2C297%2C1366%2C1539&w=750&h=845",
+    "https://images.prismic.io/inertia-website/Z73zS57c43Q3gNts_BC20240408-03-0407.jpg?auto=format%2Ccompress&rect=0%2C254%2C1366%2C1539&w=750&h=845",
+    "https://images.prismic.io/inertia-website/Z73zTJ7c43Q3gNtu_BC20240408-04-0653-BW.jpg?auto=format%2Ccompress&rect=2262%2C0%2C4204%2C4736&w=750&h=845"
+]
 const index = () => {
 
     useEffect(() => {
-            AOS.init({
-                duration: 1500,
-                once: false,
-            });
-            AOS.refresh();
-        }, []);
+        AOS.init({
+            duration: 1500,
+            once: false,
+        });
+        AOS.refresh();
+    }, []);
+
+
+useEffect(() => {
+  const img = document.querySelector(".img_sticky_rot");
+  let prevRotation = 0;
+  let currentIndex = 0; 
+
+  gsap.set(img, {
+    transformStyle: "preserve-3d",
+    perspective: 400,
+  });
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".sticky_sec",
+      start: "top top",
+      end: "bottom 50%",
+      scrub: 0.5,
+      // markers: true,
+    },
+    onUpdate: (self) => {
+      const rotation = gsap.getProperty(img, "rotateY") % 360;
+      const direction = rotation - prevRotation > 0 ? "forward" : "backward";
+      prevRotation = rotation;
+
+      if (direction === "forward") {
+        if (rotation >= 85 && rotation < 95 && currentIndex !== 1) {
+          currentIndex = 1;
+          img.src = flipImg[1];
+        } else if (rotation >= 265 && rotation < 275 && currentIndex !== 2) {
+          currentIndex = 2;
+          img.src = flipImg[2];
+        }
+      }
+
+      else {
+        if (rotation >= 85 && rotation < 95 && currentIndex !== 0) {
+          currentIndex = 0;
+          img.src = flipImg[0];
+        } else if (rotation >= 265 && rotation < 275 && currentIndex !== 1) {
+          currentIndex = 1;
+          img.src = flipImg[1];
+        }
+      }
+    },
+  });
+
+  // Rotate Y twice (0 → 180 → 360)
+  tl.to(".img_sticky_rot", { rotateY: 180, ease: "none" });
+  tl.to(".img_sticky_rot", { rotateY: 360, ease: "none" });
+
+  return () => {
+    tl.kill();
+    ScrollTrigger.getAll().forEach((t) => t.kill());
+  };
+}, [flipImg]);
+
 
     useGSAP(() => {
 
-        gsap.to(".exp_anim_div", {
-            width:"100%",
-            ease:"expo.inOut",
-            duration:3,
-            stagger:0.05
-        })
-
-        gsap.fromTo(
-            ".show_reel_video",
-            { y: -200 },
-            {
-                y: 200,
-                ease: "linear",
-                scrollTrigger: {
-                    trigger: ".show_reel_paren",
-                    start: "top bottom",
-                    end: "bottom top",
-                    scrub: 0.4,
-                },
+        gsap.to(".about_vid",{
+            opacity:0,
+            scrollTrigger:{
+                trigger:".sticky_sec",
+                start:"top bottom",
+                end:"bottom bottom",
+                scrub:0.4,
+                // markers:true,
             }
-        );
+        })
+       
+
     });
     return (
         <>
-            <div className="w-full  h-screen flex items-center flex-col  gap-y-24 justify-center   px-5">
-                <div className="w-full">
-                    <div className=" exp_anim_div gap-5 w-[70%]  whitespace-nowrap text-8xl pr-52 uppercase flex justify-between">
-                        <h2>a</h2>
-                        <h2>strategy-led </h2>
-                    </div>
-                    <div className="exp_anim_div gap-5 w-[65%]  text-8xl uppercase flex justify-between">
-                        <h2>marketing</h2>
-                        <h2>agency.</h2>
-                    </div>
-                </div>
-
-                <div className="w-full flex justify-end ">
-                    <div className="w-1/2 text-2xl uppercase">
-                        <p className='w-[70%]'>we build on that foundation with resonant creative and flawless execution to reshape perceptions and establish market leadership.</p>
-                    </div>
-                </div>
+            <div className=" about_vid  fixed top-0 left-0 z-[-1] w-full h-screen pointer-events-none">
+                <video className=' w-full h-full object-cover brightness-50 ' loop autoPlay muted src="/video/show_reel.mp4"></video>
             </div>
 
-            <div className="w-full py-20 border-b border-t border-[#e5e7eb44] h-[100vh] flex px-5">
-                <div className="w-1/2 h-full flex flex-col justify-between">
-                    <div className="flex items-center gap-2">
-                        <img className='w-[1.5vw]' src="/icons/cut_blocks.svg" alt="" />
-                        <h2 className='text-xl uppercase'>who we are</h2>
+            <div className="w-full relative h-screen center text-center">
+                <h2 className='uppercase text-5xl'>Investing In & Building the <br /> Next Wave of Disruption.</h2>
+            </div>
+            <div className=" sticky_sec  h-[175vw]  px-5  w-full">
+                <div className="w-full flex justify-end">
+                    <div className="w-[25vw] ">
+                        <img className=' aspect-[3/4] w-full object-cover' src="https://images.prismic.io/malvah-v2/974b2180-2936-483d-82c7-4ff9b0286179_Hero.bw.2.jpg?auto=compress,format" alt="" />
+                        <p className='text-xl leading-tight mt-2' >We extended the mandate to re-engineer Guyana for the next five years.</p>
                     </div>
-                    <div className="space-y-12">
-                        <img
-                        data-aos-anchor-placement="top-bottom"
-                        data-aos="clip" className='aspect-video w-[55%]' src="/images/ImagesPop/images06.jpg" alt="" />
-                        <div className="w-[70%]  text-lg">
-                            <div className=" w-full text-end">
-                                <p>We are a strategy-led integrated marketing </p>
+                </div>
+                <div className="  sticky top-1/2 -translate-y-1/2  aspect-[3/4] w-[22vw]">
+                    <img className=' img_sticky_rot  w-full h-full object-cover' src={flipImg[0]} alt="" />
+                </div>
+
+                <div className="w-full -translate-y-[16vw] flex justify-end">
+                    <div className=" w-[30vw] uppercase text-7xl ">
+                        <h2>Navigating a New Landscape</h2>
+                    </div>
+                </div>
+
+                <div className="w-full  flex justify-end">
+                    <div className="w-[50vw] ">
+                        <img className=' aspect-[4/3] w-full object-cover' src="https://images.prismic.io/malvah-v2/18c08b41-8e6f-467a-bc92-6ecd39c4a437_03_Para2.jpg?auto=compress,format" alt="" />
+                        <p className='text-2xl leading-tight mt-2' >We extended the mandate to re-engineer Guyana for the next five years.</p>
+                    </div>
+                </div>
+
+                <div className="w-full translate-y-[16vw] flex justify-end">
+                    <div className=" w-[50vw]   ">
+                        <p className='uppercase text-7xl'> <span className=' opacity-0'> ssssssss </span> We wired a nation for the future.</p>
+                        <div className="w-full grid mt-10 gap-x-5 grid-cols-2">
+                            <p> We are a strategy-led integrated marketing agency. This means that disruption for us isn't about noise; it's about focus. It's a deliberate act, born from rigorous strategy and deep market understanding.</p>
+                            <p>Our work often involves shaping brands and driving growth. We are now applying that same data-driven rigour to challenges of national significance.</p>
+                        </div>
+
+                          <button className=' group mt-10 relative flex items-center gap-1'>
+                        <div className="w-0 group-hover:w-[97%] transition-all duration-300  h-[1px] bg-white absolute bottom-0 left-0"></div>
+                        <p className=' text-xl group-hover:italic uppercase '>Read more</p>
+                        <RiArrowRightUpLine size={20} />
+                    </button>
+                    </div>
+                </div>
+                
+            </div>
+
+
+
+                <div className=" mb-32">
+                    <div className="w-full center">
+                        <h2 className='text-3xl'>
+                            PARTNERS AT WORK
+                        </h2>
+                    </div>
+                    <div className="pt-10">
+                        <Marquee>
+                            <div key={index} className="flex gap-5">
+                                {[...clientsData, ...clientsData].map((item, index) => (
+                                    <img className=' w-[7vw]  invert-100' src={item.icon} alt="" />
+                                ))}
                             </div>
-                                <p>agency. This means that disruption for us isn't about noise; it's about focus. It's a deliberate act, born from rigorous strategy and deep market understanding.Our process is one of calculated impact. We begin with meticulous research to find a brand's most potent truth. </p>
-                        </div>
+                        </Marquee>
                     </div>
                 </div>
-                <div className="w-1/2 h-full">
-                    <img
-                    data-aos-anchor-placement="top-bottom"
-                        data-aos="clip" className='w-full h-full object-cover' src="/projects/proostimg4.webp" alt="" />
-                </div>
-            </div>
 
-            <div className=" my-24">
-                <div className="w-full center">
-                    <h2 className='text-3xl'>
-                        PARTNERS AT WORK
-                    </h2>
-                </div>
-                <div className="py-10">
-                    <Marquee>
-                        <div key={index} className="flex gap-5">
-                            {[...clientsData, ...clientsData].map((item, index) => (
-                                <img className=' w-[7vw]  invert-100' src={item.icon} alt="" />
-                            ))}
-                        </div>
-                    </Marquee>
-                </div>
-
-                <div className=" show_reel_paren w-full h-[120vh] overflow-hidden">
-                    <video
-                        className="show_reel_video brightness-[.7]"
-                        loop
-                        autoPlay
-                        muted
-                        playsInline
-                        src="/video/show_reel.mp4"
-                    ></video>                </div>
-            </div>
-
-            <div className="px-5">
+            <div className=" px-5">
                 <div className=" mt-10 mb-20 text-6xl">
                     <h2>Growing Doesn’t <br /> mean being bigger, <br /> but being better</h2>
                 </div>
@@ -152,8 +205,8 @@ const index = () => {
                             <img className=' w-4 invert-100 rotate-90' src="/icons/arrow_small.svg" alt="" />
                         </div>
                         <img
-                        data-aos-anchor-placement="top-bottom"
-                        data-aos="clip" src="https://images.prismic.io/inertia-website/Z73zTZ7c43Q3gNtv_BC20240408-05-0731.jpg?auto=format%2Ccompress&rect=0%2C297%2C1366%2C1539&w=750&h=845" alt="" className="w-full aspect-[3/4] object-cover mb-2" />
+                            data-aos-anchor-placement="top-bottom"
+                            data-aos="clip" src="https://images.prismic.io/inertia-website/Z73zTZ7c43Q3gNtv_BC20240408-05-0731.jpg?auto=format%2Ccompress&rect=0%2C297%2C1366%2C1539&w=750&h=845" alt="" className="w-full aspect-[3/4] object-cover mb-2" />
                     </div>
 
                     <div className="col-span-1 col-start-3 flex flex-col items-start">
@@ -165,8 +218,8 @@ const index = () => {
                             <img className=' w-4 invert-100 rotate-90' src="/icons/arrow_small.svg" alt="" />
                         </div>
                         <img
-                        data-aos-anchor-placement="top-bottom"
-                        data-aos="clip" src="https://images.prismic.io/inertia-website/Z73zUZ7c43Q3gNty_BC20240408-16-1699-BW.jpg?auto=format%2Ccompress&rect=0%2C64%2C4736%2C6972&w=360&h=530" alt="" className="w-full aspect-[3/4] object-cover mb-2" />
+                            data-aos-anchor-placement="top-bottom"
+                            data-aos="clip" src="https://images.prismic.io/inertia-website/Z73zUZ7c43Q3gNty_BC20240408-16-1699-BW.jpg?auto=format%2Ccompress&rect=0%2C64%2C4736%2C6972&w=360&h=530" alt="" className="w-full aspect-[3/4] object-cover mb-2" />
                     </div>
 
                     <div className="col-span-2 col-start-4 flex flex-col items-start mt-[19.5vw]">
@@ -178,8 +231,8 @@ const index = () => {
                             <img className=' w-4 invert-100 rotate-90' src="/icons/arrow_small.svg" alt="" />
                         </div>
                         <img
-                        data-aos-anchor-placement="top-bottom"
-                        data-aos="clip" src="https://images.prismic.io/inertia-website/Z73zS57c43Q3gNts_BC20240408-03-0407.jpg?auto=format%2Ccompress&rect=0%2C254%2C1366%2C1539&w=750&h=845" alt="" className="w-full aspect-[3/4] object-cover mb-2" />
+                            data-aos-anchor-placement="top-bottom"
+                            data-aos="clip" src="https://images.prismic.io/inertia-website/Z73zS57c43Q3gNts_BC20240408-03-0407.jpg?auto=format%2Ccompress&rect=0%2C254%2C1366%2C1539&w=750&h=845" alt="" className="w-full aspect-[3/4] object-cover mb-2" />
                     </div>
 
                     <div className="col-span-1 col-start-6 flex flex-col items-start mt-[19.5vw]">
@@ -191,8 +244,8 @@ const index = () => {
                             <img className=' w-4 invert-100 rotate-90' src="/icons/arrow_small.svg" alt="" />
                         </div>
                         <img
-                        data-aos-anchor-placement="top-bottom"
-                        data-aos="clip" src="https://images.prismic.io/inertia-website/Z73zUJ7c43Q3gNtx_BC20240408-15-1597-BW.jpg?auto=format%2Ccompress&rect=1466%2C0%2C3217%2C4736&w=360&h=530" alt="" className="w-full aspect-[3/4] object-cover mb-2" />
+                            data-aos-anchor-placement="top-bottom"
+                            data-aos="clip" src="https://images.prismic.io/inertia-website/Z73zUJ7c43Q3gNtx_BC20240408-15-1597-BW.jpg?auto=format%2Ccompress&rect=1466%2C0%2C3217%2C4736&w=360&h=530" alt="" className="w-full aspect-[3/4] object-cover mb-2" />
                     </div>
 
                     <div className="col-span-2 flex flex-col items-start mt-[-4.5vw] ">
@@ -204,8 +257,8 @@ const index = () => {
                             <img className=' w-4 invert-100 rotate-90' src="/icons/arrow_small.svg" alt="" />
                         </div>
                         <img
-                        data-aos-anchor-placement="top-bottom"
-                        data-aos="clip" src="https://images.prismic.io/inertia-website/Z73zTJ7c43Q3gNtu_BC20240408-04-0653-BW.jpg?auto=format%2Ccompress&rect=2262%2C0%2C4204%2C4736&w=750&h=845" alt="" className="w-full aspect-[3/4] object-cover mb-2" />
+                            data-aos-anchor-placement="top-bottom"
+                            data-aos="clip" src="https://images.prismic.io/inertia-website/Z73zTJ7c43Q3gNtu_BC20240408-04-0653-BW.jpg?auto=format%2Ccompress&rect=2262%2C0%2C4204%2C4736&w=750&h=845" alt="" className="w-full aspect-[3/4] object-cover mb-2" />
                     </div>
 
                     <div className="col-span-1 col-start-3 flex flex-col items-start   mt-[-4.5vw] ">
@@ -217,8 +270,8 @@ const index = () => {
                             <img className=' w-4 invert-100 rotate-90' src="/icons/arrow_small.svg" alt="" />
                         </div>
                         <img
-                        data-aos-anchor-placement="top-bottom"
-                        data-aos="clip" src="https://images.prismic.io/inertia-website/Z3-_NZbqstJ99O7G_JaimeBravo-HoudiniArtist.jpg?auto=format%2Ccompress&w=360&h=530" alt="" className="w-full aspect-[3/4] object-cover mb-2" />
+                            data-aos-anchor-placement="top-bottom"
+                            data-aos="clip" src="https://images.prismic.io/inertia-website/Z3-_NZbqstJ99O7G_JaimeBravo-HoudiniArtist.jpg?auto=format%2Ccompress&w=360&h=530" alt="" className="w-full aspect-[3/4] object-cover mb-2" />
                     </div>
 
                     <div className="col-span-1 col-start-6 flex flex-col items-start  mt-[-4.5vw]  ">
@@ -230,14 +283,16 @@ const index = () => {
                             <img className=' w-4 invert-100 rotate-90' src="/icons/arrow_small.svg" alt="" />
                         </div>
                         <img
-                        data-aos-anchor-placement="top-bottom"
-                        data-aos="clip" src="https://images.prismic.io/inertia-website/Z73zS57c43Q3gNtr_BC20240408-02-0241-BW.jpg?auto=format,compress&rect=0,64,4736,6972&w=360&h=530" alt="" className="w-full aspect-[3/4] object-cover mb-2" />
+                            data-aos-anchor-placement="top-bottom"
+                            data-aos="clip" src="https://images.prismic.io/inertia-website/Z73zS57c43Q3gNtr_BC20240408-02-0241-BW.jpg?auto=format,compress&rect=0,64,4736,6972&w=360&h=530" alt="" className="w-full aspect-[3/4] object-cover mb-2" />
                     </div>
                 </div>
 
             </div>
 
-            <div className="px-5 py-20">
+
+            {/* /openings/ */}
+            {/* <div className="px-5 py-20">
                 <div className="w-full flex justify-between ">
                     <h2 className='uppercase text-7xl'>openings</h2>
                     <p className='w-[25%] text-lg'>Think you’d be a great fit for what we do? Reach out to us at <span className='uppercase italic underline'> team@disrptve.com,</span> even if a role isn’t listed here.</p>
@@ -258,7 +313,7 @@ const index = () => {
                         ))}
                     </div>
                 </div>
-            </div>
+            </div> */}
 
         </>
     )

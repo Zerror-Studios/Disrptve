@@ -10,11 +10,9 @@ import React from 'react'
 const index = () => {
   return (
     <>
-
       <Hero />
       <Services/>
       <Projects/>
-      <ShowReel/>
       <Clients/>
       <ImagePop/>
     </>

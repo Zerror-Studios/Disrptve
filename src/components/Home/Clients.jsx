@@ -33,7 +33,7 @@ const Clients = () => {
 
     return (
         <>
-            <div className="w-full ">
+            <div className="w-full pt-20 ">
 
                 <div className="w-full uppercase overflow-hidden">
                     <Marquee>
@@ -52,7 +52,7 @@ const Clients = () => {
                     </Marquee>
 
                 </div>
-                <div className="w-full my-20 px-5">
+                <div className="w-full my-32 px-5">
                     <div className="w-full border border-[#ffffff0b] grid-cols-6 grid">
                         {[...clientsData, ...clientsData, ...clientsData, ...clientsData]
                             .sort(() => Math.random() - 0.5)

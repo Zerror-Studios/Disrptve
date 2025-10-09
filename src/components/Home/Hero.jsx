@@ -2,6 +2,7 @@ import { useGSAP } from '@gsap/react'
 import { RiArrowRightUpLine } from '@remixicon/react'
 import gsap from 'gsap'
 import React from 'react'
+import ShowReel from './ShowReel'
 
 const Hero = () => {
 
@@ -21,21 +22,23 @@ const Hero = () => {
         <>
             <div className=" hero_video_parent w-full h-screen center relative">
                 <div className=" absolute font-medium top-1/2 -translate-y-1/2 left-5 uppercase text-sm left_txt">
-                    <p>Disruption</p>
+                    <h2>Disruption</h2>
                 </div>
                 <div className=" absolute font-medium top-1/2 -translate-y-1/2 right-5 uppercase text-sm right_txt">
-                    <p>by design.</p>
+                    <h2>by design.</h2>
                 </div>
+
                 <div
                     style={{ clipPath: "polygon(15% 20%, 85% 20%, 85% 90%, 15% 90%)" }}
                     className="hero_video w-full h-full ">
-                    <video loop autoPlay muted playsInline className='w-full h-full object-cover' src="/video/hero_video.mp4"></video>
+                    <ShowReel />
                 </div>
+
             </div>
 
 
 
-            <div className="w-full px-5 py-32 items-center flex ">
+            <div className="w-full px-5 pt-44 pb-32 items-center flex ">
                 <div className="w-[60%] uppercase text-7xl font-semibold ">
                     <h2>a strategy-led </h2>
                     <h2 className='red'>
@@ -46,12 +49,12 @@ const Hero = () => {
                     </h2>
                 </div>
                 <div className="w-[40%] ">
-                <p className='text-xl leading-tight'>Our process blends rigorous research, bold creativity, and precise execution. From brand strategy to campaigns, digital growth, and even AI - powered agents — we build the next generation of market leaders.</p>
-                <button className=' group mt-5 relative flex items-center gap-1'>
-                    <div className="w-0 group-hover:w-[97%] transition-all duration-300  h-[1px] bg-white absolute bottom-0 left-0"></div>
-                    <p className=' text-xl group-hover:italic uppercase '>explore now</p>
-                    <RiArrowRightUpLine size={20}/>
-                </button>
+                    <p className='text-xl leading-tight'>Our process blends rigorous research, bold creativity, and precise execution. From brand strategy to campaigns, digital growth, and even AI - powered agents — we build the next generation of market leaders.</p>
+                    <button className=' group mt-5 relative flex items-center gap-1'>
+                        <div className="w-0 group-hover:w-[97%] transition-all duration-300  h-[1px] bg-white absolute bottom-0 left-0"></div>
+                        <p className=' text-xl group-hover:italic uppercase '>explore now</p>
+                        <RiArrowRightUpLine size={20} />
+                    </button>
 
                 </div>
             </div >

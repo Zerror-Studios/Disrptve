@@ -92,7 +92,7 @@ const Services = () => {
                 <div className=" serv_slide   w-full h-full  gap-x-10 flex items-center ">
                     <div className="w-[30vw] shrink-0 h-full"></div>
                     {serviceData.map((item, index) => (
-                        <div key={index} className="w-[55vw] bg-[#0E0E0E] p-5 flex flex-col justify-between shrink-0 h-[65%] border border-[#e5e7eb44]">
+                        <div key={index} className="w-[55vw] bg-[#0e0e0e5d] p-5 flex flex-col justify-between shrink-0 h-[65%] border border-[#e5e7eb44]">
                             <div className="flex justify-between ">
                                 <div className=" text-5xl font-semibold uppercase ">
                                     <p>{item.title.split(" & ")[0]} </p>

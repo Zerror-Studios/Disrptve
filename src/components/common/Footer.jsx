@@ -1,5 +1,5 @@
 import { useGSAP } from '@gsap/react'
-import { RiFacebookFill, RiFacebookLine, RiInstagramFill, RiInstagramLine, RiYoutubeFill, RiYoutubeLine } from '@remixicon/react'
+import { RiFacebookFill, RiFacebookLine, RiInstagramFill, RiInstagramLine, RiLinkedinFill, RiLinkedinLine, RiTwitterFill, RiTwitterLine, RiYoutubeFill, RiYoutubeLine } from '@remixicon/react'
 import gsap from 'gsap'
 import CustomEase from 'gsap/dist/CustomEase'
 import SplitText from 'gsap/dist/SplitText'
@@ -14,6 +14,7 @@ const menuItems = [
   { name: "Ventures", href: "/ventures" },
   { name: "Contact", href: "/contact" },
 ];
+
 const Footer = () => {
   CustomEase.create("in-out-quint", "0.83,0,0.17,1");
 
@@ -46,104 +47,76 @@ const Footer = () => {
       tl.kill();
     };
   }, []);
+
   return (
     <>
       <div className="w-full  border-t pt-20 border-white/10">
 
-        <div className="w-full h-[20vw] flex px-5 ">
-          <div className="w-[30%] h-full">
+        <div className="w-full px-5  flex  justify-between ">
+          <div className="">
             <div
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="scroll-btn relative size-[20vw] cursor-pointer rounded-full flex items-center justify-center"
+              className="flex flex-col gap-y-2 uppercase text-4xl"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 80 80"
-                className="absolute w-full h-full"
-              >
-                <circle
-                  cx="40"
-                  cy="40"
-                  r="36"
-                  fill="transparent"
-                  stroke="#ffffff3a"
-                  strokeWidth=".5"
-                />
-                <circle
-                  transform="rotate(-90 40 40)"
-                  className="another-circle"
-                  cx="40"
-                  cy="40"
-                  r="36"
-                  fill="transparent"
-                  stroke="white"
-                  strokeWidth=".5"
-                />
-              </svg>
-
-              <img
-                src="/icons/arrow.svg"
-                alt="scroll to top"
-                className="w-[25%] z-10"
-              />
+              {menuItems.map((item, i) => (
+                <a
+                  key={i}
+                  href={item.href}
+                  className="group block overflow-hidden cursor-pointer w-fit relative"
+                >
+                  <h2
+                    className="w-fit group-hover:translate-y-[-100%] transition-all duration-300"
+                  >
+                    {item.name}
+                  </h2>
+                  <h2 className="absolute top-[100%] group-hover:top-0 w-fit text-[#D70000] transition-all duration-300 cursor-pointer">
+                    {item.name}
+                  </h2>
+                </a>
+              ))}
             </div>
-
           </div>
-          <div className="w-[70%] h-full flex ">
-            <div className="w-[70%] flex flex-col justify-between h-full">
-              <div className="">
-                <h2 className='font-semibold uppercase mb-3 '>Location</h2>
-                <p>Mumbai, India</p>
-              </div>
-              <div className="">
-                <h2 className='font-semibold uppercase mb-3 '>contact</h2>
-                <p>
-                  team@disrptve.com
-                </p>
-                <p>
-                  +91 97693 31076
-                </p>
-                <p>
-                  +91 91672 10094
-                </p>
-              </div>
+          <div className="h-full text-end space-y-12">
+            <div className="w-full ">
+              <p className='uppercase text-sm'>Mumbai, india</p>
             </div>
-            <div className="w-[30%] h-full flex flex-col justify-between">
-              <div className="">
-                <h2 className='font-semibold uppercase mb-3 '>Links</h2>
-                <div className="grid grid-cols-2 space-y-1 capitalize">
-                  {menuItems.map((item, index) => (
-                  <a href={item.href} key={index} className=' group  cursor-pointer w-fit hover:opacity-50 relative'>
-                    <div className="w-0 h-[1px] bg-white absolute group-hover:w-full left-0 bottom-0 transition-all duration-300"></div>
-                    <p>
-                      {item.name}
-                    </p>
-                  </a>
-                  ))}
-                </div>
-              </div>
-              <div className="">
-                <h2 className='font-semibold uppercase mb-3'>Socials</h2>
-                <div className="flex gap-4">
-                  <div className="size-14 group hover:bg-white transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
-                    <RiFacebookLine className='group-hover:opacity-0 transition-all duration-300  ' />
-                    <RiFacebookFill className='absolute group-hover:opacity-100 text-[#0E0E0E] opacity-0 transition-all duration-300  ' />
-                  </div>
-                  <div className="size-14 group hover:bg-white transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
-                    <RiInstagramLine className='group-hover:opacity-0 transition-all duration-300  ' />
-                    <RiInstagramFill className='absolute group-hover:opacity-100 text-[#0E0E0E] opacity-0 transition-all duration-300  ' />
-                  </div>
-                  <div className="size-14 group hover:bg-white transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
-                    <RiYoutubeLine className='group-hover:opacity-0 transition-all duration-300  ' />
-                    <RiYoutubeFill className='absolute group-hover:opacity-100 text-[#0E0E0E] opacity-0 transition-all duration-300  ' />
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div className=" space-y-2 text-2xl">
+              <p>team@disrptve.com</p>
+              <p>
+                +91 97693 31076
+              </p>
+              <p>
+                +91 91672 10094
+              </p>
 
+            </div>
+            <div className="">
+              <div className="flex gap-4">
+                <div className="size-14 group hover:bg-white transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
+                  <RiInstagramLine className='group-hover:opacity-0 transition-all duration-300  ' />
+                  <RiInstagramFill className='absolute group-hover:opacity-100 text-[#0E0E0E] opacity-0 transition-all duration-300  ' />
+                </div>
+                <div className="size-14 group hover:bg-white transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
+                  <RiFacebookLine className='group-hover:opacity-0 transition-all duration-300  ' />
+                  <RiFacebookFill className='absolute group-hover:opacity-100 text-[#0E0E0E] opacity-0 transition-all duration-300  ' />
+                </div>
+                <div className="size-14 group hover:bg-white transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
+                  <RiTwitterLine className='group-hover:opacity-0 transition-all duration-300  ' />
+                  <RiTwitterFill className='absolute group-hover:opacity-100 text-[#0E0E0E] opacity-0 transition-all duration-300  ' />
+                </div>
+                <div className="size-14 group hover:bg-white transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
+                  <RiLinkedinLine className='group-hover:opacity-0 transition-all duration-300  ' />
+                  <RiLinkedinFill className='absolute group-hover:opacity-100 text-[#0E0E0E] opacity-0 transition-all duration-300  ' />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+
         <div className="w-full mt-20  relative ">
+          <div className=" px-5 -translate-y-8  w-full flex justify-between">
+            <h2 className='opacity-50'>© 2025. All rights reserved.</h2>
+            <h2 className='opacity-50 capitalize'>developed by zerror studios</h2>
+          </div>
           <div className="h-[20vw] relative  overflow-hidden  ">
             <h2 className='font-bold absolute top-0  footer_txt leading-none uppercase text-[19.8vw] text-[red] mix-blend-difference'>
               disrptve

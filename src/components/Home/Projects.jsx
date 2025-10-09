@@ -12,15 +12,15 @@ const Projects = () => {
     }, []);
     return (
         <>
-            <div className="w-full">
+            <div className="w-full py-32 ">
                 <div className="w-full flex-col gap-y-5 text-center center">
-                    <div className="flex uppercase text-5xl gap-4 font-semibold">
+                    <div className="flex uppercase text-6xl gap-4 font-semibold">
                         <h2>Case</h2>
                         <h2 className='red'>Studies</h2>
                     </div>
                     <p className='uppercase leading-tight'>Brand Identity & Packaging <br /> / Campaigns  / Digital / Experience <br /> Design</p>
                 </div>
-                <div className="w-full grid-cols-4 pt-20 grid px-5">
+                <div className="w-full grid-cols-4 pt-32 grid px-5">
                     <a href='/project/1' data-aos-anchor-placement="top-bottom"
                         data-aos="clip" className="aspect-[16/12] border border-[#e5e7eb44] col-span-2 flex items-end">
                         <div className="flex w-full px-10 py-5 items-center justify-between">

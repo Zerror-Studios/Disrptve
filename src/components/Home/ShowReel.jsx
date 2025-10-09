@@ -7,23 +7,6 @@ import React, { useEffect, useRef } from "react";
 const ShowReel = () => {
     const videoRef = useRef(null);
 
-    useGSAP(() => {
-        gsap.fromTo(
-            ".show_reel_video",
-            { y: -200 },
-            {
-                y: 200,
-                ease: "linear",
-                scrollTrigger: {
-                    trigger: ".show_reel_paren",
-                    start: "top bottom",
-                    end: "bottom top",
-                    scrub: 0.4,
-                },
-            }
-        );
-    });
-
     const spring = {
         stiffness: 150,
         damping: 15,
@@ -79,9 +62,9 @@ const ShowReel = () => {
             onStart: () => {
                 if (window.lenis) lenis.stop();
                 if (video) {
+                    video.play();
                     video.currentTime = 0;
                     video.muted = false;
-                    video.play();
                 }
             },
         })
@@ -123,7 +106,7 @@ const ShowReel = () => {
                 onMouseEnter={mouseMove}
                 onMouseLeave={mouseLeave}
                 style={{ clipPath: "polygon(35% 30%, 65% 30%, 65% 60%, 35% 60%)" }}
-                className=" play_vid_sec cursor-pointer bg-[#0E0E0E] center w-full scale-0 h-screen fixed z-[9] top-0 left-0 ">
+                className=" play_vid_sec cursor-pointer bg-[#0E0E0E] center w-full scale-0 h-screen fixed z-[99] top-0 left-0 ">
                 <motion.div
                     className="cursor-box z-[4] opacity-0 fixed top-1/2 lg:top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:translate-x-0 lg:translate-y-0 lg:left-0 pointer-events-none mix-blend-difference  flex items-center gap-1 "
                     style={{ x: mousePosition.x, y: mousePosition.y }}>
@@ -133,13 +116,9 @@ const ShowReel = () => {
                 <video ref={videoRef} className="w-[80%] h-[90%] object-cover brightness-[.8]" loop autoPlay muted controls src="/video/show_reel.mp4"></video>
             </div>
 
-
-
-
-
             <div
                 onClick={openVideo} onMouseMove={mouseMove} onMouseEnter={mouseMove} onMouseLeave={mouseLeave}
-                className="show_reel_paren relative my-32 overflow-hidden w-full h-[120vh] flex items-center cursor-pointer justify-center"
+                className="show_reel_paren relative  overflow-hidden w-full h-[100vh] flex items-center cursor-pointer justify-center"
             >
 
                 <motion.div

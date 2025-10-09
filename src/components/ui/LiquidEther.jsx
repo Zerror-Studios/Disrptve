@@ -2,17 +2,17 @@ import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
 export default function LiquidEther({
-  mouseForce = 20,
-  cursorSize = 100,
+  mouseForce = 10,
+  cursorSize = 20,
   isViscous = false,
   viscous = 30,
-  iterationsViscous = 32,
-  iterationsPoisson = 32,
+  iterationsViscous = 8,
+  iterationsPoisson = 8,
   dt = 0.014,
   BFECC = true,
-  resolution = 0.5,
+  resolution = 0.1,
   isBounce = false,
-  colors = ['#5227FF', '#FF9FFC', '#B19EEF'],
+  colors = ['#ff0000', '#ff0000', '#ff0000'],
   style = {},
   className = '',
   autoDemo = true,
@@ -139,21 +139,21 @@ export default function LiquidEther({
       }
       init(container) {
         this.container = container;
-        container.addEventListener('mousemove', this._onMouseMove, false);
-        container.addEventListener('touchstart', this._onTouchStart, false);
-        container.addEventListener('touchmove', this._onTouchMove, false);
-        container.addEventListener('mouseenter', this._onMouseEnter, false);
-        container.addEventListener('mouseleave', this._onMouseLeave, false);
-        container.addEventListener('touchend', this._onTouchEnd, false);
+        window.addEventListener('mousemove', this._onMouseMove, false);
+        window.addEventListener('touchstart', this._onTouchStart, false);
+        window.addEventListener('touchmove', this._onTouchMove, false);
+        window.addEventListener('mouseenter', this._onMouseEnter, false);
+        window.addEventListener('mouseleave', this._onMouseLeave, false);
+        window.addEventListener('touchend', this._onTouchEnd, false);
       }
       dispose() {
         if (!this.container) return;
-        this.container.removeEventListener('mousemove', this._onMouseMove, false);
-        this.container.removeEventListener('touchstart', this._onTouchStart, false);
-        this.container.removeEventListener('touchmove', this._onTouchMove, false);
-        this.container.removeEventListener('mouseenter', this._onMouseEnter, false);
-        this.container.removeEventListener('mouseleave', this._onMouseLeave, false);
-        this.container.removeEventListener('touchend', this._onTouchEnd, false);
+        window.removeEventListener('mousemove', this._onMouseMove, false);
+        window.removeEventListener('touchstart', this._onTouchStart, false);
+        window.removeEventListener('touchmove', this._onTouchMove, false);
+        window.removeEventListener('mouseenter', this._onMouseEnter, false);
+        window.removeEventListener('mouseleave', this._onMouseLeave, false);
+        window.removeEventListener('touchend', this._onTouchEnd, false);
       }
       setCoords(x, y) {
         if (!this.container) return;
