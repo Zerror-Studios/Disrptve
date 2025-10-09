@@ -53,11 +53,11 @@ const Clients = () => {
 
                 </div>
                 <div className="w-full my-32 px-5">
-                    <div className="w-full border border-[#ffffff0b] grid-cols-6 grid">
+                    <div className="w-full border border-[#fb050118]  grid-cols-6 grid">
                         {[...clientsData, ...clientsData, ...clientsData, ...clientsData]
                             .sort(() => Math.random() - 0.5)
                             .map((item, index) => (
-                                <div key={index} className=" group  aspect-square border border-[#ffffff0b] overflow-hidden relative center">
+                                <div key={index} className=" group  aspect-square border border-[#fb050118]  overflow-hidden relative center">
                                     <img className=' invert-100 group-hover:invert-0 absolute z-[1] w-[70%] transition-all duration-300 object-contain' src={item.icon} alt="" />
                                     <img className=' scale-105 group-hover:scale-100 brightness-[.8] group-hover:opacity-100 opacity-0 transition-all duration-300 absolute w-full h-full object-contain' src={item.img} alt="" />
                                 </div>

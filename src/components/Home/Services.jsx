@@ -82,7 +82,7 @@ const Services = () => {
                         </div>
                         <button className=' h-fit w-fit group mt-5 relative flex items-center gap-1'>
                             <div className="w-0 group-hover:w-[97%] transition-all duration-300  h-[1px] bg-white absolute bottom-0 left-0"></div>
-                            <p className=' text-base group-hover:italic uppercase '>explore now</p>
+                            <h2 className=' text-base group-hover:italic uppercase '>explore now</h2>
                             <RiArrowDownLine size={18} />
                         </button>
                         <p>From startups to global mandates, we deliver impact-driven campaigns, bold identities, and market-leading growth.</p>
@@ -95,21 +95,21 @@ const Services = () => {
                         <div key={index} className="w-[55vw] bg-[#0e0e0e5d] p-5 flex flex-col justify-between shrink-0 h-[65%] border border-[#e5e7eb44]">
                             <div className="flex justify-between ">
                                 <div className=" text-5xl font-semibold uppercase ">
-                                    <p>{item.title.split(" & ")[0]} </p>
-                                    <p>{item.title.split(" & ")[1]}</p>
+                                    <h2>{item.title.split(" & ")[0]} </h2>
+                                    <h2>{item.title.split(" & ")[1]}</h2>
                                 </div>
-                                <div className="w-[35%] flex justify-end text-sm">
+                                <div className="w-[35%] flex justify-end  leading-tight">
                                     <div className="">
                                         <p>{item.desc}</p>
                                     </div>
                                 </div>
                             </div>
                             <div className="flex justify-between items-end">
-                                <div className="aspect-video w-[60%] bg-cyan-300">
+                                <div className="aspect-video w-[60%] ">
                                     <img className='w-full h-full object-cover' src={item.img} alt="" />
                                 </div>
-                                <div className="text-5xl font-semibold">
-                                    <p>{item.number}</p>
+                                <div className="text-5xl  font-semibold">
+                                    <h2>{item.number}</h2>
                                 </div>
                             </div>
                         </div>

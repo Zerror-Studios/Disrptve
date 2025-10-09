@@ -76,7 +76,7 @@ const ShowReel = () => {
             duration: 1.2,
         })
         gsap.to(".reel_txt", {
-            delay:.5,
+            delay: .5,
             y: 0,
             duration: 1,
         })
@@ -106,14 +106,14 @@ const ShowReel = () => {
                 onMouseEnter={mouseMove}
                 onMouseLeave={mouseLeave}
                 style={{ clipPath: "polygon(35% 30%, 65% 30%, 65% 60%, 35% 60%)" }}
-                className=" play_vid_sec cursor-pointer bg-[#0E0E0E] center w-full scale-0 h-screen fixed z-[99] top-0 left-0 ">
+                className=" play_vid_sec cursor-pointer bg-[#000000] center w-full scale-0 h-screen fixed z-[99] top-0 left-0 ">
                 <motion.div
                     className="cursor-box z-[4] opacity-0 fixed top-1/2 lg:top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:translate-x-0 lg:translate-y-0 lg:left-0 pointer-events-none mix-blend-difference  flex items-center gap-1 "
                     style={{ x: mousePosition.x, y: mousePosition.y }}>
                     <RiCloseLine size={16} />
-                    <p className="capitalize font-semibold">close reel</p>
+                    <p className="capitalize font-semibold">close sound</p>
                 </motion.div>
-                <video ref={videoRef} className="w-[80%] h-[90%] object-cover brightness-[.8]" loop autoPlay muted controls src="/video/show_reel.mp4"></video>
+                <video ref={videoRef} className="w-[80%] h-[90%] object-cover" loop autoPlay muted controls src="/video/show_reel.mp4"></video>
             </div>
 
             <div
@@ -125,14 +125,14 @@ const ShowReel = () => {
                     className="cursor-box z-[4] opacity-0 fixed top-1/2 lg:top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:translate-x-0 lg:translate-y-0 lg:left-0 pointer-events-none mix-blend-difference  flex items-center gap-1 "
                     style={{ x: mousePosition.x, y: mousePosition.y }}>
                     <RiPlayFill size={16} />
-                    <p className="capitalize font-semibold">play reel</p>
+                    <p className="capitalize font-semibold">play sound</p>
                 </motion.div>
-                <div className="block absolute z-[1] overflow-hidden">
+                {/* <div className="block absolute z-[1] overflow-hidden">
                     <p className=" reel_txt uppercase text-5xl ">Showreel</p>
-                </div>
+                </div> */}
 
                 <video
-                    className="show_reel_video brightness-[.7]"
+                    className="show_reel_video "
                     loop
                     autoPlay
                     muted

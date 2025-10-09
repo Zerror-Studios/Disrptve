@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
 
       <div className="fixed z-[-1] top-0 left-0  w-full h-screen center ">
         <LiquidEther
-          colors={['#ff0000', '#ff0000', '#ff0000']}
+          colors={['#FB0401', '#FB0401', '#FB0401']}
           mouseForce={10}
           cursorSize={20}
           isViscous={false}
@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
           iterationsPoisson={8}
           resolution={0.1}
           isBounce={false}
-          autoDemo={true}
+          autoDemo={false}
           autoSpeed={0.5}
           autoIntensity={2.2}
           takeoverDuration={0.25}

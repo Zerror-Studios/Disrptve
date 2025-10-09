@@ -91,21 +91,21 @@ const Footer = () => {
             </div>
             <div className="">
               <div className="flex gap-4">
-                <div className="size-14 group hover:bg-white transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
+                <div className="size-14 group hover:bg-[#FB0401] transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
                   <RiInstagramLine className='group-hover:opacity-0 transition-all duration-300  ' />
-                  <RiInstagramFill className='absolute group-hover:opacity-100 text-[#0E0E0E] opacity-0 transition-all duration-300  ' />
+                  <RiInstagramFill className='absolute group-hover:opacity-100 text-[#000000] opacity-0 transition-all duration-300  ' />
                 </div>
-                <div className="size-14 group hover:bg-white transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
+                <div className="size-14 group hover:bg-[#FB0401] transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
                   <RiFacebookLine className='group-hover:opacity-0 transition-all duration-300  ' />
-                  <RiFacebookFill className='absolute group-hover:opacity-100 text-[#0E0E0E] opacity-0 transition-all duration-300  ' />
+                  <RiFacebookFill className='absolute group-hover:opacity-100 text-[#000000] opacity-0 transition-all duration-300  ' />
                 </div>
-                <div className="size-14 group hover:bg-white transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
+                <div className="size-14 group hover:bg-[#FB0401] transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
                   <RiTwitterLine className='group-hover:opacity-0 transition-all duration-300  ' />
-                  <RiTwitterFill className='absolute group-hover:opacity-100 text-[#0E0E0E] opacity-0 transition-all duration-300  ' />
+                  <RiTwitterFill className='absolute group-hover:opacity-100 text-[#000000] opacity-0 transition-all duration-300  ' />
                 </div>
-                <div className="size-14 group hover:bg-white transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
+                <div className="size-14 group hover:bg-[#FB0401] transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
                   <RiLinkedinLine className='group-hover:opacity-0 transition-all duration-300  ' />
-                  <RiLinkedinFill className='absolute group-hover:opacity-100 text-[#0E0E0E] opacity-0 transition-all duration-300  ' />
+                  <RiLinkedinFill className='absolute group-hover:opacity-100 text-[#000000] opacity-0 transition-all duration-300  ' />
                 </div>
               </div>
             </div>
@@ -118,14 +118,14 @@ const Footer = () => {
             <h2 className='opacity-50 capitalize'>developed by zerror studios</h2>
           </div>
           <div className="h-[20vw] relative  overflow-hidden  ">
-            <h2 className='font-bold absolute top-0  footer_txt leading-none uppercase text-[19.8vw] text-[red] mix-blend-difference'>
+            <h2 className='font-bold absolute top-0  footer_txt leading-none uppercase text-[19.8vw] text-[#FB0401] mix-blend-difference'>
               disrptve
             </h2>
-            <h2 className='font-bold absolute top-[100%] footer_txt_2  leading-none uppercase text-[19.8vw] text-[red] mix-blend-difference'>
+            <h2 className='font-bold absolute top-[100%] footer_txt_2  leading-none uppercase text-[19.8vw] text-[#FB0401] mix-blend-difference'>
               disrptve
             </h2>
           </div>
-          <img className=' absolute top-0 left-0 z-[-1] w-full h-full object-cover' src="/footerImg.svg" alt="" />
+          <img className=' absolute top-0 left-0 z-[-1] w-full h-full object-cover' src="/gifs/footerVid.gif" alt="" />
         </div>
       </div>
     </>

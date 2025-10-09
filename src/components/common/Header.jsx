@@ -80,13 +80,13 @@ const Header = () => {
       {/* Open Menu */}
       <div
         style={{ clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 0%)" }}
-        className="menu w-full fixed flex flex-col justify-center  bg-[#000000] z-[16] px-5 py-11 top-0 left-0 h-screen">
+        className="menu w-full fixed flex flex-col justify-center  bg-[#FB0401] z-[16] px-5 py-11 top-0 left-0 h-screen">
         <div className="w-full flex absolute top-0 left-0 px-5 py-11 justify-between ">
           <a href="/" className='cursor-pointer'>
-            <img src="/logo.svg" alt="" />
+            <img className='invert-100' src="/logo.svg" alt="" />
           </a>
           <div className=" flex justify-end cursor-pointer">
-            <img onClick={closeMenu} className='w-[50%]' src="/icons/close.svg" alt="" />
+            <img onClick={closeMenu} className='w-[50%] invert-100' src="/icons/close.svg" alt="" />
           </div>
         </div>
         <motion.div
@@ -99,24 +99,26 @@ const Header = () => {
             <a
               key={i}
               href={item.href}
-              className="group block overflow-hidden cursor-pointer w-fit relative"
+              className="group block font-semibold overflow-hidden cursor-pointer w-fit relative"
             >
               <motion.h2
-                className="w-fit group-hover:translate-y-[-100%] transition-all duration-300"
+                className="w-fit text-black group-hover:translate-y-[-100%] transition-all duration-300"
                 variants={textVariants}
               >
                 {item.name}
               </motion.h2>
-              <h2 className="absolute top-[100%] group-hover:top-0 w-fit text-[#D70000] transition-all duration-300 cursor-pointer">
+              <h2 className="absolute top-[100%] group-hover:top-0 w-fit text-[#ffffff] transition-all duration-300 cursor-pointer">
                 {item.name}
               </h2>
             </a>
           ))}
         </motion.div>
 
-        <div className=" menu_gif opacity-0 absolute right-5">
-          <img src="/gifs/blocks.gif" alt="" />
-          <img className='rotate-180 -translate-x-[.75px]' src="/gifs/blocks.gif" alt="" />
+        <div
+          style={{ clipPath: "ellipse(46% 27% at 50% 50%)" }}
+          className="menu_gif opacity-0  absolute right-5"
+        >
+          <img className="" src="/gifs/redEye.gif" alt="" />
         </div>
 
         <motion.div
@@ -129,15 +131,15 @@ const Header = () => {
             <a
               href={item.href}
               key={i}
-              className="block w-fit cursor-pointer group relative overflow-hidden"
+              className="block font-semibold w-fit cursor-pointer group relative overflow-hidden"
             >
               <motion.h2
-                className="w-fit w-fit group-hover:translate-y-[-100%] transition-all duration-300"
+                className="w-fit text-black group-hover:translate-y-[-100%] transition-all duration-300"
                 variants={textVariants}
               >
                 {item.name}
               </motion.h2>
-              <h2 className="absolute top-[100%] group-hover:top-0 w-fit text-[#D70000] transition-all duration-300 cursor-pointer">
+              <h2 className="absolute top-[100%] group-hover:top-0 w-fit text-[#ffffff] transition-all duration-300 cursor-pointer">
                 {item.name}
               </h2>
             </a>

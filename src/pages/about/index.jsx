@@ -106,34 +106,19 @@ useEffect(() => {
 }, [flipImg]);
 
 
-    useGSAP(() => {
-
-        gsap.to(".about_vid",{
-            opacity:0,
-            scrollTrigger:{
-                trigger:".sticky_sec",
-                start:"top bottom",
-                end:"bottom bottom",
-                scrub:0.4,
-                // markers:true,
-            }
-        })
-       
-
-    });
     return (
         <>
-            <div className=" about_vid  fixed top-0 left-0 z-[-1] w-full h-screen pointer-events-none">
-                <video className=' w-full h-full object-cover brightness-50 ' loop autoPlay muted src="/video/show_reel.mp4"></video>
-            </div>
 
-            <div className="w-full relative h-screen center text-center">
+            <div className="w-full relative min-h-screen  center text-center">
+            <div className=" about_vid  absolute top-0 left-0 z-[-1] w-full h-[80vw] pointer-events-none">
+                <img className='w-full h-full object-cover' src="https://images.prismic.io/malvah-v2/974b2180-2936-483d-82c7-4ff9b0286179_Hero.bw.2.jpg?auto=compress,format" alt="" />
+            </div>
                 <h2 className='uppercase text-5xl'>Investing In & Building the <br /> Next Wave of Disruption.</h2>
             </div>
             <div className=" sticky_sec  h-[175vw]  px-5  w-full">
                 <div className="w-full flex justify-end">
                     <div className="w-[25vw] ">
-                        <img className=' aspect-[3/4] w-full object-cover' src="https://images.prismic.io/malvah-v2/974b2180-2936-483d-82c7-4ff9b0286179_Hero.bw.2.jpg?auto=compress,format" alt="" />
+                        <img className=' aspect-[3/4] w-full object-cover' src="https://images.prismic.io/malvah-v2/bf6fc68f-b97c-4904-a2a2-489924668e23_01..jpg?auto=compress,format" alt="" />
                         <p className='text-xl leading-tight mt-2' >We extended the mandate to re-engineer Guyana for the next five years.</p>
                     </div>
                 </div>
