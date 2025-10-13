@@ -3,8 +3,11 @@ import Header from "./common/Header";
 import Footer from "./common/Footer";
 import LaserFlow from "./ui/LaserFlow";
 import LiquidEther from "./ui/LiquidEther";
+import { usePathname } from "next/navigation";
 
 const Layout = ({ children }) => {
+  const path = usePathname()
+
   return (
     <>
       <header>
@@ -33,9 +36,11 @@ const Layout = ({ children }) => {
 
       <main>{children}</main>
 
-      <footer>
-        <Footer />
-      </footer>
+      {path !== "/contact" && (
+        <footer>
+          <Footer />
+        </footer>
+      )}
     </>
   );
 };

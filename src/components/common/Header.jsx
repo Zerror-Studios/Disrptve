@@ -1,6 +1,9 @@
 import gsap from 'gsap'
 import React, { useState } from 'react'
 import { motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
+import { RiArrowRightUpLine } from '@remixicon/react';
+import { Sling as Hamburger } from 'hamburger-react'
 
 const menuItems = [
   { name: "About", href: "/about" },
@@ -19,6 +22,7 @@ const socailLinks = [
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const path = usePathname()
 
   const openMenu = () => {
     setIsMenuOpen(true)
@@ -74,6 +78,33 @@ const Header = () => {
 
   return (
     <>
+      {
+        path === "/contact" && (
+          <div onClick={() => {
+            if (isMenuOpen) {
+              closeMenu()
+            } else {
+              openMenu()
+            }
+          }} className={` text-black cursor-pointer fixed z-[99]  top-9 right-5`}>
+            <Hamburger />
+          </div>
+        )
+      }
+      {
+        path !== "/contact" && (
+          <div onClick={() => {
+            if (isMenuOpen) {
+              closeMenu()
+            } else {
+              openMenu()
+            }
+          }} className={` ${isMenuOpen ? "text-black" : "text-white"} cursor-pointer fixed z-[99]  top-9 right-5`}>
+            <Hamburger />
+          </div>
+        )
+      }
+
 
       <div className="blur_div h-screen w-full fixed z-[10] bg-[#000000] opacity-0 pointer-events-none"></div>
 
@@ -85,8 +116,8 @@ const Header = () => {
           <a href="/" className='cursor-pointer'>
             <img className='invert-100' src="/logo.svg" alt="" />
           </a>
-          <div className=" flex justify-end cursor-pointer">
-            <img onClick={closeMenu} className='w-[50%] invert-100' src="/icons/close.svg" alt="" />
+          <div className=" opacity-0 flex justify-end cursor-pointer">
+            <img className='w-[50%] invert-100' src="/icons/close.svg" alt="" />
           </div>
         </div>
         <motion.div
@@ -153,19 +184,24 @@ const Header = () => {
 
       <div className="flex fixed top-0 left-0 z-[15] w-full items-center justify-between px-5 py-10">
         <a href="/" className='cursor-pointer'>
-          <img src="/logo.svg" alt="" />
+          <img className={`${path === "/contact" ? "invert-100" : "invert-0"}`} src="/logo.svg" alt="" />
         </a>
         <div className="flex items-center gap-7">
-          <button className='px-6 py-1.5 bgred uppercase '>
-            <p className='font-medium hover:underline decoration-1 decoration-white underline-offset-4  '>
-              Let’s Talk
-            </p>
-          </button>
-          <div className=" cursor-pointer">
-            <img onClick={openMenu} src="/icons/menu.svg" alt="" />
+          <a href="/contact">
+            <button className={` ${path === "/contact" ? "bg-black" : "bgred"} group  px-6 py-2  uppercase `}>
+              <div className="relative flex items-center gap-1">
+                <div className="w-0 group-hover:w-[97%] transition-all duration-300 h-[1px] bg-white absolute bottom-0 left-0"></div>
+                <p className=" group-hover:italic uppercase"> Let’s Talk</p>
+                <RiArrowRightUpLine size={20} />
+              </div>
+            </button>
+          </a>
+          <div className=" cursor-pointer opacity-0 ">
+            <img className={`${path === "/contact" ? "invert-100" : "invert-0"}`} src="/icons/menu.svg" alt="" />
           </div>
         </div>
       </div>
+
     </>
   )
 }
