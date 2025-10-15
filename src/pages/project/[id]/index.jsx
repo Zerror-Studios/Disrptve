@@ -148,11 +148,11 @@ const index = () => {
                     </div>
                 </div>
 
-                <div className="w-full h-screen center">
+                {/* <div className="w-full h-screen center">
                     <div className="w-[25%] h-[80%]">
                         <img className='w-full h-full object-cover' src="/pr0201.webp" alt="" />
                     </div>
-                </div>
+                </div> */}
 
             </div>
         </>
