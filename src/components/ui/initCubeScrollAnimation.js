@@ -21,6 +21,7 @@ export function initCubeScrollAnimation() {
             end: "top bottom",
             scrub: 0.4,
             pin: true,
+            // markers:true,
             pinSpacing: true,
             onUpdate: (self) => {
                 const progress = self.progress;

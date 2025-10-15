@@ -6,6 +6,102 @@ import Iridescence from "@/components/ui/Iridescence";
 import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 
+const serviceData = [
+    {
+        number: "01",
+        title: "Brand Strategy & Go-to-Market",
+        desc: "Before you can win, you need a plan. This is where we define your unique position in the market and craft the roadmap to launch and grow effectively.",
+        img: "https://monogrid.com/api/optimized-image/4ae41e0c003ef27916080d64475c8d9404eed051057280207b20c2f08137195e.jpg?max-w=1200&auto=compress,format",
+        servs: [
+            "Go-to-Market (GTM) Strategy",
+            "Brand Positioning & Narrative",
+            "Audience Profiling & Segmentation",
+            "Market Research & Competitive Intelligence",
+        ],
+    },
+    {
+        number: "02",
+        title: "Brand Identity & Packaging",
+        desc: "We design the complete sensory experience of your brand—what people see, touch, and feel. It’s more than a logo; it’s your entire visual world.",
+        img: "https://monogrid.com/api/optimized-image/4ae41e0c003ef27916080d64475c8d9404eed051057280207b20c2f08137195e.jpg?max-w=1200&auto=compress,format",
+        servs: [
+            "Brand Guidelines",
+            "Packaging Design",
+            "Logo & Brand Mark Design",
+            "Visual Identity Systems (Colors, Typography, Imagery)",
+        ],
+    },
+    {
+        number: "03",
+        title: "Social Media & Performance Marketing",
+        desc: "We find your audience where they are and give them a reason to engage. This is about building a community and driving measurable growth online.",
+        img: "https://monogrid.com/api/optimized-image/4ae41e0c003ef27916080d64475c8d9404eed051057280207b20c2f08137195e.jpg?max-w=1200&auto=compress,format",
+        servs: [
+            "SEO & Content Strategy",
+            "Social Media Strategy & Management",
+            "Community Architecture & Engagement",
+            "Performance Marketing (PPC, Paid Social)",
+        ],
+    },
+    {
+        number: "04",
+        title: "Website Design & Development",
+        desc: "Your website is your home base. We design and build beautiful, intuitive, and high-performing websites that serve as the core of your digital presence.",
+        img: "https://monogrid.com/api/optimized-image/4ae41e0c003ef27916080d64475c8d9404eed051057280207b20c2f08137195e.jpg?max-w=1200&auto=compress,format",
+        servs: [
+            "E-commerce Solutions",
+            "UX/UI Research & Design",
+            "Landing Page Optimization",
+            "Website & App Development",
+        ],
+    },
+    {
+        number: "05",
+        title: "Political & National Strategy",
+        desc: "We apply our strategic and data-driven approach to campaigns of national importance, helping candidates and causes shape public opinion and drive action.",
+        img: "https://monogrid.com/api/optimized-image/4ae41e0c003ef27916080d64475c8d9404eed051057280207b20c2f08137195e.jpg?max-w=1200&auto=compress,format",
+        servs: [
+            "Digital Campaign Execution",
+            "eGovernance & National Strategy Consulting",
+            "Data & Communications Strategy for Elections",
+        ],
+    },
+    {
+        number: "06",
+        title: "AI-Led Design & Photoshoots",
+        desc: "Why be limited by reality? We use cutting-edge AI to create stunning, original visuals, from conceptual art to entire photoshoots, with unparalleled speed and creative freedom.",
+        img: "https://monogrid.com/api/optimized-image/4ae41e0c003ef27916080d64475c8d9404eed051057280207b20c2f08137195e.jpg?max-w=1200&auto=compress,format",
+        servs: [
+            "Generative Visual Assets",
+            "AI Concept Art & Moodboarding",
+            "Virtual Photoshoots & Product Renders",
+        ],
+    },
+    {
+        number: "07",
+        title: "Creative & Production",
+        desc: "This is where ideas become reality. Our team manages the entire production process to create compelling content that captures attention.",
+        img: "https://monogrid.com/api/optimized-image/4ae41e0c003ef27916080d64475c8d9404eed051057280207b20c2f08137195e.jpg?max-w=1200&auto=compress,format",
+        servs: [
+            "Photography",
+            "Content Creation",
+            "Video & Film Production",
+            "Campaign Creative Development",
+        ],
+    },
+    {
+        number: "08",
+        title: "Business Decks, Brochures & Collateral",
+        desc: "We arm your team with the tools they need to communicate effectively. From investor pitches to sales materials, we design documents that are clear, compelling, and beautifully crafted.",
+        img: "https://monogrid.com/api/optimized-image/4ae41e0c003ef27916080d64475c8d9404eed051057280207b20c2f08137195e.jpg?max-w=1200&auto=compress,format",
+        servs: [
+            "Bespoke Presentations",
+            "Sales & Marketing Collateral",
+            "Investor & Pitch Deck Design",
+            "Corporate Brochures & Reports",
+        ],
+    },
+];
 
 const agencyData = [
     {
@@ -40,31 +136,31 @@ const agencyData = [
     },
 ];
 
-const serviceData = [
+const serviceImgs = [
     {
         id: 1,
         title: "Web Development",
-        img: "https://ning-h.com/wp-content/uploads/2025/06/invasion_cover.webp",
+        img: "https://cuberto.com/assets/projects/daoway/cover@2x.jpg",
     },
     {
         id: 2,
         title: "Brand Strategy",
-        img: "https://ning-h.com/wp-content/uploads/2025/06/gag_cover.webp",
+        img: "https://cuberto.com/assets/projects/cisco/cover@2x.jpg",
     },
     {
         id: 3,
         title: "UI/UX Design",
-        img: "https://ning-h.com/wp-content/uploads/2025/06/other_cover.webp",
+        img: "https://cuberto.com/assets/projects/zelt/cover@2x.jpg",
     },
     {
         id: 4,
-        img: "https://ning-h.com/wp-content/uploads/2025/06/cube_vtm.webp",
+        img: "https://cuberto.com/assets/projects/puntopago/cover@2x.jpg",
         title: "Motion Graphics",
     },
     {
         id: 5,
         title: "3D Visualization",
-        img: "https://ning-h.com/wp-content/uploads/2025/06/24_cover.webp",
+        img: "https://cuberto.com/assets/projects/kzero/cover@2x.jpg",
     },
 ];
 
@@ -87,6 +183,21 @@ const index = () => {
             },
             opacity: 0
         })
+
+
+        gsap.to(".serv_slide", {
+            scrollTrigger: {
+                trigger: ".serv_paren",
+                start: "top top",
+                pin: true,
+                end: "+200% top",
+                anticipatePin: 1,
+                scrub: .4,
+            },
+            xPercent: -81,
+            ease: "linear",
+        })
+
     })
 
     return (
@@ -104,7 +215,7 @@ const index = () => {
                     <div
                         className="cube absolute scale-[.4] w-[200px] top-1/2 left-1/2 h-[200px] [transform-style:preserve-3d]"
                         data-initial='{"top":40,"left":46,"rotateX":-360,"rotateY":-360,"rotateZ":-180,"z":-180000,"scale":0.4}'
-                        data-final='{"top":50,"left":20,"rotateX":-1,"rotateY":1,"rotateZ":0,"z":0,"scale":1.4}'
+                        data-final='{"top":50,"left":20,"rotateX":0,"rotateY":1,"rotateZ":0,"z":0,"scale":1.4}'
                     >
                         <div
                             className="cube relative w-[200px] h-[200px] [transform-style:preserve-3d]"
@@ -179,27 +290,27 @@ const index = () => {
                     technology.
                 </h2>
             </div>
-            <div className="w-full flex pt-12 px-5 ">
+            <div className="w-full flex pt-32 px-5 ">
                 <div className="w-[42%] h-full"></div>
                 <div className="w-[58%]  h-full">
-                    {[1, 2, 3, 4, 5].map((item, i) => (
+                    {serviceData.map((item, i) => (
                         <div key={i} className="w-full pb-24">
                             <div className="w-full border-b border-white py-5 flex">
                                 <p className="text-3xl">0{i + 1}</p>
                             </div>
                             <div className=" py-5 h-full w-full flex">
                                 <div className="w-[40%] text-3xl font-semibold uppercase  h-full ">
-                                    <p>Strategy and
-                                        Consultancy.</p>
+                                    <p>{item.title}</p>
                                 </div>
                                 <div className="w-[60%]  h-full">
-                                    <p className="text-xl leading-tight">Listening carefully, understanding, and analysing needs at every stage is essential to our work. We create and adapt strategies to overcome constantly evolving challenges and optimise results for sustainable success. We provide ongoing advice and support, accompanying businesses on their journey into the future.</p>
-                                    <div className="w-full mt-20 grid grid-cols-2">
-                                        <p>Product Strategy</p>
-                                        <p>Brand Strategy</p>
-                                        <p>Research Strategy</p>
-                                        <p>Analytics Strategy</p>
-                                        <p>Technical Consulting</p>
+                                    <p className="text-xl leading-tight">{item.desc}</p>
+                                    <div className="w-full mt-20 space-y-2 gap-x-5 grid grid-cols-2">
+                                        {item?.servs.map((ser, i) => (
+                                            <div key={i} className=" text-base flex gap-2">
+                                                <p>»</p>
+                                                <p > {ser}</p>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
                             </div>
@@ -230,13 +341,15 @@ const index = () => {
             </div>
             <div className="w-full  mb-24  px-5 ">
                 <h2 className="text-5xl uppercase red py-12" >Industries</h2>
-                <div className="w-full flex gap-x-10 scroller_none overflow-x-scroll">
-                    {serviceData.map((item, i) => (
-                        <div key={i} className=" shrink-0 text-center center relative w-[33vw] aspect-[3/4]">
-                            <h2 className="text-4xl absolute z-[1] uppercase">{item.title}</h2>
-                            <img className="w-full h-full object-cover brightness-75" src={item.img} alt="" />
-                        </div>
-                    ))}
+                <div className=" serv_paren w-full h-screen flex items-center ">
+                    <div className="serv_slide w-full flex gap-x-10 scroller_none ">
+                        {serviceImgs.map((item, i) => (
+                            <div key={i} className=" shrink-0 text-black text-center center relative w-[33vw] aspect-[3/4]">
+                                <h2 className="text-5xl absolute bottom-5 z-[1] uppercase">{item.title}</h2>
+                                <img className="w-full h-full object-cover " src={item.img} alt="" />
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
             </div>

@@ -2,11 +2,29 @@ import { useGSAP } from '@gsap/react'
 import { RiArrowRightUpLine, RiFacebookFill, RiFacebookLine, RiInstagramFill, RiInstagramLine, RiLinkedinFill, RiLinkedinLine, RiTwitterFill, RiTwitterLine, RiYoutubeFill, RiYoutubeLine } from '@remixicon/react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
-import React from 'react'
+import { useRouter } from 'next/router'
+import React, { useEffect } from 'react'
 gsap.registerPlugin(ScrollTrigger)
 
 
 const index = () => {
+
+const router = useRouter();
+
+  useEffect(() => {
+    console.log("object");
+    if (!router.isReady) return;
+    const hash = window.location.hash;
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 200);
+      }
+    }
+  }, [router.asPath, router.isReady]);
+
   useGSAP(() => {
     gsap.to(".fixy_con", {
       filter: "blur(14px) brightness(.6)",
@@ -28,7 +46,7 @@ const index = () => {
       <div className="w-full">
         <div className="w-full slide_u h-screen"></div>
         <div className="w-full pt-20 pb-5 bg-black  center">
-          <div className="w-[80%]  gap-20 flex justify-between items-stretch">
+          <div className="w-full px-5  gap-20 flex justify-between items-stretch">
             <div className="w-1/2 h-full">
               <div className=" grid grid-cols-2 space-y-20">
                 <div className="">
@@ -97,7 +115,7 @@ const index = () => {
                 </div>
               </div>
               <div className="">
-                <p className='text-lg  leading-tight ' >We’d love to hear from you. Whether you’re looking to disrupt your category, need a fresh perspective, or want to explore potential collaborations.</p>
+                <p className='text-lg w-[80%]  leading-tight ' >We’d love to hear from you. Whether you’re looking to disrupt your category, need a fresh perspective, or want to explore potential collaborations.</p>
               </div>
             </div>
             <div className="w-1/2 flex items-end justify-center overflow-hidden    ">
@@ -106,16 +124,15 @@ const index = () => {
           </div>
         </div>
 
-        <div className="px-5 pt-20 bg-black">
+        <div id='career' className="px-5 pt-20 bg-black">
           <div className="w-full flex justify-between ">
-            <h2 className='uppercase text-5xl red'>openings</h2>
+            <h2 className='uppercase text-5xl '>openings</h2>
             <p className='w-[25%] text-lg'>Think you’d be a great fit for what we do? Reach out to us at <span className='uppercase italic underline'> team@disrptve.com,</span> even if a role isn’t listed here.</p>
           </div>
-          <div className=" w-full mt-32">
-            <h2 className='uppercase '>filters</h2>
-            <div className="mt-10">
+          <div className=" w-full pb-10">
+            <div className="mt-5">
               {[1, 2, 3, 4].map((item, index) => (
-                <div key={index} className=" cursor-pointer hover:border-b-white/100 transition-all duration-300 w-full h-20 border-b border-white/10 flex items-center justify-between">
+                <a href='/career' key={index} className=" cursor-pointer hover:border-b-white/100 transition-all duration-300 w-full h-20 border-b border-white/10 flex items-center justify-between">
                   <p className=' font-semibold capitalize text-2xl'>social media manager</p>
                   <div className="flex h-full items-center gap-4">
                     <p>Mumbai</p>
@@ -123,7 +140,7 @@ const index = () => {
                     <p>Hybrid</p>
                     <img className=' w-4 -rotate-45 invert-100' src="/icons/arrow_small.svg" alt="" />
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>

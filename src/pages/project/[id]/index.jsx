@@ -21,15 +21,27 @@ const index = () => {
             ease: "linear",
         })
 
-        // gsap.to(".fixy_img_dcd", {
-        //     opacity:0,
-        //     duration:.1,
-        //     scrollTrigger: {
-        //         trigger: ".trick_di",
-        //         start: "top top",
-        //         scrub:true
-        //     },
-        // })
+        gsap.to(".fixy_img_dcd", {
+            opacity:0,
+            duration:.1,
+            scrollTrigger: {
+                trigger: ".trick_di",
+                start: "top top",
+                scrub:true
+            },
+        })
+        gsap.set(".main_pdcd",{backgroundColor:"black",})
+        gsap.to(".main_pdcd", {
+            backgroundColor:"#00000000",
+            duration:.1,
+            scrollTrigger: {
+                trigger: ".main_pdcd",
+                start: "5% top",
+                // scrub:true,
+                toggleActions :"play none none reverse",
+                // markers:true
+            },
+        })
 
     })
     return (
@@ -68,7 +80,7 @@ const index = () => {
                 </div>
             </div>
             <div className="w-full main_pdcd  relative bg-black">
-                <div className=" trick_di w-full absolute bg-black h-20 -translate-y-20"></div>
+                <div className=" main_pdcd trick_di w-full absolute bg-black h-20 -translate-y-20"></div>
                 <div className="w-full flex p-5 ">
                     <div className="w-1/2"></div>
                     <div className="w-1/2">
