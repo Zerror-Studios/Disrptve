@@ -13,10 +13,12 @@ const Hero = () => {
             scrollTrigger: {
                 trigger: ".hero_video_parent",
                 start: "top top",
+                pin: true,
                 end: "bottom 50%",
                 scrub: true,
             },
-            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            width:"100%",
+            height:"100%",
         })
     })
 
@@ -129,18 +131,18 @@ const Hero = () => {
                 </motion.div>
                 <video ref={videoRef} className="w-[80%] h-[90%] object-cover" loop autoPlay muted controls src="/video/logo_loop.mp4"></video>
             </div>
-            <div className=" hero_video_parent w-full h-screen center relative">
-                <div className=" absolute font-medium top-1/2 -translate-y-1/2 left-5 uppercase text-sm left_txt">
+            
+            <div className=" hero_video_parent  w-full h-screen center relative">
+                <div className=" absolute font-medium top-1/2 -translate-y-1/2 left-3 md:left-5 uppercase text-sm left_txt">
                     <h2>Disruption</h2>
                 </div>
-                <div className=" absolute font-medium top-1/2 -translate-y-1/2 right-5 uppercase text-sm right_txt">
+                <div className=" absolute font-medium top-1/2 -translate-y-1/2 right-3 md:right-5 uppercase text-sm right_txt">
                     <h2>by design.</h2>
                 </div>
 
                 <div
                     onClick={openVideo} onMouseMove={mouseMove} onMouseEnter={mouseMove} onMouseLeave={mouseLeave}
-                    style={{ clipPath: "polygon(15% 20%, 85% 20%, 85% 90%, 15% 90%)" }}
-                    className="hero_video brightness-100 w-full h-full ">
+                    className="hero_video w-[95%] lg:w-[60%] h-[50%] lg:h-[70%] brightness-100 ">
                     <ShowReel />
                 </div>
 
@@ -148,8 +150,8 @@ const Hero = () => {
 
 
 
-            <div className="w-full px-5 pt-44 pb-32 items-center flex ">
-                <div className="w-[60%] uppercase text-7xl font-semibold ">
+            <div className="w-full px-3 md:px-5 pt-16 pb-12 gap-5 md:gap-0 md:pt-44 md:pb-32 items-center flex flex-col md:flex-row ">
+                <div className=" w-full md:w-[60%] uppercase leading-none text-3xl md:text-7xl font-semibold ">
                     <h2>a strategy-led </h2>
                     <h2 className='red'>
                         marketing
@@ -158,12 +160,12 @@ const Hero = () => {
                         agency.
                     </h2>
                 </div>
-                <div className="w-[40%] ">
-                    <p className='text-xl leading-tight'>Our process blends rigorous research, bold creativity, and precise execution. From brand strategy to campaigns, digital growth, and even AI - powered agents — we build the next generation of market leaders.</p>
-
-                    <button className=' group mt-5 relative flex items-center gap-1'>
+                <div className=" w-full md:w-[40%] space-y-8 ">
+                    <p className=' text-base w-[80%] leading-none md:text-3xl md:leading-none '>Attention is the new currency. And most brands are overdrawn</p>
+                    <p className=' text-base leading-none md:text-xl md:leading-tight'>We build brands that earn it back, with interest.</p>
+                    <button className=' group relative flex items-center gap-1'>
                         <div className="w-0 group-hover:w-[97%] transition-all duration-300  h-[1px] bg-white absolute bottom-0 left-0"></div>
-                        <p className=' text-xl group-hover:italic uppercase '>explore now</p>
+                        <p className=' text-base md:text-xl group-hover:italic uppercase '>explore now</p>
                         <RiArrowRightUpLine size={20} />
                     </button>
 

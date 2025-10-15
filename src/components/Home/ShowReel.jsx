@@ -36,8 +36,8 @@ const ShowReel = () => {
         <>
 
             <div
-                 onMouseMove={mouseMove} onMouseEnter={mouseMove} onMouseLeave={mouseLeave}
-                className="show_reel_paren relative  overflow-hidden w-full h-[100vh] flex items-center cursor-pointer justify-center"
+                onMouseMove={mouseMove} onMouseEnter={mouseMove} onMouseLeave={mouseLeave}
+                className="show_reel_paren relative  overflow-hidden w-full h-full flex items-center cursor-pointer justify-center"
             >
 
                 <motion.div
@@ -51,6 +51,7 @@ const ShowReel = () => {
                 </div> */}
 
                 <video
+                    className="w-full h-full object-cover "
                     loop
                     autoPlay
                     muted

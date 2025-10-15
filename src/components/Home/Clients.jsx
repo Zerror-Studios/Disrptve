@@ -1,4 +1,5 @@
-import React from 'react'
+import gsap from 'gsap';
+import React, { useEffect, useRef } from 'react'
 import Marquee from 'react-fast-marquee'
 
 const Clients = () => {
@@ -30,36 +31,75 @@ const Clients = () => {
         },
     ]
 
+    const containerRef = useRef(null);
+
+    useEffect(() => {
+        const boxes = containerRef.current.querySelectorAll(".client-box");
+
+        boxes.forEach((box) => {
+            const icon = box.querySelector(".client-icon");
+            const img = box.querySelector(".client-img");
+
+            box.addEventListener("mouseenter", () => {
+                gsap.to(icon, { filter: "invert(0%)", duration: 0.15, ease: "power3.out" });
+                gsap.to(img, { opacity: 1, scale: 1, duration: 0.15, ease: "power3.out" });
+            });
+
+            box.addEventListener("mouseleave", () => {
+                gsap.to(icon, { filter: "invert(100%)", duration: 0.15, ease: "power3.in" });
+                gsap.to(img, { opacity: 0, scale: 1.05, duration: 0.15, ease: "power3.in" });
+            });
+        });
+
+        return () => {
+            boxes.forEach((box) => {
+                box.replaceWith(box.cloneNode(true)); // cleanup event listeners
+            });
+        };
+    }, []);
+
 
     return (
         <>
-            <div className="w-full pt-20 ">
-
+            <div className="w-full pt-20">
                 <div className="w-full uppercase overflow-hidden">
                     <Marquee>
-                        <div className=" pl-10 flex text-8xl whitespace-nowrap uppercase font-semibold items-center gap-10">
-                            <p>OUR clients</p>
-                            <img className='w-[25%]' src="/icons/cut_blocks.svg" alt="" />
-                        </div>
-                        <div className=" pl-10 flex text-8xl whitespace-nowrap uppercase font-semibold items-center gap-10">
-                            <p>OUR clients</p>
-                            <img className='w-[25%]' src="/icons/cut_blocks.svg" alt="" />
-                        </div>
-                        <div className=" pl-10 flex text-8xl whitespace-nowrap uppercase font-semibold items-center gap-10">
-                            <p>OUR clients</p>
-                            <img className='w-[25%]' src="/icons/cut_blocks.svg" alt="" />
-                        </div>
+                        {[1, 2, 3,4,5,6].map((_, i) => (
+                            <div
+                                key={i}
+                                className="pl-12 gap-12 w-fit overflow-hidden flex text-8xl whitespace-nowrap justify-between uppercase font-semibold items-center"
+                            >
+                                <p className='block w-fit '>OUR clients</p>
+                                <div className="size-12 center ">
+                                <img className="w-full" src="/icons/cut_blocks.svg" alt="" />
+                                </div>
+                            </div>
+                        ))}
                     </Marquee>
-
                 </div>
+
                 <div className="w-full my-32 px-5">
-                    <div className="w-full border border-[#fb050118]  grid-cols-6 grid">
+                    <div
+                        ref={containerRef}
+                        className="w-full border border-[#8585855b] grid grid-cols-6"
+                    >
                         {[...clientsData, ...clientsData, ...clientsData, ...clientsData]
                             .sort(() => Math.random() - 0.5)
                             .map((item, index) => (
-                                <div key={index} className=" group  aspect-square border border-[#fb050118]  overflow-hidden relative center">
-                                    <img className=' invert-100 group-hover:invert-0 absolute z-[1] w-[70%] transition-all duration-300 object-contain' src={item.icon} alt="" />
-                                    <img className=' scale-105 group-hover:scale-100 brightness-[.8] group-hover:opacity-100 opacity-0 transition-all duration-300 absolute w-full h-full object-contain' src={item.img} alt="" />
+                                <div
+                                    key={index}
+                                    className="client-box aspect-square border border-[#8585855b] overflow-hidden relative flex items-center justify-center"
+                                >
+                                    <img
+                                        className="client-icon absolute z-[1] w-[70%] invert"
+                                        src={item.icon}
+                                        alt=""
+                                    />
+                                    <img
+                                        className="client-img absolute w-full h-full object-contain opacity-0 scale-105 brightness-[.8]"
+                                        src={item.img}
+                                        alt=""
+                                    />
                                 </div>
                             ))}
                     </div>

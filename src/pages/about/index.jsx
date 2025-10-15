@@ -335,33 +335,6 @@ const index = () => {
             </div>
 
 
-
-
-
-            {/* /openings/ */}
-            {/* <div className="px-5 py-20">
-                <div className="w-full flex justify-between ">
-                    <h2 className='uppercase text-7xl'>openings</h2>
-                    <p className='w-[25%] text-lg'>Think you’d be a great fit for what we do? Reach out to us at <span className='uppercase italic underline'> team@disrptve.com,</span> even if a role isn’t listed here.</p>
-                </div>
-                <div className=" w-full my-32">
-                    <h2 className='uppercase '>filters</h2>
-                    <div className="mt-10">
-                        {[1, 2, 3, 4].map((item, index) => (
-                        <div key={index} className=" cursor-pointer hover:border-b-white/100 transition-all duration-300 w-full h-20 border-b border-white/10 flex items-center justify-between">
-                        <h2 className='capitalize text-2xl'>social media manager</h2>
-                        <div className="flex h-full items-center gap-4">
-                            <p>Mumbai</p>
-                            <div className="w-[1px] bg-white h-[20%]"></div>
-                            <p>Hybrid</p>
-                            <img className=' w-4 -rotate-45 invert-100' src="/icons/arrow_small.svg" alt="" />
-                        </div>
-                        </div>
-                        ))}
-                    </div>
-                </div>
-            </div> */}
-
         </>
     )
 }

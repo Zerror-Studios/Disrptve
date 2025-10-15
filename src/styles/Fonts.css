@@ -1,36 +1,15 @@
  @font-face {
+  font-family: "basisgrotesquepro";
+  src: url("../../public/fonts/basisgrotesquepro-medium-webfont.woff2");
+}
+ @font-face {
   font-family: "suisseIntl";
   src: url("../../public/fonts/SuisseIntl-Light.woff2");
 }
-
-@font-face {
-  font-family: "Archivo";
-  src: url("../../public/fonts/Archivo-Medium.ttf");
-  font-weight: 200;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Archivo";
-  src: url("../../public/fonts/Archivo-Regular.ttf");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Archivo";
-  src: url("../../public/fonts/Archivo-SemiBold.ttf");
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Archivo";
-  src: url("../../public/fonts/Archivo-Bold.ttf");
-  font-weight: 800;
-  font-style: normal;
-}
-
 p{
   font-family: suisseIntl;
 }
 h2{
-  font-family: Archivo;
+  font-family: basisgrotesquepro;
+  font-weight: 1000;
 }

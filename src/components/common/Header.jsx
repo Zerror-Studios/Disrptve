@@ -3,14 +3,14 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import { RiArrowRightUpLine } from '@remixicon/react';
-import { Sling as Hamburger } from 'hamburger-react'
+import { Squeeze  as Hamburger } from 'hamburger-react'
 
 const menuItems = [
   { name: "About", href: "/about" },
-  { name: "culture", href: "/culture" },
-  { name: "case studies", href: "/case_studies" },
-  { name: "Ventures", href: "/ventures" },
+  { name: "projects", href: "/projects" },
+  { name: "services", href: "/services" },
   { name: "career", href: "/career" },
+  { name: "contact", href: "/contact" },
 ];
 
 const socailLinks = [
@@ -86,7 +86,7 @@ const Header = () => {
             } else {
               openMenu()
             }
-          }} className={` text-black cursor-pointer fixed z-[99]  top-9 right-5`}>
+          }} className={` text-black cursor-pointer fixed z-[99] top-5  md:top-9 right-5`}>
             <Hamburger />
           </div>
         )
@@ -99,7 +99,7 @@ const Header = () => {
             } else {
               openMenu()
             }
-          }} className={` ${isMenuOpen ? "text-black" : "text-white"} cursor-pointer fixed z-[99]  top-9 right-5`}>
+          }} className={` ${isMenuOpen ? "text-black" : "text-white"} scale-[.8] md:scale-100 cursor-pointer fixed z-[99]  top-2  md:top-9 right-2 md:right-5`}>
             <Hamburger />
           </div>
         )
@@ -111,17 +111,17 @@ const Header = () => {
       {/* Open Menu */}
       <div
         style={{ clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 0%)" }}
-        className="menu w-full fixed flex flex-col justify-center  bg-[#FB0401] z-[16] px-5 py-11 top-0 left-0 h-screen">
-        <div className="w-full flex absolute top-0 left-0 px-5 py-11 justify-between ">
+        className="menu w-full fixed flex flex-col justify-center  bg-[#FB0401] z-[16] px-3 md:px-5 py-11 top-0 left-0  md:h-screen">
+        <div className="w-full flex absolute top-0 left-0 px-3 py-5 md:px-5 md:py-11 justify-between ">
           <a href="/" className='cursor-pointer'>
-            <img className='invert-100' src="/logo.svg" alt="" />
+            <img className=' w-[40vw] md:w-fit invert-100' src="/logo.svg" alt="" />
           </a>
           <div className=" opacity-0 flex justify-end cursor-pointer">
             <img className='w-[50%] invert-100' src="/icons/close.svg" alt="" />
           </div>
         </div>
         <motion.div
-          className="flex flex-col gap-y-2 uppercase text-4xl"
+          className="flex flex-col pt-10 gap-y-2 uppercase text-4xl"
           variants={containerVariants}
           initial="closed"
           animate={isMenuOpen ? "open" : "closed"}
@@ -144,16 +144,24 @@ const Header = () => {
             </a>
           ))}
         </motion.div>
+        <div className="w-full center">
+          <div
+          style={{ clipPath: "ellipse(46% 27% at 50% 50%)" }}
+          className="  lg:hidden menu_gif opacity-0"
+          >
+          <img className="w-[60vw]" src="/gifs/redEye.gif" alt="" />
+        </div>
+          </div>
 
         <div
           style={{ clipPath: "ellipse(46% 27% at 50% 50%)" }}
-          className="menu_gif opacity-0  absolute right-5"
+          className=" hidden md:block menu_gif opacity-0  absolute right-5"
         >
           <img className="" src="/gifs/redEye.gif" alt="" />
         </div>
 
         <motion.div
-          className="absolute flex  gap-10 uppercase w-full bottom-11 "
+          className="absolute flex pr-8 text-sm md:text-base justify-between md:justify-start  md:gap-10 uppercase w-full bottom-11 "
           variants={containerVariants}
           initial="closed"
           animate={isMenuOpen ? "open" : "closed"}
@@ -182,12 +190,12 @@ const Header = () => {
 
 
 
-      <div className="flex fixed top-0 left-0 z-[15] w-full items-center justify-between px-5 py-10">
+      <div className="flex fixed top-0 left-0 z-[15] w-full items-center justify-between px-3 md:px-5 py-5 md:py-10">
         <a href="/" className='cursor-pointer'>
-          <img className={`${path === "/contact" ? "invert-100" : "invert-0"}`} src="/logo.svg" alt="" />
+          <img className={`  w-[40vw] md:w-fit ${path === "/contact" ? "invert-100" : "invert-0"}`} src="/logo.svg" alt="" />
         </a>
         <div className="flex items-center gap-7">
-          <a href="/contact">
+          <a href="/contact" className='hidden md:block'>
             <button className={` ${path === "/contact" ? "bg-black" : "bgred"} group  px-6 py-2  uppercase `}>
               <div className="relative flex items-center gap-1">
                 <div className="w-0 group-hover:w-[97%] transition-all duration-300 h-[1px] bg-white absolute bottom-0 left-0"></div>

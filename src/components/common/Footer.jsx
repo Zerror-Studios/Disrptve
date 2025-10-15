@@ -9,10 +9,10 @@ gsap.registerPlugin(CustomEase, SplitText);
 
 const menuItems = [
   { name: "About", href: "/about" },
-  { name: "Services", href: "/services" },
-  { name: "Work", href: "/work" },
-  { name: "Ventures", href: "/ventures" },
-  { name: "Contact", href: "/contact" },
+  { name: "projects", href: "/projects" },
+  { name: "services", href: "/services" },
+  { name: "career", href: "/career" },
+  { name: "contact", href: "/contact" },
 ];
 
 const Footer = () => {
@@ -63,14 +63,14 @@ const Footer = () => {
                   href={item.href}
                   className="group block overflow-hidden cursor-pointer w-fit relative"
                 >
-                  <h2
-                    className="w-fit group-hover:translate-y-[-100%] transition-all duration-300"
+                  <p
+                    className="w-fit font-semibold group-hover:translate-y-[-100%] transition-all duration-300"
                   >
                     {item.name}
-                  </h2>
-                  <h2 className="absolute top-[100%] group-hover:top-0 w-fit text-[#D70000] transition-all duration-300 cursor-pointer">
+                  </p>
+                  <p className="absolute font-semibold top-[100%] group-hover:top-0 w-fit text-[#D70000] transition-all duration-300 cursor-pointer">
                     {item.name}
-                  </h2>
+                  </p>
                 </a>
               ))}
             </div>
@@ -114,8 +114,8 @@ const Footer = () => {
 
         <div className="w-full mt-20  relative ">
           <div className=" px-5 -translate-y-8  w-full flex justify-between">
-            <h2 className='opacity-50'>© 2025. All rights reserved.</h2>
-            <h2 className='opacity-50 capitalize'>developed by zerror studios</h2>
+            <p className='  opacity-50'>© 2025. All rights reserved.</p>
+            <p className='  opacity-50 capitalize'>developed by zerror studios</p>
           </div>
           <div className="h-[20vw] relative  overflow-hidden  ">
             <h2 className='font-bold absolute top-0  footer_txt leading-none uppercase text-[19.8vw] text-[#FB0401] mix-blend-difference'>
