@@ -122,7 +122,7 @@ const Services = () => {
             scrollTrigger: {
                 trigger: ".serv_paren",
                 start: "top top",
-                end: "bottom 40%",
+                end: "bottom 80%",
                 scrub: .4,
             },
             opacity: 0,
