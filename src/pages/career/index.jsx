@@ -1,80 +1,81 @@
-import { RiArrowRightUpLine } from '@remixicon/react'
+import { useGSAP } from '@gsap/react'
+import { RiArrowRightUpLine, RiFacebookFill, RiFacebookLine, RiInstagramFill, RiInstagramLine, RiLinkedinFill, RiLinkedinLine, RiTwitterFill, RiTwitterLine, RiYoutubeFill, RiYoutubeLine } from '@remixicon/react'
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import React from 'react'
+gsap.registerPlugin(ScrollTrigger)
+
+const JobOpenings = [
+    {
+        id: 1,
+        title: "Social Media Manager",
+        location: "Mumbai",
+        type: "Hybrid",
+    },
+    {
+        id: 2,
+        title: "UI/UX Designer",
+        location: "Bangalore",
+        type: "Remote",
+    },
+    {
+        id: 3,
+        title: "Frontend Developer",
+        location: "Delhi",
+        type: "On-site",
+    },
+    {
+        id: 4,
+        title: "Project Coordinator",
+        location: "Pune",
+        type: "Hybrid",
+    },
+    {
+        id: 5,
+        title: "Brand Strategist",
+        location: "Chennai",
+        type: "Remote",
+    },
+];
 
 const index = () => {
+    useGSAP(() => {
+        gsap.to(".prx_img", {
+            y: 200,
+            ease: "linear",
+            scrollTrigger: {
+                trigger: ".prx_pren",
+                start: "top top",
+                end: "bottom top",
+                scrub: true
+            }
+        })
+
+    })
     return (
         <>
-            <div className="w-full h-screen center flex-col">
-                <h2 className='uppercase text-7xl'>social media manager</h2>
-                <button className="mt-12 group px-6 py-2 border center border-white">
-                    <div className="relative flex items-center gap-1">
-                        <div className="w-0 group-hover:w-[97%] transition-all duration-300 h-[1px] bg-white absolute bottom-0 left-0"></div>
-                        <p className="text-lg group-hover:italic uppercase">apply now</p>
-                        <RiArrowRightUpLine size={20} />
-                    </div>
-                </button>
-
+            <div className="w-full h-screen prx_pren overflow-hidden">
+                <img className='w-full h-full object-cover brightness-90 prx_img' src="https://images.unsplash.com/photo-1496449903678-68ddcb189a24?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070" alt="" />
             </div>
-            <div className="w-full  gap-24 px-5 border-t pt-10 pb-20 border-white/10 flex">
-                <div className="w-[50%] h-full text-2xl leading-tight">
-                    <p className='w-[80%]'>At Disrptve, we don’t just run social  we create conversations that stick. If you’re obsessed with culture, trends, and building communities that matter, this one’s for you.</p>
+            <div id='career' className="px-5 py-20 ">
+                <div className="w-full flex justify-between ">
+                    <h2 className='uppercase text-5xl red'>openings</h2>
+                    <p className='w-[30%] text-xl'>Think you’d be a great fit for what we do? Reach out to us at <span className='uppercase italic underline'> team@disrptve.com,</span> even if a role isn’t listed here.</p>
                 </div>
-                <div className="w-[50%] h-full grid grid-cols-[60%_40%]">
-                    <div className="w-full space-y-5">
-                        <div className="">
-                            <h2 className='text-lg uppercase opacity-60' >type</h2>
-                            <p className='' >Full Time, Hybrid</p>
-                        </div>
-                        <div className="">
-                            <h2 className='text-lg uppercase opacity-60' >location</h2>
-                            <p className='' >Mumbai, India</p>
-                        </div>
-                        <div className="">
-                            <h2 className='text-lg uppercase opacity-60' >Experience</h2>
-                            <p className='' >2+ Years</p>
-                        </div>
+                <div className=" w-full">
+                    <div className="mt-10">
+                        {JobOpenings.map((item, index) => (
+                            <a href={`/career/${item.id}`} key={index} className=" cursor-pointer hover:px-5 hover:border-b-white/100 transition-all duration-300 w-full h-20 border-b border-white/10 flex items-center justify-between">
+                                <p className='  capitalize text-3xl'>{item.title}</p>
+                                <div className="flex text-lg h-full items-center gap-4">
+                                    <p>{item.location}</p>
+                                    <div className="w-[1px] bg-white h-[20%]"></div>
+                                    <p>{item.type}</p>
+                                    <img className=' w-4 -rotate-45 invert-100' src="/icons/arrow_small.svg" alt="" />
+                                </div>
+                            </a>
+                        ))}
                     </div>
-                    <div className="w-full space-y-5">
-                        <div className="">
-                            <h2 className='text-lg uppercase opacity-60' >Working Hours</h2>
-                            <p className='' >8 Hours</p>
-                        </div>
-                        <div className="">
-                            <h2 className='text-lg uppercase opacity-60' >salary</h2>
-                            <p className='' >To Be Discussed..</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="w-full  gap-24 px-5 border-t pt-10 pb-20 border-white/10 flex">
-                <div className="w-[50%] h-full text-2xl leading-tight">
-                    <h2 className=' text-4xl uppercase'>What We’re Looking For</h2>
-                </div>
-                <div className="w-[50%] h-full space-y-4 text-xl">
-                    <p>• 2–4 years of experience managing social media for brands.</p>
-                    <p>• Strong grasp of Instagram, LinkedIn, Twitter/X, and emerging platforms.</p>
-                    <p>• Creative mindset with the ability to write engaging, on-trend copy.</p>
-                    <p>• Skilled in planning campaigns and building content calendars.</p>
-                    <p>• Familiarity with analytics tools to track, measure, and optimize performance.</p>
-                    <p>• A proactive self-starter who thrives in fast-paced environments.</p>
-                    <p>• Bonus: experience with design tools (Canva, Figma, Adobe Suite).</p>
-                </div>
-            </div>
-            <div className="w-full  gap-24 px-5 border-t pt-10 pb-20 border-white/10 flex">
-                <div className="w-[50%] h-full text-2xl leading-tight">
-                    <h2 className=' text-4xl uppercase'>What You’ll Do</h2>
-                </div>
-                <div className="w-[50%] h-full space-y-4 text-xl">
-                    <p>• Own and grow brand voices across social platforms</p>
-                    <p>• Create scroll-stopping content & campaigns</p>
-                    <p>• Track, analyze, and optimize for performance</p>
-                    <button className="mt-20 group px-6 py-2 border center border-white">
-                        <div className="relative flex items-center gap-1">
-                            <div className="w-0 group-hover:w-[97%] transition-all duration-300 h-[1px] bg-white absolute bottom-0 left-0"></div>
-                            <p className="text-lg group-hover:italic uppercase">apply now</p>
-                            <RiArrowRightUpLine size={20} />
-                        </div>
-                    </button>
                 </div>
             </div>
         </>

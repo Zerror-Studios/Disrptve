@@ -104,63 +104,53 @@ const serviceData = [
 ];
 
 const agencyData = [
-    {
-        id: 1,
-        title: "Boutique Agency",
-        desc: "We are a boutique agency that prioritises flexibility and adaptability. Our structure allows us to respond swiftly to our clients' changing needs, and offers high-level tailor-made solutions that large agencies can't match.",
-    },
-    {
-        id: 2,
-        title: "Creative Storytellers",
-        desc: "Our team thrives on crafting narratives that connect emotionally with audiences. Every brand has a story, and we make sure yours is told with authenticity, creativity, and purpose.",
-    },
-    {
-        id: 3,
-        title: "Design-Driven Strategy",
-        desc: "We merge design thinking with strategic insight to create impactful visual identities and campaigns that leave lasting impressions across every touchpoint.",
-    },
-    {
-        id: 4,
-        title: "Digital First Approach",
-        desc: "From interactive experiences to social engagement, we focus on crafting digital-first strategies that align with modern behavior and evolving platforms.",
-    },
-    {
-        id: 5,
-        title: "Collaborative Mindset",
-        desc: "We believe in partnership over transaction. Our process is built on transparency and collaboration, ensuring clients are part of the creative journey from start to finish.",
-    },
-    {
-        id: 6,
-        title: "Results That Matter",
-        desc: "Our success is measured by the real-world impact we create. Whether it’s brand growth, audience engagement, or cultural relevance, we focus on results that move the needle.",
-    },
+  {
+    id: 1,
+    title: "A Unique Foundation",
+    desc: "Most agencies are built on a single point of view. DISRPTVE was founded on a deliberate blend of three distinct worlds: the proven process and strategic rigor of an established agency, the network and legacy of the entertainment industry, and a modern perspective on design and culture. This structure means our work is strategically sound, culturally connected, and creatively fresh, all at the same time.",
+  },
+  {
+    id: 2,
+    title: "Strategy Over Everything",
+    desc: "We don't believe in creative for creative's sake. Every design, campaign, and line of copy is born from a sharp, clear, and defensible strategy. We start with a deep dive into your world to find your most potent truth, and we don't build anything until we have a rock-solid plan to make it count.",
+  },
+  {
+    id: 3,
+    title: "A Direct Line to the Principals",
+    desc: "When you partner with us, you partner with us. The founders are deeply involved in every project, ensuring you get the senior-level thinking and accountability you deserve. There are no layers of account managers to get through—just a direct, collaborative relationship focused on getting the best work done.",
+  },
+  {
+    id: 4,
+    title: "Built for the Modern Mandate",
+    desc: "Our experience isn't limited to a single industry or channel. We've run national political campaigns, launched brands with A-list celebrities, built identities from scratch, and created photoshoots entirely with AI. This diverse expertise means we're uniquely equipped to handle the complex, multi-channel challenges that modern brands face.",
+  },
 ];
 
 const serviceImgs = [
     {
         id: 1,
-        title: "Web Development",
-        img: "https://cuberto.com/assets/projects/daoway/cover@2x.jpg",
+        title: "Political",
+        img: "https://images.unsplash.com/photo-1566460516667-ac306003c3aa?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1974",
     },
     {
         id: 2,
-        title: "Brand Strategy",
-        img: "https://cuberto.com/assets/projects/cisco/cover@2x.jpg",
+        title: "Entertainment",
+        img: "https://images.unsplash.com/photo-1751606801988-daa492edd7df?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1935",
     },
     {
         id: 3,
-        title: "UI/UX Design",
-        img: "https://cuberto.com/assets/projects/zelt/cover@2x.jpg",
+        title: "Fashion",
+        img: "https://images.unsplash.com/photo-1504198458649-3128b932f49e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1974",
     },
     {
         id: 4,
-        img: "https://cuberto.com/assets/projects/puntopago/cover@2x.jpg",
-        title: "Motion Graphics",
+        img: "https://images.unsplash.com/photo-1659194726424-20d6a40ef80a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1974",
+        title: "Sports",
     },
     {
         id: 5,
-        title: "3D Visualization",
-        img: "https://cuberto.com/assets/projects/kzero/cover@2x.jpg",
+        title: "Automotive",
+        img: "https://plus.unsplash.com/premium_photo-1693776353300-a6171520f93b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1974",
     },
 ];
 
@@ -279,16 +269,14 @@ const index = () => {
             </div>
             <div className=" anim_star h-[55vh] w-full"></div>
             <div className="w-full h-[45vh] flex flex-col justify-end p-5 uppercase text-7xl ">
-                <h2>We turn ideas into</h2>
+                <h2>A service is just a tool.</h2>
                 <h2>
-                    tailored digital solutions
+                     It’s the strategy behind
                 </h2>
                 <h2>
-                    through design, data and
+                    it that creates the impact.
                 </h2>
-                <h2>
-                    technology.
-                </h2>
+                <p className="text-2xl leading-none mt-5 normal-case w-[40%]">We believe in a strategy-first approach to everything we do. The capabilities listed here are the tools we use to execute on a clear, well-defined plan. </p>
             </div>
             <div className="w-full flex pt-32 px-5 ">
                 <div className="w-[42%] h-full"></div>
@@ -296,9 +284,9 @@ const index = () => {
                     {serviceData.map((item, i) => (
                         <div key={i} className="w-full pb-24">
                             <div className="w-full border-b border-white py-5 flex">
-                                <p className="text-3xl">0{i + 1}</p>
+                                <p className="text-3xl font-semibold">0{i + 1}</p>
                             </div>
-                            <div className=" py-5 h-full w-full flex">
+                            <div className=" py-5 h-full w-full gap-5 flex">
                                 <div className="w-[40%] text-3xl font-semibold uppercase  h-full ">
                                     <p>{item.title}</p>
                                 </div>
@@ -306,9 +294,9 @@ const index = () => {
                                     <p className="text-xl leading-tight">{item.desc}</p>
                                     <div className="w-full mt-20 space-y-2 gap-x-5 grid grid-cols-2">
                                         {item?.servs.map((ser, i) => (
-                                            <div key={i} className=" text-base flex gap-2">
-                                                <p>»</p>
-                                                <p > {ser}</p>
+                                            <div key={i} className="  flex gap-2">
+                                                <div className='size-2 shrink-0  translate-y-2.5 bg-white' ></div>
+                                                <p className="text-xl" > {ser}</p>
                                             </div>
                                         ))}
                                     </div>
@@ -319,20 +307,20 @@ const index = () => {
                 </div>
             </div>
             <div className="w-full why_us mb-24  px-5">
-                <h2 className="text-5xl red uppercase">WHY DISRPTIVE</h2>
+                <h2 className="text-5xl red uppercase">Why We're Different</h2>
                 <div className="mt-12">
-                    <div className="w-full flex items-stretch">
+                    <div className="  w-full flex items-stretch">
                         <div className="w-[60%]  pt-2 gap-12 grid grid-cols-2 ">
                             {agencyData.map((item, i) => (
                                 <div key={i} className="">
-                                    <p className="text-2xl font-semibold mb-4"> 0{i + 1}. {item.title} </p>
-                                    <p className="leading-tight">{item.desc}</p>
+                                    <p className="text-3xl font-semibold mb-4"> 0{i + 1}. {item.title} </p>
+                                    <p className=" text-lg leading-tight">{item.desc}</p>
                                 </div>
                             ))}
 
                         </div>
-                        <div className="w-[40%] flex items-center justify-end ">
-                            <div className="w-[65%]  center">
+                        <div className="w-[40%]  flex items-center justify-end ">
+                            <div className="w-[70%]">
                                 <img className="w-full" src="/gifs/sandClock.gif" alt="" />
                             </div>
                         </div>
@@ -345,7 +333,8 @@ const index = () => {
                     <div className="serv_slide w-full flex gap-x-10 scroller_none ">
                         {serviceImgs.map((item, i) => (
                             <div key={i} className=" shrink-0 text-black text-center center relative w-[33vw] aspect-[3/4]">
-                                <h2 className="text-5xl absolute bottom-5 z-[1] uppercase">{item.title}</h2>
+                                <div className="absolute bottom-0 w-full z-[1] h-44 bg-gradient-to-b from-transparent to-white"></div>
+                                <h2 className="text-5xl absolute bottom-5 z-[2] uppercase">{item.title}</h2>
                                 <img className="w-full h-full object-cover " src={item.img} alt="" />
                             </div>
                         ))}

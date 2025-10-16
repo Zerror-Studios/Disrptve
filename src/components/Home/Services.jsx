@@ -10,7 +10,7 @@ const serviceData = [
         number: "01",
         title: "Brand Strategy & Go-to-Market",
         desc: "Before you can win, you need a plan. This is where we define your unique position in the market and craft the roadmap to launch and grow effectively.",
-        img: "https://monogrid.com/api/optimized-image/4ae41e0c003ef27916080d64475c8d9404eed051057280207b20c2f08137195e.jpg?max-w=1200&auto=compress,format",
+        img: "https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070",
         servs: [
             "Go-to-Market (GTM) Strategy",
             "Brand Positioning & Narrative",
@@ -22,7 +22,7 @@ const serviceData = [
         number: "02",
         title: "Brand Identity & Packaging",
         desc: "We design the complete sensory experience of your brand—what people see, touch, and feel. It’s more than a logo; it’s your entire visual world.",
-        img: "https://monogrid.com/api/optimized-image/4ae41e0c003ef27916080d64475c8d9404eed051057280207b20c2f08137195e.jpg?max-w=1200&auto=compress,format",
+        img: "https://images.unsplash.com/photo-1633533451997-8b6079082e3d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1931",
         servs: [
             "Brand Guidelines",
             "Packaging Design",
@@ -34,7 +34,7 @@ const serviceData = [
         number: "03",
         title: "Social Media & Performance Marketing",
         desc: "We find your audience where they are and give them a reason to engage. This is about building a community and driving measurable growth online.",
-        img: "https://monogrid.com/api/optimized-image/4ae41e0c003ef27916080d64475c8d9404eed051057280207b20c2f08137195e.jpg?max-w=1200&auto=compress,format",
+        img: "https://images.unsplash.com/photo-1676285437506-3ad6aa7d7cad?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070",
         servs: [
             "SEO & Content Strategy",
             "Social Media Strategy & Management",
@@ -46,7 +46,7 @@ const serviceData = [
         number: "04",
         title: "Website Design & Development",
         desc: "Your website is your home base. We design and build beautiful, intuitive, and high-performing websites that serve as the core of your digital presence.",
-        img: "https://monogrid.com/api/optimized-image/4ae41e0c003ef27916080d64475c8d9404eed051057280207b20c2f08137195e.jpg?max-w=1200&auto=compress,format",
+        img: "https://images.unsplash.com/photo-1676263813382-bb5ba4b63f91?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2071",
         servs: [
             "E-commerce Solutions",
             "UX/UI Research & Design",
@@ -58,7 +58,7 @@ const serviceData = [
         number: "05",
         title: "Political & National Strategy",
         desc: "We apply our strategic and data-driven approach to campaigns of national importance, helping candidates and causes shape public opinion and drive action.",
-        img: "https://monogrid.com/api/optimized-image/4ae41e0c003ef27916080d64475c8d9404eed051057280207b20c2f08137195e.jpg?max-w=1200&auto=compress,format",
+        img: "https://images.unsplash.com/photo-1744807867611-6e39f5229af6?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1112",
         servs: [
             "Digital Campaign Execution",
             "eGovernance & National Strategy Consulting",
@@ -69,7 +69,7 @@ const serviceData = [
         number: "06",
         title: "AI-Led Design & Photoshoots",
         desc: "Why be limited by reality? We use cutting-edge AI to create stunning, original visuals, from conceptual art to entire photoshoots, with unparalleled speed and creative freedom.",
-        img: "https://monogrid.com/api/optimized-image/4ae41e0c003ef27916080d64475c8d9404eed051057280207b20c2f08137195e.jpg?max-w=1200&auto=compress,format",
+        img: "https://images.unsplash.com/photo-1617050318658-a9a3175e34cb?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2071",
         servs: [
             "Generative Visual Assets",
             "AI Concept Art & Moodboarding",
@@ -80,7 +80,7 @@ const serviceData = [
         number: "07",
         title: "Creative & Production",
         desc: "This is where ideas become reality. Our team manages the entire production process to create compelling content that captures attention.",
-        img: "https://monogrid.com/api/optimized-image/4ae41e0c003ef27916080d64475c8d9404eed051057280207b20c2f08137195e.jpg?max-w=1200&auto=compress,format",
+        img: "https://images.unsplash.com/photo-1612631656340-ad1e06d3a0de?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070",
         servs: [
             "Photography",
             "Content Creation",
@@ -92,7 +92,7 @@ const serviceData = [
         number: "08",
         title: "Business Decks, Brochures & Collateral",
         desc: "We arm your team with the tools they need to communicate effectively. From investor pitches to sales materials, we design documents that are clear, compelling, and beautifully crafted.",
-        img: "https://monogrid.com/api/optimized-image/4ae41e0c003ef27916080d64475c8d9404eed051057280207b20c2f08137195e.jpg?max-w=1200&auto=compress,format",
+        img: "https://images.unsplash.com/photo-1659560893493-9b565e1a26a5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1332",
         servs: [
             "Bespoke Presentations",
             "Sales & Marketing Collateral",
@@ -146,18 +146,13 @@ const Services = () => {
     return (
         <>
             <div className="serv_paren w-full relative h-screen overflow-hidden ">
-                <div className="h-full w-[25vw] flex items-center absolute px-5 top-0 left-0">
-                    <div className=" w-full right_serv   flex flex-col justify-between h-[65%] ">
-                        <div className="text-4xl font-semibold uppercase">
+                <div className="h-full w-[30vw] flex items-center absolute px-5 top-0 left-0">
+                    <div className=" w-full right_serv   flex flex-col justify-between h-[35vw] ">
+                        <div className="text-5xl font-semibold uppercase">
                             <h2>What</h2>
                             <h2 className='red'>We Do</h2>
                         </div>
-                        <button className=' h-fit w-fit group mt-5 relative flex items-center gap-1'>
-                            <div className="w-0 group-hover:w-[97%] transition-all duration-300  h-[1px] bg-white absolute bottom-0 left-0"></div>
-                            <h2 className=' text-base group-hover:italic uppercase '>explore now</h2>
-                            <RiArrowDownLine size={18} />
-                        </button>
-                        <p>We’re a full-service agency, which means we can help from the first spark of an idea to the final, polished execution. Our work is broken down into these core areas.</p>
+                        <p className='text-2xl'>We’re a full-service agency, which means we can help from the first spark of an idea to the final, polished execution. Our work is broken down into these core areas.</p>
                     </div>
                 </div>
 
@@ -168,17 +163,17 @@ const Services = () => {
                             <div className="flex justify-between ">
                                 <div className=" text-4xl w-[90%] leading-none font-semibold uppercase ">
                                     <div className=" ">
-                                        <h2>{item.title.split(" & ")[0]} </h2>
-                                        <h2>{item.title.split(" & ")[1]}</h2>
+                                        <h2>{item.title.split(" & ")[0]} & </h2>
+                                        <h2>{item.title.split(" & ")[1]} </h2>
                                     </div>
-                                    <p className='text-base mt-5 opacity-80 normal-case font-light leading-none w-[75%]'>{item.desc}</p>
+                                    <p className='text-lg mt-7  normal-case font-light leading-none w-[75%]'>{item.desc}</p>
                                 </div>
-                                <div className=" w-[70%]  flex justify-end  leading-none">
+                                <div className=" w-[50%]  flex justify-end  leading-none">
                                     <div className=" space-y-2 ">
                                         {item?.servs.map((ser, i) => (
-                                            <div key={i} className=" text-base flex gap-2">
-                                                <p>»</p>
-                                                <p > {ser}</p>
+                                            <div key={i} className="  flex gap-2">
+                                                <div className='size-2  translate-y-2.5 bg-white' ></div>
+                                                <p className='text-xl' > {ser}</p>
                                             </div>
                                         ))}
                                     </div>

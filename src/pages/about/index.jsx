@@ -62,11 +62,25 @@ const teamMembers = [
 const index = () => {
 
     useGSAP(() => {
+
+        gsap.from(".her_txt_anim", {
+            width: "50%",
+            scrollTrigger: {
+                trigger: ".abt_her_prn",
+                start: "top top",
+                end: "bottom 70%",
+                // markers:true,
+                scrub: 0.4
+            }
+        })
+
+
+
+
         gsap.registerPlugin(SplitText, ScrollTrigger);
 
         const paragraphs = ["par1", "par2", "par3", "par4"];
 
-        // SplitText setup
         const splitSets = paragraphs.map((p) => ({
             a: new SplitText(`.${p}_a`, { type: "chars" }),
             b: new SplitText(`.${p}_b`, { type: "chars" }),
@@ -77,7 +91,7 @@ const index = () => {
             scrollTrigger: {
                 trigger: ".mix_paren",
                 start: "top top",
-                end: "+=800%",
+                end: "+=400%",
                 scrub: 0.4,
                 // markers: true,
                 pin: true,
@@ -85,20 +99,18 @@ const index = () => {
             defaults: { ease: "none" },
         });
 
-        // Helper: fade in chars sequentially
         const fadeInChars = (chars) =>
             tl.fromTo(
                 chars,
                 { opacity: 0.2 },
                 {
                     opacity: 1,
-                    stagger: 0.05,
-                    duration: 0.1,
+                    stagger: 0.01,
+                    duration: 0.01,
                 },
-                ">+=0.1" // means "start after previous finishes + small delay"
+                ">+=0.1"
             );
 
-        // ====== First Set (A) ======
         splitSets.forEach((set) => fadeInChars(set.a.chars));
 
         tl.to(".nm_2", { opacity: 1 }, ">")
@@ -106,9 +118,9 @@ const index = () => {
             .to(".nam_1, .par1_a, .par2_a, .par3_a, .par4_a", { yPercent: -100, opacity: 0 }, "<")
             .to(".nm_1", { opacity: 0.3 }, "<")
             .to(".crd_1", { scale: 0.9 }, "<")
-            .from(".crd_2", { top: "100%", duration: 1 }, "<");
+            .from(".crd_2", { top: "100%", duration: 1 }, "<")
+            .to(".mix_img_1", { opacity: 0, duration: .15 }, "<+=1.0");
 
-        // ====== Second Set (B) ======
         splitSets.forEach((set) => fadeInChars(set.b.chars));
 
         tl.to(".nm_3", { opacity: 1 }, ">")
@@ -117,9 +129,10 @@ const index = () => {
             .to(".nm_2", { opacity: 0.3 }, "<")
             .to(".crd_1", { scale: 0.8 }, "<")
             .to(".crd_2", { scale: 0.9 }, "<")
-            .from(".crd_3", { top: "100%", duration: 1 }, "<");
+            .from(".crd_3", { top: "100%", duration: 1 }, "<")
+            .to(".mix_img_2", { opacity: 0, duration: .15 }, "<+=1.0")
+            .to(".crd_1", { opacity: .7, duration: .15 }, "<");
 
-        // ====== Third Set (C) ======
         splitSets.forEach((set) => fadeInChars(set.c.chars));
     });
 
@@ -133,23 +146,27 @@ const index = () => {
 
     return (
         <>
-            <div className="w-full relative px-5 text-8xl uppercase flex-col h-screen center">
-                <img className='absolute z-[-2] scale-[1.5]' src="/gifs/globe.gif" alt="" />
+            <div className="w-full  z-[-2] h-screen fixed center ">
+                <img className=' scale-[1.5]' src="/gifs/globe.gif" alt="" />
+            </div>
+            <div className="  abt_her_prn w-full relative px-5 text-9xl uppercase flex-col h-screen center">
                 <div className="w-full">
-                    <div className="flex justify-between w-[80%] ">
+                    <div className="flex her_txt_anim gap-10 whitespace-nowrap justify-between w-[80%] ">
                         <h2>A</h2>
                         <h2>strategy-led</h2>
                     </div>
                 </div>
-                <div className="flex justify-between w-full ">
-                    <h2>marketing</h2>
-                    <h2>agency.</h2>
+                <div className="w-full">
+                    <div className="flex her_txt_anim gap-10 whitespace-nowrap justify-between  w-full ">
+                        <h2>marketing</h2>
+                        <h2>agency.</h2>
+                    </div>
                 </div>
             </div>
 
             <div className="w-full px-5 flex mb-32 items-stretch">
                 <div className="w-1/2 pb-20">
-                    <p className='uppercase font-semibold mb-5 red'>About Us</p>
+                    <p className='uppercase text-2xl font-semibold mb-5 red'>About Us</p>
                     <p className='text-6xl'>It started with a simple idea: Let's build the agency we'd want to hire.</p>
                 </div>
                 <div className="w-1/2 flex flex-col items-end justify-end  ">
@@ -163,19 +180,18 @@ const index = () => {
 
             <div className=" mix_paren w-full px-5 overflow-hidden  h-screen items-center grid grid-cols-3">
                 <div className="w-full space-y-8">
-                    <p className='leading-none font-bold text-6xl red'>The <br /> Perfect Mix</p>
-                    <div className="text-4xl space-y-3 ">
-                        <p className='  nm_1'> • Ashish</p>
-                        <p className=' opacity-30  nm_2'> • Kaushik</p>
-                        <p className=' opacity-30  nm_3'> • Kanishq</p>
+                    <p className='leading-none font-bold text-7xl red'>The <br /> Perfect Mix</p>
+                    <div className="text-xl space-y-3 ">
+                        <p>We realized we had all the right pieces, each bringing a powerful and distinct advantage to the table.</p>
+                        <p>It was the ideal blend of experience, relationships, and a fresh perspective. That conversation wasn't just talk. It became DISRPTVE.</p>
                     </div>
                 </div>
                 <div className="w-full h-full flex -translate-y-20 relative items-center justify-center">
                     <div className=" crd_1 absolute translate-y-10 overflow-hidden  aspect-square w-[80%] bgred rounded-2xl">
-                        <img className='w-full h-full object-cover' src="/images/teamMember/ashish.webp" alt="" />
+                        <img className='w-full h-full mix_img_1 object-cover' src="/images/teamMember/ashish.webp" alt="" />
                     </div>
                     <div className=" crd_2 absolute translate-y-20 overflow-hidden aspect-square w-[80%] bgred rounded-2xl">
-                        <img className='w-full h-full object-cover' src="/images/teamMember/kaushik.webp" alt="" />
+                        <img className='w-full h-full mix_img_2 object-cover' src="/images/teamMember/kaushik.webp" alt="" />
                     </div>
                     <div className="crd_3 absolute  translate-y-32 overflow-hidden aspect-square w-[80%] bg-[#D9D9D9] rounded-2xl">
                         <img className='w-full h-full object-cover' src="/images/teamMember/kanishq.webp" alt="" />
@@ -183,30 +199,30 @@ const index = () => {
                 </div>
                 <div className="w-full pl-20 space-y-5">
                     <div className=" block relative overflow-hidden ">
-                        <p className='red nam_1 leading-none font-semibold text-lg'>• Ashish</p>
-                        <p className='red nam_2 absolute top-[100%] leading-none font-semibold text-lg'>• Kaushik</p>
-                        <p className='red nam_3 absolute top-[100%] leading-none font-semibold text-lg'>• Kanishq</p>
+                        <div className='red nam_1 leading-none flex items-center gap-3 font-semibold text-lg'><div className="size-1 bgred"></div><p>Ashish</p></div>
+                        <div className='red nam_2 absolute top-[100%] leading-none flex items-center gap-3 font-semibold text-lg'><div className="size-1 bgred"></div><p>Kaushik</p></div>
+                        <div className='red nam_3 absolute top-[100%] leading-none flex items-center gap-3 font-semibold text-lg'><div className="size-1 bgred"></div><p>Kanishq</p></div>
                     </div>
                     <div className='text-2xl leading-tight'>
                         <div className="block relative overflow-hidden ">
                             <p className='par1_a'>An actor and entrepreneur with an</p>
-                            <p className='par1_b absolute left-0 top-full'>An actor and entrepreneur with an</p>
-                            <p className='par1_c absolute left-0 top-full'>An actor and entrepreneur with an</p>
+                            <p className='par1_b absolute left-0 top-full'>The seasoned strategist, who merged </p>
+                            <p className='par1_c absolute left-0 top-full'>The new-gen, with a sharp eye for</p>
                         </div>
                         <div className="block relative overflow-hidden ">
                             <p className='par2_a'>incredible network and a legacy in</p>
-                            <p className='par2_b absolute left-0 top-full'>incredible network and a legacy in</p>
-                            <p className='par2_c absolute left-0 top-full'>incredible network and a legacy in</p>
+                            <p className='par2_b absolute left-0 top-full'>  his own successful agency of 10+</p>
+                            <p className='par2_c absolute left-0 top-full'> design, a knack for culture, and</p>
                         </div>
                         <div className="block relative overflow-hidden ">
                             <p className='par3_a'>advertising - his father's agency, Art,</p>
-                            <p className='par3_b absolute left-0 top-full'>advertising - his father's agency, Art,</p>
-                            <p className='par3_c absolute left-0 top-full'>advertising - his father's agency, Art,</p>
+                            <p className='par3_b absolute left-0 top-full'> years into this new vision, bringing </p>
+                            <p className='par3_c absolute left-0 top-full'> his own entrepreneurial grit.</p>
                         </div>
                         <div className="block relative overflow-hidden ">
                             <p className='par4_a'>was an icon of the 80s and 90s.</p>
-                            <p className='par4_b absolute left-0 top-full'>was an icon of the 80s and 90s.</p>
-                            <p className='par4_c absolute left-0 top-full'>was an icon of the 80s and 90s.</p>
+                            <p className='par4_b absolute left-0 top-full'>a deep understanding of what it </p>
+                            <p className='par4_c absolute left-0 top-full'>takes to win.</p>
                         </div>
                     </div>
                 </div>
@@ -214,11 +230,11 @@ const index = () => {
             </div>
 
             <div className="w-full mb-20 flex gap-x-10 items-stretch px-5 ">
-                <div className="w-1/2 space-y-8 relative p-8 flex flex-col justify-between h-full border border-[#FB0401]">
+                <div className="w-1/2 space-y-8 bg-black relative p-8 flex flex-col justify-between h-full border border-[#FB0401]">
                     <img className='rotate-180 w-[25%] absolute top-0 right-0' src="/gifs/blocks.gif" alt="" />
-                    <h2 className='text-6xl red leading-none'>From <br /> Conversation <br /> to Campaign</h2>
-                    <p className='text-xl font-semibold'>That simple idea grew. Fast.</p>
-                    <p>Today, we're a full-fledged agency with a rapidly growing team. Our portfolio is our proof, having worked on everything from shaping the identity for a craft beer brand to running data-driven national campaigns. We've partnered with major celebrities to launch brands, managed complex photoshoots from start to finish, and even used AI to create visuals that were once impossible.</p>
+                    <h2 className='text-7xl red leading-none'>From <br /> Conversation <br /> to Campaign</h2>
+                    <p className='text-3xl font-semibold'>That simple idea grew. Fast.</p>
+                    <p className='text-lg'>Today, we're a full-fledged agency with a rapidly growing team. Our portfolio is our proof, having worked on everything from shaping the identity for a craft beer brand to running data-driven national campaigns. We've partnered with major celebrities to launch brands, managed complex photoshoots from start to finish, and even used AI to create visuals that were once impossible.</p>
                 </div>
                 <div className="w-1/2 relative p-8  flex flex-col justify-between bgred ">
                     <div
@@ -227,25 +243,28 @@ const index = () => {
                     >
                         <img className="w-[20vw]" src="/gifs/redEye.gif" alt="" />
                     </div>
-                    <h2 className='text-6xl text-black leading-none'>How we <br /> work</h2>
-                    <p>Our process is simple. We listen more than we talk. We dive deep into your world to find the one thing that makes you special. Then we build a clear, honest plan and bring it to life with a team that’s genuinely passionate about what they do.</p>
+                    <h2 className='text-7xl text-black leading-none'>How we <br /> work</h2>
+                    <p className='text-lg'>Our process is simple. We listen more than we talk. We dive deep into your world to find the one thing that makes you special. Then we build a clear, honest plan and bring it to life with a team that’s genuinely passionate about what they do.</p>
 
                 </div>
             </div>
 
             <div className="w-full  overflow-hidden relative h-screen gap-y-10 center text-center flex-col">
                 <div className="absolute wave_bg top-0 left-0 z-[-2] w-full h-full center">
-                <Iridescence
-                    color={[.5, 0, 0]}
-                    mouseReact={false}
-                    amplitude={0.1}
-                    speed={0.5}
-                />
-            </div>
+                    <Iridescence
+                        color={[.5, 0, 0]}
+                        mouseReact={false}
+                        amplitude={0.1}
+                        speed={0.5}
+                    />
+                </div>
                 <h2 className='text-6xl uppercase'>Let's Build Something Great.</h2>
-                <p className='w-[40%] leading-tight text-2xl'>At the end of the day, we’re still driven by the spirit of that first conversation: a desire to do great work with good people. If you’re building something you believe in, we’d love to have a conversation with you, too.</p>
+                <div className="space-y-4 text-center w-full center flex-col">
+                <p className='w-[45%] leading-tight text-2xl'>At the end of the day, we’re still driven by the spirit of that first conversation: a desire to do great work with good people. </p>
+                <p  className='w-[45%] leading-tight text-2xl'>If you’re building something you believe in, we’d love to have a conversation with you, too.</p>
+                </div>
                 <button className=' group relative flex items-center gap-1'>
-                    <div className="w-0 group-hover:w-[97%] transition-all duration-300  h-[1px] bg-white absolute bottom-0 left-0"></div>
+                    <div className="w-full group-hover:w-0 transition-all duration-300  h-[1px] bg-white absolute bottom-0 right-0"></div>
                     <p className=' text-base md:text-xl group-hover:italic  '>Work with us</p>
                     <RiArrowRightUpLine size={20} />
                 </button>
@@ -253,7 +272,7 @@ const index = () => {
             </div>
 
             <div className=" py-20 px-5 ">
-                <p className='uppercase font-semibold mb-5 red'>About Us</p>
+                <p className='uppercase text-2xl font-semibold mb-5 red'>our team</p>
                 <div className="w-full  grid grid-cols-6 gap-5">
                     {teamMembers.map((member, i) => (
                         <div

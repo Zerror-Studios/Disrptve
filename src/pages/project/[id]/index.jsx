@@ -53,11 +53,11 @@ const index = () => {
             <div className="w-full px-5 ">
                 <div className="w-full h-[185vh] ">
                     <div className="w-full h-[55vh] flex items-end  border-b border-[#8585855b]">
-                        <div className=" w-full text-5xl  py-4">
+                        <div className=" w-full text-5xl font-semibold uppercase  py-4">
                             <p>Bigpicture Company</p>
                         </div>
                     </div>
-                    <div className="w-full sticky z-[2] top-[50vh] uppercase leading-none py-4 flex justify-between">
+                    <div className="w-full sticky z-[2] top-[50vh] text-xl uppercase leading-none py-4 flex justify-between">
                         <div className=" w-1/2 flex items-center gap-2">
                             <a href="">
                                 <div className="flex mb-1 group  w-fit relative items-center gap-2">
@@ -80,15 +80,15 @@ const index = () => {
                 </div>
             </div>
             <div className="w-full main_pdcd  relative bg-black">
-                <div className=" main_pdcd trick_di w-full absolute bg-black h-20 -translate-y-20"></div>
+                <div className=" main_pdcd trick_di w-full absolute bg-black h-24 -translate-y-24"></div>
                 <div className="w-full flex p-5 ">
                     <div className="w-1/2"></div>
                     <div className="w-1/2">
-                        <p className='text-xl'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum odio distinctio consectetur soluta eos nemo possimus delectus magnam quisquam voluptatibus illum at dolor recusandae tenetur officia, hic id cumque optio.</p>
+                        <p className='text-2xl'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum odio distinctio consectetur soluta eos nemo possimus delectus magnam quisquam voluptatibus illum at dolor recusandae tenetur officia, hic id cumque optio.</p>
                     </div>
                 </div>
 
-                <div className="w-full grid grid-cols-3 px-5 gap-x-20 mt-44">
+                <div className="w-full grid grid-cols-3 text-xl px-5 gap-x-20 mt-44">
                     <div className="w-full">
                         <div className=" w-full py-2 border-b border-[#8585855b]">
                             <p className=' uppercase'>Mission</p>

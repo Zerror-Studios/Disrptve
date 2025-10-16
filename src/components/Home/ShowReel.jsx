@@ -40,12 +40,6 @@ const ShowReel = () => {
                 className="show_reel_paren relative  overflow-hidden w-full h-full flex items-center cursor-pointer justify-center"
             >
 
-                <motion.div
-                    className="cursor-box z-[4] opacity-0 fixed top-1/2 lg:top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:translate-x-0 lg:translate-y-0 lg:left-0 pointer-events-none mix-blend-difference  flex items-center gap-1 "
-                    style={{ x: mousePosition.x, y: mousePosition.y }}>
-                    <RiPlayFill size={16} />
-                    <p className="capitalize font-semibold">play sound</p>
-                </motion.div>
                 {/* <div className="block absolute z-[1] overflow-hidden">
                     <p className=" reel_txt uppercase text-5xl ">Showreel</p>
                 </div> */}

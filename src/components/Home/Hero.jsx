@@ -5,10 +5,30 @@ import ShowReel from './ShowReel'
 import { RiCloseLine, RiPlayFill } from "@remixicon/react";
 import { motion, useSpring } from 'framer-motion';
 import React, { useEffect, useRef } from "react";
+import LineBtn from '../buttons/LineBtn';
 
 const Hero = () => {
 
     useGSAP(() => {
+        gsap.from(".left_txt", {
+            x: -200,
+            duration: .5,
+            ease: "ease-secondary",
+            delay: .5
+        })
+        gsap.from(".right_txt", {
+            x: 200,
+            duration: .5,
+            ease: "ease-secondary",
+            delay: .5
+        })
+
+        gsap.to(".hero_video", {
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            duration: .5,
+            ease: "ease-secondary",
+            delay: .5
+        })
         gsap.to(".hero_video", {
             scrollTrigger: {
                 trigger: ".hero_video_parent",
@@ -17,8 +37,8 @@ const Hero = () => {
                 end: "bottom 50%",
                 scrub: true,
             },
-            width:"100%",
-            height:"100%",
+            width: "100%",
+            height: "100%",
         })
     })
 
@@ -116,6 +136,12 @@ const Hero = () => {
 
     return (
         <>
+            <motion.div
+                className="cursor-box z-[4] opacity-0 fixed top-1/2 lg:top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:translate-x-0 lg:translate-y-0 lg:left-0 pointer-events-none mix-blend-difference  flex items-center gap-1 "
+                style={{ x: mousePosition.x, y: mousePosition.y }}>
+                <RiPlayFill size={16} />
+                <p className="capitalize font-semibold">play sound</p>
+            </motion.div>
             <div
                 onClick={closeVideo}
                 onMouseMove={mouseMove}
@@ -131,16 +157,17 @@ const Hero = () => {
                 </motion.div>
                 <video ref={videoRef} className="w-[80%] h-[90%] object-cover" loop autoPlay muted controls src="/video/logo_loop.mp4"></video>
             </div>
-            
+
             <div className=" hero_video_parent  w-full h-screen center relative">
-                <div className=" absolute font-medium top-1/2 -translate-y-1/2 left-3 md:left-5 uppercase text-sm left_txt">
-                    <h2>Disruption</h2>
+                <div className=" absolute  font-semibold top-1/2 -translate-y-1/2 left-3 md:left-5 uppercase text-xl left_txt">
+                    <p>Disruption</p>
                 </div>
-                <div className=" absolute font-medium top-1/2 -translate-y-1/2 right-3 md:right-5 uppercase text-sm right_txt">
-                    <h2>by design.</h2>
+                <div className=" absolute  font-semibold top-1/2 -translate-y-1/2 right-3 md:right-5 uppercase text-xl right_txt">
+                    <p>by design.</p>
                 </div>
 
                 <div
+                    style={{ clipPath: "polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%)" }}
                     onClick={openVideo} onMouseMove={mouseMove} onMouseEnter={mouseMove} onMouseLeave={mouseLeave}
                     className="hero_video w-[95%] lg:w-[60%] h-[50%] lg:h-[70%] brightness-100 ">
                     <ShowReel />
@@ -161,13 +188,9 @@ const Hero = () => {
                     </h2>
                 </div>
                 <div className=" w-full md:w-[40%] space-y-8 ">
-                    <p className=' text-base w-[80%] leading-none md:text-3xl md:leading-none '>Attention is the new currency. And most brands are overdrawn</p>
+                    <p className=' text-base w-[80%] leading-none md:text-3xl md:leading-none '>Attention is the new currency. <br /> And most brands are overdrawn</p>
                     <p className=' text-base leading-none md:text-xl md:leading-tight'>We build brands that earn it back, with interest.</p>
-                    <button className=' group relative flex items-center gap-1'>
-                        <div className="w-0 group-hover:w-[97%] transition-all duration-300  h-[1px] bg-white absolute bottom-0 left-0"></div>
-                        <p className=' text-base md:text-xl group-hover:italic uppercase '>explore now</p>
-                        <RiArrowRightUpLine size={20} />
-                    </button>
+                    <LineBtn text={"explore now"} />
 
                 </div>
             </div >

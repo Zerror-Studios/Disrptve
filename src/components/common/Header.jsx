@@ -3,13 +3,14 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import { RiArrowRightUpLine } from '@remixicon/react';
-import { Squeeze  as Hamburger } from 'hamburger-react'
+import { Squeeze as Hamburger } from 'hamburger-react'
+import { useGSAP } from '@gsap/react';
 
 const menuItems = [
   { name: "About", href: "/about" },
   { name: "projects", href: "/projects" },
   { name: "services", href: "/services" },
-  { name: "career", href: "/contact#career" },
+  { name: "career", href: "/career" },
   { name: "contact", href: "/contact" },
 ];
 
@@ -74,6 +75,20 @@ const Header = () => {
     },
   };
 
+  useGSAP(() => {
+    gsap.from(".header", {
+      yPercent: -100,
+      duration: .5,
+      ease: "ease-secondary",
+      delay: 1
+    })
+    gsap.from(".burger", {
+      opacity: 0,
+      duration: .5,
+      ease: "ease-secondary",
+      delay: 1.5
+    })
+  })
 
 
   return (
@@ -86,7 +101,7 @@ const Header = () => {
             } else {
               openMenu()
             }
-          }} className={` text-black cursor-pointer fixed z-[99] top-5  md:top-9 right-5`}>
+          }} className={` text-black cursor-pointer fixed z-[99] top-5  md:top-9 burger right-5`}>
             <Hamburger />
           </div>
         )
@@ -99,7 +114,7 @@ const Header = () => {
             } else {
               openMenu()
             }
-          }} className={` ${isMenuOpen ? "text-black" : "text-white"} scale-[.8] md:scale-100 cursor-pointer fixed z-[99]  top-2  md:top-9 right-2 md:right-5`}>
+          }} className={` ${isMenuOpen ? "text-black" : "text-white"} scale-[.8] md:scale-100 cursor-pointer fixed z-[99]  top-2  md:top-9 burger right-2 md:right-5`}>
             <Hamburger />
           </div>
         )
@@ -146,12 +161,12 @@ const Header = () => {
         </motion.div>
         <div className="w-full center">
           <div
-          style={{ clipPath: "ellipse(46% 27% at 50% 50%)" }}
-          className="  lg:hidden menu_gif opacity-0"
+            style={{ clipPath: "ellipse(46% 27% at 50% 50%)" }}
+            className="  lg:hidden menu_gif opacity-0"
           >
-          <img className="w-[60vw]" src="/gifs/redEye.gif" alt="" />
-        </div>
+            <img className="w-[60vw]" src="/gifs/redEye.gif" alt="" />
           </div>
+        </div>
 
         <div
           style={{ clipPath: "ellipse(46% 27% at 50% 50%)" }}
@@ -190,7 +205,7 @@ const Header = () => {
 
 
 
-      <div className="flex fixed top-0 left-0 z-[15] w-full items-center justify-between px-3 md:px-5 py-5 md:py-10">
+      <div className=" header flex fixed top-0 left-0 z-[15] w-full items-center justify-between px-3 md:px-5 py-5 md:py-10">
         <a href="/" className='cursor-pointer'>
           <img className={`  w-[40vw] md:w-fit ${path === "/contact" ? "invert-100" : "invert-0"}`} src="/logo.svg" alt="" />
         </a>
