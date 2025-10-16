@@ -25,27 +25,27 @@ const Projects = () => {
                         data-aos="clip" className=" group aspect-[16/12] border border-[#8585855b] relative col-span-2 flex items-end">
                         <div className="w-full group-hover:h-[22%] ease-in-out transition-all duration-300 h-0 absolute bg-[#FB0401] z-[-1] bottom-0 left-0"></div>
                         <div className="flex w-full px-10 py-5 items-center justify-between group-hover:text-black group-hover:font-semibold transition-colors duration-700">
-                            <p className='text-3xl   w-[40%] leading-tight'>PROOST – Craft Beer Brand Refresh</p>
+                            <p className='text-3xl   w-[40%] leading-tight'>PROOST</p>
                             <RiArrowRightUpLine size={32} />
                         </div>
                     </a>
                     <div data-aos-anchor-placement="top-bottom"
                         data-aos="clip" className="aspect-[16/12] border border-[#8585855b]  relative col-span-2">
-                        <img className='w-full h-full object-cover' src="https://images.prismic.io/rejouice-2024/Z1r5YJbqstJ98aaA_ov-loop.jpg?auto=format,compress&w=2560&h=1472&fm=avif" alt="" />
+                        <img className='w-full h-full object-cover' src="/images/projects/Proost/heroImg.webp" alt="" />
                     </div>
                     <a href='/project/2' data-aos-anchor-placement="top-bottom"
                         data-aos="clip"
                         className=" group aspect-square border border-[#8585855b]  relative col-span-1 flex items-end">
                         <div className="w-full group-hover:h-[25%] ease-in-out transition-all duration-300 h-0 absolute bg-[#FB0401] z-[-1] bottom-0 left-0"></div>
                         <div className="flex w-full px-5 py-5 items-center justify-between group-hover:text-black group-hover:font-semibold transition-colors duration-700">
-                            <p className='text-xl w-[60%] leading-tight'>Proost – Craft Beer Brand Refresh</p>
+                            <p className='text-xl w-[60%] leading-tight uppercase'>Imagine</p>
                             <RiArrowRightUpLine size={26} />
                         </div>
                     </a>
                     <div data-aos-anchor-placement="top-bottom"
                         data-aos="clip"
                         className="aspect-square border border-[#8585855b]  relative col-span-1">
-                        <img className='w-full h-full object-cover' src="https://www.rejouice.com/_vercel/image?url=https:%2F%2Fimages.prismic.io%2Frejouice-2024%2FZ1m0HZbqstJ98VgZ_oura-abdul-ovaice-3d-cd-031.png?auto=format,compress?auto=compress,format&w=1439&q=80" alt="" />
+                        <img className='w-full h-full object-cover ' src="/images/projects/Imagine/img2.webp" alt="" />
                     </div>
                     <a href='/project/3' data-aos-anchor-placement="top-bottom"
                         data-aos="clip"

@@ -1,45 +1,127 @@
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
-import AOS from "aos";
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 import React, { useEffect } from 'react'
-import Marquee from 'react-fast-marquee'
+import AOS from "aos";
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { SplitText } from 'gsap/dist/SplitText';
+import Iridescence from '@/components/ui/Iridescence';
 import { RiArrowRightUpLine } from '@remixicon/react';
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
-const clientsData = [
+const teamMembers = [
     {
-        img: "https://images.prismic.io/inertia-website/Z6Y-S5bqstJ9-YBt_LouisVuitton.jpg?auto=format,compress&rect=424,0,1072,1080&w=412&h=415",
-        icon: "https://inertia-website.cdn.prismic.io/inertia-website/Z6ZC6ZbqstJ9-YEw_MarinBikes.svg"
+        name: "Ashish Chaudhary",
+        role: "Managing Director",
+        img: "/images/teamMember/ashish.webp",
+        colSpan: "col-span-2",
+        extraClasses: "teams_div",
     },
     {
-        img: "https://images.prismic.io/inertia-website/Z6Y-wZbqstJ9-YCa_PARAMOUNT.png?auto=format%2Ccompress&rect=4%2C0%2C1072%2C1080&w=412&h=415",
-        icon: "https://inertia-website.cdn.prismic.io/inertia-website/Z6Y8oJbqstJ9-YA4_AxelArigato.svg"
+        name: "Kaushik Sundararajan",
+        role: "Chief Executive Officer",
+        img: "/images/teamMember/kaushik.webp",
+        colSpan: "col-span-1 col-start-3",
     },
     {
-        img: "https://images.prismic.io/inertia-website/Z6Y5ppbqstJ9-X-K_PUMA.jpg?auto=format%2Ccompress&rect=657%2C0%2C1430%2C1440&w=412&h=415",
-        icon: "https://inertia-website.cdn.prismic.io/inertia-website/Z6Y-eZbqstJ9-YCN_Nike.svg"
+        name: "Kanishq Chhabria",
+        role: "Chief Operating Officer",
+        img: "/images/teamMember/kanishq.webp",
+        colSpan: "col-span-2 col-start-4",
+        extraClasses: "mt-[19.5vw]",
     },
     {
-        img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
-        icon: "https://inertia-website.cdn.prismic.io/inertia-website/Z6Y-OZbqstJ9-YBr_LouisVuitton.svg"
+        name: "Chetan Chopra",
+        role: "Chief Business Officer",
+        img: "/images/teamMember/ashish.webp",
+        colSpan: "col-span-1 col-start-6",
+        extraClasses: "mt-[19.5vw]",
     },
     {
-        img: "https://images.prismic.io/inertia-website/Z6Y8tpbqstJ9-YA6_AXELARIGATO.png?auto=format%2Ccompress&rect=234%2C454%2C979%2C986&w=412&h=415",
-        icon: "https://inertia-website.cdn.prismic.io/inertia-website/Z6Y-rJbqstJ9-YCX_Paramount.svg"
+        name: "Rachit Rajguru",
+        role: "Head of Operations",
+        img: "/images/teamMember/rachit.webp",
+        colSpan: "col-span-2",
+        extraClasses: "mt-[-4.5vw]",
     },
     {
-        img: "https://images.prismic.io/inertia-website/Z6Y8V5bqstJ9-YAk_Adidas.png?auto=format%2Ccompress&rect=424%2C0%2C1072%2C1080&w=412&h=415",
-        icon: "https://inertia-website.cdn.prismic.io/inertia-website/Z6Y8oJbqstJ9-YA4_AxelArigato.svg"
+        name: "Aayush Panchal",
+        role: "Head of Design",
+        img: "/images/teamMember/aayush.webp",
+        colSpan: "col-span-1 col-start-3",
+        extraClasses: "mt-[-4.5vw]",
     },
-]
+    {
+        name: "Karan Adodra",
+        role: "Head of Content",
+        img: "/images/teamMember/kanishq.webp",
+        colSpan: "col-span-1 col-start-6",
+        extraClasses: "mt-[-4.5vw]",
+    },
+];
 
-const flipImg = [
-    "https://images.prismic.io/inertia-website/Z73zS57c43Q3gNts_BC20240408-03-0407.jpg?auto=format%2Ccompress&rect=0%2C254%2C1366%2C1539&w=750&h=845",
-    "https://images.prismic.io/inertia-website/Z73zTJ7c43Q3gNtu_BC20240408-04-0653-BW.jpg?auto=format%2Ccompress&rect=2262%2C0%2C4204%2C4736&w=750&h=845",
-    "https://images.prismic.io/inertia-website/Z73zTZ7c43Q3gNtv_BC20240408-05-0731.jpg?auto=format%2Ccompress&rect=0%2C297%2C1366%2C1539&w=750&h=845",
-]
 const index = () => {
+
+    useGSAP(() => {
+        gsap.registerPlugin(SplitText, ScrollTrigger);
+
+        const paragraphs = ["par1", "par2", "par3", "par4"];
+
+        // SplitText setup
+        const splitSets = paragraphs.map((p) => ({
+            a: new SplitText(`.${p}_a`, { type: "chars" }),
+            b: new SplitText(`.${p}_b`, { type: "chars" }),
+            c: new SplitText(`.${p}_c`, { type: "chars" }),
+        }));
+
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".mix_paren",
+                start: "top top",
+                end: "+=800%",
+                scrub: 0.4,
+                // markers: true,
+                pin: true,
+            },
+            defaults: { ease: "none" },
+        });
+
+        // Helper: fade in chars sequentially
+        const fadeInChars = (chars) =>
+            tl.fromTo(
+                chars,
+                { opacity: 0.2 },
+                {
+                    opacity: 1,
+                    stagger: 0.05,
+                    duration: 0.1,
+                },
+                ">+=0.1" // means "start after previous finishes + small delay"
+            );
+
+        // ====== First Set (A) ======
+        splitSets.forEach((set) => fadeInChars(set.a.chars));
+
+        tl.to(".nm_2", { opacity: 1 }, ">")
+            .to(".nam_2, .par1_b, .par2_b, .par3_b, .par4_b", { top: "0%" }, "<")
+            .to(".nam_1, .par1_a, .par2_a, .par3_a, .par4_a", { yPercent: -100, opacity: 0 }, "<")
+            .to(".nm_1", { opacity: 0.3 }, "<")
+            .to(".crd_1", { scale: 0.9 }, "<")
+            .from(".crd_2", { top: "100%", duration: 1 }, "<");
+
+        // ====== Second Set (B) ======
+        splitSets.forEach((set) => fadeInChars(set.b.chars));
+
+        tl.to(".nm_3", { opacity: 1 }, ">")
+            .to(".nam_3, .par1_c, .par2_c, .par3_c, .par4_c", { top: "0%" }, "<")
+            .to(".nam_2, .par1_b, .par2_b, .par3_b, .par4_b", { yPercent: -100, opacity: 0 }, "<")
+            .to(".nm_2", { opacity: 0.3 }, "<")
+            .to(".crd_1", { scale: 0.8 }, "<")
+            .to(".crd_2", { scale: 0.9 }, "<")
+            .from(".crd_3", { top: "100%", duration: 1 }, "<");
+
+        // ====== Third Set (C) ======
+        splitSets.forEach((set) => fadeInChars(set.c.chars));
+    });
 
     useEffect(() => {
         AOS.init({
@@ -49,287 +131,158 @@ const index = () => {
         AOS.refresh();
     }, []);
 
-
-    useEffect(() => {
-        const img = document.querySelector(".img_sticky_rot");
-        let prevRotation = 0;
-        let currentIndex = 0;
-
-        gsap.set(img, {
-            transformStyle: "preserve-3d",
-            perspective: 400,
-        });
-
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".sticky_div_paren",
-                start: "top top",
-                end: "bottom 50%",
-                endTrigger: ".teams_div",
-                end: "top center",
-                scrub: 0.3,
-                // markers: true,
-            },
-            onUpdate: (self) => {
-                const rotation = gsap.getProperty(img, "rotateY") % 360;
-                const direction = rotation - prevRotation > 0 ? "forward" : "backward";
-                prevRotation = rotation;
-
-                if (direction === "forward") {
-                    if (rotation >= 85 && rotation < 95 && currentIndex !== 1) {
-                        currentIndex = 1;
-                        img.src = flipImg[1];
-                    } else if (rotation >= 265 && rotation < 275 && currentIndex !== 2) {
-                        currentIndex = 2;
-                        img.src = flipImg[2];
-                    }
-                }
-
-                else {
-                    if (rotation >= 85 && rotation < 95 && currentIndex !== 0) {
-                        currentIndex = 0;
-                        img.src = flipImg[0];
-                    } else if (rotation >= 265 && rotation < 275 && currentIndex !== 1) {
-                        currentIndex = 1;
-                        img.src = flipImg[1];
-                    }
-                }
-            },
-        });
-
-        // Rotate Y twice (0 → 180 → 360)
-        tl.to(".img_sticky_rot", { rotateY: 180, ease: "none" });
-        tl.to(".img_sticky_rot", { rotateY: 360, ease: "none" });
-
-        return () => {
-            tl.kill();
-            ScrollTrigger.getAll().forEach((t) => t.kill());
-        };
-    }, [flipImg]);
-
-    useGSAP(() => {
-        gsap.to(".sticky_div", {
-            scrollTrigger: {
-                trigger: ".sticky_div_paren",
-                start: "top top",
-                endTrigger: ".teams_div",
-                end: "top top",
-                pin: true,
-                scrub: 0.4,
-                // markers: true,
-            },
-        });
-        gsap.to(".sticky_about", {
-            scrollTrigger: {
-                trigger: ".teams_div",
-                start: "top top",
-                toggleActions: "play none none reverse",
-                // markers: true,
-            },
-            opacity: 1,
-        });
-
-    })
-
-
     return (
         <>
+            <div className="w-full relative px-5 text-8xl uppercase flex-col h-screen center">
+                <img className='absolute z-[-2] scale-[1.5]' src="/gifs/globe.gif" alt="" />
+                <div className="w-full">
+                    <div className="flex justify-between w-[80%] ">
+                        <h2>A</h2>
+                        <h2>strategy-led</h2>
+                    </div>
+                </div>
+                <div className="flex justify-between w-full ">
+                    <h2>marketing</h2>
+                    <h2>agency.</h2>
+                </div>
+            </div>
 
-            <div className=" sticky_sec  relative  px-5  w-full">
+            <div className="w-full px-5 flex mb-32 items-stretch">
+                <div className="w-1/2 pb-20">
+                    <p className='uppercase font-semibold mb-5 red'>About Us</p>
+                    <p className='text-6xl'>It started with a simple idea: Let's build the agency we'd want to hire.</p>
+                </div>
+                <div className="w-1/2 flex flex-col items-end justify-end  ">
+                    <div className="w-1/2 space-y-4">
+                        <p>In late 2023, we decided to do just that. We wanted to create a place that was nimble, strategy-led, and obsessed with creative excellence. </p>
+                        <p>No layers, no jargon - just a direct line between a client's vision and work that makes an impact.</p>
+                    </div>
+                </div>
+            </div>
 
-                <div className="sticky_div_paren absolute  top-[75vw] z-[11] left-0   px-5">
-                    <div className="sticky_div">
-                        <div className="grid grid-cols-6 gap-5 w-full ">
-                            <div className="w-full  h-screen center col-span-2">
-                                <div className="  aspect-[3/4] relative">
-                                    <img
-                                        data-aos-anchor-placement="top-bottom"
-                                        data-aos="clip" src={flipImg[0]} alt=""
-                                        className=" img_sticky_rot w-full h-full  object-cover mb-2" />
 
-                                    <div className=" sticky_about opacity-0 absolute -bottom-13 flex w-full items-start justify-between">
-                                        <div className="">
-                                            <h2 className="font-medium leading-none">HENRY YEOMANS</h2>
-                                            <p className="text-sm opacity-70 mb-3">Partner, Creative Director</p>
-                                        </div>
-                                        <img className=' w-4  invert-100 -rotate-90' src="/icons/arrow_small.svg" alt="" />
-                                    </div>
-                                </div>
-                            </div>
+            <div className=" mix_paren w-full px-5 overflow-hidden  h-screen items-center grid grid-cols-3">
+                <div className="w-full space-y-8">
+                    <p className='leading-none font-bold text-6xl red'>The <br /> Perfect Mix</p>
+                    <div className="text-4xl space-y-3 ">
+                        <p className='  nm_1'> • Ashish</p>
+                        <p className=' opacity-30  nm_2'> • Kaushik</p>
+                        <p className=' opacity-30  nm_3'> • Kanishq</p>
+                    </div>
+                </div>
+                <div className="w-full h-full flex -translate-y-20 relative items-center justify-center">
+                    <div className=" crd_1 absolute translate-y-10 overflow-hidden  aspect-square w-[80%] bgred rounded-2xl">
+                        <img className='w-full h-full object-cover' src="/images/teamMember/ashish.webp" alt="" />
+                    </div>
+                    <div className=" crd_2 absolute translate-y-20 overflow-hidden aspect-square w-[80%] bgred rounded-2xl">
+                        <img className='w-full h-full object-cover' src="/images/teamMember/kaushik.webp" alt="" />
+                    </div>
+                    <div className="crd_3 absolute  translate-y-32 overflow-hidden aspect-square w-[80%] bg-[#D9D9D9] rounded-2xl">
+                        <img className='w-full h-full object-cover' src="/images/teamMember/kanishq.webp" alt="" />
+                    </div>
+                </div>
+                <div className="w-full pl-20 space-y-5">
+                    <div className=" block relative overflow-hidden ">
+                        <p className='red nam_1 leading-none font-semibold text-lg'>• Ashish</p>
+                        <p className='red nam_2 absolute top-[100%] leading-none font-semibold text-lg'>• Kaushik</p>
+                        <p className='red nam_3 absolute top-[100%] leading-none font-semibold text-lg'>• Kanishq</p>
+                    </div>
+                    <div className='text-2xl leading-tight'>
+                        <div className="block relative overflow-hidden ">
+                            <p className='par1_a'>An actor and entrepreneur with an</p>
+                            <p className='par1_b absolute left-0 top-full'>An actor and entrepreneur with an</p>
+                            <p className='par1_c absolute left-0 top-full'>An actor and entrepreneur with an</p>
+                        </div>
+                        <div className="block relative overflow-hidden ">
+                            <p className='par2_a'>incredible network and a legacy in</p>
+                            <p className='par2_b absolute left-0 top-full'>incredible network and a legacy in</p>
+                            <p className='par2_c absolute left-0 top-full'>incredible network and a legacy in</p>
+                        </div>
+                        <div className="block relative overflow-hidden ">
+                            <p className='par3_a'>advertising - his father's agency, Art,</p>
+                            <p className='par3_b absolute left-0 top-full'>advertising - his father's agency, Art,</p>
+                            <p className='par3_c absolute left-0 top-full'>advertising - his father's agency, Art,</p>
+                        </div>
+                        <div className="block relative overflow-hidden ">
+                            <p className='par4_a'>was an icon of the 80s and 90s.</p>
+                            <p className='par4_b absolute left-0 top-full'>was an icon of the 80s and 90s.</p>
+                            <p className='par4_c absolute left-0 top-full'>was an icon of the 80s and 90s.</p>
                         </div>
                     </div>
                 </div>
 
+            </div>
 
-                <div className=" about_vid  absolute top-0 left-0 z-[-1] w-full h-[80vw] pointer-events-none">
-                    <img className='w-full h-full object-cover' src="https://images.prismic.io/malvah-v2/974b2180-2936-483d-82c7-4ff9b0286179_Hero.bw.2.jpg?auto=compress,format" alt="" />
+            <div className="w-full mb-20 flex gap-x-10 items-stretch px-5 ">
+                <div className="w-1/2 space-y-8 relative p-8 flex flex-col justify-between h-full border border-[#FB0401]">
+                    <img className='rotate-180 w-[25%] absolute top-0 right-0' src="/gifs/blocks.gif" alt="" />
+                    <h2 className='text-6xl red leading-none'>From <br /> Conversation <br /> to Campaign</h2>
+                    <p className='text-xl font-semibold'>That simple idea grew. Fast.</p>
+                    <p>Today, we're a full-fledged agency with a rapidly growing team. Our portfolio is our proof, having worked on everything from shaping the identity for a craft beer brand to running data-driven national campaigns. We've partnered with major celebrities to launch brands, managed complex photoshoots from start to finish, and even used AI to create visuals that were once impossible.</p>
                 </div>
+                <div className="w-1/2 relative p-8  flex flex-col justify-between bgred ">
+                    <div
+                        style={{ clipPath: "ellipse(46% 27% at 50% 50%)" }}
+                        className=" absolute top-0 right-0"
+                    >
+                        <img className="w-[20vw]" src="/gifs/redEye.gif" alt="" />
+                    </div>
+                    <h2 className='text-6xl text-black leading-none'>How we <br /> work</h2>
+                    <p>Our process is simple. We listen more than we talk. We dive deep into your world to find the one thing that makes you special. Then we build a clear, honest plan and bring it to life with a team that’s genuinely passionate about what they do.</p>
 
-                <div className="w-full relative h-screen   center text-center">
-                    <h2 className='uppercase text-5xl'>Investing In & Building the <br /> Next Wave of Disruption.</h2>
                 </div>
+            </div>
 
-                <div className="space-y-52">
-                    <div className="w-full flex justify-end">
-                        <div className="w-[25vw] ">
-                            <img
+            <div className="w-full  overflow-hidden relative h-screen gap-y-10 center text-center flex-col">
+                <div className="absolute wave_bg top-0 left-0 z-[-2] w-full h-full center">
+                <Iridescence
+                    color={[.5, 0, 0]}
+                    mouseReact={false}
+                    amplitude={0.1}
+                    speed={0.5}
+                />
+            </div>
+                <h2 className='text-6xl uppercase'>Let's Build Something Great.</h2>
+                <p className='w-[40%] leading-tight text-2xl'>At the end of the day, we’re still driven by the spirit of that first conversation: a desire to do great work with good people. If you’re building something you believe in, we’d love to have a conversation with you, too.</p>
+                <button className=' group relative flex items-center gap-1'>
+                    <div className="w-0 group-hover:w-[97%] transition-all duration-300  h-[1px] bg-white absolute bottom-0 left-0"></div>
+                    <p className=' text-base md:text-xl group-hover:italic  '>Work with us</p>
+                    <RiArrowRightUpLine size={20} />
+                </button>
+
+            </div>
+
+            <div className=" py-20 px-5 ">
+                <p className='uppercase font-semibold mb-5 red'>About Us</p>
+                <div className="w-full  grid grid-cols-6 gap-5">
+                    {teamMembers.map((member, i) => (
+                        <div
+                            key={i}
+                            className={`${member.colSpan} flex w-full flex-col items-start ${member.extraClasses || ""}`}
+                        >
+                            <div className="flex   w-full items-center justify-between">
+                                <div>
+                                    <p className="font-semibold uppercase leading-none">{member.name}</p>
+                                    <p className="text-sm opacity-70 mb-3">{member.role}</p>
+                                </div>
+                                <img
+                                    className={`w-4 invert-100 rotate-90`}
+                                    src="/icons/arrow_small.svg"
+                                    alt=""
+                                />
+                            </div>
+                            <div
                                 data-aos-anchor-placement="top-bottom"
-                                data-aos="clip" className=' aspect-[3/4] w-full object-cover' src="https://images.prismic.io/malvah-v2/bf6fc68f-b97c-4904-a2a2-489924668e23_01..jpg?auto=compress,format" alt="" />
-                            <p className='text-xl leading-tight mt-2' >We extended the mandate to re-engineer Guyana for the next five years.</p>
-                        </div>
-                    </div>
-
-                    <div className="w-full  flex justify-end">
-                        <div className=" w-[30vw] uppercase text-7xl ">
-                            <h2>Navigating a New Landscape</h2>
-                        </div>
-                    </div>
-
-                    <div className="w-full  flex justify-end">
-                        <div className="w-[50vw] ">
-                            <img 
-                            data-aos-anchor-placement="top-bottom"
-                                    data-aos="clip" className=' aspect-[4/3] w-full object-cover' src="https://images.prismic.io/malvah-v2/18c08b41-8e6f-467a-bc92-6ecd39c4a437_03_Para2.jpg?auto=compress,format" alt="" />
-                            <p className='text-2xl leading-tight mt-2' >We extended the mandate to re-engineer Guyana for the next five years.</p>
-                        </div>
-                    </div>
-
-                    <div className="w-full  flex justify-end">
-                        <div className=" w-[40vw]  ">
-                            <h2 className='uppercase text-7xl'> <span className=' opacity-0'> ssss</span> We wired
-                                <br /> a nation for the future.</h2>
-                            <div className="w-full grid mt-10 gap-x-5 grid-cols-2">
-                                <p> We are a strategy-led integrated marketing agency. This means that disruption for us isn't about noise; it's about focus. It's a deliberate act, born from rigorous strategy and deep market understanding.</p>
-                                <p>Our work often involves shaping brands and driving growth. We are now applying that same data-driven rigour to challenges of national significance.</p>
-                            </div>
-
-                            <button className=' group mt-10 relative flex items-center gap-1'>
-                                <div className="w-0 group-hover:w-[97%] transition-all duration-300  h-[1px] bg-white absolute bottom-0 left-0"></div>
-                                <p className=' text-xl group-hover:italic uppercase '>Read more</p>
-                                <RiArrowRightUpLine size={20} />
-                            </button>
-                        </div>
-                    </div>
-
-                    <div className=" ">
-                        <div className="w-full center">
-                            <h2 className='text-3xl'>
-                                PARTNERS AT WORK
-                            </h2>
-                        </div>
-                        <div className="pt-10">
-                            <Marquee>
-                                <div key={index} className="flex gap-5">
-                                    {[...clientsData, ...clientsData].map((item, index) => (
-                                        <img className=' w-[7vw]  invert-100' src={item.icon} alt="" />
-                                    ))}
-                                </div>
-                            </Marquee>
-                        </div>
-                    </div>
-
-                    <div className=" ">
-                        <div className=" mt-10 mb-20w-full flex justify-end">
-                            <div className="uppercase text-6xl">
-                                <h2>Growing Doesn’t </h2>
-                                <h2>mean being bigger,</h2>
-                                <h2>but being better</h2>
-                            </div>
-                        </div>
-                        <div className="  w-full py-20 grid grid-cols-6 gap-5">
-                            <div className=" teams_div col-span-2  flex flex-col items-start">
-                                <div className=" opacity-0 translate-y-14 flex w-full items-start justify-between">
-                                    <div className="">
-                                        <h2 className="font-medium leading-none">HENRY YEOMANS</h2>
-                                        <p className="text-sm opacity-70 mb-3">Partner, Creative Director</p>
-                                    </div>
-                                    <img className=' w-4  invert-100 -rotate-90' src="/icons/arrow_small.svg" alt="" />
-                                </div>
+                                data-aos="clip"
+                                className=" w-full bg-[#D9D9D9]">
                                 <img
-                                    src="https://images.prismic.io/inertia-website/Z73zTZ7c43Q3gNtv_BC20240408-05-0731.jpg?auto=format%2Ccompress&rect=0%2C297%2C1366%2C1539&w=750&h=845" alt=""
-                                    className="w-full opacity-0 aspect-[3/4] object-cover mb-2" />
-
-                            </div>
-
-                            <div className="col-span-1 col-start-3 flex flex-col items-start">
-                                <div className="flex w-full items-center justify-between">
-                                    <div className="">
-                                        <h2 className="font-medium leading-none">JACK LIETTI</h2>
-                                        <p className="text-sm opacity-70 mb-3">Senior 3D Artist</p>
-                                    </div>
-                                    <img className=' w-4 invert-100 rotate-90' src="/icons/arrow_small.svg" alt="" />
-                                </div>
-                                <img
-                                    data-aos-anchor-placement="top-bottom"
-                                    data-aos="clip" src="https://images.prismic.io/inertia-website/Z73zUZ7c43Q3gNty_BC20240408-16-1699-BW.jpg?auto=format%2Ccompress&rect=0%2C64%2C4736%2C6972&w=360&h=530" alt="" className="w-full aspect-[3/4] object-cover mb-2" />
-                            </div>
-
-                            <div className="col-span-2 col-start-4 flex flex-col items-start mt-[19.5vw]">
-                                <div className="flex w-full items-center justify-between">
-                                    <div className="">
-                                        <h2 className="font-medium leading-none">THOMAS VALENTE</h2>
-                                        <p className="text-sm opacity-70 mb-3">Founder, Executive Creative Director</p>
-                                    </div>
-                                    <img className=' w-4 invert-100 rotate-90' src="/icons/arrow_small.svg" alt="" />
-                                </div>
-                                <img
-                                    data-aos-anchor-placement="top-bottom"
-                                    data-aos="clip" src="https://images.prismic.io/inertia-website/Z73zS57c43Q3gNts_BC20240408-03-0407.jpg?auto=format%2Ccompress&rect=0%2C254%2C1366%2C1539&w=750&h=845" alt="" className="w-full aspect-[3/4] object-cover mb-2" />
-                            </div>
-
-                            <div className="col-span-1 col-start-6 flex flex-col items-start mt-[19.5vw]">
-                                <div className="flex w-full items-center justify-between">
-                                    <div className="">
-                                        <h2 className="font-medium leading-none">GEMMA GARMAN</h2>
-                                        <p className="text-sm opacity-70 mb-3">Senior Producer</p>
-                                    </div>
-                                    <img className=' w-4 invert-100 rotate-90' src="/icons/arrow_small.svg" alt="" />
-                                </div>
-                                <img
-                                    data-aos-anchor-placement="top-bottom"
-                                    data-aos="clip" src="https://images.prismic.io/inertia-website/Z73zUJ7c43Q3gNtx_BC20240408-15-1597-BW.jpg?auto=format%2Ccompress&rect=1466%2C0%2C3217%2C4736&w=360&h=530" alt="" className="w-full aspect-[3/4] object-cover mb-2" />
-                            </div>
-
-                            <div className="col-span-2 flex flex-col items-start mt-[-4.5vw] ">
-                                <div className="flex w-full items-center justify-between">
-                                    <div className="">
-                                        <h2 className="font-medium leading-none">HENRY YEOMANS</h2>
-                                        <p className="text-sm opacity-70 mb-3">Partner, Creative Director</p>
-                                    </div>
-                                    <img className=' w-4 invert-100 rotate-90' src="/icons/arrow_small.svg" alt="" />
-                                </div>
-                                <img
-                                    data-aos-anchor-placement="top-bottom"
-                                    data-aos="clip" src="https://images.prismic.io/inertia-website/Z73zTJ7c43Q3gNtu_BC20240408-04-0653-BW.jpg?auto=format%2Ccompress&rect=2262%2C0%2C4204%2C4736&w=750&h=845" alt="" className="w-full aspect-[3/4] object-cover mb-2" />
-                            </div>
-
-                            <div className="col-span-1 col-start-3 flex flex-col items-start   mt-[-4.5vw] ">
-                                <div className="flex w-full items-center justify-between">
-                                    <div className="">
-                                        <h2 className="font-medium leading-none">JAIME BRAVO</h2>
-                                        <p className="text-sm opacity-70 mb-3">Houdini Artist</p>
-                                    </div>
-                                    <img className=' w-4 invert-100 rotate-90' src="/icons/arrow_small.svg" alt="" />
-                                </div>
-                                <img
-                                    data-aos-anchor-placement="top-bottom"
-                                    data-aos="clip" src="https://images.prismic.io/inertia-website/Z3-_NZbqstJ99O7G_JaimeBravo-HoudiniArtist.jpg?auto=format%2Ccompress&w=360&h=530" alt="" className="w-full aspect-[3/4] object-cover mb-2" />
-                            </div>
-
-                            <div className="col-span-1 col-start-6 flex flex-col items-start  mt-[-4.5vw]  ">
-                                <div className="flex w-full items-center justify-between">
-                                    <div className="">
-                                        <h2 className="font-medium leading-none">ELLIOT HARRIS</h2>
-                                        <p className="text-sm opacity-70 mb-3">3D Artist</p>
-                                    </div>
-                                    <img className=' w-4 invert-100 rotate-90' src="/icons/arrow_small.svg" alt="" />
-                                </div>
-                                <img
-                                    data-aos-anchor-placement="top-bottom"
-                                    data-aos="clip" src="https://images.prismic.io/inertia-website/Z73zS57c43Q3gNtr_BC20240408-02-0241-BW.jpg?auto=format,compress&rect=0,64,4736,6972&w=360&h=530" alt="" className="w-full aspect-[3/4] object-cover mb-2" />
+                                    src={member.img}
+                                    alt={member.name}
+                                    className="w-full grayscale-100 aspect-[3/4] object-cover"
+                                />
                             </div>
                         </div>
-                    </div>
+                    ))}
                 </div>
 
             </div>
@@ -337,6 +290,7 @@ const index = () => {
 
         </>
     )
+
 }
 
 export default index
