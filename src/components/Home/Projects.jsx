@@ -22,8 +22,8 @@ const Projects = () => {
                 </div>
 
                 <div className="w-full grid-cols-4 pt-32 grid px-5">
-
-                    <a href='/project/1' data-aos-anchor-placement="top-bottom"
+                
+                    <a href='/projects/4' data-aos-anchor-placement="top-bottom"
                         data-aos="clip" className=" group  border border-[#8585855b] relative col-span-4 flex items-end">
                         <div className="flex w-1/2 px-6 py-5 items-center justify-between group-hover:text-[#FB0401] group-hover:font-semibold transition-colors duration-300">
                             <div className="">
@@ -34,12 +34,12 @@ const Projects = () => {
                         </div>
                         <div data-aos-anchor-placement="top-bottom"
                             data-aos="clip" className="aspect-[16/12] border border-[#8585855b]  relative w-1/2">
-                            <img className='w-full scale-105 transition-all duration-300 group-hover:scale-100 h-full object-cover' src="/images/projects/Proost/img5.webp" alt="" />
+                            <img className='w-full  transition-all duration-300 group-hover:scale-90 h-full object-cover' src="/images/projects/Proost/img5.webp" alt="" />
                         </div>
                     </a>
 
-
-                    <a href='/project/2' data-aos-anchor-placement="top-bottom"
+                
+                    <a href='/projects/8' data-aos-anchor-placement="top-bottom"
                         data-aos="clip"
                         className=" group  border border-[#8585855b]  relative col-span-2 flex items-end">
                         {/* <div className="w-full group-hover:h-[25%] ease-in-out transition-all duration-300 h-0 absolute bg-[#FB0401] z-[-1] bottom-0 left-0"></div> */}
@@ -53,12 +53,12 @@ const Projects = () => {
                         <div data-aos-anchor-placement="top-bottom"
                             data-aos="clip"
                             className="aspect-square border w-1/2 border-[#8585855b]  relative ">
-                            <img className='w-full scale-105 transition-all duration-300 group-hover:scale-100 h-full object-cover ' src="/images/projects/Imagine/img3.webp" alt="" />
+                            <img className='w-full  transition-all duration-300 group-hover:scale-90 h-full object-cover ' src="/images/projects/Imagine/heroImg.webp" alt="" />
                         </div>
                     </a>
 
 
-                    <a href='/project/3' data-aos-anchor-placement="top-bottom"
+                    <a href='/projects/9' data-aos-anchor-placement="top-bottom"
                         data-aos="clip"
                         className=" group  border border-[#8585855b]  relative col-span-2 flex items-end">
                         {/* <div className="w-full group-hover:h-[25%] ease-in-out transition-all duration-300 h-0 absolute bg-[#FB0401] z-[-1] bottom-0 left-0"></div> */}
@@ -72,16 +72,15 @@ const Projects = () => {
                         <div data-aos-anchor-placement="top-bottom"
                             data-aos="clip"
                             className="aspect-square border w-1/2 border-[#8585855b]  relative ">
-                            <img className='w-full scale-105 transition-all duration-300 group-hover:scale-100 h-full object-cover ' src="/images/projects/superYou/heroImg.jpg" alt="" />
+                            <img className='w-full  transition-all duration-300 group-hover:scale-90 h-full object-cover object-top ' src="/images/projects/superYou/heroImg.webp" alt="" />
                         </div>
                     </a>
 
-
-                    <a href='/project/4' data-aos-anchor-placement="top-bottom"
+                    <a href='/projects/1' data-aos-anchor-placement="top-bottom"
                         data-aos="clip" className=" group  border border-[#8585855b] relative col-span-4 flex items-end">
                         <div data-aos-anchor-placement="top-bottom"
                             data-aos="clip" className="aspect-[16/12] border border-[#8585855b]  relative w-1/2">
-                            <img className='w-full scale-105 transition-all duration-300 group-hover:scale-100 h-full object-cover' src="/images/projects/guyana/heroImg.jpg" alt="" />
+                            <img className='w-full  transition-all duration-300 group-hover:scale-90 h-full object-cover object-bottom' src="/images/projects/guyana/heroImg.webp" alt="" />
                         </div>
                         <div className="flex w-1/2 px-6 py-5 items-center justify-between group-hover:text-[#FB0401] group-hover:font-semibold transition-colors duration-300">
                             <div className="">
@@ -92,7 +91,7 @@ const Projects = () => {
                         </div>
                     </a>
 
-                    <a href='/project/5' data-aos-anchor-placement="top-bottom"
+                    <a href='/projects/6' data-aos-anchor-placement="top-bottom"
                         data-aos="clip"
                         className=" group  border border-[#8585855b]  relative col-span-2 flex items-end">
                         {/* <div className="w-full group-hover:h-[25%] ease-in-out transition-all duration-300 h-0 absolute bg-[#FB0401] z-[-1] bottom-0 left-0"></div> */}
@@ -106,7 +105,7 @@ const Projects = () => {
                         <div data-aos-anchor-placement="top-bottom"
                             data-aos="clip"
                             className="aspect-square border w-1/2 border-[#8585855b]  relative ">
-                            <img className='w-full scale-105 transition-all duration-300 group-hover:scale-100 h-full object-cover ' src="/images/projects/punjabKings/heroImg.jpg" alt="" />
+                            <img className='w-full  transition-all duration-300 group-hover:scale-90 h-full object-cover ' src="/images/projects/punjabKings/heroImg.webp" alt="" />
                         </div>
                     </a>
 
@@ -122,6 +121,7 @@ const Projects = () => {
                         </div>
                     </a>
                 </div>
+                
             </div>
         </>
     )

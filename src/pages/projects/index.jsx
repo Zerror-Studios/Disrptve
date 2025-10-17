@@ -1,8 +1,45 @@
 import { RiArrowRightUpLine } from '@remixicon/react'
-import React, { useEffect } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import AOS from "aos";
+import { ProjectsData } from '@/store/ProjectsData';
 
 const index = () => {
+    const [activeFilter, setActiveFilter] = useState("All");
+    const filters = useMemo(() => {
+        const tagCount = {};
+
+        ProjectsData.forEach((p) => {
+            if (p.industry) {
+                tagCount[p.industry] = (tagCount[p.industry] || 0) + 1;
+            }
+
+            if (p.tags && Array.isArray(p.tags)) {
+                p.tags.forEach((t) => {
+                    tagCount[t] = (tagCount[t] || 0) + 1;
+                });
+            }
+        });
+
+        const sortedTags = Object.entries(tagCount)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 6) // take top 6 tags
+            .map(([label, count]) => ({ label, count }));
+
+        return [{ label: "All", count: ProjectsData.length }, ...sortedTags];
+    }, [ProjectsData]);
+
+    const filteredProjects =
+        activeFilter === "All"
+            ? ProjectsData
+            : ProjectsData.filter(
+                (p) =>
+                    p.industry === activeFilter ||
+                    (p.tags && p.tags.includes(activeFilter))
+            );
+
+    const pattern = (i) => (i % 6) + 1;
+
+
     useEffect(() => {
         AOS.init({
             duration: 1500,
@@ -14,19 +51,16 @@ const index = () => {
     return (
         <>
             <div className="w-full h-[70vh] px-5 flex items-end">
-                <div className="w-full flex flex-wrap space-y-3 group">
-                    {[
-                        { label: "All", count: 5 },
-                        { label: "Strategic Design", count: 5 },
-                        { label: "Digital Products", count: 5 },
-                        { label: "Branding", count: 5 },
-                        { label: "Consultancy", count: 5 },
-                        { label: "Experiences", count: 5 },
-                        { label: "Technology", count: 5 },
-                    ].map((item, i) => (
+
+                <div className="w-full flex flex-wrap space-y-3 group mb-10">
+                    {filters.map((item, i) => (
                         <div
                             key={i}
-                            className="flex cursor-pointer px-2 transition-opacity duration-300 opacity-100 group-hover:opacity-40 hover:!opacity-100"
+                            onClick={() => setActiveFilter(item.label)}
+                            className={`flex cursor-pointer px-2 transition-opacity duration-300 ${activeFilter === item.label
+                                ? "opacity-100"
+                                : "opacity-40 group-hover:opacity-40 hover:!opacity-100"
+                                }`}
                         >
                             <p className="text-6xl font-semibold flex items-start">
                                 {i === 0 ? (
@@ -36,7 +70,8 @@ const index = () => {
                                     </>
                                 ) : (
                                     <>
-                                        — {item.label} <sup className="text-base">({item.count})</sup>
+                                        — {item.label}
+                                        <sup className="text-base">({item.count})</sup>
                                     </>
                                 )}
                             </p>
@@ -47,93 +82,167 @@ const index = () => {
 
             </div>
 
-            <div className="w-full grid-cols-4 pt-12 pb-32 grid px-5">
+            {filteredProjects.length === 0 ? (
+                <p className="text-lg text-gray-400 text-center mt-10">
+                    No projects found.
+                </p>
+            ) : (
+                <div className="w-full pt-12 pb-32">
+                    {filteredProjects.map((project, i) => {
+                        const layout = pattern(i);
 
-                    <a href='/project/1' data-aos-anchor-placement="top-bottom"
-                        data-aos="clip" className=" group  border border-[#8585855b] relative col-span-4 flex items-end">
-                        <div className="flex w-1/2 px-6 py-5 items-center justify-between group-hover:text-[#FB0401] group-hover:font-semibold transition-colors duration-300">
-                            <p className='text-3xl font-semibold   w-[40%] leading-tight'>PROOST</p>
-                            <RiArrowRightUpLine size={32} />
-                        </div>
-                        <div data-aos-anchor-placement="top-bottom"
-                            data-aos="clip" className="aspect-[16/12] border border-[#8585855b]  relative w-1/2">
-                            <img className='w-full scale-105 transition-all duration-300 group-hover:scale-100 h-full object-cover' src="/images/projects/Proost/heroImg.webp" alt="" />
-                        </div>
-                    </a>
+                        // 1st layout (1st, 7th, 13th, ...)
+                        if (layout === 1)
+                            return (
+                                <div key={project.id} className="w-full">
+                                    <a
+                                        href={`/projects/${project.id}`}
+                                        data-aos-anchor-placement="top-bottom"
+                                        data-aos="clip"
+                                        className="group border border-[#8585855b] relative w-full flex items-end"
+                                    >
+                                        <div className="flex w-1/2 px-6 py-5 items-center justify-between group-hover:text-[#FB0401]  transition-colors duration-300">
+                                            <div>
+                                                <p className="text-3xl font-semibold leading-tight uppercase">
+                                                    {project.title}
+                                                </p>
+                                                <p className="text-lg">{project.tagline || ""}</p>
+                                            </div>
+                                            <RiArrowRightUpLine size={32} />
+                                        </div>
+                                        <div
+                                            data-aos-anchor-placement="top-bottom"
+                                            data-aos="clip"
+                                            className="aspect-[16/12] border border-[#8585855b] relative w-1/2"
+                                        >
+                                            <img
+                                                className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
+                                                src={project.heroImg}
+                                                alt={project.title}
+                                            />
+                                        </div>
+                                    </a>
+                                </div>
+                            );
 
+                        // 2nd & 3rd layout (paired grid)
+                        if (layout === 2 || layout === 3) {
+                            // Render pair only once (on even index in pattern 2)
+                            if (layout === 3) return null;
+                            const pair = filteredProjects[i + 1] ? [project, filteredProjects[i + 1]] : [project];
+                            return (
+                                <div key={project.id} className="w-full flex">
+                                    {pair.map((p) => (
+                                        <a
+                                            key={p.id}
+                                            href={`/projects/${p.id}`}
+                                            data-aos-anchor-placement="top-bottom"
+                                            data-aos="clip"
+                                            className="group border border-[#8585855b] relative w-1/2 flex items-end"
+                                        >
+                                            <div className="flex aspect-square w-1/2 px-5 py-5 items-end justify-between group-hover:text-[#FB0401]  transition-colors duration-300">
+                                                <div>
+                                                    <p className="text-xl  leading-tight font-semibold uppercase">
+                                                        {p.title}
+                                                    </p>
+                                                    <p className="text-base w-[80%]">{p.tagline || ""}</p>
+                                                </div>
+                                                <RiArrowRightUpLine size={26} />
+                                            </div>
+                                            <div
+                                                data-aos-anchor-placement="top-bottom"
+                                                data-aos="clip"
+                                                className="aspect-square border w-1/2 border-[#8585855b] relative"
+                                            >
+                                                <img
+                                                    className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
+                                                    src={p.heroImg}
+                                                    alt={p.title}
+                                                />
+                                            </div>
+                                        </a>
+                                    ))}
+                                </div>
+                            );
+                        }
 
-                    <a href='/project/2' data-aos-anchor-placement="top-bottom"
-                        data-aos="clip"
-                        className=" group  border border-[#8585855b]  relative col-span-2 flex items-end">
-                        {/* <div className="w-full group-hover:h-[25%] ease-in-out transition-all duration-300 h-0 absolute bg-[#FB0401] z-[-1] bottom-0 left-0"></div> */}
-                        <div className="flex aspect-square w-1/2 px-5 py-5 items-end justify-between group-hover:text-[#FB0401] ont-semibold transition-colors duration-300">
-                            <p className='text-xl w-[60%] leading-tight font-semibold uppercase'>Imagine</p>
-                            <RiArrowRightUpLine size={26} />
-                        </div>
-                        <div data-aos-anchor-placement="top-bottom"
-                            data-aos="clip"
-                            className="aspect-square border w-1/2 border-[#8585855b]  relative ">
-                            <img className='w-full scale-105 transition-all duration-300 group-hover:scale-100 h-full object-cover ' src="/images/projects/Imagine/img2.webp" alt="" />
-                        </div>
-                    </a>
+                        // 4th layout (mirrored full-width)
+                        if (layout === 4)
+                            return (
+                                <div key={project.id} className="w-full">
+                                    <a
+                                        href={`/projects/${project.id}`}
+                                        data-aos-anchor-placement="top-bottom"
+                                        data-aos="clip"
+                                        className="group border border-[#8585855b] relative w-full flex items-end"
+                                    >
+                                        <div
+                                            data-aos-anchor-placement="top-bottom"
+                                            data-aos="clip"
+                                            className="aspect-[16/12] border border-[#8585855b] relative w-1/2"
+                                        >
+                                            <img
+                                                className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
+                                                src={project.heroImg}
+                                                alt={project.title}
+                                            />
+                                        </div>
+                                        <div className="flex w-1/2 px-6 py-5 items-center justify-between group-hover:text-[#FB0401]  transition-colors duration-300">
+                                            <div>
+                                                <p className="text-3xl font-semibold leading-tight uppercase">
+                                                    {project.title}
+                                                </p>
+                                                <p className="text-lg">{project.tagline || ""}</p>
+                                            </div>
+                                            <RiArrowRightUpLine size={32} />
+                                        </div>
+                                    </a>
+                                </div>
+                            );
 
-
-                    <a href='/project/3' data-aos-anchor-placement="top-bottom"
-                        data-aos="clip"
-                        className=" group  border border-[#8585855b]  relative col-span-2 flex items-end">
-                        {/* <div className="w-full group-hover:h-[25%] ease-in-out transition-all duration-300 h-0 absolute bg-[#FB0401] z-[-1] bottom-0 left-0"></div> */}
-                        <div className="flex aspect-square w-1/2 px-5 py-5 items-end justify-between group-hover:text-[#FB0401] ont-semibold transition-colors duration-300">
-                            <p className='text-xl w-[60%] leading-tight font-semibold uppercase'>Imagine</p>
-                            <RiArrowRightUpLine size={26} />
-                        </div>
-                        <div data-aos-anchor-placement="top-bottom"
-                            data-aos="clip"
-                            className="aspect-square border w-1/2 border-[#8585855b]  relative ">
-                            <img className='w-full scale-105 transition-all duration-300 group-hover:scale-100 h-full object-cover ' src="/images/projects/Imagine/img2.webp" alt="" />
-                        </div>
-                    </a>
-
-
-                    <a href='/project/4' data-aos-anchor-placement="top-bottom"
-                        data-aos="clip" className=" group  border border-[#8585855b] relative col-span-4 flex items-end">
-                        <div data-aos-anchor-placement="top-bottom"
-                            data-aos="clip" className="aspect-[16/12] border border-[#8585855b]  relative w-1/2">
-                            <img className='w-full scale-105 transition-all duration-300 group-hover:scale-100 h-full object-cover' src="/images/projects/Proost/heroImg.webp" alt="" />
-                        </div>
-                        <div className="flex w-1/2 px-6 py-5 items-center justify-between group-hover:text-[#FB0401] group-hover:font-semibold transition-colors duration-300">
-                            <p className='text-3xl font-semibold   w-[40%] leading-tight'>PROOST</p>
-                            <RiArrowRightUpLine size={32} />
-                        </div>
-                    </a>
-
-
-                    <a href='/project/5' data-aos-anchor-placement="top-bottom"
-                        data-aos="clip"
-                        className=" group  border border-[#8585855b]  relative col-span-2 flex items-end">
-                        {/* <div className="w-full group-hover:h-[25%] ease-in-out transition-all duration-300 h-0 absolute bg-[#FB0401] z-[-1] bottom-0 left-0"></div> */}
-                        <div className="flex aspect-square w-1/2 px-5 py-5 items-end justify-between group-hover:text-[#FB0401] ont-semibold transition-colors duration-300">
-                            <p className='text-xl w-[60%] leading-tight font-semibold uppercase'>Imagine</p>
-                            <RiArrowRightUpLine size={26} />
-                        </div>
-                        <div data-aos-anchor-placement="top-bottom"
-                            data-aos="clip"
-                            className="aspect-square border w-1/2 border-[#8585855b]  relative ">
-                            <img className='w-full scale-105 transition-all duration-300 group-hover:scale-100 h-full object-cover ' src="/images/projects/Imagine/img2.webp" alt="" />
-                        </div>
-                    </a>
-
-
-                    <a href='/projects' className=" group cursor-pointer border border-[#8585855b]  relative col-span-2 flex items-end">
-                        {/* <div className="w-full group-hover:h-[19%] ease-in-out transition-all duration-300 h-0 absolute bg-[#FB0401] z-[-1] bottom-0 left-0"></div> */}
-                        <div className="flex w-full px-5 py-5 items-center justify-between group-hover:text-[#FB0401] group-hover:font-semibold transition-colors duration-300">
-                            <div className="relative">
-                                <div className="w-0 group-hover:w-[100%] transition-all duration-300  h-[2px] bg-[#FB0401] absolute bottom-0 left-0"></div>
-                                <p className=' text-xl group-hover:italic uppercase '>view all our works</p>
-                            </div>
-                            <RiArrowRightUpLine size={32} />
-                        </div>
-                    </a>
+                        // 5th & 6th layout (same as 2nd & 3rd)
+                        if (layout === 5 || layout === 6) {
+                            if (layout === 6) return null;
+                            const pair = filteredProjects[i + 1] ? [project, filteredProjects[i + 1]] : [project];
+                            return (
+                                <div key={project.id} className="w-full flex">
+                                    {pair.map((p) => (
+                                        <a
+                                            key={p.id}
+                                            href={`/projects/${p.id}`}
+                                            data-aos-anchor-placement="top-bottom"
+                                            data-aos="clip"
+                                            className="group border border-[#8585855b] relative w-1/2 flex items-end"
+                                        >
+                                            <div className="flex aspect-square w-1/2 px-5 py-5 items-end justify-between group-hover:text-[#FB0401]  transition-colors duration-300">
+                                                <div>
+                                                    <p className="text-xl  leading-tight font-semibold uppercase">
+                                                        {p.title}
+                                                    </p>
+                                                    <p className="text-base w-[80%]">{p.tagline || ""}</p>
+                                                </div>
+                                                <RiArrowRightUpLine size={26} />
+                                            </div>
+                                            <div
+                                                data-aos-anchor-placement="top-bottom"
+                                                data-aos="clip"
+                                                className="aspect-square border w-1/2 border-[#8585855b] relative"
+                                            >
+                                                <img
+                                                    className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
+                                                    src={p.heroImg}
+                                                    alt={p.title}
+                                                />
+                                            </div>
+                                        </a>
+                                    ))}
+                                </div>
+                            );
+                        }
+                    })}
                 </div>
+            )}
+
         </>
     )
 }
