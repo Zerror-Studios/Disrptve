@@ -30,7 +30,6 @@ export default function ProjectImageSlider({ images = [] }) {
             },
         });
 
-        return () => ScrollTrigger.kill(); // cleanup
     }, [images]);
 
     return (

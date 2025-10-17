@@ -3,6 +3,7 @@ import { RiArrowDownLine } from '@remixicon/react'
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import React from 'react'
+import useHeadingAnimation from '../ui/useHeadingAnimation';
 gsap.registerPlugin(ScrollTrigger);
 
 const serviceData = [
@@ -105,6 +106,7 @@ const serviceData = [
 
 
 const Services = () => {
+    useHeadingAnimation();
 
     useGSAP(() => {
         gsap.from(".serv_slide", {
@@ -134,7 +136,7 @@ const Services = () => {
                 start: "top top",
                 pin: true,
                 end: "+400% top",
-                anticipatePin:1,
+                anticipatePin: 1,
                 scrub: .4,
             },
             xPercent: -56.1 * (serviceData.length - 1),
@@ -148,7 +150,7 @@ const Services = () => {
             <div className="serv_paren w-full relative h-screen overflow-hidden ">
                 <div className="h-full w-[30vw] flex items-center absolute px-5 top-0 left-0">
                     <div className=" w-full right_serv   flex flex-col justify-between h-[35vw] ">
-                        <div className="text-5xl font-semibold uppercase">
+                        <div className="text-5xl animate-heading font-semibold uppercase">
                             <h2>What</h2>
                             <h2 className='red'>We Do</h2>
                         </div>

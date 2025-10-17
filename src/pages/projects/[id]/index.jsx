@@ -68,7 +68,7 @@ const index = () => {
                 // markers:true
             },
         })
-        
+
 
     })
     return (
@@ -149,8 +149,11 @@ const index = () => {
                     </div>
 
                 </div>
-
-                <ProjectImageSlider images={project?.Images} />
+                {
+                    project?.Images?.length > 0 && (
+                        <ProjectImageSlider images={project?.Images} />
+                    )
+                }
 
                 {/* <div className="w-full h-screen center">
                     <div className="w-[25%] h-[80%]">

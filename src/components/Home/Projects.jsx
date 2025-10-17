@@ -1,8 +1,11 @@
 import { RiArrowRightUpLine } from '@remixicon/react'
 import React, { useEffect } from 'react'
 import AOS from "aos";
+import useHeadingAnimation from '../ui/useHeadingAnimation';
 
 const Projects = () => {
+    useHeadingAnimation();
+
     useEffect(() => {
         AOS.init({
             duration: 1500,
@@ -14,7 +17,7 @@ const Projects = () => {
         <>
             <div className="w-full py-32 ">
                 <div className="w-full flex-col gap-y-5 text-center center">
-                    <div className="flex uppercase text-7xl gap-4 font-semibold">
+                    <div className="flex animate-heading uppercase text-7xl gap-4 font-semibold">
                         <h2>Case</h2>
                         <h2 className='red'>Studies</h2>
                     </div>
@@ -22,12 +25,12 @@ const Projects = () => {
                 </div>
 
                 <div className="w-full grid-cols-4 pt-32 grid px-5">
-                
+
                     <a href='/projects/4' data-aos-anchor-placement="top-bottom"
                         data-aos="clip" className=" group  border border-[#8585855b] relative col-span-4 flex items-end">
                         <div className="flex w-1/2 px-6 py-5 items-center justify-between group-hover:text-[#FB0401] group-hover:font-semibold transition-colors duration-300">
                             <div className="">
-                                <p className='text-3xl font-semibold  leading-tight'>PROOST</p>
+                                <h2 className='text-3xl   leading-tight'>PROOST</h2>
                                 <p className='text-lg'> Alcohol Beverages</p>
                             </div>
                             <RiArrowRightUpLine size={32} />
@@ -38,14 +41,14 @@ const Projects = () => {
                         </div>
                     </a>
 
-                
+
                     <a href='/projects/8' data-aos-anchor-placement="top-bottom"
                         data-aos="clip"
                         className=" group  border border-[#8585855b]  relative col-span-2 flex items-end">
                         {/* <div className="w-full group-hover:h-[25%] ease-in-out transition-all duration-300 h-0 absolute bg-[#FB0401] z-[-1] bottom-0 left-0"></div> */}
                         <div className="flex aspect-square w-1/2 px-5 py-5 items-end justify-between group-hover:text-[#FB0401] ont-semibold transition-colors duration-300">
                             <div className="">
-                                <p className='text-xl w-[60%] leading-tight font-semibold uppercase'>Imagine</p>
+                                <h2 className='text-xl w-[60%] leading-tight font-semibold uppercase'>Imagine</h2>
                                 <p className='text-lg'>Plant-Based Meat</p>
                             </div>
                             <RiArrowRightUpLine size={26} />
@@ -64,7 +67,7 @@ const Projects = () => {
                         {/* <div className="w-full group-hover:h-[25%] ease-in-out transition-all duration-300 h-0 absolute bg-[#FB0401] z-[-1] bottom-0 left-0"></div> */}
                         <div className="flex aspect-square w-1/2 px-5 py-5 items-end justify-between group-hover:text-[#FB0401] ont-semibold transition-colors duration-300">
                             <div className="">
-                                <p className='text-xl w-[60%] leading-tight font-semibold uppercase'>SuperYou</p>
+                                <h2 className='text-xl w-[60%] leading-tight font-semibold uppercase'>SuperYou</h2>
                                 <p className='text-lg'>Retail and Health & Nutrition</p>
                             </div>
                             <RiArrowRightUpLine size={26} />
@@ -84,7 +87,7 @@ const Projects = () => {
                         </div>
                         <div className="flex w-1/2 px-6 py-5 items-center justify-between group-hover:text-[#FB0401] group-hover:font-semibold transition-colors duration-300">
                             <div className="">
-                                <p className='text-3xl font-semibold  leading-tight'>Guyana</p>
+                                <h2 className='text-3xl font-semibold uppercase  leading-tight'>Guyana</h2>
                                 <p className='text-lg'>Political</p>
                             </div>
                             <RiArrowRightUpLine size={32} />
@@ -97,7 +100,7 @@ const Projects = () => {
                         {/* <div className="w-full group-hover:h-[25%] ease-in-out transition-all duration-300 h-0 absolute bg-[#FB0401] z-[-1] bottom-0 left-0"></div> */}
                         <div className="flex aspect-square w-1/2 px-5 py-5 items-end justify-between group-hover:text-[#FB0401] ont-semibold transition-colors duration-300">
                             <div className="">
-                                <p className='text-xl  leading-tight font-semibold uppercase'>Punjab Kings</p>
+                                <h2 className='text-xl  leading-tight font-semibold uppercase'>Punjab Kings</h2>
                                 <p className='text-lg'>Sports</p>
                             </div>
                             <RiArrowRightUpLine size={26} />
@@ -115,13 +118,13 @@ const Projects = () => {
                         <div className="flex w-full px-5 py-5 items-center justify-between group-hover:text-[#FB0401] group-hover:font-semibold transition-colors duration-300">
                             <div className="relative">
                                 <div className="w-0 group-hover:w-[100%] transition-all duration-300  h-[2px] bg-[#FB0401] absolute bottom-0 left-0"></div>
-                                <p className=' text-xl group-hover:italic uppercase '>view all our works</p>
+                                <h2 className=' text-xl group-hover:italic uppercase '>view all our works</h2>
                             </div>
                             <RiArrowRightUpLine size={32} />
                         </div>
                     </a>
                 </div>
-                
+
             </div>
         </>
     )

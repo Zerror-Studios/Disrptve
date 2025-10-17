@@ -1,6 +1,7 @@
 import { motion, AnimatePresence, useSpring } from "framer-motion";
 import { RiArrowRightUpLine } from "@remixicon/react";
 import React, { useRef, useState, useCallback, useEffect } from "react";
+import useHeadingAnimation from "../ui/useHeadingAnimation";
 
 const TRAIL_IMAGE_COUNT = 20;
 const TRAIL_IMAGE_LIFESPAN = 600;
@@ -13,6 +14,8 @@ const springConfig = {
 };
 
 const ImagePop = () => {
+
+        useHeadingAnimation();
     const containerRef = useRef(null);
     const [trailImages, setTrailImages] = useState([]);
     const lastPos = useRef({ x: 0, y: 0 });
@@ -78,7 +81,7 @@ const ImagePop = () => {
             ref={containerRef}
             onMouseEnter={handleMouseMove}
             onMouseMove={handleMouseMove}
-            className="image_pop_paren flex center flex-col uppercase text-7xl font-semibold text-center w-full h-screen"
+            className="image_pop_paren  flex center flex-col uppercase text-7xl font-semibold text-center w-full h-screen"
             style={{ position: "relative", overflow: "hidden" }}
         >
             <AnimatePresence>
@@ -101,11 +104,12 @@ const ImagePop = () => {
                     />
                 ))}
             </AnimatePresence>
-
-            <h2>Explore our</h2>
-            <h2>case credentials,</h2>
-            <h2>studies, and</h2>
-            <h2>capabilities in detail.</h2>
+            <div className="animate-heading">
+                <h2>Explore our</h2>
+                <h2>case credentials,</h2>
+                <h2>studies, and</h2>
+                <h2>capabilities in detail.</h2>
+            </div>
 
             <button className="mt-12 group px-6 py-2 border center border-white">
                 <div className="relative flex items-center gap-1">

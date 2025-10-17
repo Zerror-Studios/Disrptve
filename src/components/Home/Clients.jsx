@@ -1,8 +1,10 @@
 import gsap from 'gsap';
 import React, { useEffect, useRef } from 'react'
 import Marquee from 'react-fast-marquee'
+import useHeadingAnimation from '../ui/useHeadingAnimation';
 
 const Clients = () => {
+        useHeadingAnimation();
 
     const clientsData = [
         {
@@ -67,9 +69,9 @@ const Clients = () => {
                         {[1, 2, 3,4,5,6].map((_, i) => (
                             <div
                                 key={i}
-                                className="pl-12 gap-12 w-fit overflow-hidden flex text-8xl whitespace-nowrap justify-between uppercase font-semibold items-center"
+                                className=" pl-12 gap-12 w-fit overflow-hidden flex text-8xl whitespace-nowrap justify-between uppercase font-semibold items-center"
                             >
-                                <p className='block w-fit '>OUR clients</p>
+                                <h2 className='block w-fit '>OUR clients</h2>
                                 <div className="size-12 center ">
                                 <img className="w-full" src="/icons/cut_blocks.svg" alt="" />
                                 </div>

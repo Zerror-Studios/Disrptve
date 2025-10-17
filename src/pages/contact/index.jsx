@@ -1,3 +1,4 @@
+import useHeadingAnimation from '@/components/ui/useHeadingAnimation'
 import { useGSAP } from '@gsap/react'
 import { RiArrowRightUpLine, RiFacebookFill, RiFacebookLine, RiInstagramFill, RiInstagramLine, RiLinkedinFill, RiLinkedinLine, RiTwitterFill, RiTwitterLine, RiYoutubeFill, RiYoutubeLine } from '@remixicon/react'
 import gsap from 'gsap'
@@ -7,6 +8,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 
 const index = () => {
+  useHeadingAnimation();
 
   useGSAP(() => {
     gsap.to(".fixy_con", {
@@ -21,8 +23,8 @@ const index = () => {
   })
   return (
     <>
-      <div className="w-full fixy_con fixed z-[-1] brightness-[1] blur-[0] top-0 left-0 h-screen pt-20 bg-[#FB0401] text-black center flex-col gap-y-10 text-center">
-        <h2 className='uppercase leading-[8.5vw] text-[10vw] font-bold'>Ready to Find <br /> Your dream <br /> heaven?</h2>
+      <div className=" animate-heading w-full fixy_con fixed z-[-1] brightness-[1] blur-[0] top-0 left-0 h-screen pt-20 bg-[#FB0401] text-black center flex-col gap-y-10 text-center">
+        <h2 className='uppercase leading-[8.5vw] text-[10vw] '>Ready to Find <br /> Your dream <br /> heaven?</h2>
         <h2 className=' font-semibold leading-tight uppercase'>Our manager will contact you <br /> as soon as possible.</h2>
       </div>
 
@@ -33,11 +35,11 @@ const index = () => {
             <div className="w-1/2 h-full">
               <div className=" grid grid-cols-2 space-y-20">
                 <div className="">
-                  <p className=' mb-2 text-xl uppercase font-semibold opacity-70'>location</p>
+                  <h3 className=' mb-2 text-xl uppercase font-semibold opacity-70'>location</h3>
                   <p className='text-lg' >Mumbai, India</p>
                 </div>
                 <div className="">
-                  <p className=' mb-2 text-xl uppercase font-semibold opacity-70'>email</p>
+                  <h3 className=' mb-2 text-xl uppercase font-semibold opacity-70'>email</h3>
                   <a href="">
                     <div className="flex mb-1 group  w-fit relative items-center gap-2">
                       <div className="absolute group-hover:w-full rounded-full transition-all duration-300 w-0 h-[1px] bgred bottom-0 left-0"></div>
@@ -61,7 +63,7 @@ const index = () => {
                   </a>
                 </div>
                 <div className="">
-                  <p className=' mb-2 text-xl uppercase font-semibold opacity-70'>contact</p>
+                  <h3 className=' mb-2 text-xl uppercase font-semibold opacity-70'>contact</h3>
                   <a href="" className='flex mb-1 group  w-fit relative items-center gap-2'>
                     <div className="absolute group-hover:w-full rounded-full transition-all duration-300 w-0 h-[1px] bgred bottom-0 left-0"></div>
                     <p className='text-lg group-hover:italic' >
@@ -76,7 +78,7 @@ const index = () => {
                   </a>
                 </div>
                 <div className="">
-                  <p className=' mb-2 text-xl uppercase font-semibold opacity-70'>socials</p>
+                  <h3 className=' mb-2 text-xl uppercase font-semibold opacity-70'>socials</h3>
                   <div className="flex gap-4">
                     <div className="size-14 group hover:bg-[#FB0401] transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
                       <RiInstagramLine className='group-hover:opacity-0 transition-all duration-300  ' />

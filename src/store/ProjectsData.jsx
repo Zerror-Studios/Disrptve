@@ -50,29 +50,22 @@ export const ProjectsData = [
       "/images/projects/devgan/img4.webp",
     ],
   },
-  // {
-  //   id: 3,
-  //   title: "Sarabh Khanijou",
-  //   tagline: "High fashion, imagined with Artificial Intelligence.",
-  //   heroImg: "/images/projects/prominance/heroImg.webp",
-  // logo:"/images/projects/Proost/logo.png",
-  //   websiteLink: "",
-  //   tags: ["AI Photoshoot", "Creative Production", "Design"],
-  //   challenge:
-  //     "For a high-fashion designer, a lookbook or campaign shoot is a critical asset, but it’s also incredibly expensive and logistically complex, involving models, locations, photographers, and stylists. Sarabh Khanijou needed world-class visuals that would capture the essence of his collection without the prohibitive costs and time commitment of a traditional photoshoot.",
-  //   approach:
-  //     "We bypassed the physical limitations entirely. Using cutting-edge generative AI, we produced a stunning, hyper-realistic photoshoot from scratch. By collaborating closely with the designer on mood boards and creative direction, we were able to generate unique, high-fashion imagery that was indistinguishable from a real-world shoot. This innovative approach allowed for limitless creative freedom while delivering the final assets at 1/8th the cost and in a fraction of the time.",
-  //   industry: "Fashion",
-  //   Images: [
-  //     "/images/projects/guyana/img1.webp",
-  //     "/images/projects/guyana/img2.webp",
-  //     "/images/projects/guyana/img3.webp",
-  //     "/images/projects/guyana/img4.webp",
-  //     "/images/projects/guyana/img5.webp",
-  //     "/images/projects/guyana/img6.webp",
-  //     "/images/projects/guyana/img7.webp",
-  //   ],
-  // },
+  {
+    id: 3,
+    title: "Sarabh Khanijou",
+    tagline: "High fashion, imagined with Artificial Intelligence.",
+    heroImg: "/images/projects/sarabh/heroImg.webp",
+    logo: "/images/projects/sarabh/logo.png",
+    websiteLink: "",
+    tags: ["AI Photoshoot", "Creative Production", "Design"],
+    challenge:
+      "For a high-fashion designer, a lookbook or campaign shoot is a critical asset, but it’s also incredibly expensive and logistically complex, involving models, locations, photographers, and stylists. Sarabh Khanijou needed world-class visuals that would capture the essence of his collection without the prohibitive costs and time commitment of a traditional photoshoot.",
+    approach:
+      "We bypassed the physical limitations entirely. Using cutting-edge generative AI, we produced a stunning, hyper-realistic photoshoot from scratch. By collaborating closely with the designer on mood boards and creative direction, we were able to generate unique, high-fashion imagery that was indistinguishable from a real-world shoot. This innovative approach allowed for limitless creative freedom while delivering the final assets at 1/8th the cost and in a fraction of the time.",
+    industry: "Fashion",
+    Images: [
+    ],
+  },
   {
     id: 4,
     title: "Proost Beer",
@@ -205,28 +198,28 @@ export const ProjectsData = [
       "/images/projects/superYou/img3.webp",
     ],
   },
-  {
-    id: 10,
-    title: "Flaunt Your Ink",
-    tagline: "From brand identity to brand investment.",
-    heroImg: "/images/projects/FYI/heroImg.webp",
-    logo: "/images/projects/FYI/logo.png",
-    websiteLink: "",
-    tags: [
-      "Brand Identity",
-      "Packaging",
-      "Celebrity Onboarding",
-      "Fundraising Strategy",
-    ],
-    challenge:
-      "Launching a new beauty brand requires identity, credibility, and capital. Flaunt Your Ink needed a partner to build both brand and business simultaneously.",
-    approach:
-      "We built the brand identity and packaging system, onboarded Suniel Shetty and Aalim Hakim as ambassadors, and supported their first fundraising round to fuel growth.",
-    industry: "Beauty and Personal Care",
-    Images: [
-      "/images/projects/FYI/img1.webp",
-    ],
-  },
+  // {
+  //   id: 10,
+  //   title: "Flaunt Your Ink",
+  //   tagline: "From brand identity to brand investment.",
+  //   heroImg: "/images/projects/FYI/heroImg.webp",
+  //   logo: "/images/projects/FYI/logo.png",
+  //   websiteLink: "",
+  //   tags: [
+  //     "Brand Identity",
+  //     "Packaging",
+  //     "Celebrity Onboarding",
+  //     "Fundraising Strategy",
+  //   ],
+  //   challenge:
+  //     "Launching a new beauty brand requires identity, credibility, and capital. Flaunt Your Ink needed a partner to build both brand and business simultaneously.",
+  //   approach:
+  //     "We built the brand identity and packaging system, onboarded Suniel Shetty and Aalim Hakim as ambassadors, and supported their first fundraising round to fuel growth.",
+  //   industry: "Beauty and Personal Care",
+  //   Images: [
+  //     "/images/projects/FYI/img1.webp",
+  //   ],
+  // },
   {
     id: 11,
     title: "Pune United",
@@ -252,71 +245,71 @@ export const ProjectsData = [
       "/images/projects/puneUnited/img9.webp",
     ],
   },
-  {
-    id: 12,
-    title: "Meve Jars",
-    tagline: "Launching a brand with star power.",
-    heroImg: "/images/projects/meve/heroImg.webp",
-    logo: "/images/projects/meve/logo.png",
-    websiteLink: "",
-    tags: ["Celebrity Onboarding", "Production", "Packaging"],
-    challenge:
-      "To stand out in the health food market, Meve Jars needed an impactful, credible launch.",
-    approach:
-      "We onboarded Shamita Shetty as co-founder, produced the launch photoshoot, and designed premium packaging that matched the brand’s elevated positioning.",
-    industry: "Health and Wellness Food",
-    Images: [
-      "/images/projects/meve/img1.webp",
-      "/images/projects/meve/img2.webp",
-      "/images/projects/meve/img3.webp",
-    ],
-  },
-  {
-    id: 13,
-    title: "Shivdutt Das Art Foundation",
-    tagline: "Crafting a Foundation for the Arts.",
-    heroImg: "/images/projects/sdaf/heroImg.webp",
-    logo: "/images/projects/sdaf/logo.png",
-    websiteLink: "",
-    tags: [
-      "Brand Strategy",
-      "Website Development",
-      "Event Management",
-      "Social Media",
-      "Identity Design",
-      "VIP Outreach",
-    ],
-    challenge:
-      "Launching a new art foundation required creating prestige and community from day one, starting with its first major event, 'Timeless Frames.'",
-    approach:
-      "We built their digital presence, event identity, and social campaign, handled VIP outreach, and continue managing their strategy and social media to shape their cultural legacy.",
-    industry: "Arts and Culture",
-    Images: [
-      "/images/projects/sdaf/img1.webp",
-      "/images/projects/sdaf/img2.webp",
-    ],
-  },
-  {
-    id: 14,
-    title: "India Maritime Week",
-    tagline: "Corporate design that commands attention.",
-    heroImg: "/images/projects/imw/heroImg.webp",
-    logo: "/images/projects/imw/logo.png",
-    websiteLink: "",
-    tags: ["Brochure Design", "Corporate Collateral"],
-    challenge:
-      "Major industry events rely on corporate brochures as key takeaways. The challenge was to make dense content clear, elegant, and prestigious.",
-    approach:
-      "We created a high-impact brochure with a clean, modern design system, transforming complex information into clarity and style.",
-    industry: "Events / Maritime",
-    Images: [
-      "/images/projects/imw/img1.webp",
-      "/images/projects/imw/img2.webp",
-      "/images/projects/imw/img3.webp",
-      "/images/projects/imw/img4.webp",
-      "/images/projects/imw/img5.webp",
-    ],
-  },
+  // {
+  //   id: 12,
+  //   title: "Meve Jars",
+  //   tagline: "Launching a brand with star power.",
+  //   heroImg: "/images/projects/meve/heroImg.webp",
+  //   logo: "/images/projects/meve/logo.png",
+  //   websiteLink: "",
+  //   tags: ["Celebrity Onboarding", "Production", "Packaging"],
+  //   challenge:
+  //     "To stand out in the health food market, Meve Jars needed an impactful, credible launch.",
+  //   approach:
+  //     "We onboarded Shamita Shetty as co-founder, produced the launch photoshoot, and designed premium packaging that matched the brand’s elevated positioning.",
+  //   industry: "Health and Wellness Food",
+  //   Images: [
+  //     "/images/projects/meve/img1.webp",
+  //     "/images/projects/meve/img2.webp",
+  //     "/images/projects/meve/img3.webp",
+  //   ],
+  // },
+  // {
+  //   id: 13,
+  //   title: "Shivdutt Das Art Foundation",
+  //   tagline: "Crafting a Foundation for the Arts.",
+  //   heroImg: "/images/projects/sdaf/heroImg.webp",
+  //   logo: "/images/projects/sdaf/logo.png",
+  //   websiteLink: "",
+  //   tags: [
+  //     "Brand Strategy",
+  //     "Website Development",
+  //     "Event Management",
+  //     "Social Media",
+  //     "Identity Design",
+  //     "VIP Outreach",
+  //   ],
+  //   challenge:
+  //     "Launching a new art foundation required creating prestige and community from day one, starting with its first major event, 'Timeless Frames.'",
+  //   approach:
+  //     "We built their digital presence, event identity, and social campaign, handled VIP outreach, and continue managing their strategy and social media to shape their cultural legacy.",
+  //   industry: "Arts and Culture",
+  //   Images: [
+  //     "/images/projects/sdaf/img1.webp",
+  //     "/images/projects/sdaf/img2.webp",
+  //   ],
+  // },
+  // {
+  //   id: 14,
+  //   title: "India Maritime Week",
+  //   tagline: "Corporate design that commands attention.",
+  //   heroImg: "/images/projects/imw/heroImg.webp",
+  //   logo: "/images/projects/imw/logo.png",
+  //   websiteLink: "",
+  //   tags: ["Brochure Design", "Corporate Collateral"],
+  //   challenge:
+  //     "Major industry events rely on corporate brochures as key takeaways. The challenge was to make dense content clear, elegant, and prestigious.",
+  //   approach:
+  //     "We created a high-impact brochure with a clean, modern design system, transforming complex information into clarity and style.",
+  //   industry: "Events / Maritime",
+  //   Images: [
+  //     "/images/projects/imw/img1.webp",
+  //     "/images/projects/imw/img2.webp",
+  //     "/images/projects/imw/img3.webp",
+  //     "/images/projects/imw/img4.webp",
+  //     "/images/projects/imw/img5.webp",
+  //   ],
+  // },
   // {
   //   id: 15,
   //   title: "Piramal Nextgen",
@@ -340,33 +333,33 @@ export const ProjectsData = [
   //     "/images/projects/guyana/img7.webp",
   //   ],
   // },
-  {
-    id: 16,
-    title: "VS Corporate",
-    tagline: "Giving executives a powerful voice.",
-    heroImg: "/images/projects/vsCorporate/heroImg.webp",
-    logo: "/images/projects/vsCorporate/logo.png",
-    websiteLink: "",
-    tags: ["Executive Strategy", "Social Media", "Content"],
-    challenge:
-      "Executives at Vishwa Samudra needed strategic LinkedIn management to shape their public narrative and establish thought leadership.",
-    approach:
-      "We manage and craft content for their profiles, building authentic personal brands and ensuring their digital voice matches their leadership stature.",
-    industry: "Corporate / Conglomerate",
-    Images: [
-      "/images/projects/vsCorporate/img1.webp",
-      "/images/projects/vsCorporate/img2.webp",
-      "/images/projects/vsCorporate/img3.webp",
-      "/images/projects/vsCorporate/img4.webp",
-      "/images/projects/vsCorporate/img5.webp",
-      "/images/projects/vsCorporate/img6.webp",
-      "/images/projects/vsCorporate/img7.webp",
-      "/images/projects/vsCorporate/img8.webp",
-      "/images/projects/vsCorporate/img9.webp",
-      "/images/projects/vsCorporate/img10.webp",
-      "/images/projects/vsCorporate/img11.webp",
-    ],
-  },
+  // {
+  //   id: 16,
+  //   title: "VS Corporate",
+  //   tagline: "Giving executives a powerful voice.",
+  //   heroImg: "/images/projects/vsCorporate/heroImg.webp",
+  //   logo: "/images/projects/vsCorporate/logo.png",
+  //   websiteLink: "",
+  //   tags: ["Executive Strategy", "Social Media", "Content"],
+  //   challenge:
+  //     "Executives at Vishwa Samudra needed strategic LinkedIn management to shape their public narrative and establish thought leadership.",
+  //   approach:
+  //     "We manage and craft content for their profiles, building authentic personal brands and ensuring their digital voice matches their leadership stature.",
+  //   industry: "Corporate / Conglomerate",
+  //   Images: [
+  //     "/images/projects/vsCorporate/img1.webp",
+  //     "/images/projects/vsCorporate/img2.webp",
+  //     "/images/projects/vsCorporate/img3.webp",
+  //     "/images/projects/vsCorporate/img4.webp",
+  //     "/images/projects/vsCorporate/img5.webp",
+  //     "/images/projects/vsCorporate/img6.webp",
+  //     "/images/projects/vsCorporate/img7.webp",
+  //     "/images/projects/vsCorporate/img8.webp",
+  //     "/images/projects/vsCorporate/img9.webp",
+  //     "/images/projects/vsCorporate/img10.webp",
+  //     "/images/projects/vsCorporate/img11.webp",
+  //   ],
+  // },
   // {
   //   id: 17,
   //   title: "Dalhousie Public School",

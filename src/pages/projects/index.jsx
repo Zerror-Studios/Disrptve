@@ -62,19 +62,19 @@ const index = () => {
                                 : "opacity-40 group-hover:opacity-40 hover:!opacity-100"
                                 }`}
                         >
-                            <p className="text-6xl font-semibold flex items-start">
+                            <h3 className="text-6xl  flex items-start">
                                 {i === 0 ? (
                                     <>
                                         {item.label}
-                                        <sup className="text-base">({item.count})</sup>
+                                        <sup className="text-base leading-none mt-2">({item.count})</sup>
                                     </>
                                 ) : (
                                     <>
                                         — {item.label}
-                                        <sup className="text-base">({item.count})</sup>
+                                        <sup className="text-base leading-none mt-2">({item.count})</sup>
                                     </>
                                 )}
-                            </p>
+                            </h3>
                         </div>
                     ))}
                 </div>
@@ -103,9 +103,9 @@ const index = () => {
                                     >
                                         <div className="flex w-1/2 px-6 py-5 items-center justify-between group-hover:text-[#FB0401]  transition-colors duration-300">
                                             <div>
-                                                <p className="text-3xl font-semibold leading-tight uppercase">
+                                                <h3 className="text-3xl font-semibold leading-tight uppercase">
                                                     {project.title}
-                                                </p>
+                                                </h3>
                                                 <p className="text-lg">{project.tagline || ""}</p>
                                             </div>
                                             <RiArrowRightUpLine size={32} />
@@ -142,10 +142,10 @@ const index = () => {
                                         >
                                             <div className="flex aspect-square w-1/2 px-5 py-5 items-end justify-between group-hover:text-[#FB0401]  transition-colors duration-300">
                                                 <div>
-                                                    <p className="text-xl  leading-tight font-semibold uppercase">
+                                                    <h3 className="text-xl  leading-tight font-semibold uppercase">
                                                         {p.title}
-                                                    </p>
-                                                    <p className="text-base w-[80%]">{p.tagline || ""}</p>
+                                                    </h3>
+                                                    <p className="text-base leading-none mt-2 w-[80%]">{p.tagline || ""}</p>
                                                 </div>
                                                 <RiArrowRightUpLine size={26} />
                                             </div>
@@ -189,9 +189,9 @@ const index = () => {
                                         </div>
                                         <div className="flex w-1/2 px-6 py-5 items-center justify-between group-hover:text-[#FB0401]  transition-colors duration-300">
                                             <div>
-                                                <p className="text-3xl font-semibold leading-tight uppercase">
+                                                <h3 className="text-3xl font-semibold leading-tight uppercase">
                                                     {project.title}
-                                                </p>
+                                                </h3>
                                                 <p className="text-lg">{project.tagline || ""}</p>
                                             </div>
                                             <RiArrowRightUpLine size={32} />
@@ -216,10 +216,10 @@ const index = () => {
                                         >
                                             <div className="flex aspect-square w-1/2 px-5 py-5 items-end justify-between group-hover:text-[#FB0401]  transition-colors duration-300">
                                                 <div>
-                                                    <p className="text-xl  leading-tight font-semibold uppercase">
+                                                    <h3 className="text-xl  leading-tight font-semibold uppercase">
                                                         {p.title}
-                                                    </p>
-                                                    <p className="text-base w-[80%]">{p.tagline || ""}</p>
+                                                    </h3>
+                                                    <p className="text-base leading-none mt-2 w-[80%]">{p.tagline || ""}</p>
                                                 </div>
                                                 <RiArrowRightUpLine size={26} />
                                             </div>

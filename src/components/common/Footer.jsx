@@ -63,14 +63,14 @@ const Footer = () => {
                   href={item.href}
                   className="group block overflow-hidden cursor-pointer w-fit relative"
                 >
-                  <p
+                  <h2
                     className="w-fit font-semibold group-hover:translate-y-[-100%] transition-all duration-300"
                   >
                     {item.name}
-                  </p>
-                  <p className="absolute font-semibold top-[100%] group-hover:top-0 w-fit text-[#D70000] transition-all duration-300 cursor-pointer">
+                  </h2>
+                  <h2 className="absolute font-semibold top-[100%] group-hover:top-0 w-fit text-[#D70000] transition-all duration-300 cursor-pointer">
                     {item.name}
-                  </p>
+                  </h2>
                 </a>
               ))}
             </div>

@@ -6,8 +6,11 @@ import { RiCloseLine, RiPlayFill } from "@remixicon/react";
 import { motion, useSpring } from 'framer-motion';
 import React, { useEffect, useRef } from "react";
 import LineBtn from '../buttons/LineBtn';
+import useHeadingAnimation from '../ui/useHeadingAnimation';
 
 const Hero = () => {
+
+    useHeadingAnimation();
 
     useGSAP(() => {
         gsap.from(".left_txt", {
@@ -159,10 +162,10 @@ const Hero = () => {
             </div>
 
             <div className=" hero_video_parent  w-full h-screen center relative">
-                <div className=" absolute  font-semibold top-1/2 -translate-y-1/2 left-3 md:left-5 uppercase text-xl left_txt">
+                <div className=" absolute  top-1/2 -translate-y-1/2 left-3 md:left-5 uppercase text-xl left_txt">
                     <p>Disruption</p>
                 </div>
-                <div className=" absolute  font-semibold top-1/2 -translate-y-1/2 right-3 md:right-5 uppercase text-xl right_txt">
+                <div className=" absolute  top-1/2 -translate-y-1/2 right-3 md:right-5 uppercase text-xl right_txt">
                     <p>by design.</p>
                 </div>
 
@@ -178,7 +181,7 @@ const Hero = () => {
 
 
             <div className="w-full px-3 md:px-5 pt-16 pb-12 gap-5 md:gap-0 md:pt-44 md:pb-32 items-center flex flex-col md:flex-row ">
-                <div className=" w-full md:w-[60%] uppercase leading-none text-3xl md:text-7xl font-semibold ">
+                <div className=" w-full md:w-[60%] animate-heading uppercase leading-none text-3xl md:text-7xl font-semibold ">
                     <h2>a strategy-led </h2>
                     <h2 className='red'>
                         marketing

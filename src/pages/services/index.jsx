@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { initCubeScrollAnimation } from "@/components/ui/initCubeScrollAnimation";
 import Iridescence from "@/components/ui/Iridescence";
 import { useGSAP } from "@gsap/react";
+import useHeadingAnimation from "@/components/ui/useHeadingAnimation";
 gsap.registerPlugin(ScrollTrigger);
 
 const serviceData = [
@@ -104,26 +105,26 @@ const serviceData = [
 ];
 
 const agencyData = [
-  {
-    id: 1,
-    title: "A Unique Foundation",
-    desc: "Most agencies are built on a single point of view. DISRPTVE was founded on a deliberate blend of three distinct worlds: the proven process and strategic rigor of an established agency, the network and legacy of the entertainment industry, and a modern perspective on design and culture. This structure means our work is strategically sound, culturally connected, and creatively fresh, all at the same time.",
-  },
-  {
-    id: 2,
-    title: "Strategy Over Everything",
-    desc: "We don't believe in creative for creative's sake. Every design, campaign, and line of copy is born from a sharp, clear, and defensible strategy. We start with a deep dive into your world to find your most potent truth, and we don't build anything until we have a rock-solid plan to make it count.",
-  },
-  {
-    id: 3,
-    title: "A Direct Line to the Principals",
-    desc: "When you partner with us, you partner with us. The founders are deeply involved in every project, ensuring you get the senior-level thinking and accountability you deserve. There are no layers of account managers to get through—just a direct, collaborative relationship focused on getting the best work done.",
-  },
-  {
-    id: 4,
-    title: "Built for the Modern Mandate",
-    desc: "Our experience isn't limited to a single industry or channel. We've run national political campaigns, launched brands with A-list celebrities, built identities from scratch, and created photoshoots entirely with AI. This diverse expertise means we're uniquely equipped to handle the complex, multi-channel challenges that modern brands face.",
-  },
+    {
+        id: 1,
+        title: "A Unique Foundation",
+        desc: "Most agencies are built on a single point of view. DISRPTVE was founded on a deliberate blend of three distinct worlds: the proven process and strategic rigor of an established agency, the network and legacy of the entertainment industry, and a modern perspective on design and culture. This structure means our work is strategically sound, culturally connected, and creatively fresh, all at the same time.",
+    },
+    {
+        id: 2,
+        title: "Strategy Over Everything",
+        desc: "We don't believe in creative for creative's sake. Every design, campaign, and line of copy is born from a sharp, clear, and defensible strategy. We start with a deep dive into your world to find your most potent truth, and we don't build anything until we have a rock-solid plan to make it count.",
+    },
+    {
+        id: 3,
+        title: "A Direct Line to the Principals",
+        desc: "When you partner with us, you partner with us. The founders are deeply involved in every project, ensuring you get the senior-level thinking and accountability you deserve. There are no layers of account managers to get through—just a direct, collaborative relationship focused on getting the best work done.",
+    },
+    {
+        id: 4,
+        title: "Built for the Modern Mandate",
+        desc: "Our experience isn't limited to a single industry or channel. We've run national political campaigns, launched brands with A-list celebrities, built identities from scratch, and created photoshoots entirely with AI. This diverse expertise means we're uniquely equipped to handle the complex, multi-channel challenges that modern brands face.",
+    },
 ];
 
 const serviceImgs = [
@@ -155,6 +156,7 @@ const serviceImgs = [
 ];
 
 const index = () => {
+        useHeadingAnimation();
 
     useEffect(() => {
         if (typeof window !== "undefined") {
@@ -164,6 +166,13 @@ const index = () => {
     }, []);
 
     useGSAP(() => {
+
+        gsap.to(".sticky_sec",{
+            opacity:1,
+            duration: 1,
+            delay:1 
+        })
+
         gsap.to(".wave_bg", {
             scrollTrigger: {
                 trigger: ".anim_star",
@@ -184,7 +193,7 @@ const index = () => {
                 anticipatePin: 1,
                 scrub: .4,
             },
-            xPercent: -81,
+            xPercent: -70,
             ease: "linear",
         })
 
@@ -200,7 +209,7 @@ const index = () => {
                     speed={0.5}
                 />
             </div>
-            <div class="sticky_sec absolute top-0 w-full left-0 z-[2]  h-[100vh]  overflow-hidden">
+            <div class="sticky_sec opacity-0 absolute top-0 w-full left-0 z-[2]  h-[100vh]  overflow-hidden">
                 <div class="cubes">
                     <div
                         className="cube absolute scale-[.4] w-[200px] top-1/2 left-1/2 h-[200px] [transform-style:preserve-3d]"
@@ -268,12 +277,12 @@ const index = () => {
                 </div>
             </div>
             <div className=" anim_star h-[55vh] w-full"></div>
-            <div className="w-full h-[45vh] flex flex-col justify-end p-5 uppercase text-7xl ">
-                <h2>A service is just a tool.</h2>
-                <h2>
-                     It’s the strategy behind
+            <div className="w-full  h-[45vh] flex flex-col justify-end p-5 uppercase text-7xl ">
+                <h2 className="animate-heading">A service is just a tool.</h2>
+                <h2 className="animate-heading">
+                    It’s the strategy behind
                 </h2>
-                <h2>
+                <h2 className="animate-heading">
                     it that creates the impact.
                 </h2>
                 <p className="text-2xl leading-none mt-5 normal-case w-[40%]">We believe in a strategy-first approach to everything we do. The capabilities listed here are the tools we use to execute on a clear, well-defined plan. </p>
@@ -284,11 +293,11 @@ const index = () => {
                     {serviceData.map((item, i) => (
                         <div key={i} className="w-full pb-24">
                             <div className="w-full border-b border-white py-5 flex">
-                                <p className="text-3xl font-semibold">0{i + 1}</p>
+                                <h3 className="text-3xl font-semibold">0{i + 1}</h3>
                             </div>
                             <div className=" py-5 h-full w-full gap-5 flex">
-                                <div className="w-[40%] text-3xl font-semibold uppercase  h-full ">
-                                    <p>{item.title}</p>
+                                <div className="w-[40%] animate-heading text-3xl font-semibold uppercase  h-full ">
+                                    <h3>{item.title}</h3>
                                 </div>
                                 <div className="w-[60%]  h-full">
                                     <p className="text-xl leading-tight">{item.desc}</p>
@@ -307,13 +316,13 @@ const index = () => {
                 </div>
             </div>
             <div className="w-full why_us mb-24  px-5">
-                <h2 className="text-5xl red uppercase">Why We're Different</h2>
+                <h2 className="text-5xl animate-heading red uppercase">Why We're Different</h2>
                 <div className="mt-12">
                     <div className="  w-full flex items-stretch">
                         <div className="w-[60%]  pt-2 gap-12 grid grid-cols-2 ">
                             {agencyData.map((item, i) => (
                                 <div key={i} className="">
-                                    <p className="text-3xl font-semibold mb-4"> 0{i + 1}. {item.title} </p>
+                                    <h3 className="text-3xl font-semibold mb-4"> 0{i + 1}. {item.title} </h3>
                                     <p className=" text-lg leading-tight">{item.desc}</p>
                                 </div>
                             ))}
@@ -327,12 +336,12 @@ const index = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-full  mb-24  px-5 ">
-                <h2 className="text-5xl uppercase red py-12" >Industries</h2>
-                <div className=" serv_paren w-full h-screen flex items-center ">
-                    <div className="serv_slide w-full flex gap-x-10 scroller_none ">
+            <div className="w-full  mb-24  px-5  ">
+                <div className="  serv_paren w-full h-screen flex  flex-col justify-center ">
+                    <h2 className=" animate-heading text-5xl uppercase red " >Industries</h2>
+                    <div className=" mt-12 h-fit serv_slide w-full flex gap-x-10 scroller_none ">
                         {serviceImgs.map((item, i) => (
-                            <div key={i} className=" shrink-0 text-black text-center center relative w-[33vw] aspect-[3/4]">
+                            <div key={i} className=" shrink-0 text-black text-center center relative w-[30vw] aspect-[3/4]">
                                 <div className="absolute bottom-0 w-full z-[1] h-44 bg-gradient-to-b from-transparent to-white"></div>
                                 <h2 className="text-5xl absolute bottom-5 z-[2] uppercase">{item.title}</h2>
                                 <img className="w-full h-full object-cover " src={item.img} alt="" />

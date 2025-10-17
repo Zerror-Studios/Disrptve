@@ -1,15 +1,62 @@
- @font-face {
-  font-family: "basisgrotesquepro";
-  src: url("../../public/fonts/basisgrotesquepro-medium-webfont.woff2");
+@font-face {
+  font-family: "helvetica";
+  src: url("../../public/fonts/HelveticaNowDisplay-Hairline.woff2");
+  font-weight: 100;
+  font-style: normal;
 }
- @font-face {
-  font-family: "suisseIntl";
-  src: url("../../public/fonts/SuisseIntl-Light.woff2");
+@font-face {
+  font-family: "helvetica";
+  src: url("../../public/fonts/HelveticaNowDisplay-Thin.woff2");
+  font-weight: 200;
+  font-style: normal;
 }
+@font-face {
+  font-family: "helvetica";
+  src: url("../../public/fonts/HelveticaNowDisplay-Light.woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "helvetica";
+  src: url("../../public/fonts/HelveticaNowDisplay-Regular.woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "helvetica";
+  src: url("../../public/fonts/HelveticaNowDisplay-Medium.woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "helvetica";
+  src: url("../../public/fonts/HelveticaNowDisplay-Bold.woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "helvetica";
+  src: url("../../public/fonts/HelveticaNowDisplay-Black.woff2");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "helvetica";
+  font-weight: 900;
+  src: url("../../public/fonts/HelveticaNowDisplay-ExtBlk.woff2");
+  font-style: normal;
+}
+
 p{
-  font-family: suisseIntl;
+  font-family: helvetica;
+  font-weight: 300;
 }
+
 h2{
-  font-family: basisgrotesquepro;
-  font-weight: 1000;
+  font-family: helvetica;
+  font-weight: 700;
+}
+
+h3{
+  font-family: helvetica;
 }

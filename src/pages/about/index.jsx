@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { SplitText } from 'gsap/dist/SplitText';
 import Iridescence from '@/components/ui/Iridescence';
 import { RiArrowRightUpLine } from '@remixicon/react';
+import useHeadingAnimation from '@/components/ui/useHeadingAnimation';
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const teamMembers = [
@@ -60,22 +61,15 @@ const teamMembers = [
 ];
 
 const index = () => {
+    useHeadingAnimation();
 
     useGSAP(() => {
 
         gsap.from(".her_txt_anim", {
             width: "50%",
-            scrollTrigger: {
-                trigger: ".abt_her_prn",
-                start: "top top",
-                end: "bottom 70%",
-                // markers:true,
-                scrub: 0.4
-            }
+            duration: 1,
+            delay: .5,
         })
-
-
-
 
         gsap.registerPlugin(SplitText, ScrollTrigger);
 
@@ -92,6 +86,7 @@ const index = () => {
                 trigger: ".mix_paren",
                 start: "top top",
                 end: "+=400%",
+                pinSpacing: true,
                 scrub: 0.4,
                 // markers: true,
                 pin: true,
@@ -134,6 +129,21 @@ const index = () => {
             .to(".crd_1", { opacity: .7, duration: .15 }, "<");
 
         splitSets.forEach((set) => fadeInChars(set.c.chars));
+
+
+        gsap.fromTo(".red_bx_ey", {
+            y: 100,
+        }, {
+            y: -100,
+            ease: "linear",
+            scrollTrigger: {
+                trigger: ".conv_parent",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 0.4,
+                // markers: true
+            }
+        })
     });
 
     useEffect(() => {
@@ -166,7 +176,7 @@ const index = () => {
 
             <div className="w-full px-5 flex mb-32 items-stretch">
                 <div className="w-1/2 pb-20">
-                    <p className='uppercase text-2xl font-semibold mb-5 red'>About Us</p>
+                    <h2 className='uppercase text-2xl font-semibold mb-5 red'>About Us</h2>
                     <p className='text-6xl'>It started with a simple idea: Let's build the agency we'd want to hire.</p>
                 </div>
                 <div className="w-1/2 flex flex-col items-end justify-end  ">
@@ -180,7 +190,7 @@ const index = () => {
 
             <div className=" mix_paren w-full px-5 overflow-hidden  h-screen items-center grid grid-cols-3">
                 <div className="w-full space-y-8">
-                    <p className='leading-none font-bold text-7xl red'>The <br /> Perfect Mix</p>
+                    <h2 className='leading-none animate-heading font-bold text-7xl red'>The <br /> Perfect Mix</h2>
                     <div className="text-xl space-y-3 ">
                         <p>We realized we had all the right pieces, each bringing a powerful and distinct advantage to the table.</p>
                         <p>It was the ideal blend of experience, relationships, and a fresh perspective. That conversation wasn't just talk. It became DISRPTVE.</p>
@@ -199,9 +209,9 @@ const index = () => {
                 </div>
                 <div className="w-full pl-20 space-y-5">
                     <div className=" block relative overflow-hidden ">
-                        <div className='red nam_1 leading-none flex items-center gap-3 font-semibold text-lg'><div className="size-1 bgred"></div><p>Ashish</p></div>
-                        <div className='red nam_2 absolute top-[100%] leading-none flex items-center gap-3 font-semibold text-lg'><div className="size-1 bgred"></div><p>Kaushik</p></div>
-                        <div className='red nam_3 absolute top-[100%] leading-none flex items-center gap-3 font-semibold text-lg'><div className="size-1 bgred"></div><p>Kanishq</p></div>
+                        <div className='red nam_1 leading-none flex items-center gap-3 font-semibold text-lg'><div className="size-1 bgred"></div><h2>Ashish</h2></div>
+                        <div className='red nam_2 absolute top-[100%] leading-none flex items-center gap-3 font-semibold text-lg'><div className="size-1 bgred"></div><h2>Kaushik</h2></div>
+                        <div className='red nam_3 absolute top-[100%] leading-none flex items-center gap-3 font-semibold text-lg'><div className="size-1 bgred"></div><h2>Kanishq</h2></div>
                     </div>
                     <div className='text-2xl leading-tight'>
                         <div className="block relative overflow-hidden ">
@@ -229,21 +239,21 @@ const index = () => {
 
             </div>
 
-            <div className="w-full mb-20 flex gap-x-10 items-stretch px-5 ">
-                <div className="w-1/2 space-y-8 bg-black relative p-8 flex flex-col justify-between h-full border border-[#FB0401]">
+            <div className=" conv_parent  w-full mb-20 flex gap-x-10 items-stretch px-5 ">
+                <div className=" red_bx_ey w-1/2 space-y-8 bg-black relative p-8 flex flex-col justify-between h-full border border-[#FB0401]">
                     <img className='rotate-180 w-[25%] absolute top-0 right-0' src="/gifs/blocks.gif" alt="" />
-                    <h2 className='text-7xl red leading-none'>From <br /> Conversation <br /> to Campaign</h2>
-                    <p className='text-3xl font-semibold'>That simple idea grew. Fast.</p>
+                    <h2 className=' animate-heading text-7xl red leading-none'>From <br /> Conversation <br /> to Campaign</h2>
+                    <h2 className='text-3xl font-semibold'>That simple idea grew. Fast.</h2>
                     <p className='text-lg'>Today, we're a full-fledged agency with a rapidly growing team. Our portfolio is our proof, having worked on everything from shaping the identity for a craft beer brand to running data-driven national campaigns. We've partnered with major celebrities to launch brands, managed complex photoshoots from start to finish, and even used AI to create visuals that were once impossible.</p>
                 </div>
-                <div className="w-1/2 relative p-8  flex flex-col justify-between bgred ">
+                <div className="  w-1/2 relative p-8  flex flex-col justify-between bgred ">
                     <div
                         style={{ clipPath: "ellipse(46% 27% at 50% 50%)" }}
                         className=" absolute top-0 right-0"
                     >
                         <img className="w-[20vw]" src="/gifs/redEye.gif" alt="" />
                     </div>
-                    <h2 className='text-7xl text-black leading-none'>How we <br /> work</h2>
+                    <h2 className='text-7xl animate-heading text-black leading-none'>How we <br /> work</h2>
                     <p className='text-lg'>Our process is simple. We listen more than we talk. We dive deep into your world to find the one thing that makes you special. Then we build a clear, honest plan and bring it to life with a team that’s genuinely passionate about what they do.</p>
 
                 </div>
@@ -258,10 +268,10 @@ const index = () => {
                         speed={0.5}
                     />
                 </div>
-                <h2 className='text-6xl uppercase'>Let's Build Something Great.</h2>
+                <h2 className=' animate-heading text-6xl uppercase'>Let's Build Something Great.</h2>
                 <div className="space-y-4 text-center w-full center flex-col">
-                <p className='w-[45%] leading-tight text-2xl'>At the end of the day, we’re still driven by the spirit of that first conversation: a desire to do great work with good people. </p>
-                <p  className='w-[45%] leading-tight text-2xl'>If you’re building something you believe in, we’d love to have a conversation with you, too.</p>
+                    <p className='w-[45%] leading-tight text-2xl'>At the end of the day, we’re still driven by the spirit of that first conversation: a desire to do great work with good people. </p>
+                    <p className='w-[45%] leading-tight text-2xl'>If you’re building something you believe in, we’d love to have a conversation with you, too.</p>
                 </div>
                 <button className=' group relative flex items-center gap-1'>
                     <div className="w-full group-hover:w-0 transition-all duration-300  h-[1px] bg-white absolute bottom-0 right-0"></div>
@@ -272,7 +282,7 @@ const index = () => {
             </div>
 
             <div className=" py-20 px-5 ">
-                <p className='uppercase text-2xl font-semibold mb-5 red'>our team</p>
+                <h2 className='uppercase text-2xl font-semibold mb-5 red'>our team</h2>
                 <div className="w-full  grid grid-cols-6 gap-5">
                     {teamMembers.map((member, i) => (
                         <div
@@ -281,7 +291,7 @@ const index = () => {
                         >
                             <div className="flex   w-full items-center justify-between">
                                 <div>
-                                    <p className="font-semibold uppercase leading-none">{member.name}</p>
+                                    <h2 className="font-semibold uppercase leading-none">{member.name}</h2>
                                     <p className="text-sm opacity-70 mb-3">{member.role}</p>
                                 </div>
                                 <img
