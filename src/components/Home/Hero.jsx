@@ -16,7 +16,7 @@ const Hero = () => {
                 <video className='w-full h-full object-cover' loop autoPlay muted playsInline src="/video/logo_loop.mp4"></video>
             </div>
             <div className="w-full px-3 md:px-5 py-14 gap-5 md:gap-0 md:pt-44 md:pb-32 items-center flex flex-col md:flex-row ">
-                <div className=" w-full md:w-[60%] animate-heading uppercase leading-none text-4xl md:text-7xl font-semibold ">
+                <div className=" w-full md:w-[60%] animate-heading uppercase leading-none text-4xl lg:text-7xl font-semibold ">
                     <h2>a strategy-led </h2>
                     <h2 className='red'>
                         marketing
@@ -26,8 +26,8 @@ const Hero = () => {
                     </h2>
                 </div>
                 <div className=" w-full md:w-[40%] space-y-8 ">
-                    <h2 className=' text-lg anim-tx-y w-[80%] leading-none md:text-3xl md:leading-none '>Attention is the new currency. <br /> And most brands are overdrawn</h2>
-                    <p className=' text-base anim-tx-y  leading-none md:text-xl md:leading-tight'>We build brands that earn it back, with interest.</p>
+                    <h2 className=' text-xl  lg:w-[80%] leading-none lg:text-3xl md:leading-tight '>Attention is the new currency. <br /> And most brands are overdrawn</h2>
+                    <p className=' text-base   leading-none lg:text-xl md:leading-tight'>We build brands that earn it back, with interest.</p>
                     <LineBtn text={"explore now"} href={'/about'} />
                 </div>
             </div >

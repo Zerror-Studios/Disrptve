@@ -185,19 +185,33 @@ const index = () => {
             opacity: 0
         })
 
-
-        gsap.to(".serv_slide", {
-            scrollTrigger: {
-                trigger: ".serv_paren",
-                start: "top top",
-                pin: true,
-                end: "+200% top",
-                anticipatePin: 1,
-                scrub: .4,
-            },
-            xPercent: -70,
-            ease: "linear",
-        })
+        if(window.innerWidth >= 768){
+            gsap.to(".serv_slide", {
+                scrollTrigger: {
+                    trigger: ".serv_paren",
+                    start: "top top",
+                    pin: true,
+                    end: "+200% top",
+                    anticipatePin: 1,
+                    scrub: .4,
+                },
+                xPercent: -70,
+                ease: "linear",
+            })
+        }else{
+            gsap.to(".serv_slide", {
+                scrollTrigger: {
+                    trigger: ".serv_paren",
+                    start: "top top",
+                    pin: true,
+                    end: "+200% top",
+                    anticipatePin: 1,
+                    scrub: .4,
+                },
+                xPercent: -470,
+                ease: "linear",
+            })
+        }
 
     })
 
@@ -227,8 +241,9 @@ const index = () => {
                     speed={0.5}
                 />
             </div>
-            <div class="sticky_sec opacity-0 absolute top-0 w-full left-0 z-[2]  h-[100vh]  overflow-hidden">
-                <div class="cubes">
+
+            <div className=" hidden md:block  sticky_sec opacity-0 absolute top-0 w-full left-0 z-[2]  h-[100vh]  overflow-hidden">
+                <div className="cubes">
                     <div
                         className="cube absolute scale-[.4] w-[200px] top-1/2 left-1/2 h-[200px] [transform-style:preserve-3d]"
                         data-initial='{"top":40,"left":46,"rotateX":-360,"rotateY":-360,"rotateZ":-180,"z":-180000,"scale":0.4}'
@@ -294,8 +309,17 @@ const index = () => {
                     </div>
                 </div>
             </div>
+
             <div className=" anim_star h-[55vh] w-full"></div>
-            <div className="w-full  h-[45vh] flex flex-col justify-end p-5 uppercase text-7xl ">
+            <div className="w-full lg:hidden  h-[45vh] flex flex-col justify-end p-3 lg:p-5 uppercase text-4xl lg:text-7xl ">
+                <h2 className="animate-heading">
+                    A service is just a tool.
+                    It’s the strategy behind
+                    it that creates the impact.
+                </h2>
+                <p className=" text-lg lg:text-2xl anim-tx-y leading-none mt-5 normal-case md:w-[60%] lg:w-[40%]">We believe in a strategy-first approach to everything we do. The capabilities listed here are the tools we use to execute on a clear, well-defined plan. </p>
+            </div>
+            <div className="w-full hidden  h-[45vh] lg:flex flex-col justify-end p-3 lg:p-5 uppercase text-4xl lg:text-7xl ">
                 <h2 className="animate-heading">A service is just a tool.</h2>
                 <h2 className="animate-heading">
                     It’s the strategy behind
@@ -303,28 +327,28 @@ const index = () => {
                 <h2 className="animate-heading">
                     it that creates the impact.
                 </h2>
-                <p className="text-2xl anim-tx-y leading-none mt-5 normal-case w-[40%]">We believe in a strategy-first approach to everything we do. The capabilities listed here are the tools we use to execute on a clear, well-defined plan. </p>
+                <p className=" text-lg lg:text-2xl anim-tx-y leading-none mt-5 normal-case md:w-[60%] lg:w-[40%]">We believe in a strategy-first approach to everything we do. The capabilities listed here are the tools we use to execute on a clear, well-defined plan. </p>
             </div>
-            <div className="w-full flex pt-32 px-5 ">
-                <div className="w-[42%] h-full"></div>
-                <div className="w-[58%]  h-full">
+            <div className="w-full flex pt-14 lg:pt-32 px-5 ">
+                <div className=" hidden md:block w-[40%] h-full"></div>
+                <div className=" w-full lg:w-[60%]  h-full">
                     {serviceData.map((item, i) => (
-                        <div key={i} className="w-full pb-24">
-                            <div className={` serv_anim_border ${i===0 ? "w-full":'w-0'}  border-b border-white`}></div>
+                        <div key={i} className="w-full pb-10 lg:pb-24">
+                            <div className={` serv_anim_border ${i === 0 ? "w-full" : 'w-0'}  border-b border-white`}></div>
                             <div className="w-full  py-5 flex">
-                                <h3 className="text-3xl font-semibold">0{i + 1}</h3>
+                                <h3 className=" text-xl lg:text-3xl font-semibold">0{i + 1}</h3>
                             </div>
-                            <div className=" py-5 h-full w-full gap-5 flex">
-                                <div className="w-[40%] animate-heading text-3xl font-semibold uppercase  h-full ">
+                            <div className=" md:py-5 h-full w-full gap-5 flex flex-col md:flex-row">
+                                <div className=" w-full md:w-[40%] animate-heading text-xl lg:text-3xl font-semibold uppercase  h-full ">
                                     <h3>{item.title}</h3>
                                 </div>
-                                <div className="w-[60%]  h-full">
-                                    <p className="text-xl anim-tx-y leading-tight">{item.desc}</p>
-                                    <div className="w-full mt-20 space-y-2 gap-x-5 grid grid-cols-2">
+                                <div className=" w-full md:w-[60%]  h-full">
+                                    <p className=" text-base lg:text-xl  leading-tight">{item.desc}</p>
+                                    <div className="w-full mt-8 md:mt-20 space-y-2 gap-x-5 grid md:grid-cols-1 lg:grid-cols-2">
                                         {item?.servs.map((ser, i) => (
                                             <div key={i} className="  flex gap-2">
                                                 <div className='size-2 shrink-0  translate-y-2.5 bg-white' ></div>
-                                                <p className="text-xl anim-tx-y" > {ser}</p>
+                                                <p className=" text-base lg:text-xl " > {ser}</p>
                                             </div>
                                         ))}
                                     </div>
@@ -334,35 +358,35 @@ const index = () => {
                     ))}
                 </div>
             </div>
-            <div className="w-full why_us mb-24  px-5">
-                <h2 className="text-5xl animate-heading red uppercase">Why We're Different</h2>
-                <div className="mt-12">
-                    <div className="  w-full flex items-stretch">
-                        <div className="w-[60%]  pt-2 gap-12 grid grid-cols-2 ">
+            <div className="w-full why_us mt-4 lg:mt-0 mb-0 lg:mb-24 px-3 lg:px-5">
+                <h2 className="text-4xl lg:text-7xl animate-heading red uppercase">Why We're Different</h2>
+                <div className=" mt-5 lg:mt-12">
+                    <div className="  w-full flex flex-col lg:flex-row items-stretch">
+                        <div className=" w-full lg:w-[60%]  pt-2 gap-12 grid md:grid-cols-2 ">
                             {agencyData.map((item, i) => (
                                 <div key={i} className="">
-                                    <h3 className=" anim-tx-y text-3xl font-semibold mb-4"> 0{i + 1}. {item.title} </h3>
-                                    <p className=" anim-tx-y text-lg leading-tight">{item.desc}</p>
+                                    <h3 className="  text-xl lg:text-3xl font-semibold mb-4"> 0{i + 1}. {item.title} </h3>
+                                    <p className="  text-base lg:text-xl leading-tight">{item.desc}</p>
                                 </div>
                             ))}
 
                         </div>
-                        <div className="w-[40%]  flex items-center justify-end ">
-                            <div className="w-[70%]">
+                        <div className=" mt-5  w-full lg:w-[40%]  flex items-center justify-center lg:justify-end ">
+                            <div className="w-[100%] md:w-[40%] lg:w-[70%]">
                                 <img className="w-full" src="/gifs/sandClock.gif" alt="" />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="w-full  mb-24  px-5  ">
+            <div className="w-full  lg:mb-24  px-3 lg:px-5  ">
                 <div className="  serv_paren w-full h-screen flex  flex-col justify-center ">
-                    <h2 className=" animate-heading text-5xl uppercase red " >Industries</h2>
-                    <div className=" mt-12 h-fit serv_slide w-full flex gap-x-10 scroller_none ">
+                    <h2 className=" animate-heading text-4xl lg:text-7xl uppercase red " >Industries</h2>
+                    <div className=" mt-5 lg:mt-12 h-fit serv_slide w-full flex gap-x-10 scroller_none ">
                         {serviceImgs.map((item, i) => (
-                            <div key={i} className=" shrink-0 text-black text-center center relative w-[30vw] aspect-[3/4]">
+                            <div key={i} className=" shrink-0 text-black text-center center relative w-[100vw] md:w-[30vw] aspect-[3/4]">
                                 <div className="absolute bottom-0 w-full z-[1] h-44 bg-gradient-to-b from-transparent to-white"></div>
-                                <h2 className=" anim-tx-y text-5xl absolute bottom-5 z-[2] uppercase">{item.title}</h2>
+                                <h2 className=" anim-tx-y text-xl lg:text-3xl absolute bottom-5 z-[2] uppercase">{item.title}</h2>
                                 <img className="w-full h-full object-cover " src={item.img} alt="" />
                             </div>
                         ))}

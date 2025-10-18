@@ -4,7 +4,7 @@ import Marquee from 'react-fast-marquee'
 import useHeadingAnimation from '../ui/useHeadingAnimation';
 
 const Clients = () => {
-        useHeadingAnimation();
+    useHeadingAnimation();
 
     const clientsData = [
         {
@@ -66,14 +66,14 @@ const Clients = () => {
             <div className="w-full  lg:pt-20">
                 <div className="w-full uppercase overflow-hidden">
                     <Marquee>
-                        {[1, 2, 3,4,5,6].map((_, i) => (
+                        {[1, 2, 3, 4, 5, 6].map((_, i) => (
                             <div
                                 key={i}
                                 className=" pl-6 lg:pl-12 gap-6 lg:gap-12 w-fit overflow-hidden flex text-4xl lg:text-7xl whitespace-nowrap justify-between uppercase font-semibold items-center"
                             >
                                 <h2 className='block w-fit '>OUR clients</h2>
                                 <div className=" size-6 lg:size-12 center ">
-                                <img className="w-full" src="/icons/cut_blocks.svg" alt="" />
+                                    <img className="w-full" src="/icons/cut_blocks.svg" alt="" />
                                 </div>
                             </div>
                         ))}

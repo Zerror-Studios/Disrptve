@@ -61,22 +61,22 @@ const index = () => {
     return (
         <>
             <div className="w-full h-screen prx_pren overflow-hidden">
-                <img className='w-full h-full object-cover brightness-90 prx_img' src="https://images.unsplash.com/photo-1496449903678-68ddcb189a24?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070" alt="" />
+                <img className='w-full h-full object-cover brightness-90 prx_img' src="https://images.unsplash.com/photo-1530036846422-afb4b7af2fd4?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2127" alt="" />
             </div>
-            <div id='career' className="px-5 py-20 ">
-                <div className="w-full flex justify-between ">
-                    <h2 className=' animate-heading uppercase text-5xl red'>openings</h2>
-                    <p className=' anim-tx-y w-[30%] text-xl'>Think you’d be a great fit for what we do? Reach out to us at <span className='uppercase italic underline'> team@disrptve.com,</span> even if a role isn’t listed here.</p>
+            <div id='career' className=" px-3 lg:px-5 py-14 lg:py-20 ">
+                <div className="w-full flex flex-col md:flex-row justify-between ">
+                    <h2 className=' animate-heading uppercase text-4xl lg:text-7xl red'>openings</h2>
+                    <p className=' leading-tight mt-2 md:mt-0  md:w-[30%] text-base lg:text-xl'>Think you’d be a great fit for what we do? Reach out to us at <span className='uppercase italic underline'> team@disrptve.com,</span> even if a role isn’t listed here.</p>
                 </div>
                 <div className=" w-full">
                     <div className="mt-10">
                         {JobOpenings.map((item, index) => (
-                            <a href={`/career/${item.id}`} key={index} className=" cursor-pointer hover:px-5 hover:border-b-white/100 transition-all duration-300 w-full h-20 border-b border-white/10 flex items-center justify-between">
-                                <p className='  capitalize text-3xl'>{item.title}</p>
-                                <div className="flex text-lg h-full items-center gap-4">
-                                    <p>{item.location}</p>
+                            <a href={`/career/${item.id}`} key={index} className=" cursor-pointer hover:px-5 hover:border-b-white/100 transition-all duration-300 w-full h-20 border-b border-white/20 flex items-center justify-between">
+                                <p className='  capitalize text-xl lg:text-3xl'>{item.title}</p>
+                                <div className="flex text-base lg:text-xl h-full items-center gap-4">
+                                    <p className='anim-tx-y'>{item.location}</p>
                                     <div className="w-[1px] bg-white h-[20%]"></div>
-                                    <p>{item.type}</p>
+                                    <p className='anim-tx-y'>{item.type}</p>
                                     <img className=' w-4 -rotate-45 invert-100' src="/icons/arrow_small.svg" alt="" />
                                 </div>
                             </a>

@@ -7,10 +7,12 @@ import { useParams } from 'next/navigation';
 import { ProjectsData } from '@/store/ProjectsData';
 import LineBtn from '@/components/buttons/LineBtn';
 import ProjectImageSlider from '@/components/ui/ProjectImageSlider';
+import useTextYAnimation from '@/components/ui/useTextYAnimation';
 gsap.registerPlugin(ScrollTrigger);
 
 
 const index = () => {
+    useTextYAnimation()
 
     const id = useParams()
 
@@ -71,6 +73,21 @@ const index = () => {
 
 
     })
+
+    useGSAP(() => {
+        gsap.utils.toArray(".pj_anim_border").forEach((border) => {
+            gsap.to(border, {
+                width: "100%",
+                ease: "ease-secondary",
+                duration: 1,
+                scrollTrigger: {
+                    trigger: border,
+                    start: "top 80%",
+                    // toggleActions: "play none none reverse",
+                },
+            });
+        });
+    });
     return (
         <>
             <div className="fixed fixy_img_dcd z-[-1] top-0 left-0 w-full h-screen">
@@ -84,22 +101,22 @@ const index = () => {
             <div className="w-full px-5 ">
                 <div className="w-full h-[185vh] ">
                     <div className="w-full h-[55vh] flex flex-col justify-end  ">
-                        <div className=" w-full text-5xl font-semibold uppercase  py-4">
+                        <div className=" w-full text-4xl lg:text-7xl font-semibold uppercase  py-4">
                             <h3 className='pj_anim_txt'>{project?.title}</h3>
                         </div>
                         <div className=" border_animm w-full border-b border-white"></div>
                     </div>
-                    <div className="w-full  sticky z-[2] top-[50vh] text-xl uppercase leading-none py-4 flex justify-between">
-                        <div className=" w-1/2 flex items-center gap-2">
-                            <p className='text-lg pj_anim_txt w-[80%]'>{project?.tagline}</p>
+                    <div className="w-full  sticky z-[2] top-[50vh] text-base lg:text-xl uppercase leading-none py-4 flex flex-col gap-y-2 md:gap-y-0 md:flex-row  md:justify-between">
+                        <div className="  w-full  md:w-1/2 flex items-center gap-2">
+                            <p className=' pj_anim_txt w-[80%]'>{project?.tagline}</p>
                         </div>
-                        <div className="w-1/2 flex justify-between">
-                            <div className="pj_anim_txt w-1/2">
+                        <div className=" w-full  md:w-1/2 flex justify-between">
+                            <div className=" hidden md:block pj_anim_txt w-1/2">
                                 {/* {project?.websiteLink !== "" && (
                                     <LineBtn text="website link" href={project?.websiteLink} />
                                 )} */}
                             </div>
-                            <div className="pj_anim_txt">
+                            <div className="pj_anim_txt ">
                                 <p>{project?.industry}</p>
                             </div>
                         </div>
@@ -109,38 +126,41 @@ const index = () => {
             <div className="w-full main_pdcd  relative bg-black">
                 <div className=" main_pdcd trick_di w-full absolute bg-black h-24 -translate-y-24"></div>
                 <div className="w-full flex p-5 ">
-                    <div className="w-1/2"></div>
-                    <div className="w-1/2">
-                        <p className='text-2xl'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum odio distinctio consectetur soluta eos nemo possimus delectus magnam quisquam voluptatibus illum at dolor recusandae tenetur officia, hic id cumque optio.</p>
+                    <div className="hidden md:block w-1/2"></div>
+                    <div className=" w-full md:w-1/2">
+                        <p className=' text-base lg:text-xl'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum odio distinctio consectetur soluta eos nemo possimus delectus magnam quisquam voluptatibus illum at dolor recusandae tenetur officia, hic id cumque optio.</p>
                     </div>
                 </div>
 
-                <div className="w-full grid grid-cols-3 text-xl px-5 gap-x-20 mt-44">
+                <div className="w-full grid grid-cols-1 lg:grid-cols-3 text-base lg:text-xl px-5 gap-x-20 gap-y-10 mt-20 lg:mt-44">
                     <div className="w-full">
-                        <div className=" w-full py-2 border-b border-[#8585855b]">
-                            <p className=' uppercase text-2xl '>The Challenge</p>
+                        <div className=" w-full ">
+                            <h3 className=' anim-tx-y uppercase  text-xl lg:text-3xl '>The Challenge</h3>
+                            <div className="pj_anim_border py-2 w-0  border-b border-white "></div>
                         </div>
-                        <div className="py-4 text-lg">
+                        <div className="py-4 text-base lg:text-xl">
                             <p>{project?.challenge}</p>
                         </div>
                     </div>
                     <div className="w-full">
-                        <div className=" w-full py-2 border-b border-[#8585855b]">
-                            <p className=' uppercase text-2xl '>Our Approach</p>
+                        <div className=" w-full  ">
+                            <h3 className=' anim-tx-y uppercase  text-xl lg:text-3xl '>Our Approach</h3>
+                            <div className="pj_anim_border py-2 w-0  border-b border-white "></div>
                         </div>
-                        <div className="py-4 text-lg">
+                        <div className="py-4 text-base lg:text-xl">
                             <p>{project?.approach}</p>
                         </div>
                     </div>
                     <div className="w-full">
-                        <div className=" w-full py-2 border-b border-[#8585855b]">
-                            <p className=' uppercase text-2xl '>Our Role</p>
+                        <div className=" w-full  ">
+                            <h3 className=' anim-tx-y uppercase  text-xl lg:text-3xl '>Our Role</h3>
+                            <div className="pj_anim_border py-2 w-0  border-b border-white "></div>
                         </div>
                         <div className="py-4 space-y-4">
                             {project?.tags.map((tag, i) => (
                                 <div key={i} className="  flex gap-2">
                                     <div className='size-1.5 shrink-0  translate-y-2.5 bg-white' ></div>
-                                    <p className="text-lg" > {tag}</p>
+                                    <p className="text-base lg:text-xl" > {tag}</p>
                                 </div>
                             ))}
                         </div>

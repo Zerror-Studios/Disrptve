@@ -25,17 +25,37 @@ export default function ProjectImageSlider({ images = [] }) {
                 start: "top top",
                 end: () => `+=${totalWidth}`,
                 pin: true,
-                scrub: 1,
+                scrub: .4,
                 anticipatePin: 1,
             },
         });
+        gsap.to(".anim_cont_wid", {
+            width: "100%",
+            ease: "linear",
+            scrollTrigger: {
+                trigger: container,
+                start: "top top",
+                end: () => `+=${totalWidth}`,
+                scrub: .4,
+            },
+        });
+        gsap.to(".pgrs_bar", {
+            rotate: 5,
+            y: 10,
+            opacity: 0,
+            scrollTrigger: {
+                trigger: container,
+                start: "bottom 95%",
+                toggleActions: "play none none reverse",
+            },
+        })
 
     }, [images]);
 
     return (
         <div
             ref={containerRef}
-            className="w-full serv_img_paren mt-20 h-screen overflow-hidden flex items-center"
+            className="w-full relative serv_img_paren mt-20 h-screen overflow-hidden flex items-center"
         >
             <div
                 ref={sliderRef}
@@ -44,7 +64,7 @@ export default function ProjectImageSlider({ images = [] }) {
                 {images.map((imgSrc, i) => (
                     <div
                         key={i}
-                        className="h-[75vh] shrink-0 w-[70vw] flex justify-center items-center"
+                        className=" h-[40vh] md:h-[75vh] shrink-0 w-[70vw] flex justify-center items-center"
                     >
                         <img
                             src={imgSrc}
@@ -54,6 +74,27 @@ export default function ProjectImageSlider({ images = [] }) {
                     </div>
                 ))}
             </div>
+
+            <div className="w-full absolute bottom-[2vw] center">
+                <div
+                    style={{
+                        gridTemplateColumns:
+                            window.innerWidth < 640
+                                ? `repeat(15, 1fr)` // mobile
+                                : `repeat(30, 1fr)`, // tablet and up
+                    }}
+                    className=" pgrs_bar w-[30%] md:w-[18%] relative  h-5 grid"
+                >
+                    <div className=" anim_cont_wid  absolute h-full w-0 border border-[#ffff] bg-black"></div>
+                    {[...Array(30)].map((_, i) => (
+                        <div
+                            key={i}
+                            className="border-r border-[#ffff] w-full h-full"
+                        ></div>
+                    ))}
+                </div>
+            </div>
+
         </div>
     );
 }

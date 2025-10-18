@@ -1,0 +1,7 @@
+type - desktop - tablet - mobile 
+
+full large  - 9xl - 6xl - 4xl
+heading   - 7xl  -   4xl  -  4xl
+sub heading - 3xl -   -  xl
+para -  xl  -   - base
+ btn - lg

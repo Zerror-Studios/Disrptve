@@ -49,7 +49,7 @@ const serviceData = [
         number: "04",
         title: "Website Design & Development",
         desc: "Your website is your home base. We design and build beautiful, intuitive, and high-performing websites that serve as the core of your digital presence.",
-        img: "https://images.unsplash.com/photo-1676263813382-bb5ba4b63f91?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2071",
+        img: "https://images.unsplash.com/photo-1599652292429-3dc38b19228f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070",
         servs: [
             "E-commerce Solutions",
             "UX/UI Research & Design",
@@ -61,7 +61,7 @@ const serviceData = [
         number: "05",
         title: "Political & National Strategy",
         desc: "We apply our strategic and data-driven approach to campaigns of national importance, helping candidates and causes shape public opinion and drive action.",
-        img: "https://images.unsplash.com/photo-1744807867611-6e39f5229af6?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1112",
+        img: "https://images.unsplash.com/photo-1502772066658-3006ff41449b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1293",
         servs: [
             "Digital Campaign Execution",
             "eGovernance & National Strategy Consulting",
@@ -72,7 +72,7 @@ const serviceData = [
         number: "06",
         title: "AI-Led Design & Photoshoots",
         desc: "Why be limited by reality? We use cutting-edge AI to create stunning, original visuals, from conceptual art to entire photoshoots, with unparalleled speed and creative freedom.",
-        img: "https://images.unsplash.com/photo-1617050318658-a9a3175e34cb?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2071",
+        img: "https://images.pexels.com/photos/9028921/pexels-photo-9028921.jpeg",
         servs: [
             "Generative Visual Assets",
             "AI Concept Art & Moodboarding",
@@ -134,7 +134,7 @@ const Services = () => {
             ease: "linear",
         })
 
-        if(window.innerWidth >= 1024){
+        if (window.innerWidth >= 1024) {
             gsap.to(".serv_slide", {
                 scrollTrigger: {
                     trigger: ".serv_paren",
@@ -147,8 +147,21 @@ const Services = () => {
                 xPercent: -56.1 * (serviceData.length - 1),
                 ease: "linear",
             })
-        
-        }else{
+
+        } else if (window.innerWidth >= 768) {
+            gsap.to(".serv_slide", {
+                scrollTrigger: {
+                    trigger: ".serv_paren",
+                    start: "top top",
+                    pin: true,
+                    end: "+400% top",
+                    anticipatePin: 1,
+                    scrub: .4,
+                },
+                xPercent: -53 * (serviceData.length - 1),
+                ease: "linear",
+            })
+        } else {
             gsap.to(".serv_slide", {
                 scrollTrigger: {
                     trigger: ".serv_paren",
@@ -168,26 +181,28 @@ const Services = () => {
     return (
         <>
             <div className="serv_paren my-14 lg:my-0 w-full relative h-screen overflow-hidden ">
+
                 <div className=" lg:hidden    w-full flex z-[1] items-center  px-3">
                     <div className=" w-full    flex flex-col justify-between ">
-                        <div className="text-3xl mb-4 leading-none w-full animate-heading font-semibold uppercase">
+                        <div className="text-4xl mb-4 leading-none w-full animate-heading font-semibold uppercase">
                             <h2>What</h2>
                             <h2 className='red'>We Do</h2>
                         </div>
                         <div className="space-y-4">
-                            <p className='  text-base lg:text-xl anim-tx-y leading-tight '>We’re a full-service agency, which means we can help from the first spark of an idea to the final, polished execution. Our work is broken down into these core areas.</p>
+                            <p className='  text-base lg:text-xl anim-tx-y md:w-[80%] leading-tight '>We’re a full-service agency, which means we can help from the first spark of an idea to the final, polished execution. Our work is broken down into these core areas.</p>
                             <LineBtn text={"explore now"} href={'/about'} />
                         </div>
                     </div>
                 </div>
+
                 <div className="h-full hidden  w-[30vw] lg:flex z-[1] items-center absolute px-5 top-0 left-0">
                     <div className=" w-full right_serv   flex flex-col justify-between h-[35vw] ">
-                        <div className="text-5xl animate-heading font-semibold uppercase">
+                        <div className="text-7xl leading-none animate-heading font-semibold uppercase">
                             <h2>What</h2>
                             <h2 className='red'>We Do</h2>
                         </div>
                         <div className="space-y-4">
-                            <p className='text-xl anim-tx-y leading-tight '>We’re a full-service agency, which means we can help from the first spark of an idea to the final, polished execution. Our work is broken down into these core areas.</p>
+                            <p className='text-xl  leading-tight '>We’re a full-service agency, which means we can help from the first spark of an idea to the final, polished execution. Our work is broken down into these core areas.</p>
                             <LineBtn text={"explore now"} href={'/about'} />
                         </div>
                     </div>
@@ -196,14 +211,14 @@ const Services = () => {
                 <div className=" serv_slide  px-3 mt-5 lg:mt-0  w-full h-[70vh] lg:h-full gap-x-5 lg:gap-x-10 flex items-center ">
                     <div className="hidden lg:block w-[30vw] shrink-0 h-full"></div>
                     {serviceData.map((item, index) => (
-                        <div key={index} className=" w-[100vw] lg:w-[55vw] bg-[#0e0e0e5d] p-3 lg:p-5  flex flex-col lg:justify-between shrink-0  h-full lg:h-[35vw] border border-[#e5e7eb44]">
+                        <div key={index} className=" w-[100vw] md:w-[55vw] bg-[#0e0e0e5d] p-3 lg:p-5  flex flex-col lg:justify-between shrink-0  h-full lg:h-[35vw] border border-[#e5e7eb44]">
                             <div className="flex justify-between ">
                                 <div className=" text-2xl lg:text-5xl  leading-none font-semibold uppercase ">
                                     <div className=" red">
-                                        <h3 className='anim-tx-y font-normal'>{item.title.split(" & ")[0]} & </h3>
-                                        <h3 className='anim-tx-y font-normal'>{item.title.split(" & ")[1]} </h3>
+                                        <h3 className=' font-normal'>{item.title.split(" & ")[0]} & </h3>
+                                        <h3 className=' font-normal'>{item.title.split(" & ")[1]} </h3>
                                     </div>
-                                    <p className=' text-sm lg:text-lg  mt-7  normal-case font-light leading-none w[90%] lg:w-[75%]'>{item.desc}</p>
+                                    <p className=' text-base lg:text-xl  mt-7  normal-case font-light leading-none w[90%] lg:w-[75%]'>{item.desc}</p>
                                 </div>
                             </div>
                             <div className="flex flex-col-reverse justify-between h-full lg:h-fit lg:flex-row gap-4 lg:gap-8">
@@ -215,12 +230,12 @@ const Services = () => {
                                         {item?.servs.map((ser, i) => (
                                             <div key={i} className=" group  flex transition-all duration-300 gap-3 hover:px-2">
                                                 <div className='size-1.5 shrink-0 group-hover:bg-[#FB0401]  transition-all duration-300 translate-y-1.5 bg-white' ></div>
-                                                <p className=' text-sm lg:text-lg  group-hover:text-[#FB0401] transition-all duration-300 leading-none ' > {ser}</p>
+                                                <p className=' text-base lg:text-xl  group-hover:text-[#FB0401] transition-all duration-300 leading-none ' > {ser}</p>
                                             </div>
                                         ))}
                                     </div>
                                     <div className="w-full text-end">
-                                    <h2 className='anim-tx-y text-3xl lg:text-5xl'>{item.number}</h2>
+                                        <h2 className='anim-tx-y text-2xl lg:text-5xl'>{item.number}</h2>
                                     </div>
                                 </div>
                             </div>

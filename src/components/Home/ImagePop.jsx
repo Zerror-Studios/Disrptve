@@ -82,7 +82,7 @@ const ImagePop = () => {
             ref={containerRef}
             onMouseEnter={handleMouseMove}
             onMouseMove={handleMouseMove}
-            className="image_pop_paren  flex center flex-col uppercase text-4xl lg:text-7xl font-semibold text-center w-full h-screen"
+            className="image_pop_paren  flex center flex-col uppercase text-4xl lg:text-7xl font-semibold text-center w-full h-[80vh] lg:h-screen"
             style={{ position: "relative", overflow: "hidden" }}
         >
             <AnimatePresence>
