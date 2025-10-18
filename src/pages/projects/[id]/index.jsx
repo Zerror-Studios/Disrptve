@@ -85,21 +85,19 @@ const index = () => {
                 <div className="w-full h-[185vh] ">
                     <div className="w-full h-[55vh] flex flex-col justify-end  ">
                         <div className=" w-full text-5xl font-semibold uppercase  py-4">
-                            <p className='pj_anim_txt'>{project?.title}</p>
+                            <h3 className='pj_anim_txt'>{project?.title}</h3>
                         </div>
-                        <div className=" border_animm w-full border-b border-[#8585855b]"></div>
+                        <div className=" border_animm w-full border-b border-white"></div>
                     </div>
                     <div className="w-full  sticky z-[2] top-[50vh] text-xl uppercase leading-none py-4 flex justify-between">
                         <div className=" w-1/2 flex items-center gap-2">
-                            <p className='text-lg w-[80%]'>{project?.tagline}</p>
+                            <p className='text-lg pj_anim_txt w-[80%]'>{project?.tagline}</p>
                         </div>
                         <div className="w-1/2 flex justify-between">
                             <div className="pj_anim_txt w-1/2">
-                                {project?.websiteLink !== "" && (
-                                    <a href={project?.websiteLink} target="_blank">
-                                        <LineBtn text="website link" />
-                                    </a>
-                                )}
+                                {/* {project?.websiteLink !== "" && (
+                                    <LineBtn text="website link" href={project?.websiteLink} />
+                                )} */}
                             </div>
                             <div className="pj_anim_txt">
                                 <p>{project?.industry}</p>

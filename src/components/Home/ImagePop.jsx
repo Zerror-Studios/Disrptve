@@ -2,6 +2,7 @@ import { motion, AnimatePresence, useSpring } from "framer-motion";
 import { RiArrowRightUpLine } from "@remixicon/react";
 import React, { useRef, useState, useCallback, useEffect } from "react";
 import useHeadingAnimation from "../ui/useHeadingAnimation";
+import RedBtn from "../buttons/RedBtn";
 
 const TRAIL_IMAGE_COUNT = 20;
 const TRAIL_IMAGE_LIFESPAN = 600;
@@ -15,7 +16,7 @@ const springConfig = {
 
 const ImagePop = () => {
 
-        useHeadingAnimation();
+    useHeadingAnimation();
     const containerRef = useRef(null);
     const [trailImages, setTrailImages] = useState([]);
     const lastPos = useRef({ x: 0, y: 0 });
@@ -81,7 +82,7 @@ const ImagePop = () => {
             ref={containerRef}
             onMouseEnter={handleMouseMove}
             onMouseMove={handleMouseMove}
-            className="image_pop_paren  flex center flex-col uppercase text-7xl font-semibold text-center w-full h-screen"
+            className="image_pop_paren  flex center flex-col uppercase text-4xl lg:text-7xl font-semibold text-center w-full h-screen"
             style={{ position: "relative", overflow: "hidden" }}
         >
             <AnimatePresence>
@@ -105,19 +106,17 @@ const ImagePop = () => {
                 ))}
             </AnimatePresence>
             <div className="animate-heading">
-                <h2>Explore our</h2>
-                <h2>case credentials,</h2>
-                <h2>studies, and</h2>
-                <h2>capabilities in detail.</h2>
-            </div>
-
-            <button className="mt-12 group px-6 py-2 border center border-white">
-                <div className="relative flex items-center gap-1">
-                    <div className="w-0 group-hover:w-[97%] transition-all duration-300 h-[1px] bg-white absolute bottom-0 left-0"></div>
-                    <p className="text-lg group-hover:italic uppercase">Download</p>
-                    <RiArrowRightUpLine size={20} />
+                <h2>Explore our case</h2>
+                <h2 className="red"> credentials,</h2>
+                <h2 className="red">studies, and</h2>
+                <div className=" flex flex-col lg:flex-row lg:gap-4">
+                    <h2 className="red whitespace-nowrap">capabilities </h2>
+                    <h2> in detail.</h2>
                 </div>
-            </button>
+            </div>
+            <div className=" text-sm lg:text-base mt-12">
+                <RedBtn text='Download' />
+            </div>
         </div>
     );
 };

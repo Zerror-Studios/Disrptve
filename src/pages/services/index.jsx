@@ -5,6 +5,7 @@ import { initCubeScrollAnimation } from "@/components/ui/initCubeScrollAnimation
 import Iridescence from "@/components/ui/Iridescence";
 import { useGSAP } from "@gsap/react";
 import useHeadingAnimation from "@/components/ui/useHeadingAnimation";
+import useTextYAnimation from "@/components/ui/useTextYAnimation";
 gsap.registerPlugin(ScrollTrigger);
 
 const serviceData = [
@@ -156,7 +157,8 @@ const serviceImgs = [
 ];
 
 const index = () => {
-        useHeadingAnimation();
+    useHeadingAnimation();
+    useTextYAnimation()
 
     useEffect(() => {
         if (typeof window !== "undefined") {
@@ -167,10 +169,10 @@ const index = () => {
 
     useGSAP(() => {
 
-        gsap.to(".sticky_sec",{
-            opacity:1,
+        gsap.to(".sticky_sec", {
+            opacity: 1,
             duration: 1,
-            delay:1 
+            delay: 1
         })
 
         gsap.to(".wave_bg", {
@@ -198,6 +200,22 @@ const index = () => {
         })
 
     })
+
+    useGSAP(() => {
+        gsap.utils.toArray(".serv_anim_border").forEach((border) => {
+            gsap.to(border, {
+                width: "100%",
+                ease: "ease-secondary",
+                duration: 1,
+                scrollTrigger: {
+                    trigger: border,
+                    start: "top 80%",
+                    // toggleActions: "play none none reverse",
+                },
+            });
+        });
+    });
+
 
     return (
         <>
@@ -285,14 +303,15 @@ const index = () => {
                 <h2 className="animate-heading">
                     it that creates the impact.
                 </h2>
-                <p className="text-2xl leading-none mt-5 normal-case w-[40%]">We believe in a strategy-first approach to everything we do. The capabilities listed here are the tools we use to execute on a clear, well-defined plan. </p>
+                <p className="text-2xl anim-tx-y leading-none mt-5 normal-case w-[40%]">We believe in a strategy-first approach to everything we do. The capabilities listed here are the tools we use to execute on a clear, well-defined plan. </p>
             </div>
             <div className="w-full flex pt-32 px-5 ">
                 <div className="w-[42%] h-full"></div>
                 <div className="w-[58%]  h-full">
                     {serviceData.map((item, i) => (
                         <div key={i} className="w-full pb-24">
-                            <div className="w-full border-b border-white py-5 flex">
+                            <div className={` serv_anim_border ${i===0 ? "w-full":'w-0'}  border-b border-white`}></div>
+                            <div className="w-full  py-5 flex">
                                 <h3 className="text-3xl font-semibold">0{i + 1}</h3>
                             </div>
                             <div className=" py-5 h-full w-full gap-5 flex">
@@ -300,12 +319,12 @@ const index = () => {
                                     <h3>{item.title}</h3>
                                 </div>
                                 <div className="w-[60%]  h-full">
-                                    <p className="text-xl leading-tight">{item.desc}</p>
+                                    <p className="text-xl anim-tx-y leading-tight">{item.desc}</p>
                                     <div className="w-full mt-20 space-y-2 gap-x-5 grid grid-cols-2">
                                         {item?.servs.map((ser, i) => (
                                             <div key={i} className="  flex gap-2">
                                                 <div className='size-2 shrink-0  translate-y-2.5 bg-white' ></div>
-                                                <p className="text-xl" > {ser}</p>
+                                                <p className="text-xl anim-tx-y" > {ser}</p>
                                             </div>
                                         ))}
                                     </div>
@@ -322,8 +341,8 @@ const index = () => {
                         <div className="w-[60%]  pt-2 gap-12 grid grid-cols-2 ">
                             {agencyData.map((item, i) => (
                                 <div key={i} className="">
-                                    <h3 className="text-3xl font-semibold mb-4"> 0{i + 1}. {item.title} </h3>
-                                    <p className=" text-lg leading-tight">{item.desc}</p>
+                                    <h3 className=" anim-tx-y text-3xl font-semibold mb-4"> 0{i + 1}. {item.title} </h3>
+                                    <p className=" anim-tx-y text-lg leading-tight">{item.desc}</p>
                                 </div>
                             ))}
 
@@ -343,7 +362,7 @@ const index = () => {
                         {serviceImgs.map((item, i) => (
                             <div key={i} className=" shrink-0 text-black text-center center relative w-[30vw] aspect-[3/4]">
                                 <div className="absolute bottom-0 w-full z-[1] h-44 bg-gradient-to-b from-transparent to-white"></div>
-                                <h2 className="text-5xl absolute bottom-5 z-[2] uppercase">{item.title}</h2>
+                                <h2 className=" anim-tx-y text-5xl absolute bottom-5 z-[2] uppercase">{item.title}</h2>
                                 <img className="w-full h-full object-cover " src={item.img} alt="" />
                             </div>
                         ))}

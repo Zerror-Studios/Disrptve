@@ -10,32 +10,28 @@ export default function useHeadingAnimation(selector = ".animate-heading") {
     const headings = document.querySelectorAll(selector);
 
     headings.forEach((heading) => {
-      // Split the heading into chars
       const split = new SplitText(heading, { types: "chars", tagName: "span" });
 
-      // Reset initial state
-      gsap.set(split.chars, { opacity: 0, filter: "blur(5px)" });
+      gsap.set(split.chars, { opacity: 0, filter: "blur(0px)" });
 
-      // Animate on scroll into view with random order
       gsap.to(split.chars, {
         scrollTrigger: {
           trigger: heading,
           start: "top 80%",
-          toggleActions: "play none none reverse",
+          // toggleActions: "play none none reverse",
         },
         opacity: 1,
         filter: "blur(0px)",
         stagger: {
           each: 0.05,
           grid: "auto",
-          from: "random", // <-- random order
+          from: "random",
         },
-        duration: 0.8,
-        ease: "ease-secondary", // using a smooth easing
+        duration: 0.6,
+        ease: "ease-secondary", 
       });
     });
 
-    // Cleanup on unmount
     return () => {
       ScrollTrigger.getAll().forEach((st) => st.kill());
     };

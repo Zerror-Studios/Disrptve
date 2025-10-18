@@ -7,6 +7,7 @@ import { SplitText } from 'gsap/dist/SplitText';
 import Iridescence from '@/components/ui/Iridescence';
 import { RiArrowRightUpLine } from '@remixicon/react';
 import useHeadingAnimation from '@/components/ui/useHeadingAnimation';
+import useTextYAnimation from '@/components/ui/useTextYAnimation';
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const teamMembers = [
@@ -62,6 +63,7 @@ const teamMembers = [
 
 const index = () => {
     useHeadingAnimation();
+    useTextYAnimation()
 
     useGSAP(() => {
 
@@ -162,27 +164,27 @@ const index = () => {
             <div className="  abt_her_prn w-full relative px-5 text-9xl uppercase flex-col h-screen center">
                 <div className="w-full">
                     <div className="flex her_txt_anim gap-10 whitespace-nowrap justify-between w-[80%] ">
-                        <h2>A</h2>
-                        <h2>strategy-led</h2>
+                        <h2 className='anim-tx-y'>A</h2>
+                        <h2 className='anim-tx-y'>strategy-led</h2>
                     </div>
                 </div>
                 <div className="w-full">
-                    <div className="flex her_txt_anim gap-10 whitespace-nowrap justify-between  w-full ">
-                        <h2>marketing</h2>
-                        <h2>agency.</h2>
+                    <div className="flex her_txt_anim  gap-10 whitespace-nowrap justify-between  w-full ">
+                        <h2 className='anim-tx-y'>marketing</h2>
+                        <h2 className='anim-tx-y'>agency.</h2>
                     </div>
                 </div>
             </div>
 
             <div className="w-full px-5 flex mb-32 items-stretch">
-                <div className="w-1/2 pb-20">
-                    <h2 className='uppercase text-2xl font-semibold mb-5 red'>About Us</h2>
-                    <p className='text-6xl'>It started with a simple idea: Let's build the agency we'd want to hire.</p>
+                <div className=" animate-heading w-1/2 pb-20">
+                    <h2 className='anim-tx-y uppercase text-2xl font-semibold mb-5 red'>About Us</h2>
+                    <p className='text-7xl'>It started with a simple idea: Let's build the agency we'd want to hire.</p>
                 </div>
-                <div className="w-1/2 flex flex-col items-end justify-end  ">
+                <div className="w-1/2 flex flex-col text-xl items-end justify-end  ">
                     <div className="w-1/2 space-y-4">
-                        <p>In late 2023, we decided to do just that. We wanted to create a place that was nimble, strategy-led, and obsessed with creative excellence. </p>
-                        <p>No layers, no jargon - just a direct line between a client's vision and work that makes an impact.</p>
+                        <p className='anim-tx-y leading-none pb-0'>In late 2023, we decided to do just that. We wanted to create a place that was nimble, strategy-led, and obsessed with creative excellence. </p>
+                        <p className='anim-tx-y leading-none pb-0'>No layers, no jargon - just a direct line between a client's vision and work that makes an impact.</p>
                     </div>
                 </div>
             </div>
@@ -192,8 +194,8 @@ const index = () => {
                 <div className="w-full space-y-8">
                     <h2 className='leading-none animate-heading font-bold text-7xl red'>The <br /> Perfect Mix</h2>
                     <div className="text-xl space-y-3 ">
-                        <p>We realized we had all the right pieces, each bringing a powerful and distinct advantage to the table.</p>
-                        <p>It was the ideal blend of experience, relationships, and a fresh perspective. That conversation wasn't just talk. It became DISRPTVE.</p>
+                        <p className='anim-tx-y leading-none'>We realized we had all the right pieces, each bringing a powerful and distinct advantage to the table.</p>
+                        <p className='anim-tx-y leading-none'>It was the ideal blend of experience, relationships, and a fresh perspective. That conversation wasn't just talk. It became DISRPTVE.</p>
                     </div>
                 </div>
                 <div className="w-full h-full flex -translate-y-20 relative items-center justify-center">
@@ -243,8 +245,8 @@ const index = () => {
                 <div className=" red_bx_ey w-1/2 space-y-8 bg-black relative p-8 flex flex-col justify-between h-full border border-[#FB0401]">
                     <img className='rotate-180 w-[25%] absolute top-0 right-0' src="/gifs/blocks.gif" alt="" />
                     <h2 className=' animate-heading text-7xl red leading-none'>From <br /> Conversation <br /> to Campaign</h2>
-                    <h2 className='text-3xl font-semibold'>That simple idea grew. Fast.</h2>
-                    <p className='text-lg'>Today, we're a full-fledged agency with a rapidly growing team. Our portfolio is our proof, having worked on everything from shaping the identity for a craft beer brand to running data-driven national campaigns. We've partnered with major celebrities to launch brands, managed complex photoshoots from start to finish, and even used AI to create visuals that were once impossible.</p>
+                    <h2 className='text-3xl anim-tx-y font-semibold'>That simple idea grew. Fast.</h2>
+                    <p className='text-lg anim-tx-y leading-none'>Today, we're a full-fledged agency with a rapidly growing team. Our portfolio is our proof, having worked on everything from shaping the identity for a craft beer brand to running data-driven national campaigns. We've partnered with major celebrities to launch brands, managed complex photoshoots from start to finish, and even used AI to create visuals that were once impossible.</p>
                 </div>
                 <div className="  w-1/2 relative p-8  flex flex-col justify-between bgred ">
                     <div
@@ -254,7 +256,7 @@ const index = () => {
                         <img className="w-[20vw]" src="/gifs/redEye.gif" alt="" />
                     </div>
                     <h2 className='text-7xl animate-heading text-black leading-none'>How we <br /> work</h2>
-                    <p className='text-lg'>Our process is simple. We listen more than we talk. We dive deep into your world to find the one thing that makes you special. Then we build a clear, honest plan and bring it to life with a team that’s genuinely passionate about what they do.</p>
+                    <p className='text-lg anim-tx-y leading-none'>Our process is simple. We listen more than we talk. We dive deep into your world to find the one thing that makes you special. Then we build a clear, honest plan and bring it to life with a team that’s genuinely passionate about what they do.</p>
 
                 </div>
             </div>
@@ -270,8 +272,8 @@ const index = () => {
                 </div>
                 <h2 className=' animate-heading text-6xl uppercase'>Let's Build Something Great.</h2>
                 <div className="space-y-4 text-center w-full center flex-col">
-                    <p className='w-[45%] leading-tight text-2xl'>At the end of the day, we’re still driven by the spirit of that first conversation: a desire to do great work with good people. </p>
-                    <p className='w-[45%] leading-tight text-2xl'>If you’re building something you believe in, we’d love to have a conversation with you, too.</p>
+                    <p className='w-[45%] anim-tx-y leading-none text-2xl'>At the end of the day, we’re still driven by the spirit of that first conversation: a desire to do great work with good people. </p>
+                    <p className='w-[45%]  anim-tx-y leading-none text-2xl'>If you’re building something you believe in, we’d love to have a conversation with you, too.</p>
                 </div>
                 <button className=' group relative flex items-center gap-1'>
                     <div className="w-full group-hover:w-0 transition-all duration-300  h-[1px] bg-white absolute bottom-0 right-0"></div>
@@ -282,7 +284,7 @@ const index = () => {
             </div>
 
             <div className=" py-20 px-5 ">
-                <h2 className='uppercase text-2xl font-semibold mb-5 red'>our team</h2>
+                <h2 className=' animate-heading anim-tx-y uppercase text-2xl font-semibold mb-5 red'>our team</h2>
                 <div className="w-full  grid grid-cols-6 gap-5">
                     {teamMembers.map((member, i) => (
                         <div
@@ -290,7 +292,7 @@ const index = () => {
                             className={`${member.colSpan} flex w-full flex-col items-start ${member.extraClasses || ""}`}
                         >
                             <div className="flex   w-full items-center justify-between">
-                                <div>
+                                <div className='anim-tx-y'>
                                     <h2 className="font-semibold uppercase leading-none">{member.name}</h2>
                                     <p className="text-sm opacity-70 mb-3">{member.role}</p>
                                 </div>

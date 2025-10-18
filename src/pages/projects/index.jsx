@@ -2,8 +2,12 @@ import { RiArrowRightUpLine } from '@remixicon/react'
 import React, { useEffect, useMemo, useState } from 'react'
 import AOS from "aos";
 import { ProjectsData } from '@/store/ProjectsData';
+import useHeadingAnimation from '@/components/ui/useHeadingAnimation';
+import useTextYAnimation from '@/components/ui/useTextYAnimation';
 
 const index = () => {
+    useHeadingAnimation();
+    useTextYAnimation()
     const [activeFilter, setActiveFilter] = useState("All");
     const filters = useMemo(() => {
         const tagCount = {};
@@ -62,7 +66,7 @@ const index = () => {
                                 : "opacity-40 group-hover:opacity-40 hover:!opacity-100"
                                 }`}
                         >
-                            <h3 className="text-6xl  flex items-start">
+                            <h3 className="text-6xl animate-heading flex items-start">
                                 {i === 0 ? (
                                     <>
                                         {item.label}
@@ -103,7 +107,7 @@ const index = () => {
                                     >
                                         <div className="flex w-1/2 px-6 py-5 items-center justify-between group-hover:text-[#FB0401]  transition-colors duration-300">
                                             <div>
-                                                <h3 className="text-3xl font-semibold leading-tight uppercase">
+                                                <h3 className="text-3xl anim-tx-y font-semibold leading-tight uppercase">
                                                     {project.title}
                                                 </h3>
                                                 <p className="text-lg">{project.tagline || ""}</p>
@@ -117,7 +121,7 @@ const index = () => {
                                         >
                                             <img
                                                 className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
-                                                src={project.heroImg}
+                                                src={project.coverImg}
                                                 alt={project.title}
                                             />
                                         </div>
@@ -142,7 +146,7 @@ const index = () => {
                                         >
                                             <div className="flex aspect-square w-1/2 px-5 py-5 items-end justify-between group-hover:text-[#FB0401]  transition-colors duration-300">
                                                 <div>
-                                                    <h3 className="text-xl  leading-tight font-semibold uppercase">
+                                                    <h3 className="text-xl anim-tx-y  leading-tight font-semibold uppercase">
                                                         {p.title}
                                                     </h3>
                                                     <p className="text-base leading-none mt-2 w-[80%]">{p.tagline || ""}</p>
@@ -183,13 +187,13 @@ const index = () => {
                                         >
                                             <img
                                                 className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
-                                                src={project.heroImg}
+                                                src={project.coverImg}
                                                 alt={project.title}
                                             />
                                         </div>
                                         <div className="flex w-1/2 px-6 py-5 items-center justify-between group-hover:text-[#FB0401]  transition-colors duration-300">
                                             <div>
-                                                <h3 className="text-3xl font-semibold leading-tight uppercase">
+                                                <h3 className="text-3xl anim-tx-y font-semibold leading-tight uppercase">
                                                     {project.title}
                                                 </h3>
                                                 <p className="text-lg">{project.tagline || ""}</p>
@@ -216,10 +220,10 @@ const index = () => {
                                         >
                                             <div className="flex aspect-square w-1/2 px-5 py-5 items-end justify-between group-hover:text-[#FB0401]  transition-colors duration-300">
                                                 <div>
-                                                    <h3 className="text-xl  leading-tight font-semibold uppercase">
+                                                    <h3 className="text-xl anim-tx-y  leading-tight font-semibold uppercase">
                                                         {p.title}
                                                     </h3>
-                                                    <p className="text-base leading-none mt-2 w-[80%]">{p.tagline || ""}</p>
+                                                    <p className="text-base  leading-none mt-2 w-[80%]">{p.tagline || ""}</p>
                                                 </div>
                                                 <RiArrowRightUpLine size={26} />
                                             </div>

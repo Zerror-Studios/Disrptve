@@ -1,75 +1,9 @@
 export const ProjectsData = [
   {
-    id: 1,
-    title: "Guyana National Campaign",
-    tagline: "Shaping a national conversation, from the ground up.",
-    heroImg: "/images/projects/guyana/heroImg.webp",
-    websiteLink: "",
-    logo: "/images/projects/guyana/logo.png",
-    tags: [
-      "Political Strategy",
-      "Social Media",
-      "Campaign Strategy & Execution",
-      "PR",
-      "OOH Strategy",
-      "Digital Infrastructure",
-      "Community Management",
-    ],
-    challenge:
-      "Political campaigns are among the most complex and high-stakes communication challenges in the world. We were tasked with executing a comprehensive national campaign in Guyana, requiring a nuanced understanding of the electorate and the ability to manage a multi-channel strategy under immense pressure. The goal was to shape public opinion, mobilize support, and build an undeniable narrative for victory.",
-    approach:
-      "We established a central command for the campaign's entire communications and data infrastructure. Our team developed the core narrative and messaging, which was then deployed across every vertical and multiple platforms with multiple pages deployed. This included managing a sophisticated digital strategy with content seeding and community management, continuous social listening to track sentiment, and crafting powerful campaign speeches. We extended our reach offline with on-ground activations and OOH strategy, and even managed the crucial exit poll process to provide real-time data. It was a true 360-degree operation, blending digital precision with real-world impact.",
-    industry: "Political",
-    Images: [
-      "/images/projects/guyana/img1.webp",
-      "/images/projects/guyana/img2.webp",
-      "/images/projects/guyana/img3.webp",
-      "/images/projects/guyana/img4.webp",
-      "/images/projects/guyana/img5.webp",
-      "/images/projects/guyana/img6.webp",
-      "/images/projects/guyana/img7.webp",
-    ],
-  },
-  {
-    id: 2,
-    title: "Devgn CinEx",
-    tagline: "Building a blockbuster brand for a cinematic icon.",
-    heroImg: "/images/projects/devgan/heroImg.webp",
-    logo: "/images/projects/devgan/logo.png",
-    websiteLink: "",
-    tags: ["Brand Identity", "Naming", "Creative Strategy"],
-    challenge:
-      "When a superstar like Ajay Devgn enters the highly competitive cinema space, partnering with a large conglomerate (Vishwa Samudra), the brand needs to feel both premium and personal, while also paying homage to both brands. The task was to create a new identity from scratch that could stand alongside industry giants, reflect the founders’ legacies, and promise a world-class movie-going experience.",
-    approach:
-      "This project began with the most fundamental question: 'What should we call it?' Our team coined the name 'Devgn CinEx,' creating a direct link to its iconic founder. From there, we architected the entire brand universe. This wasn't just a logo; it was a complete visual system—from the color palette and typography to the on-screen animations and in-venue branding. We delivered a comprehensive brand identity that was modern, powerful, and ready for a nationwide rollout.",
-    industry: "Entertainment",
-    Images: [
-      "/images/projects/devgan/img1.webp",
-      "/images/projects/devgan/img2.webp",
-      "/images/projects/devgan/img3.webp",
-      "/images/projects/devgan/img4.webp",
-    ],
-  },
-  {
-    id: 3,
-    title: "Sarabh Khanijou",
-    tagline: "High fashion, imagined with Artificial Intelligence.",
-    heroImg: "/images/projects/sarabh/heroImg.webp",
-    logo: "/images/projects/sarabh/logo.png",
-    websiteLink: "",
-    tags: ["AI Photoshoot", "Creative Production", "Design"],
-    challenge:
-      "For a high-fashion designer, a lookbook or campaign shoot is a critical asset, but it’s also incredibly expensive and logistically complex, involving models, locations, photographers, and stylists. Sarabh Khanijou needed world-class visuals that would capture the essence of his collection without the prohibitive costs and time commitment of a traditional photoshoot.",
-    approach:
-      "We bypassed the physical limitations entirely. Using cutting-edge generative AI, we produced a stunning, hyper-realistic photoshoot from scratch. By collaborating closely with the designer on mood boards and creative direction, we were able to generate unique, high-fashion imagery that was indistinguishable from a real-world shoot. This innovative approach allowed for limitless creative freedom while delivering the final assets at 1/8th the cost and in a fraction of the time.",
-    industry: "Fashion",
-    Images: [
-    ],
-  },
-  {
     id: 4,
     title: "Proost Beer",
     tagline: "A brand that looks as good as it tastes.",
+    coverImg: "/images/projects/Proost/coverImg.webp",
     heroImg: "/images/projects/Proost/heroImg.webp",
     logo: "/images/projects/Proost/logo.png",
     websiteLink: "",
@@ -94,66 +28,11 @@ export const ProjectsData = [
     ],
   },
   {
-    id: 5,
-    title: "Prominance",
-    tagline: "Building credibility and launching a superstar.",
-    heroImg: "/images/projects/prominance/heroImg.webp",
-    logo: "/images/projects/prominance/logo.png",
-    websiteLink: "",
-    tags: ["Social Media", "Strategy", "Performance Marketing"],
-    challenge:
-      "Prominance wanted to build broader brand trust and cement its market leadership by launching Shah Rukh Khan as its brand ambassador. The task was to manage this high-profile launch while simultaneously building a credible, engaging social media presence from the ground up.",
-    approach:
-      "We developed a comprehensive social media and performance marketing plan focused on authenticity and trust. Then we strategically integrated the Shah Rukh Khan launch to amplify the brand’s credibility and core message of quality.",
-    industry: "Construction and Building Materials",
-    Images: [
-      "/images/projects/prominance/img1.webp",
-      "/images/projects/prominance/img2.webp",
-      "/images/projects/prominance/img3.webp",
-    ],
-  },
-  {
-    id: 6,
-    title: "Punjab Kings",
-    tagline: "Turning passive fans into an active movement.",
-    heroImg: "/images/projects/punjabKings/heroImg.webp",
-    logo: "/images/projects/punjabKings/logo.png",
-    websiteLink: "",
-    tags: ["Community Strategy", "Social Media"],
-    challenge:
-      "Every IPL team has fans, but not every team has a true community. We identified an opportunity to harness the passion of Punjab Kings supporters and give them a dedicated space to connect, engage, and belong.",
-    approach:
-      "We built and managed the team’s unofficial fan community, encouraging user-generated content and authentic interactions that turned ordinary fans into a digital movement extending beyond official channels.",
-    industry: "Sports",
-    Images: [
-      "/images/projects/punjabKings/img1.webp",
-      "/images/projects/punjabKings/img2.webp",
-      "/images/projects/punjabKings/img3.webp",
-    ],
-  },
-  {
-    id: 7,
-    title: "Tata EV - Harrier Launch",
-    tagline: "Driving the launch of an electric icon.",
-    heroImg: "/images/projects/tata/heroImg.webp",
-    logo: "/images/projects/tata/logo.png",
-    websiteLink: "",
-    tags: ["Launch Strategy", "Social Media", "Video Production"],
-    challenge:
-      "The launch of the Tata Harrier EV was a pivotal moment. The campaign needed to generate excitement, communicate innovation, and dominate online conversation in a crowded automotive space.",
-    approach:
-      "We collaborated with Tata’s internal teams to enhance digital launch efforts, edit the main video for online engagement, and produce a wave of high-impact social creatives to drive hype and bookings.",
-    industry: "Automotive",
-    Images: [
-      "/images/projects/tata/img1.webp",
-      "/images/projects/tata/img2.webp",
-    ],
-  },
-  {
     id: 8,
     title: "Imagine",
     tagline: "End-to-end brand custodians.",
     heroImg: "/images/projects/Imagine/heroImg.webp",
+    coverImg: "/images/projects/Imagine/coverImg.webp",
     logo: "/images/projects/Imagine/logo.png",
     websiteLink: "",
     tags: [
@@ -184,6 +63,7 @@ export const ProjectsData = [
     title: "SuperYou",
     tagline: "Making wellness feel good online.",
     heroImg: "/images/projects/superYou/heroImg.webp",
+    coverImg: "/images/projects/superYou/coverImg.webp",
     logo: "/images/projects/superYou/logo.png",
     websiteLink: "",
     tags: ["Social Media", "Creative Strategy", "ORM"],
@@ -198,6 +78,140 @@ export const ProjectsData = [
       "/images/projects/superYou/img3.webp",
     ],
   },
+  {
+    id: 2,
+    title: "Devgn CinEx",
+    tagline: "Building a blockbuster brand for a cinematic icon.",
+    coverImg: "/images/projects/devgan/coverImg.webp",
+    heroImg: "/images/projects/devgan/heroImg.webp",
+    logo: "/images/projects/devgan/logo.png",
+    websiteLink: "",
+    tags: ["Brand Identity", "Naming", "Creative Strategy"],
+    challenge:
+      "When a superstar like Ajay Devgn enters the highly competitive cinema space, partnering with a large conglomerate (Vishwa Samudra), the brand needs to feel both premium and personal, while also paying homage to both brands. The task was to create a new identity from scratch that could stand alongside industry giants, reflect the founders’ legacies, and promise a world-class movie-going experience.",
+    approach:
+      "This project began with the most fundamental question: 'What should we call it?' Our team coined the name 'Devgn CinEx,' creating a direct link to its iconic founder. From there, we architected the entire brand universe. This wasn't just a logo; it was a complete visual system—from the color palette and typography to the on-screen animations and in-venue branding. We delivered a comprehensive brand identity that was modern, powerful, and ready for a nationwide rollout.",
+    industry: "Entertainment",
+    Images: [
+      "/images/projects/devgan/img1.webp",
+      "/images/projects/devgan/img2.webp",
+      "/images/projects/devgan/img3.webp",
+      "/images/projects/devgan/img4.webp",
+    ],
+  },
+  {
+    id: 6,
+    title: "Punjab Kings",
+    tagline: "Turning passive fans into an active movement.",
+    coverImg: "/images/projects/punjabKings/coverImg.webp",
+    heroImg: "/images/projects/punjabKings/heroImg.webp",
+    logo: "/images/projects/punjabKings/logo.png",
+    websiteLink: "",
+    tags: ["Community Strategy", "Social Media"],
+    challenge:
+      "Every IPL team has fans, but not every team has a true community. We identified an opportunity to harness the passion of Punjab Kings supporters and give them a dedicated space to connect, engage, and belong.",
+    approach:
+      "We built and managed the team’s unofficial fan community, encouraging user-generated content and authentic interactions that turned ordinary fans into a digital movement extending beyond official channels.",
+    industry: "Sports",
+    Images: [
+      "/images/projects/punjabKings/img1.webp",
+      "/images/projects/punjabKings/img2.webp",
+      "/images/projects/punjabKings/img3.webp",
+    ],
+  },
+  {
+    id: 1,
+    title: "Guyana National Campaign",
+    tagline: "Shaping a national conversation, from the ground up.",
+    coverImg: "/images/projects/guyana/coverImg.webp",
+    heroImg: "/images/projects/guyana/heroImg.webp",
+    websiteLink: "",
+    logo: "/images/projects/guyana/logo.png",
+    tags: [
+      "Political Strategy",
+      "Social Media",
+      "Campaign Strategy & Execution",
+      "PR",
+      "OOH Strategy",
+      "Digital Infrastructure",
+      "Community Management",
+    ],
+    challenge:
+      "Political campaigns are among the most complex and high-stakes communication challenges in the world. We were tasked with executing a comprehensive national campaign in Guyana, requiring a nuanced understanding of the electorate and the ability to manage a multi-channel strategy under immense pressure. The goal was to shape public opinion, mobilize support, and build an undeniable narrative for victory.",
+    approach:
+      "We established a central command for the campaign's entire communications and data infrastructure. Our team developed the core narrative and messaging, which was then deployed across every vertical and multiple platforms with multiple pages deployed. This included managing a sophisticated digital strategy with content seeding and community management, continuous social listening to track sentiment, and crafting powerful campaign speeches. We extended our reach offline with on-ground activations and OOH strategy, and even managed the crucial exit poll process to provide real-time data. It was a true 360-degree operation, blending digital precision with real-world impact.",
+    industry: "Political",
+    Images: [
+      "/images/projects/guyana/img1.webp",
+      "/images/projects/guyana/img2.webp",
+      "/images/projects/guyana/img3.webp",
+      "/images/projects/guyana/img4.webp",
+      "/images/projects/guyana/img5.webp",
+      "/images/projects/guyana/img6.webp",
+      "/images/projects/guyana/img7.webp",
+    ],
+  },
+
+  {
+    id: 3,
+    title: "Sarabh Khanijou",
+    tagline: "High fashion, imagined with Artificial Intelligence.",
+    coverImg: "/images/projects/sarabh/coverImg.webp",
+    heroImg: "/images/projects/sarabh/heroImg.webp",
+    logo: "/images/projects/sarabh/logo.png",
+    websiteLink: "",
+    tags: ["AI Photoshoot", "Creative Production", "Design"],
+    challenge:
+      "For a high-fashion designer, a lookbook or campaign shoot is a critical asset, but it’s also incredibly expensive and logistically complex, involving models, locations, photographers, and stylists. Sarabh Khanijou needed world-class visuals that would capture the essence of his collection without the prohibitive costs and time commitment of a traditional photoshoot.",
+    approach:
+      "We bypassed the physical limitations entirely. Using cutting-edge generative AI, we produced a stunning, hyper-realistic photoshoot from scratch. By collaborating closely with the designer on mood boards and creative direction, we were able to generate unique, high-fashion imagery that was indistinguishable from a real-world shoot. This innovative approach allowed for limitless creative freedom while delivering the final assets at 1/8th the cost and in a fraction of the time.",
+    industry: "Fashion",
+    Images: [
+    ],
+  },
+
+  {
+    id: 5,
+    title: "Prominance",
+    tagline: "Building credibility and launching a superstar.",
+    coverImg: "/images/projects/prominance/coverImg.webp",
+    heroImg: "/images/projects/prominance/heroImg.webp",
+    logo: "/images/projects/prominance/logo.png",
+    websiteLink: "",
+    tags: ["Social Media", "Strategy", "Performance Marketing"],
+    challenge:
+      "Prominance wanted to build broader brand trust and cement its market leadership by launching Shah Rukh Khan as its brand ambassador. The task was to manage this high-profile launch while simultaneously building a credible, engaging social media presence from the ground up.",
+    approach:
+      "We developed a comprehensive social media and performance marketing plan focused on authenticity and trust. Then we strategically integrated the Shah Rukh Khan launch to amplify the brand’s credibility and core message of quality.",
+    industry: "Construction and Building Materials",
+    Images: [
+      "/images/projects/prominance/img1.webp",
+      "/images/projects/prominance/img2.webp",
+      "/images/projects/prominance/img3.webp",
+    ],
+  },
+
+  {
+    id: 7,
+    title: "Tata EV - Harrier Launch",
+    tagline: "Driving the launch of an electric icon.",
+    coverImg: "/images/projects/tata/coverImg.webp",
+    heroImg: "/images/projects/tata/heroImg.webp",
+    logo: "/images/projects/tata/logo.png",
+    websiteLink: "",
+    tags: ["Launch Strategy", "Social Media", "Video Production"],
+    challenge:
+      "The launch of the Tata Harrier EV was a pivotal moment. The campaign needed to generate excitement, communicate innovation, and dominate online conversation in a crowded automotive space.",
+    approach:
+      "We collaborated with Tata’s internal teams to enhance digital launch efforts, edit the main video for online engagement, and produce a wave of high-impact social creatives to drive hype and bookings.",
+    industry: "Automotive",
+    Images: [
+      "/images/projects/tata/img1.webp",
+      "/images/projects/tata/img2.webp",
+    ],
+  },
+
+
   // {
   //   id: 10,
   //   title: "Flaunt Your Ink",
@@ -225,6 +239,7 @@ export const ProjectsData = [
     title: "Pune United",
     tagline: "Launching a team, not just a logo.",
     heroImg: "/images/projects/puneUnited/heroImg.webp",
+    coverImg: "/images/projects/puneUnited/coverImg.webp",
     logo: "/images/projects/puneUnited/logo.png",
     websiteLink: "",
     tags: ["Brand Identity", "Social Media", "Event Coverage"],

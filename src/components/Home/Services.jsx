@@ -4,6 +4,8 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import React from 'react'
 import useHeadingAnimation from '../ui/useHeadingAnimation';
+import LineBtn from '../buttons/LineBtn';
+import useTextYAnimation from '../ui/useTextYAnimation';
 gsap.registerPlugin(ScrollTrigger);
 
 const serviceData = [
@@ -107,6 +109,7 @@ const serviceData = [
 
 const Services = () => {
     useHeadingAnimation();
+    useTextYAnimation()
 
     useGSAP(() => {
         gsap.from(".serv_slide", {
@@ -130,63 +133,95 @@ const Services = () => {
             opacity: 0,
             ease: "linear",
         })
-        gsap.to(".serv_slide", {
-            scrollTrigger: {
-                trigger: ".serv_paren",
-                start: "top top",
-                pin: true,
-                end: "+400% top",
-                anticipatePin: 1,
-                scrub: .4,
-            },
-            xPercent: -56.1 * (serviceData.length - 1),
-            ease: "linear",
-        })
+
+        if(window.innerWidth >= 1024){
+            gsap.to(".serv_slide", {
+                scrollTrigger: {
+                    trigger: ".serv_paren",
+                    start: "top top",
+                    pin: true,
+                    end: "+400% top",
+                    anticipatePin: 1,
+                    scrub: .4,
+                },
+                xPercent: -56.1 * (serviceData.length - 1),
+                ease: "linear",
+            })
+        
+        }else{
+            gsap.to(".serv_slide", {
+                scrollTrigger: {
+                    trigger: ".serv_paren",
+                    start: "top top",
+                    pin: true,
+                    end: "+400% top",
+                    anticipatePin: 1,
+                    scrub: .4,
+                },
+                xPercent: -106 * (serviceData.length - 1),
+                ease: "linear",
+            })
+        }
     })
 
 
     return (
         <>
-            <div className="serv_paren w-full relative h-screen overflow-hidden ">
-                <div className="h-full w-[30vw] flex items-center absolute px-5 top-0 left-0">
+            <div className="serv_paren my-14 lg:my-0 w-full relative h-screen overflow-hidden ">
+                <div className=" lg:hidden    w-full flex z-[1] items-center  px-3">
+                    <div className=" w-full    flex flex-col justify-between ">
+                        <div className="text-3xl mb-4 leading-none w-full animate-heading font-semibold uppercase">
+                            <h2>What</h2>
+                            <h2 className='red'>We Do</h2>
+                        </div>
+                        <div className="space-y-4">
+                            <p className='  text-base lg:text-xl anim-tx-y leading-tight '>We’re a full-service agency, which means we can help from the first spark of an idea to the final, polished execution. Our work is broken down into these core areas.</p>
+                            <LineBtn text={"explore now"} href={'/about'} />
+                        </div>
+                    </div>
+                </div>
+                <div className="h-full hidden  w-[30vw] lg:flex z-[1] items-center absolute px-5 top-0 left-0">
                     <div className=" w-full right_serv   flex flex-col justify-between h-[35vw] ">
                         <div className="text-5xl animate-heading font-semibold uppercase">
                             <h2>What</h2>
                             <h2 className='red'>We Do</h2>
                         </div>
-                        <p className='text-2xl'>We’re a full-service agency, which means we can help from the first spark of an idea to the final, polished execution. Our work is broken down into these core areas.</p>
+                        <div className="space-y-4">
+                            <p className='text-xl anim-tx-y leading-tight '>We’re a full-service agency, which means we can help from the first spark of an idea to the final, polished execution. Our work is broken down into these core areas.</p>
+                            <LineBtn text={"explore now"} href={'/about'} />
+                        </div>
                     </div>
                 </div>
 
-                <div className=" serv_slide   w-full h-full  gap-x-10 flex items-center ">
-                    <div className="w-[30vw] shrink-0 h-full"></div>
+                <div className=" serv_slide  px-3 mt-5 lg:mt-0  w-full h-[70vh] lg:h-full gap-x-5 lg:gap-x-10 flex items-center ">
+                    <div className="hidden lg:block w-[30vw] shrink-0 h-full"></div>
                     {serviceData.map((item, index) => (
-                        <div key={index} className="w-[55vw] bg-[#0e0e0e5d] p-5  flex flex-col justify-between shrink-0 h-[35vw] border border-[#e5e7eb44]">
+                        <div key={index} className=" w-[100vw] lg:w-[55vw] bg-[#0e0e0e5d] p-3 lg:p-5  flex flex-col lg:justify-between shrink-0  h-full lg:h-[35vw] border border-[#e5e7eb44]">
                             <div className="flex justify-between ">
-                                <div className=" text-4xl w-[90%] leading-none font-semibold uppercase ">
-                                    <div className=" ">
-                                        <h2>{item.title.split(" & ")[0]} & </h2>
-                                        <h2>{item.title.split(" & ")[1]} </h2>
+                                <div className=" text-2xl lg:text-5xl  leading-none font-semibold uppercase ">
+                                    <div className=" red">
+                                        <h3 className='anim-tx-y font-normal'>{item.title.split(" & ")[0]} & </h3>
+                                        <h3 className='anim-tx-y font-normal'>{item.title.split(" & ")[1]} </h3>
                                     </div>
-                                    <p className='text-lg mt-7  normal-case font-light leading-none w-[75%]'>{item.desc}</p>
+                                    <p className=' text-sm lg:text-lg  mt-7  normal-case font-light leading-none w[90%] lg:w-[75%]'>{item.desc}</p>
                                 </div>
-                                <div className=" w-[50%]  flex justify-end  leading-none">
-                                    <div className=" space-y-2 ">
+                            </div>
+                            <div className="flex flex-col-reverse justify-between h-full lg:h-fit lg:flex-row gap-4 lg:gap-8">
+                                <div className="aspect-video shrink-0 h-[60%] lg:h-full w-full lg:w-[60%] ">
+                                    <img className='w-full h-full object-cover' src={item.img} alt="" />
+                                </div>
+                                <div className=" flex w-full flex-col justify-between  font-semibold">
+                                    <div className=" mt-5 lg:mt-0 space-y-1 lg:space-y-3 ">
                                         {item?.servs.map((ser, i) => (
-                                            <div key={i} className="  flex gap-2">
-                                                <div className='size-2  translate-y-2.5 bg-white' ></div>
-                                                <p className='text-xl' > {ser}</p>
+                                            <div key={i} className=" group  flex transition-all duration-300 gap-3 hover:px-2">
+                                                <div className='size-1.5 shrink-0 group-hover:bg-[#FB0401]  transition-all duration-300 translate-y-1.5 bg-white' ></div>
+                                                <p className=' text-sm lg:text-lg  group-hover:text-[#FB0401] transition-all duration-300 leading-none ' > {ser}</p>
                                             </div>
                                         ))}
                                     </div>
-                                </div>
-                            </div>
-                            <div className="flex justify-between items-end">
-                                <div className="aspect-video w-[60%] ">
-                                    <img className='w-full h-full object-cover' src={item.img} alt="" />
-                                </div>
-                                <div className="text-5xl  font-semibold">
-                                    <h2>{item.number}</h2>
+                                    <div className="w-full text-end">
+                                    <h2 className='anim-tx-y text-3xl lg:text-5xl'>{item.number}</h2>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -63,16 +63,16 @@ const Clients = () => {
 
     return (
         <>
-            <div className="w-full pt-20">
+            <div className="w-full  lg:pt-20">
                 <div className="w-full uppercase overflow-hidden">
                     <Marquee>
                         {[1, 2, 3,4,5,6].map((_, i) => (
                             <div
                                 key={i}
-                                className=" pl-12 gap-12 w-fit overflow-hidden flex text-8xl whitespace-nowrap justify-between uppercase font-semibold items-center"
+                                className=" pl-6 lg:pl-12 gap-6 lg:gap-12 w-fit overflow-hidden flex text-4xl lg:text-7xl whitespace-nowrap justify-between uppercase font-semibold items-center"
                             >
                                 <h2 className='block w-fit '>OUR clients</h2>
-                                <div className="size-12 center ">
+                                <div className=" size-6 lg:size-12 center ">
                                 <img className="w-full" src="/icons/cut_blocks.svg" alt="" />
                                 </div>
                             </div>
@@ -80,10 +80,10 @@ const Clients = () => {
                     </Marquee>
                 </div>
 
-                <div className="w-full my-32 px-5">
+                <div className="w-full my-12 lg:my-32 px-3 lg:px-5">
                     <div
                         ref={containerRef}
-                        className="w-full border border-[#8585855b] grid grid-cols-6"
+                        className="w-full border border-[#8585855b] grid grid-cols-4 lg:grid-cols-6"
                     >
                         {[...clientsData, ...clientsData, ...clientsData, ...clientsData]
                             .sort(() => Math.random() - 0.5)

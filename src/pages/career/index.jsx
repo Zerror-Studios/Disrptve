@@ -1,3 +1,5 @@
+import useHeadingAnimation from '@/components/ui/useHeadingAnimation'
+import useTextYAnimation from '@/components/ui/useTextYAnimation'
 import { useGSAP } from '@gsap/react'
 import { RiArrowRightUpLine, RiFacebookFill, RiFacebookLine, RiInstagramFill, RiInstagramLine, RiLinkedinFill, RiLinkedinLine, RiTwitterFill, RiTwitterLine, RiYoutubeFill, RiYoutubeLine } from '@remixicon/react'
 import gsap from 'gsap'
@@ -39,6 +41,10 @@ const JobOpenings = [
 ];
 
 const index = () => {
+
+    useTextYAnimation()
+    useHeadingAnimation()
+
     useGSAP(() => {
         gsap.to(".prx_img", {
             y: 200,
@@ -59,8 +65,8 @@ const index = () => {
             </div>
             <div id='career' className="px-5 py-20 ">
                 <div className="w-full flex justify-between ">
-                    <h2 className='uppercase text-5xl red'>openings</h2>
-                    <p className='w-[30%] text-xl'>Think you’d be a great fit for what we do? Reach out to us at <span className='uppercase italic underline'> team@disrptve.com,</span> even if a role isn’t listed here.</p>
+                    <h2 className=' animate-heading uppercase text-5xl red'>openings</h2>
+                    <p className=' anim-tx-y w-[30%] text-xl'>Think you’d be a great fit for what we do? Reach out to us at <span className='uppercase italic underline'> team@disrptve.com,</span> even if a role isn’t listed here.</p>
                 </div>
                 <div className=" w-full">
                     <div className="mt-10">
