@@ -1,11 +1,8 @@
 import { useGSAP } from '@gsap/react';
-import { RiArrowDownLine } from '@remixicon/react'
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import React from 'react'
-import useHeadingAnimation from '../ui/useHeadingAnimation';
 import LineBtn from '../buttons/LineBtn';
-import useTextYAnimation from '../ui/useTextYAnimation';
 gsap.registerPlugin(ScrollTrigger);
 
 const serviceData = [
@@ -105,11 +102,7 @@ const serviceData = [
     },
 ];
 
-
-
 const Services = () => {
-    useHeadingAnimation();
-    useTextYAnimation()
 
     useGSAP(() => {
         gsap.from(".serv_slide", {
@@ -183,21 +176,21 @@ const Services = () => {
             <div className="serv_paren my-14 lg:my-0 w-full relative h-screen overflow-hidden ">
 
                 <div className=" lg:hidden    w-full flex z-[1] items-center  px-3">
-                    <div className=" w-full    flex flex-col justify-between ">
-                        <div className="text-4xl mb-4 leading-none w-full animate-heading font-semibold uppercase">
+                    <div className=" w-full pt-16    flex flex-col justify-between ">
+                        <div className="text-4xl mb-4 leading-none w-full  font-semibold uppercase">
                             <h2>What</h2>
                             <h2 className='red'>We Do</h2>
                         </div>
-                        <div className="space-y-4">
-                            <p className='  text-base lg:text-xl anim-tx-y md:w-[80%] leading-tight '>We’re a full-service agency, which means we can help from the first spark of an idea to the final, polished execution. Our work is broken down into these core areas.</p>
+                        {/* <div className="space-y-4">
+                            <p className='  text-base lg:text-xl  md:w-[80%] leading-tight '>We’re a full-service agency, which means we can help from the first spark of an idea to the final, polished execution. Our work is broken down into these core areas.</p>
                             <LineBtn text={"explore now"} href={'/about'} />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
 
                 <div className="h-full hidden  w-[30vw] lg:flex z-[1] items-center absolute px-5 top-0 left-0">
                     <div className=" w-full right_serv   flex flex-col justify-between h-[35vw] ">
-                        <div className="text-7xl leading-none animate-heading font-semibold uppercase">
+                        <div className="text-7xl leading-none  font-semibold uppercase">
                             <h2>What</h2>
                             <h2 className='red'>We Do</h2>
                         </div>
@@ -208,7 +201,7 @@ const Services = () => {
                     </div>
                 </div>
 
-                <div className=" serv_slide  px-3 mt-5 lg:mt-0  w-full h-[70vh] lg:h-full gap-x-5 lg:gap-x-10 flex items-center ">
+                <div className=" serv_slide  px-3 mt-5 lg:mt-0  w-full h-[75vh]  lg:h-full gap-x-5 lg:gap-x-10 flex items-center ">
                     <div className="hidden lg:block w-[30vw] shrink-0 h-full"></div>
                     {serviceData.map((item, index) => (
                         <div key={index} className=" w-[100vw] md:w-[55vw] bg-[#0e0e0e5d] p-3 lg:p-5  flex flex-col lg:justify-between shrink-0  h-full lg:h-[35vw] border border-[#e5e7eb44]">
@@ -235,7 +228,7 @@ const Services = () => {
                                         ))}
                                     </div>
                                     <div className="w-full text-end">
-                                        <h2 className='anim-tx-y text-2xl lg:text-5xl'>{item.number}</h2>
+                                        <h2 className=' text-2xl lg:text-5xl'>{item.number}</h2>
                                     </div>
                                 </div>
                             </div>

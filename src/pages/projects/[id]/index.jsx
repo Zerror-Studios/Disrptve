@@ -1,18 +1,14 @@
 import React from 'react'
 import { useGSAP } from '@gsap/react'
-import { RiArrowRightUpLine } from '@remixicon/react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { useParams } from 'next/navigation';
 import { ProjectsData } from '@/store/ProjectsData';
-import LineBtn from '@/components/buttons/LineBtn';
 import ProjectImageSlider from '@/components/ui/ProjectImageSlider';
-import useTextYAnimation from '@/components/ui/useTextYAnimation';
 gsap.registerPlugin(ScrollTrigger);
 
 
 const index = () => {
-    useTextYAnimation()
 
     const id = useParams()
 
@@ -20,13 +16,13 @@ const index = () => {
 
     useGSAP(() => {
 
-        gsap.from(".border_animm", {
+        gsap.to(".border_animm", {
             duration: .5,
             delay: .5,
-            width: 0,
+            width: "100%",
         })
-        gsap.from(".pj_anim_txt", {
-            opacity: 0,
+        gsap.to(".pj_anim_txt", {
+            opacity: 1,
             delay: 1,
             stagger: .2
         })
@@ -102,21 +98,21 @@ const index = () => {
                 <div className="w-full h-[185vh] ">
                     <div className="w-full h-[55vh] flex flex-col justify-end  ">
                         <div className=" w-full text-4xl lg:text-7xl font-semibold uppercase  py-4">
-                            <h3 className='pj_anim_txt'>{project?.title}</h3>
+                            <h3 className='pj_anim_txt opacity-0'>{project?.title}</h3>
                         </div>
-                        <div className=" border_animm w-full border-b border-white"></div>
+                        <div className=" border_animm w-0 border-b border-white"></div>
                     </div>
                     <div className="w-full  sticky z-[2] top-[50vh] text-base lg:text-xl uppercase leading-none py-4 flex flex-col gap-y-2 md:gap-y-0 md:flex-row  md:justify-between">
                         <div className="  w-full  md:w-1/2 flex items-center gap-2">
-                            <p className=' pj_anim_txt w-[80%]'>{project?.tagline}</p>
+                            <p className=' pj_anim_txt opacity-0 w-[80%]'>{project?.tagline}</p>
                         </div>
                         <div className=" w-full  md:w-1/2 flex justify-between">
-                            <div className=" hidden md:block pj_anim_txt w-1/2">
+                            <div className=" hidden md:block pj_anim_txt opacity-0 w-1/2">
                                 {/* {project?.websiteLink !== "" && (
                                     <LineBtn text="website link" href={project?.websiteLink} />
                                 )} */}
                             </div>
-                            <div className="pj_anim_txt ">
+                            <div className="pj_anim_txt opacity-0 ">
                                 <p>{project?.industry}</p>
                             </div>
                         </div>
@@ -135,7 +131,7 @@ const index = () => {
                 <div className="w-full grid grid-cols-1 lg:grid-cols-3 text-base lg:text-xl px-5 gap-x-20 gap-y-10 mt-20 lg:mt-44">
                     <div className="w-full">
                         <div className=" w-full ">
-                            <h3 className=' anim-tx-y uppercase  text-xl lg:text-3xl '>The Challenge</h3>
+                            <h3 className=' uppercase  text-xl lg:text-3xl '>The Challenge</h3>
                             <div className="pj_anim_border py-2 w-0  border-b border-white "></div>
                         </div>
                         <div className="py-4 text-base lg:text-xl">
@@ -144,7 +140,7 @@ const index = () => {
                     </div>
                     <div className="w-full">
                         <div className=" w-full  ">
-                            <h3 className=' anim-tx-y uppercase  text-xl lg:text-3xl '>Our Approach</h3>
+                            <h3 className=' uppercase  text-xl lg:text-3xl '>Our Approach</h3>
                             <div className="pj_anim_border py-2 w-0  border-b border-white "></div>
                         </div>
                         <div className="py-4 text-base lg:text-xl">
@@ -153,7 +149,7 @@ const index = () => {
                     </div>
                     <div className="w-full">
                         <div className=" w-full  ">
-                            <h3 className=' anim-tx-y uppercase  text-xl lg:text-3xl '>Our Role</h3>
+                            <h3 className=' uppercase  text-xl lg:text-3xl '>Our Role</h3>
                             <div className="pj_anim_border py-2 w-0  border-b border-white "></div>
                         </div>
                         <div className="py-4 space-y-4">

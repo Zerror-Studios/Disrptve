@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "./common/Header";
 import Footer from "./common/Footer";
-import LaserFlow from "./ui/LaserFlow";
 import LiquidEther from "./ui/LiquidEther";
 import { usePathname } from "next/navigation";
 
@@ -10,6 +9,9 @@ const Layout = ({ children }) => {
 
   return (
     <>
+
+      {/* <PageTransition ref={revealerRef} /> */}
+
       <header>
         <Header />
       </header>

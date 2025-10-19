@@ -17,7 +17,7 @@ export default function useHeadingAnimation(selector = ".animate-heading") {
       gsap.to(split.chars, {
         scrollTrigger: {
           trigger: heading,
-          start: "top 80%",
+          start: "top 90%",
           // toggleActions: "play none none reverse",
         },
         opacity: 1,

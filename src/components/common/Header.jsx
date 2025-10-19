@@ -8,17 +8,15 @@ import { useGSAP } from '@gsap/react';
 
 const menuItems = [
   { name: "About", href: "/about" },
-  { name: "projects", href: "/projects" },
+  { name: "case studies", href: "/projects" },
   { name: "services", href: "/services" },
   { name: "career", href: "/career" },
   { name: "contact", href: "/contact" },
 ];
 
 const socailLinks = [
-  { name: "instagram", href: "" },
-  { name: "facebook", href: "" },
-  { name: "twitter", href: "" },
-  { name: "linkedin", href: "" },
+  { name: "instagram", href: "https://www.instagram.com/bedisrptve?igsh=MWw3enZqcWZnYmZkbQ==" },
+  { name: "linkedin", href: "https://www.linkedin.com/company/disrptve/" },
 ]
 
 const Header = () => {
@@ -101,7 +99,7 @@ const Header = () => {
             } else {
               openMenu()
             }
-          }} className={` text-black cursor-pointer fixed z-[99] top-5  lg:top-9 burger right-5`}>
+          }} className={` text-black cursor-pointer fixed z-[99] top-2  lg:top-9 burger right-5`}>
             <Hamburger />
           </div>
         )
@@ -126,9 +124,12 @@ const Header = () => {
       {/* Open Menu */}
       <div
         style={{ clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 0%)" }}
-        className="menu w-full fixed flex flex-col justify-end  bg-[#FB0401] z-[16] px-3 md:px-5 py-11 top-0 left-0  md:h-screen">
+        className="menu w-full fixed flex flex-col justify-between lg:justify-end  bg-[#FB0401] z-[16] px-3 md:px-5 py-11 top-0 left-0  h-screen">
         <div className="w-full flex absolute top-0 left-0 px-3 py-5 md:px-5 lg:py-11 justify-between ">
-          <a href="/" className='cursor-pointer'>
+          <a
+            href="/"
+            // onClick={() => { navigate(router, "/"), closeMenu() }}
+            className='cursor-pointer'>
             <img className=' w-[40vw] md:w-fit invert-100' src="/logo.svg" alt="" />
           </a>
           <div className=" opacity-0 flex justify-end cursor-pointer">
@@ -136,7 +137,7 @@ const Header = () => {
           </div>
         </div>
         <motion.div
-          className="flex mt-20 md:mt-0 justify-between w-full items-end  uppercase text-4xl lg:text-7xl"
+          className="flex mt-32 md:mt-10 lg:mt-0 justify-between w-full items-end  uppercase text-4xl lg:text-7xl"
           variants={containerVariants}
           initial="closed"
           animate={isMenuOpen ? "open" : "closed"}
@@ -146,6 +147,7 @@ const Header = () => {
               <a
                 key={i}
                 href={item.href}
+                // onClick={() => { navigate(router, item.href), closeMenu() }}
                 className="group block  mt-2 lg:mt-4 font-semibold overflow-hidden cursor-pointer w-fit relative"
               >
                 <motion.h2
@@ -209,11 +211,17 @@ const Header = () => {
 
 
       <div className=" header flex fixed top-0 left-0 z-[15] w-full items-center justify-between px-3 md:px-5 py-5 lg:py-10">
-        <a href="/" className='cursor-pointer'>
+        <a
+           href="/" 
+          //  onClick={() => navigate(router, "/")}
+          className='cursor-pointer'>
           <img className={`  w-[40vw] md:w-fit ${path === "/contact" ? "invert-100" : "invert-0"}`} src="/logo.svg" alt="" />
         </a>
         <div className="flex items-center gap-7">
-          <a href="/contact" className='hidden lg:block'>
+          <a 
+          href="/contact"
+          // onClick={() => navigate(router, "/contact")}
+           className='hidden lg:block'>
             <button className={` ${path === "/contact" ? "bg-black" : "bgred"} group  px-6 py-2  uppercase `}>
               <div className="relative flex items-center gap-1">
                 <div className="w-0 group-hover:w-[97%] transition-all duration-300 h-[1px] bg-white absolute bottom-0 left-0"></div>

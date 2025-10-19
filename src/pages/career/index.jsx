@@ -1,7 +1,4 @@
-import useHeadingAnimation from '@/components/ui/useHeadingAnimation'
-import useTextYAnimation from '@/components/ui/useTextYAnimation'
 import { useGSAP } from '@gsap/react'
-import { RiArrowRightUpLine, RiFacebookFill, RiFacebookLine, RiInstagramFill, RiInstagramLine, RiLinkedinFill, RiLinkedinLine, RiTwitterFill, RiTwitterLine, RiYoutubeFill, RiYoutubeLine } from '@remixicon/react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import React from 'react'
@@ -10,40 +7,25 @@ gsap.registerPlugin(ScrollTrigger)
 const JobOpenings = [
     {
         id: 1,
-        title: "Social Media Manager",
+        title: "Video Editor",
         location: "Mumbai",
         type: "Hybrid",
     },
     {
         id: 2,
-        title: "UI/UX Designer",
+        title: "Graphic Designer ",
         location: "Bangalore",
         type: "Remote",
     },
     {
         id: 3,
-        title: "Frontend Developer",
+        title: "Content Writer",
         location: "Delhi",
         type: "On-site",
-    },
-    {
-        id: 4,
-        title: "Project Coordinator",
-        location: "Pune",
-        type: "Hybrid",
-    },
-    {
-        id: 5,
-        title: "Brand Strategist",
-        location: "Chennai",
-        type: "Remote",
     },
 ];
 
 const index = () => {
-
-    useTextYAnimation()
-    useHeadingAnimation()
 
     useGSAP(() => {
         gsap.to(".prx_img", {
@@ -58,6 +40,7 @@ const index = () => {
         })
 
     })
+    
     return (
         <>
             <div className="w-full h-screen prx_pren overflow-hidden">
@@ -65,7 +48,7 @@ const index = () => {
             </div>
             <div id='career' className=" px-3 lg:px-5 py-14 lg:py-20 ">
                 <div className="w-full flex flex-col md:flex-row justify-between ">
-                    <h2 className=' animate-heading uppercase text-4xl lg:text-7xl red'>openings</h2>
+                    <h2 className='  uppercase text-4xl lg:text-7xl red'>openings</h2>
                     <p className=' leading-tight mt-2 md:mt-0  md:w-[30%] text-base lg:text-xl'>Think you’d be a great fit for what we do? Reach out to us at <span className='uppercase italic underline'> team@disrptve.com,</span> even if a role isn’t listed here.</p>
                 </div>
                 <div className=" w-full">
@@ -74,9 +57,9 @@ const index = () => {
                             <a href={`/career/${item.id}`} key={index} className=" cursor-pointer hover:px-5 hover:border-b-white/100 transition-all duration-300 w-full h-20 border-b border-white/20 flex items-center justify-between">
                                 <p className='  capitalize text-xl lg:text-3xl'>{item.title}</p>
                                 <div className="flex text-base lg:text-xl h-full items-center gap-4">
-                                    <p className='anim-tx-y'>{item.location}</p>
+                                    <p className=''>{item.location}</p>
                                     <div className="w-[1px] bg-white h-[20%]"></div>
-                                    <p className='anim-tx-y'>{item.type}</p>
+                                    <p className=''>{item.type}</p>
                                     <img className=' w-4 -rotate-45 invert-100' src="/icons/arrow_small.svg" alt="" />
                                 </div>
                             </a>

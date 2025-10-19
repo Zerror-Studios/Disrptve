@@ -1,7 +1,5 @@
 import { motion, AnimatePresence, useSpring } from "framer-motion";
-import { RiArrowRightUpLine } from "@remixicon/react";
 import React, { useRef, useState, useCallback, useEffect } from "react";
-import useHeadingAnimation from "../ui/useHeadingAnimation";
 import RedBtn from "../buttons/RedBtn";
 
 const TRAIL_IMAGE_COUNT = 20;
@@ -16,7 +14,6 @@ const springConfig = {
 
 const ImagePop = () => {
 
-    useHeadingAnimation();
     const containerRef = useRef(null);
     const [trailImages, setTrailImages] = useState([]);
     const lastPos = useRef({ x: 0, y: 0 });
@@ -105,7 +102,7 @@ const ImagePop = () => {
                     />
                 ))}
             </AnimatePresence>
-            <div className="animate-heading">
+            <div className="">
                 <h2>Explore our case</h2>
                 <h2 className="red"> credentials,</h2>
                 <h2 className="red">studies, and</h2>

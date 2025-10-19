@@ -75,7 +75,7 @@ export default function ProjectImageSlider({ images = [] }) {
                 ))}
             </div>
 
-            <div className="w-full absolute bottom-[2vw] center">
+            <div className="w-full absolute bottom-10 md:bottom-[2vw] center">
                 <div
                     style={{
                         gridTemplateColumns:

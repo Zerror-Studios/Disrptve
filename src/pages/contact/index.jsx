@@ -1,5 +1,3 @@
-import useHeadingAnimation from '@/components/ui/useHeadingAnimation'
-import useTextYAnimation from '@/components/ui/useTextYAnimation'
 import { useGSAP } from '@gsap/react'
 import { RiArrowRightUpLine, RiFacebookFill, RiFacebookLine, RiInstagramFill, RiInstagramLine, RiLinkedinFill, RiLinkedinLine, RiTwitterFill, RiTwitterLine, RiYoutubeFill, RiYoutubeLine } from '@remixicon/react'
 import gsap from 'gsap'
@@ -9,8 +7,6 @@ gsap.registerPlugin(ScrollTrigger)
 
 
 const index = () => {
-  useHeadingAnimation();
-  useTextYAnimation()
 
   useGSAP(() => {
     gsap.to(".fixy_con", {
@@ -21,13 +17,12 @@ const index = () => {
         scrub: true
       }
     })
-
   })
   return (
     <>
-      <div className="  w-full fixy_con fixed z-[-1] brightness-[1] blur-[0] top-0 left-0 h-screen pt-20 bg-[#FB0401] text-black center flex-col gap-y-10 text-center">
-        <h2 className=' animate-heading uppercase text-4xl md:text-6xl lg:text-9xl leading-none '>Ready to Find <br /> Your dream <br /> heaven?</h2>
-        <h2 className=' anim-tx-y  text-base lg:text-xl font-semibold leading-none uppercase'>Our manager will contact you <br /> as soon as possible.</h2>
+      <div className="  w-full fixy_con fixed z-[-1] brightness-[1] blur-[0] top-0 left-0 h-screen lg:pt-20 bg-[#FB0401] text-black center flex-col gap-y-10 text-center">
+        <h2 className='uppercase text-4xl md:text-6xl lg:text-9xl leading-none '>Ready to Find <br /> Your dream <br /> heaven?</h2>
+        <h2 className='text-base lg:text-xl  leading-none uppercase'>Our team will contact you <br /> as soon as possible.</h2>
       </div>
 
       <div className="w-full">
@@ -81,23 +76,19 @@ const index = () => {
                 </div>
                 <div className="">
                   <h3 className=' mb-2 text-base lg:text-xl uppercase  opacity-70'>socials</h3>
-                  <div className="flex lg:gap-4">
-                    <div className="size-14 scale-75 lg:scale-100 shrink-0 group hover:bg-[#FB0401] transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
-                      <RiInstagramLine className='group-hover:opacity-0 transition-all duration-300  ' />
-                      <RiInstagramFill className='absolute group-hover:opacity-100 text-[#000000] opacity-0 transition-all duration-300  ' />
-                    </div>
-                    <div className="size-14 scale-75 lg:scale-100 shrink-0 group hover:bg-[#FB0401] transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
-                      <RiFacebookLine className='group-hover:opacity-0 transition-all duration-300  ' />
-                      <RiFacebookFill className='absolute group-hover:opacity-100 text-[#000000] opacity-0 transition-all duration-300  ' />
-                    </div>
-                    <div className="size-14 scale-75 lg:scale-100 shrink-0 group hover:bg-[#FB0401] transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
-                      <RiTwitterLine className='group-hover:opacity-0 transition-all duration-300  ' />
-                      <RiTwitterFill className='absolute group-hover:opacity-100 text-[#000000] opacity-0 transition-all duration-300  ' />
-                    </div>
-                    <div className=" hidden md:flex items-center justify-center size-14 scale-75 lg:scale-100 shrink-0 group hover:bg-[#FB0401] transition-all duration-300 cursor-pointer rounded-full border border-white/20 ">
-                      <RiLinkedinLine className='group-hover:opacity-0 transition-all duration-300  ' />
-                      <RiLinkedinFill className='absolute group-hover:opacity-100 text-[#000000] opacity-0 transition-all duration-300  ' />
-                    </div>
+                  <div className="flex gap-4">
+                    <a href="https://www.instagram.com/bedisrptve?igsh=MWw3enZqcWZnYmZkbQ==" target="_blank" >
+                      <div className="  size-12 group hover:bg-[#FB0401] transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
+                        <RiInstagramLine size={20} className='group-hover:opacity-0 transition-all duration-300  ' />
+                        <RiInstagramFill size={20} className='absolute group-hover:opacity-100 text-[#000000] opacity-0 transition-all duration-300  ' />
+                      </div>
+                    </a>
+                    <a href="https://www.linkedin.com/company/disrptve/" target="_blank">
+                      <div className="  size-12 group hover:bg-[#FB0401] transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
+                        <RiLinkedinLine size={20} className='group-hover:opacity-0 transition-all duration-300  ' />
+                        <RiLinkedinFill size={20} className='absolute group-hover:opacity-100 text-[#000000] opacity-0 transition-all duration-300  ' />
+                      </div>
+                    </a>
                   </div>
                 </div>
               </div>

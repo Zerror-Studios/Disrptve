@@ -111,14 +111,17 @@ export default function Iridescence({ color = [1, 1, 1], speed = 1.0, amplitude 
     }
 
     return () => {
-      cancelAnimationFrame(animateId);
-      window.removeEventListener('resize', resize);
-      if (mouseReact) {
-        window.removeEventListener('mousemove', handleMouseMove);
-      }
-      window.removeChild(gl.canvas);
-      gl.getExtension('WEBGL_lose_context')?.loseContext();
-    };
+  cancelAnimationFrame(animateId);
+  window.removeEventListener('resize', resize);
+  if (mouseReact) {
+    window.removeEventListener('mousemove', handleMouseMove);
+  }
+  if (ctn.contains(gl.canvas)) {
+    ctn.removeChild(gl.canvas);
+  }
+  gl.getExtension('WEBGL_lose_context')?.loseContext();
+};
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [color, speed, amplitude, mouseReact]);
 

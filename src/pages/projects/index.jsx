@@ -2,12 +2,7 @@ import { RiArrowRightUpLine } from '@remixicon/react'
 import React, { useEffect, useMemo, useState } from 'react'
 import AOS from "aos";
 import { ProjectsData } from '@/store/ProjectsData';
-import useHeadingAnimation from '@/components/ui/useHeadingAnimation';
-import useTextYAnimation from '@/components/ui/useTextYAnimation';
-
 const index = () => {
-    useHeadingAnimation();
-    useTextYAnimation()
     const [activeFilter, setActiveFilter] = useState("All");
     const filters = useMemo(() => {
         const tagCount = {};
@@ -66,7 +61,7 @@ const index = () => {
                                 : "opacity-40 group-hover:opacity-40 hover:!opacity-100"
                                 }`}
                         >
-                            <h3 className=" text-xl lg:text-5xl uppercase animate-heading flex items-start">
+                            <h3 className=" text-xl lg:text-5xl uppercase  flex items-start">
                                 {i === 0 ? (
                                     <>
                                         {item.label}
@@ -92,17 +87,64 @@ const index = () => {
                 </p>
             ) : (
                 <>
-                    <div className="w-full pt-14 px-3  md:hidden">
-                        {filteredProjects.map((item, index) => {
-                            return (
-                                <a href={`/projects/${item.id}`} key={index} >
-                                    <div className={`w-full flex ${index % 2 === 0 ? 'flex-row-reverse' : ''}`}>
-                                        <div className="w-1/2 overflow-hidden border border-[#8585855b] aspect-square ">
-                                            <img className='w-full h-full object-cover' src={item.coverImg} alt={item.title} />
+                    <div className="w-full pt-14 px-3 md:hidden grid">
+                        {ProjectsData.map((item, index) => {
+                            const layoutType = index % 3;
+
+                            // Layout A — full-width image with overlay text
+                            if (layoutType === 0) {
+                                return (
+                                    <div key={index} className="w-full border border-[#8585855b] relative">
+                                        <div className="w-full aspect-square overflow-hidden">
+                                            <img
+                                                src={item.coverImg}
+                                                alt={item.title}
+                                                className="w-full h-full object-cover"
+                                            />
                                         </div>
-                                        <div className="w-1/2 border border-[#8585855b] aspect-square p-3  flex flex-col justify-end ">
-                                            <h3 className='text-lg uppercase leading-none'>{item.title}</h3>
-                                            <p className='text-sm opacity-70 leading-none'>{item.industry}</p>
+                                        <div className="w-full p-3 space-y-2 absolute left-0 bottom-0 bg-black text-white">
+                                            <h3 className="text-lg uppercase leading-none">{item.title}</h3>
+                                            <p className="text-sm opacity-70 leading-none">{item.industry}</p>
+                                        </div>
+                                    </div>
+                                );
+                            }
+
+                            // Layout B (even index, e.g., 2nd)
+                            if (layoutType === 1) {
+                                return (
+                                    <a href={`/projects/${item.id}`} key={index}>
+                                        <div className="w-full flex flex-row-reverse">
+                                            <div className="w-1/2 overflow-hidden border border-[#8585855b] aspect-square">
+                                                <img
+                                                    src={item.coverImg}
+                                                    alt={item.title}
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            </div>
+                                            <div className="w-1/2 border border-[#8585855b] aspect-square p-3 flex flex-col justify-end">
+                                                <h3 className="text-lg uppercase leading-none">{item.title}</h3>
+                                                <p className="text-sm opacity-70 leading-none">{item.industry}</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                );
+                            }
+
+                            // Layout C (odd index, e.g., 3rd)
+                            return (
+                                <a href={`/projects/${item.id}`} key={index}>
+                                    <div className="w-full flex">
+                                        <div className="w-1/2 overflow-hidden border border-[#8585855b] aspect-square">
+                                            <img
+                                                src={item.coverImg}
+                                                alt={item.title}
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </div>
+                                        <div className="w-1/2 border border-[#8585855b] aspect-square p-3 flex flex-col justify-end">
+                                            <h3 className="text-lg uppercase leading-none">{item.title}</h3>
+                                            <p className="text-sm opacity-70 leading-none">{item.industry}</p>
                                         </div>
                                     </div>
                                 </a>
@@ -123,10 +165,10 @@ const index = () => {
                                         >
                                             <div className="flex w-1/2 px-3 lg:px-5 py-5 items-center justify-between group-hover:text-[#FB0401]  transition-colors duration-300">
                                                 <div>
-                                                    <h3 className="  text-xl lg:text-3xl anim-tx-y font-semibold leading-none uppercase">
+                                                    <h3 className="  text-xl lg:text-3xl  font-semibold leading-none uppercase">
                                                         {project.title}
                                                     </h3>
-                                                    <p className=" text-base  lg:text-xl anim-tx-y">{project?.industry || ""}</p>
+                                                    <p className=" text-base  lg:text-xl ">{project?.industry || ""}</p>
                                                 </div>
                                                 <RiArrowRightUpLine size={32} />
                                             </div>
@@ -160,10 +202,10 @@ const index = () => {
                                             >
                                                 <div className="flex aspect-square w-1/2 px-3 lg:px-5 py-5 items-end justify-between group-hover:text-[#FB0401]  transition-colors duration-300">
                                                     <div>
-                                                        <h3 className="  text-xl lg:text-3xl anim-tx-y  leading-none font-semibold uppercase">
+                                                        <h3 className="  text-xl lg:text-3xl   leading-none font-semibold uppercase">
                                                             {p.title}
                                                         </h3>
-                                                        <p className=" text-base  lg:text-xl anim-tx-y leading-none mt-2 ">{p.industry || ""}</p>
+                                                        <p className=" text-base  lg:text-xl  leading-none mt-2 ">{p.industry || ""}</p>
                                                     </div>
                                                     <RiArrowRightUpLine size={26} />
                                                 </div>
@@ -202,10 +244,10 @@ const index = () => {
                                             </div>
                                             <div className="flex w-1/2 px-3 lg:px-5 py-5 items-center justify-between group-hover:text-[#FB0401]  transition-colors duration-300">
                                                 <div>
-                                                    <h3 className="  text-xl lg:text-3xl anim-tx-y font-semibold leading-none uppercase">
+                                                    <h3 className="  text-xl lg:text-3xl  font-semibold leading-none uppercase">
                                                         {project.title}
                                                     </h3>
-                                                    <p className=" text-base  lg:text-xl anim-tx-y">{project?.industry || ""}</p>
+                                                    <p className=" text-base  lg:text-xl ">{project?.industry || ""}</p>
                                                 </div>
                                                 <RiArrowRightUpLine size={32} />
                                             </div>
@@ -228,10 +270,10 @@ const index = () => {
                                             >
                                                 <div className="flex aspect-square w-1/2 px-3 lg:px-5 py-5 items-end justify-between group-hover:text-[#FB0401]  transition-colors duration-300">
                                                     <div>
-                                                        <h3 className="  text-xl lg:text-3xl anim-tx-y  leading-none font-semibold uppercase">
+                                                        <h3 className="  text-xl lg:text-3xl   leading-none font-semibold uppercase">
                                                             {p.title}
                                                         </h3>
-                                                        <p className=" text-base  lg:text-xl anim-tx-y  leading-none mt-2 ">{p.industry || ""}</p>
+                                                        <p className=" text-base  lg:text-xl   leading-none mt-2 ">{p.industry || ""}</p>
                                                     </div>
                                                     <RiArrowRightUpLine size={26} />
                                                 </div>
