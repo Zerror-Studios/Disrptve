@@ -5,6 +5,7 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { useParams } from 'next/navigation';
 import { ProjectsData } from '@/store/ProjectsData';
 import ProjectImageSlider from '@/components/ui/ProjectImageSlider';
+import Link from 'next/link';
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -168,6 +169,42 @@ const index = () => {
                         <ProjectImageSlider images={project?.Images} />
                     )
                 }
+
+                <div className="w-full font-light gap-5 text-xl lg:text-3xl border-t h-10 lg:h-20 border-white/50 center uppercase flex justify-between">
+                    {/* Prev */}
+                    <Link
+                        href={`/projects/${ProjectsData[
+                                (ProjectsData.findIndex((work) => work.id === id) - 1 + ProjectsData.length) %
+                                ProjectsData.length
+                            ].id
+                            }`}
+                        className="flex group gap-2 items-center"
+                    >
+                        <div className="flex">
+                            <p className="translate-x-1/2 group-hover:scale-100 origin-right scale-0 transition-all duration-300">←</p>
+                            <p className="group-hover:scale-0 origin-left transition-all duration-300">←</p>
+                        </div>
+                        <p>Prev</p>
+                    </Link>
+
+                    <div className="h-full w-[1px] bg-white/50"></div>
+
+                    {/* Next */}
+                    <Link
+                        href={`/projects/${ProjectsData[
+                                (ProjectsData.findIndex((work) => work.id === id) + 1) % ProjectsData.length
+                            ].id
+                            }`}
+                        className="flex gap-2 items-center group"
+                    >
+                        <p>Next</p>
+                        <div className="flex">
+                            <p className="group-hover:scale-0 origin-right transition-all duration-300">→</p>
+                            <p className="-translate-x-1/2 group-hover:scale-100 origin-left scale-0 transition-all duration-300">→</p>
+                        </div>
+                    </Link>
+                </div>
+
 
                 {/* <div className="w-full h-screen center">
                     <div className="w-[25%] h-[80%]">

@@ -2,6 +2,7 @@ import { RiArrowRightUpLine } from '@remixicon/react'
 import React, { useEffect, useMemo, useState } from 'react'
 import AOS from "aos";
 import { ProjectsData } from '@/store/ProjectsData';
+import Link from 'next/link';
 const index = () => {
     const [activeFilter, setActiveFilter] = useState("All");
     const filters = useMemo(() => {
@@ -94,26 +95,28 @@ const index = () => {
                             // Layout A — full-width image with overlay text
                             if (layoutType === 0) {
                                 return (
-                                    <div key={index} className="w-full border border-[#8585855b] relative">
-                                        <div className="w-full aspect-square overflow-hidden">
-                                            <img
-                                                src={item.coverImg}
-                                                alt={item.title}
-                                                className="w-full h-full object-cover"
-                                            />
+                                    <Link href={`/projects/${item.id}`} key={index}>
+                                        <div key={index} className="w-full border border-[#8585855b] relative">
+                                            <div className="w-full aspect-square overflow-hidden">
+                                                <img
+                                                    src={item.coverImg}
+                                                    alt={item.title}
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            </div>
+                                            <div className="w-full p-3 space-y-2 absolute left-0 bottom-0 bg-black text-white">
+                                                <h3 className="text-lg uppercase leading-none">{item.title}</h3>
+                                                <p className="text-sm opacity-70 leading-none">{item.industry}</p>
+                                            </div>
                                         </div>
-                                        <div className="w-full p-3 space-y-2 absolute left-0 bottom-0 bg-black text-white">
-                                            <h3 className="text-lg uppercase leading-none">{item.title}</h3>
-                                            <p className="text-sm opacity-70 leading-none">{item.industry}</p>
-                                        </div>
-                                    </div>
+                                    </Link>
                                 );
                             }
 
                             // Layout B (even index, e.g., 2nd)
                             if (layoutType === 1) {
                                 return (
-                                    <a href={`/projects/${item.id}`} key={index}>
+                                    <Link href={`/projects/${item.id}`} key={index}>
                                         <div className="w-full flex flex-row-reverse">
                                             <div className="w-1/2 overflow-hidden border border-[#8585855b] aspect-square">
                                                 <img
@@ -127,13 +130,13 @@ const index = () => {
                                                 <p className="text-sm opacity-70 leading-none">{item.industry}</p>
                                             </div>
                                         </div>
-                                    </a>
+                                    </Link>
                                 );
                             }
 
                             // Layout C (odd index, e.g., 3rd)
                             return (
-                                <a href={`/projects/${item.id}`} key={index}>
+                                <Link href={`/projects/${item.id}`} key={index}>
                                     <div className="w-full flex">
                                         <div className="w-1/2 overflow-hidden border border-[#8585855b] aspect-square">
                                             <img
@@ -147,7 +150,7 @@ const index = () => {
                                             <p className="text-sm opacity-70 leading-none">{item.industry}</p>
                                         </div>
                                     </div>
-                                </a>
+                                </Link>
                             );
                         })}
                     </div>
@@ -159,7 +162,7 @@ const index = () => {
                             if (layout === 1)
                                 return (
                                     <div key={project.id} className="w-full">
-                                        <a
+                                        <Link
                                             href={`/projects/${project.id}`}
                                             className="group border border-[#8585855b] relative w-full flex items-end"
                                         >
@@ -182,7 +185,7 @@ const index = () => {
                                                     alt={project.title}
                                                 />
                                             </div>
-                                        </a>
+                                        </Link>
                                     </div>
                                 );
 
@@ -194,7 +197,7 @@ const index = () => {
                                 return (
                                     <div key={project.id} className="w-full flex">
                                         {pair.map((p) => (
-                                            <a
+                                            <Link
                                                 key={p.id}
                                                 href={`/projects/${p.id}`}
 
@@ -218,7 +221,7 @@ const index = () => {
                                                         alt={p.title}
                                                     />
                                                 </div>
-                                            </a>
+                                            </Link>
                                         ))}
                                     </div>
                                 );
@@ -228,7 +231,7 @@ const index = () => {
                             if (layout === 4)
                                 return (
                                     <div key={project.id} className="w-full">
-                                        <a
+                                        <Link
                                             href={`/projects/${project.id}`}
                                             className="group border border-[#8585855b] relative w-full flex items-end"
                                         >
@@ -251,7 +254,7 @@ const index = () => {
                                                 </div>
                                                 <RiArrowRightUpLine size={32} />
                                             </div>
-                                        </a>
+                                        </Link>
                                     </div>
                                 );
 
@@ -262,7 +265,7 @@ const index = () => {
                                 return (
                                     <div key={project.id} className="w-full flex">
                                         {pair.map((p) => (
-                                            <a
+                                            <Link
                                                 key={p.id}
                                                 href={`/projects/${p.id}`}
 
@@ -286,7 +289,7 @@ const index = () => {
                                                         alt={p.title}
                                                     />
                                                 </div>
-                                            </a>
+                                            </Link>
                                         ))}
                                     </div>
                                 );

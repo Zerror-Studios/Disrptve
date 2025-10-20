@@ -209,25 +209,28 @@ const Services = () => {
                                 <div className=" text-2xl lg:text-5xl  leading-none font-semibold uppercase ">
                                     <div className=" red">
                                         <h3 className=' font-normal'>{item.title.split(" & ")[0]} & </h3>
+                                        <div className="flex items-center w-full justify-between">
                                         <h3 className=' font-normal'>{item.title.split(" & ")[1]} </h3>
+                                        <h2 className=' text-white lg:hidden text-2xl lg:text-5xl'>{item.number}</h2>
+                                        </div>
                                     </div>
                                     <p className=' text-base lg:text-xl  mt-7  normal-case font-light leading-none w[90%] lg:w-[75%]'>{item.desc}</p>
                                 </div>
                             </div>
                             <div className="flex flex-col-reverse justify-between h-full lg:h-fit lg:flex-row gap-4 lg:gap-8">
-                                <div className="aspect-video shrink-0 h-[60%] lg:h-full w-full lg:w-[60%] ">
+                                <div className="aspect-video shrink-0 h-[70%] lg:h-full w-full lg:w-[60%] ">
                                     <img className='w-full h-full object-cover' src={item.img} alt="" />
                                 </div>
                                 <div className=" flex w-full flex-col justify-between  font-semibold">
                                     <div className=" mt-5 lg:mt-0 space-y-1 lg:space-y-3 ">
                                         {item?.servs.map((ser, i) => (
                                             <div key={i} className=" group  flex transition-all duration-300 gap-3 hover:px-2">
-                                                <div className='size-1.5 shrink-0 group-hover:bg-[#FB0401]  transition-all duration-300 translate-y-1.5 bg-white' ></div>
+                                                <div className='size-1.5 shrink-0 group-hover:bg-[#FB0401]  transition-all duration-300 translate-y-1.5 bgred' ></div>
                                                 <p className=' text-base lg:text-xl  group-hover:text-[#FB0401] transition-all duration-300 leading-none ' > {ser}</p>
                                             </div>
                                         ))}
                                     </div>
-                                    <div className="w-full text-end">
+                                    <div className=" hidden lg:block w-full text-end">
                                         <h2 className=' text-2xl lg:text-5xl'>{item.number}</h2>
                                     </div>
                                 </div>

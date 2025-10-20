@@ -155,13 +155,61 @@ const serviceImgs = [
 ];
 
 const index = () => {
+    useGSAP(() => {
+        const stickySection = document.querySelector(".sticky_sec");
+        const cubesContainer = document.querySelector(".cubes");
+        const cubes = document.querySelectorAll(".cube");
+        const why_us = document.querySelector(".why_us");
 
-    useEffect(() => {
-        if (typeof window !== "undefined") {
-            const cleanup = initCubeScrollAnimation();
-            return () => cleanup && cleanup();
-        }
-    }, []);
+        if (!stickySection || !cubes.length) return;
+
+        const interpolate = (start, end, progress) => start + (end - start) * progress;
+
+        const mainTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: stickySection,
+                start: "top top",
+                endTrigger: why_us,
+                end: "top bottom",
+                scrub: 0.4,
+                pin: true,
+                pinSpacing: true,
+                onUpdate: (self) => {
+                    const progress = self.progress;
+                    const firstPhaseProgress = Math.min(progress * 2, 1);
+                    const secondPhaseProgress = progress >= 0.5 ? (progress - 0.5) * 2 : 0;
+
+                    cubes.forEach((cube) => {
+                        const initialAttr = cube.getAttribute("data-initial");
+                        const finalAttr = cube.getAttribute("data-final");
+                        if (!initialAttr || !finalAttr) return;
+
+                        const initial = JSON.parse(initialAttr);
+                        const final = JSON.parse(finalAttr);
+
+                        const currentTop = interpolate(initial.top, final.top, firstPhaseProgress);
+                        const currentLeft = interpolate(initial.left, final.left, firstPhaseProgress);
+                        const currentRotateX = interpolate(initial.rotateX, final.rotateX, firstPhaseProgress);
+                        const currentRotateY = interpolate(initial.rotateY, final.rotateY, firstPhaseProgress);
+                        const currentRotateZ = interpolate(initial.rotateZ, final.rotateZ, firstPhaseProgress);
+                        const currentScale = interpolate(initial.scale, final.scale, firstPhaseProgress);
+                        const currentZ = interpolate(initial.z, final.z, firstPhaseProgress);
+                        const additionalRotation = interpolate(0, 360, secondPhaseProgress);
+
+                        cube.style.top = `${currentTop}%`;
+                        cube.style.left = `${currentLeft}%`;
+                        cube.style.scale = `${currentScale}`;
+                        cube.style.transform = `
+            translate3d(-50%, -50%, ${currentZ}px)
+            rotateX(${currentRotateX}deg)
+            rotateY(${currentRotateY + additionalRotation}deg)
+            rotateZ(${currentRotateZ}deg)
+          `;
+                    });
+                },
+            },
+        });
+    })
 
     useGSAP(() => {
 
@@ -238,7 +286,7 @@ const index = () => {
                 />
             </div>
 
-            {/* <div className=" hidden md:block  sticky_sec opacity-0 absolute top-0 w-full left-0 z-[2]  h-[100vh]  overflow-hidden">
+            <div className=" hidden md:block  sticky_sec opacity-0 absolute top-0 w-full left-0 z-[2]  h-[100vh]  overflow-hidden">
                 <div className="cubes">
                     <div
                         className="cube absolute scale-[.4] w-[200px] top-1/2 left-1/2 h-[200px] [transform-style:preserve-3d]"
@@ -304,11 +352,11 @@ const index = () => {
                         </div>
                     </div>
                 </div>
-            </div> */}
+            </div>
 
-            <div className=" anim_star h-screen flex items-end w-full">
-                <div className="w-full lg:hidden mb-12  h-[45vh] flex flex-col justify-end p-3 lg:p-5 uppercase text-4xl lg:text-7xl ">
-                    <h2 className="">
+            <div className=" anim_star h-[100dvh] lg:h-screen flex items-end w-full">
+                <div className="w-full lg:hidden mb-5  h-[45vh] flex flex-col justify-end p-3 lg:p-5 uppercase text-4xl lg:text-7xl ">
+                    <h2 className="leading-none">
                         A service is just a tool.
                         It’s the strategy behind
                         it that creates the impact.
@@ -326,6 +374,7 @@ const index = () => {
                     <p className=" text-lg lg:text-2xl  leading-none mt-5 normal-case md:w-[60%] lg:w-[40%]">We believe in a strategy-first approach to everything we do. The capabilities listed here are the tools we use to execute on a clear, well-defined plan. </p>
                 </div>
             </div>
+
             <div className="w-full flex pt-10 lg:pt-32 px-5 ">
                 <div className=" hidden md:block w-[40%] h-full"></div>
                 <div className=" w-full lg:w-[60%]  h-full">

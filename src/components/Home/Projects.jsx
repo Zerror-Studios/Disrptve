@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import AOS from "aos";
 import { ProjectsData } from '@/store/ProjectsData';
 import RedBtn from '../buttons/RedBtn';
+import Link from 'next/link';
 
 const Projects = () => {
 
@@ -33,26 +34,28 @@ const Projects = () => {
                             // Layout A — full-width image with overlay text
                             if (layoutType === 0) {
                                 return (
-                                    <div key={index} className="w-full border border-[#8585855b] relative">
-                                        <div className="w-full aspect-square overflow-hidden">
-                                            <img
-                                                src={item.coverImg}
-                                                alt={item.title}
-                                                className="w-full h-full object-cover"
-                                            />
+                                    <Link href={`/projects/${item.id}`} key={index}>
+                                        <div key={index} className="w-full border border-[#8585855b] relative">
+                                            <div className="w-full aspect-square overflow-hidden">
+                                                <img
+                                                    src={item.coverImg}
+                                                    alt={item.title}
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            </div>
+                                            <div className="w-full p-3 space-y-2 absolute left-0 bottom-0 bg-black text-white">
+                                                <h3 className="text-lg uppercase leading-none">{item.title}</h3>
+                                                <p className="text-sm opacity-70 leading-none">{item.industry}</p>
+                                            </div>
                                         </div>
-                                        <div className="w-full p-3 space-y-2 absolute left-0 bottom-0 bg-black text-white">
-                                            <h3 className="text-lg uppercase leading-none">{item.title}</h3>
-                                            <p className="text-sm opacity-70 leading-none">{item.industry}</p>
-                                        </div>
-                                    </div>
+                                    </Link>
                                 );
                             }
 
                             // Layout B (even index, e.g., 2nd)
                             if (layoutType === 1) {
                                 return (
-                                    <a href={`/projects/${item.id}`} key={index}>
+                                    <Link href={`/projects/${item.id}`} key={index}>
                                         <div className="w-full flex flex-row-reverse">
                                             <div className="w-1/2 overflow-hidden border border-[#8585855b] aspect-square">
                                                 <img
@@ -66,13 +69,13 @@ const Projects = () => {
                                                 <p className="text-sm opacity-70 leading-none">{item.industry}</p>
                                             </div>
                                         </div>
-                                    </a>
+                                    </Link>
                                 );
                             }
 
                             // Layout C (odd index, e.g., 3rd)
                             return (
-                                <a href={`/projects/${item.id}`} key={index}>
+                                <Link href={`/projects/${item.id}`} key={index}>
                                     <div className="w-full flex">
                                         <div className="w-1/2 overflow-hidden border border-[#8585855b] aspect-square">
                                             <img
@@ -86,7 +89,7 @@ const Projects = () => {
                                             <p className="text-sm opacity-70 leading-none">{item.industry}</p>
                                         </div>
                                     </div>
-                                </a>
+                                </Link>
                             );
                         })}
                     </div>
@@ -100,7 +103,7 @@ const Projects = () => {
 
                 <div className=" hidden  w-full md:grid-cols-4 pt-14 lg:pt-32 md:grid px-3 lg:px-5">
 
-                    <a href='/projects/4' className=" group  border border-[#8585855b] relative col-span-4 flex items-end">
+                    <Link href='/projects/4' className=" group  border border-[#8585855b] relative col-span-4 flex items-end">
                         <div className="flex w-1/2 px-3 lg:px-5 py-3 lg:py-5 items-center justify-between group-hover:text-[#FB0401] group-hover:font-semibold transition-colors duration-300">
                             <div className="">
                                 <h2 className=' text-xl lg:text-3xl    leading-tight'>PROOST</h2>
@@ -111,10 +114,10 @@ const Projects = () => {
                         <div className="aspect-[16/12] border border-[#8585855b]  relative w-1/2">
                             <img className='w-full  transition-all duration-300 group-hover:scale-90 h-full object-cover' src="/images/projects/Proost/coverImg.webp" alt="" />
                         </div>
-                    </a>
+                    </Link>
 
 
-                    <a href='/projects/8'
+                    <Link href='/projects/8'
                         className=" group  border border-[#8585855b]  relative col-span-2 flex items-end">
                         {/* <div className="w-full group-hover:h-[25%] ease-in-out transition-all duration-300 h-0 absolute bg-[#FB0401] z-[-1] bottom-0 left-0"></div> */}
                         <div className="flex aspect-square w-1/2 px-3 lg:px-5 py-3 lg:py-5 items-end justify-between group-hover:text-[#FB0401] ont-semibold transition-colors duration-300">
@@ -128,10 +131,10 @@ const Projects = () => {
                             className="aspect-square border w-1/2 border-[#8585855b]  relative ">
                             <img className='w-full  transition-all duration-300 group-hover:scale-90 h-full object-cover ' src="/images/projects/Imagine/coverImg.webp" alt="" />
                         </div>
-                    </a>
+                    </Link>
 
 
-                    <a href='/projects/9'
+                    <Link href='/projects/9'
                         className=" group  border border-[#8585855b]  relative col-span-2 flex items-end">
                         {/* <div className="w-full group-hover:h-[25%] ease-in-out transition-all duration-300 h-0 absolute bg-[#FB0401] z-[-1] bottom-0 left-0"></div> */}
                         <div className="flex aspect-square w-1/2 px-3 lg:px-5 py-3 lg:py-5 items-end justify-between group-hover:text-[#FB0401] ont-semibold transition-colors duration-300">
@@ -145,9 +148,9 @@ const Projects = () => {
                             className="aspect-square border w-1/2 border-[#8585855b]  relative ">
                             <img className='w-full  transition-all duration-300 group-hover:scale-90 h-full object-cover object-top ' src="/images/projects/superYou/coverImg.webp" alt="" />
                         </div>
-                    </a>
+                    </Link>
 
-                    <a href='/projects/1' className=" group  border border-[#8585855b] relative col-span-4 flex items-end">
+                    <Link href='/projects/1' className=" group  border border-[#8585855b] relative col-span-4 flex items-end">
                         <div className="aspect-[16/12] border border-[#8585855b]  relative w-1/2">
                             <img className='w-full  transition-all duration-300 group-hover:scale-90 h-full object-cover object-bottom' src="/images/projects/devgan/coverImg.webp" alt="" />
                         </div>
@@ -158,9 +161,9 @@ const Projects = () => {
                             </div>
                             <RiArrowRightUpLine size={32} />
                         </div>
-                    </a>
+                    </Link>
 
-                    <a href='/projects/6'
+                    <Link href='/projects/6'
                         className=" group  border border-[#8585855b]  relative col-span-2 flex items-end">
                         {/* <div className="w-full group-hover:h-[25%] ease-in-out transition-all duration-300 h-0 absolute bg-[#FB0401] z-[-1] bottom-0 left-0"></div> */}
                         <div className="flex aspect-square w-1/2 px-3 lg:px-5 py-3 lg:py-5 items-end justify-between group-hover:text-[#FB0401] ont-semibold transition-colors duration-300">
@@ -174,10 +177,10 @@ const Projects = () => {
                             className="aspect-square border w-1/2 border-[#8585855b]  relative ">
                             <img className='w-full  transition-all duration-300 group-hover:scale-90 h-full object-cover ' src="/images/projects/punjabKings/coverImg.webp" alt="" />
                         </div>
-                    </a>
+                    </Link>
 
 
-                    <a href='/projects' className=" group cursor-pointer border border-[#8585855b]  relative col-span-2 flex items-end">
+                    <Link href='/projects' className=" group cursor-pointer border border-[#8585855b]  relative col-span-2 flex items-end">
                         {/* <div className="w-full group-hover:h-[19%] ease-in-out transition-all duration-300 h-0 absolute bg-[#FB0401] z-[-1] bottom-0 left-0"></div> */}
                         <div className="flex w-full px-3 lg:px-5 py-3 lg:py-5 items-center justify-between group-hover:text-[#FB0401] group-hover:font-semibold transition-colors duration-300">
                             <div className="relative">
@@ -186,7 +189,7 @@ const Projects = () => {
                             </div>
                             <RiArrowRightUpLine size={32} />
                         </div>
-                    </a>
+                    </Link>
                 </div>
 
             </div>

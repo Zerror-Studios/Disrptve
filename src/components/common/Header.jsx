@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { RiArrowRightUpLine } from '@remixicon/react';
 import { Squeeze as Hamburger } from 'hamburger-react'
 import { useGSAP } from '@gsap/react';
+import Link from 'next/link';
 
 const menuItems = [
   { name: "About", href: "/about" },
@@ -126,12 +127,12 @@ const Header = () => {
         style={{ clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 0%)" }}
         className="menu w-full fixed flex flex-col justify-between lg:justify-end  bg-[#FB0401] z-[16] px-3 md:px-5 py-11 top-0 left-0  h-screen">
         <div className="w-full flex absolute top-0 left-0 px-3 py-5 md:px-5 lg:py-11 justify-between ">
-          <a
+          <Link
             href="/"
             // onClick={() => { navigate(router, "/"), closeMenu() }}
             className='cursor-pointer'>
             <img className=' w-[40vw] md:w-fit invert-100' src="/logo.svg" alt="" />
-          </a>
+          </Link>
           <div className=" opacity-0 flex justify-end cursor-pointer">
             <img className='w-[50%] invert-100' src="/icons/close.svg" alt="" />
           </div>
@@ -144,9 +145,10 @@ const Header = () => {
         >
           <div className="">
             {menuItems.map((item, i) => (
-              <a
+              <Link
                 key={i}
                 href={item.href}
+                onClick={closeMenu}
                 // onClick={() => { navigate(router, item.href), closeMenu() }}
                 className="group block  mt-2 lg:mt-4 font-semibold overflow-hidden cursor-pointer w-fit relative"
               >
@@ -159,7 +161,7 @@ const Header = () => {
                 <h2 className="absolute top-[100%] group-hover:top-0 w-fit text-[#000000] transition-all duration-300 cursor-pointer">
                   {item.name}
                 </h2>
-              </a>
+              </Link>
             ))}
           </div>
           <motion.div
@@ -211,14 +213,14 @@ const Header = () => {
 
 
       <div className=" header flex fixed top-0 left-0 z-[15] w-full items-center justify-between px-3 md:px-5 py-5 lg:py-10">
-        <a
+        <Link
            href="/" 
           //  onClick={() => navigate(router, "/")}
           className='cursor-pointer'>
           <img className={`  w-[40vw] md:w-fit ${path === "/contact" ? "invert-100" : "invert-0"}`} src="/logo.svg" alt="" />
-        </a>
+        </Link>
         <div className="flex items-center gap-7">
-          <a 
+          <Link
           href="/contact"
           // onClick={() => navigate(router, "/contact")}
            className='hidden lg:block'>
@@ -229,7 +231,7 @@ const Header = () => {
                 <RiArrowRightUpLine size={20} />
               </div>
             </button>
-          </a>
+          </Link>
           <div className=" cursor-pointer opacity-0 ">
             <img className={`${path === "/contact" ? "invert-100" : "invert-0"}`} src="/icons/menu.svg" alt="" />
           </div>

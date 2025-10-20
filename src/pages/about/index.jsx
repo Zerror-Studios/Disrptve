@@ -285,7 +285,7 @@ const index = () => {
                 </div>
             </div>
 
-            <div className="w-full  overflow-hidden relative py-14 lg:py-20 md:py-0  md:h-screen gap-y-10 center text-center flex-col">
+            <div className="w-full  overflow-hidden relative h-screen gap-y-10 center text-center flex-col">
                 <div className="absolute wave_bg top-0 left-0 z-[-2] w-full h-full center">
                     <Iridescence
                         color={[.5, 0, 0]}

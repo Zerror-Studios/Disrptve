@@ -4,6 +4,7 @@ import gsap from 'gsap'
 import CustomEase from 'gsap/dist/CustomEase'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import SplitText from 'gsap/dist/SplitText'
+import Link from 'next/link'
 
 import React from 'react'
 
@@ -73,7 +74,8 @@ const Footer = () => {
             className="flex flex-col gap-y-1 uppercase text-xl lg:text-3xl"
           >
             {menuItems.map((item, i) => (
-              <a
+              <Link
+                scroll={false}
                 key={i}
                 href={item.href}
                 // onClick={() => navigate(router, item.href)}
@@ -87,7 +89,7 @@ const Footer = () => {
                 <h2 className="absolute font-semibold top-[100%] group-hover:top-0 w-fit text-[#D70000] transition-all duration-300 cursor-pointer">
                   {item.name}
                 </h2>
-              </a>
+              </Link>
             ))}
           </div>
           <div className=" flex flex-col text-end justify-between">

@@ -1,6 +1,7 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
+import Link from 'next/link'
 import React from 'react'
 gsap.registerPlugin(ScrollTrigger)
 
@@ -54,7 +55,7 @@ const index = () => {
                 <div className=" w-full">
                     <div className="mt-10">
                         {JobOpenings.map((item, index) => (
-                            <a href={`/career/${item.id}`} key={index} className=" cursor-pointer hover:px-5 hover:border-b-white/100 transition-all duration-300 w-full h-20 border-b border-white/20 flex items-center justify-between">
+                            <Link href={`/career/${item.id}`} key={index} className=" cursor-pointer hover:px-5 hover:border-b-white/100 transition-all duration-300 w-full h-20 border-b border-white/20 flex items-center justify-between">
                                 <p className='  capitalize text-xl lg:text-3xl'>{item.title}</p>
                                 <div className="flex text-base lg:text-xl h-full items-center gap-4">
                                     <p className=''>{item.location}</p>
@@ -62,7 +63,7 @@ const index = () => {
                                     <p className=''>{item.type}</p>
                                     <img className=' w-4 -rotate-45 invert-100' src="/icons/arrow_small.svg" alt="" />
                                 </div>
-                            </a>
+                            </Link>
                         ))}
                     </div>
                 </div>
