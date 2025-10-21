@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import CustomEase from "gsap/dist/CustomEase";
 
 gsap.registerPlugin(CustomEase);
@@ -90,6 +91,7 @@ export default function Transition({ children, routeKey }) {
           duration: 0.2,
           ease: "ease-secondary",
         });
+         ScrollTrigger.refresh();
       },
     });
   }, [displayChildren]);

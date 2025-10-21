@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
       <header>
         <Header />
       </header>
-{/* 
+
       <div className=" hidden lg:block fixed z-[-1] top-0 left-0  w-full h-screen center ">
         <LiquidEther
           colors={['#FB0401', '#FB0401', '#FB0401']}
@@ -34,7 +34,7 @@ const Layout = ({ children }) => {
           autoResumeDelay={1000}
           autoRampDuration={0.6}
         />
-      </div> */}
+      </div>
 
       <main>{children}</main>
 

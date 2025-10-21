@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
@@ -11,9 +11,16 @@ gsap.registerPlugin(ScrollTrigger);
 
 const index = () => {
 
+    const containerRef = useRef(null);
+    const sliderRef = useRef(null);
+    const prgrsbarRef = useRef(null);
+    const prgrsbarInnerRef = useRef(null);
     const id = useParams()
-
+    var currentIndex
     const project = ProjectsData.find((p) => p?.id == id?.id)
+    if (project) {
+        currentIndex = ProjectsData.findIndex(work => work.id === Number(id?.id));
+    }
 
     useGSAP(() => {
 
@@ -45,46 +52,107 @@ const index = () => {
             ease: "ease-secondary"
         })
 
-
-        gsap.to(".fixy_img_dcd", {
-            opacity: 0,
-            duration: .1,
-            scrollTrigger: {
-                trigger: ".trick_di",
-                start: "top top",
-                scrub: true
-            },
-        })
-        gsap.set(".main_pdcd", { backgroundColor: "black", })
-        gsap.to(".main_pdcd", {
-            backgroundColor: "#00000000",
-            duration: .1,
-            scrollTrigger: {
-                trigger: ".main_pdcd",
-                start: "5% top",
-                // scrub:true,
-                toggleActions: "play none none reverse",
-                // markers:true
-            },
-        })
-
-
     })
 
-    useGSAP(() => {
-        gsap.utils.toArray(".pj_anim_border").forEach((border) => {
-            gsap.to(border, {
-                width: "100%",
-                ease: "ease-secondary",
-                duration: 1,
-                scrollTrigger: {
-                    trigger: border,
-                    start: "top 80%",
-                    // toggleActions: "play none none reverse",
-                },
-            });
-        });
+useEffect(() => {
+  if (!containerRef.current || !sliderRef.current || !project?.Images?.length) return;
+
+  // Clean up all existing ScrollTriggers before re-creating
+  ScrollTrigger.getAll().forEach(st => st.kill());
+
+  const container = containerRef.current;
+  const slider = sliderRef.current;
+  const totalWidth = slider.scrollWidth - container.offsetWidth;
+
+  // Animate borders
+  gsap.utils.toArray(".pj_anim_border").forEach((border) => {
+    gsap.to(border, {
+      width: "100%",
+      ease: "ease-secondary",
+      duration: 1,
+      scrollTrigger: {
+        trigger: border,
+        start: "top 80%",
+      },
     });
+  });
+
+  // Horizontal scroll animation
+  const slideTween = gsap.to(slider, {
+    x: -totalWidth,
+    ease: "linear",
+    scrollTrigger: {
+      trigger: container,
+      start: "top top",
+      end: () => `+=${totalWidth}`,
+      pin: true,
+      scrub: 0.4,
+      anticipatePin: 1,
+    },
+  });
+
+  // Fade effects
+  gsap.to(".fixy_img_dcd", {
+    opacity: 0,
+    duration: 0.1,
+    scrollTrigger: {
+      trigger: ".trick_di",
+      start: "top top",
+      scrub: true,
+    },
+  });
+
+  gsap.set(".main_pdcd", { backgroundColor: "black" });
+  gsap.to(".main_pdcd", {
+    backgroundColor: "#00000000",
+    duration: 0.1,
+    scrollTrigger: {
+      trigger: ".main_pdcd",
+      start: "5% top",
+      toggleActions: "play none none reverse",
+    },
+  });
+
+  // Progress bar
+  if (prgrsbarInnerRef.current) {
+    gsap.set(prgrsbarRef.current, { opacity: 1 , rotate: 0, y: 0});
+    gsap.to(prgrsbarInnerRef.current, {
+      width: "100%",
+      ease: "linear",
+      scrollTrigger: {
+        trigger: container,
+        start: "top top",
+        end: () => `+=${totalWidth}`,
+        scrub: 0.4,
+      },
+    });
+  }
+
+  if (prgrsbarRef.current) {
+    gsap.to(prgrsbarRef.current, {
+      rotate: 5,
+      y: 10,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: container,
+        start: "bottom 95%",
+        toggleActions: "play none none reverse",
+      },
+    });
+  }
+
+  // Force re-init after layout stabilizes
+  setTimeout(() => ScrollTrigger.refresh(), 200);
+
+  return () => {
+    ScrollTrigger.getAll().forEach(st => st.kill());
+    gsap.killTweensOf([slider, prgrsbarInnerRef.current, prgrsbarRef.current]);
+  };
+}, [project?.id]); // key change — depend on project.id, not project.Images
+
+
+
+
     return (
         <>
             <div className="fixed fixy_img_dcd z-[-1] top-0 left-0 w-full h-screen">
@@ -166,17 +234,61 @@ const index = () => {
                 </div>
                 {
                     project?.Images?.length > 0 && (
-                        <ProjectImageSlider images={project?.Images} />
+                        <div
+                            ref={containerRef}
+                            className="w-full relative serv_img_paren mt-20 h-screen overflow-hidden flex items-center"
+                        >
+                            <div
+                                ref={sliderRef}
+                                className="serv_img_slide flex gap-x-10 lg:gap-x-20 px-3 lg:px-[15vw] items-center"
+                            >
+                                {project?.Images.map((imgSrc, i) => (
+                                    <div
+                                        key={i}
+                                        className=" h-[27vh] md:h-[75vh] shrink-0 w-[90vw] lg:w-[70vw] flex justify-center items-center"
+                                    >
+                                        <img
+                                            src={imgSrc}
+                                            alt={`project-image-${i}`}
+                                            className="w-full h-full object-cover "
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+
+                            <div className="w-full absolute bottom-24 md:bottom-[2vw] center">
+                                <div
+                                    style={{
+                                        gridTemplateColumns:
+                                            window.innerWidth < 640
+                                                ? `repeat(15, 1fr)` // mobile
+                                                : `repeat(30, 1fr)`, // tablet and up
+                                    }}
+                                    ref={prgrsbarRef}
+                                    className=" pgrs_bar w-[30%] md:w-[18%] relative  h-5 grid"
+                                    >
+                                    <div
+                                    ref={prgrsbarInnerRef}
+                                     className=" anim_cont_wid  absolute h-full w-0 border border-[#ffff] bg-black"></div>
+                                    {[...Array(30)].map((_, i) => (
+                                        <div
+                                            key={i}
+                                            className="border-r border-[#ffff] w-full h-full"
+                                        ></div>
+                                    ))}
+                                </div>
+                            </div>
+
+                        </div>
                     )
                 }
 
-                <div className="w-full font-light gap-5 text-xl lg:text-3xl border-t h-10 lg:h-20 border-white/50 center uppercase flex justify-between">
+                <div className="w-full font-light gap-5 text-xl lg:text-3xl border-t border-b h-10 lg:h-20 border-white/50 center uppercase flex justify-between">
                     {/* Prev */}
                     <Link
                         href={`/projects/${ProjectsData[
-                                (ProjectsData.findIndex((work) => work.id === id) - 1 + ProjectsData.length) %
-                                ProjectsData.length
-                            ].id
+                            (currentIndex - 1 + ProjectsData.length) % ProjectsData.length
+                        ]?.id
                             }`}
                         className="flex group gap-2 items-center"
                     >
@@ -192,8 +304,8 @@ const index = () => {
                     {/* Next */}
                     <Link
                         href={`/projects/${ProjectsData[
-                                (ProjectsData.findIndex((work) => work.id === id) + 1) % ProjectsData.length
-                            ].id
+                            (currentIndex + 1) % ProjectsData.length
+                        ]?.id
                             }`}
                         className="flex gap-2 items-center group"
                     >

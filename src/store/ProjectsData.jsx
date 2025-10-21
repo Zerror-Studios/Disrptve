@@ -152,23 +152,23 @@ export const ProjectsData = [
     ],
   },
 
-  {
-    id: 3,
-    title: "Sarabh Khanijou",
-    tagline: "High fashion, imagined with Artificial Intelligence.",
-    coverImg: "/images/projects/sarabh/coverImg.webp",
-    heroImg: "/images/projects/sarabh/heroImg.webp",
-    logo: "/images/projects/sarabh/logo.png",
-    websiteLink: "",
-    tags: ["AI Photoshoot", "Creative Production", "Design"],
-    challenge:
-      "For a high-fashion designer, a lookbook or campaign shoot is a critical asset, but it’s also incredibly expensive and logistically complex, involving models, locations, photographers, and stylists. Sarabh Khanijou needed world-class visuals that would capture the essence of his collection without the prohibitive costs and time commitment of a traditional photoshoot.",
-    approach:
-      "We bypassed the physical limitations entirely. Using cutting-edge generative AI, we produced a stunning, hyper-realistic photoshoot from scratch. By collaborating closely with the designer on mood boards and creative direction, we were able to generate unique, high-fashion imagery that was indistinguishable from a real-world shoot. This innovative approach allowed for limitless creative freedom while delivering the final assets at 1/8th the cost and in a fraction of the time.",
-    industry: "Fashion",
-    Images: [
-    ],
-  },
+  // {
+  //   id: 3,
+  //   title: "Sarabh Khanijou",
+  //   tagline: "High fashion, imagined with Artificial Intelligence.",
+  //   coverImg: "/images/projects/sarabh/coverImg.webp",
+  //   heroImg: "/images/projects/sarabh/heroImg.webp",
+  //   logo: "/images/projects/sarabh/logo.png",
+  //   websiteLink: "",
+  //   tags: ["AI Photoshoot", "Creative Production", "Design"],
+  //   challenge:
+  //     "For a high-fashion designer, a lookbook or campaign shoot is a critical asset, but it’s also incredibly expensive and logistically complex, involving models, locations, photographers, and stylists. Sarabh Khanijou needed world-class visuals that would capture the essence of his collection without the prohibitive costs and time commitment of a traditional photoshoot.",
+  //   approach:
+  //     "We bypassed the physical limitations entirely. Using cutting-edge generative AI, we produced a stunning, hyper-realistic photoshoot from scratch. By collaborating closely with the designer on mood boards and creative direction, we were able to generate unique, high-fashion imagery that was indistinguishable from a real-world shoot. This innovative approach allowed for limitless creative freedom while delivering the final assets at 1/8th the cost and in a fraction of the time.",
+  //   industry: "Fashion",
+  //   Images: [
+  //   ],
+  // },
 
   {
     id: 5,
@@ -304,27 +304,28 @@ export const ProjectsData = [
   //     "/images/projects/sdaf/img2.webp",
   //   ],
   // },
-  // {
-  //   id: 14,
-  //   title: "India Maritime Week",
-  //   tagline: "Corporate design that commands attention.",
-  //   heroImg: "/images/projects/imw/heroImg.webp",
-  //   logo: "/images/projects/imw/logo.png",
-  //   websiteLink: "",
-  //   tags: ["Brochure Design", "Corporate Collateral"],
-  //   challenge:
-  //     "Major industry events rely on corporate brochures as key takeaways. The challenge was to make dense content clear, elegant, and prestigious.",
-  //   approach:
-  //     "We created a high-impact brochure with a clean, modern design system, transforming complex information into clarity and style.",
-  //   industry: "Events / Maritime",
-  //   Images: [
-  //     "/images/projects/imw/img1.webp",
-  //     "/images/projects/imw/img2.webp",
-  //     "/images/projects/imw/img3.webp",
-  //     "/images/projects/imw/img4.webp",
-  //     "/images/projects/imw/img5.webp",
-  //   ],
-  // },
+  {
+    id: 14,
+    title: "India Maritime Week",
+    tagline: "Corporate design that commands attention.",
+    heroImg: "/images/projects/imw/heroImg.webp",
+    coverImg: "/images/projects/imw/coverImg.webp",
+    logo: "/images/projects/imw/logo.png",
+    websiteLink: "",
+    tags: ["Brochure Design", "Corporate Collateral"],
+    challenge:
+      "Major industry events rely on corporate brochures as key takeaways. The challenge was to make dense content clear, elegant, and prestigious.",
+    approach:
+      "We created a high-impact brochure with a clean, modern design system, transforming complex information into clarity and style.",
+    industry: "Events / Maritime",
+    Images: [
+      "/images/projects/imw/img1.webp",
+      "/images/projects/imw/img2.webp",
+      "/images/projects/imw/img3.webp",
+      "/images/projects/imw/img4.webp",
+      "/images/projects/imw/img5.webp",
+    ],
+  },
   // {
   //   id: 15,
   //   title: "Piramal Nextgen",

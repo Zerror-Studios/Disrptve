@@ -105,17 +105,19 @@ const serviceData = [
 const Services = () => {
 
     useGSAP(() => {
-        gsap.from(".serv_slide", {
-            scrollTrigger: {
-                trigger: ".serv_paren",
-                start: "top bottom",
-                end: "top top",
-                scrub: .4,
-            },
-            x: 400,
-            ease: "linear",
-        })
-
+        if(window.innerWidth >=1024) {
+            gsap.from(".serv_slide", {
+                scrollTrigger: {
+                    trigger: ".serv_paren",
+                    start: "top bottom",
+                    end: "top top",
+                    scrub: .4,
+                },
+                x: 400,
+                ease: "linear",
+            })
+        }
+        if(window.innerWidth >=1024) {
         gsap.to(".right_serv", {
             scrollTrigger: {
                 trigger: ".serv_paren",
@@ -126,6 +128,7 @@ const Services = () => {
             opacity: 0,
             ease: "linear",
         })
+    }
 
         if (window.innerWidth >= 1024) {
             gsap.to(".serv_slide", {
@@ -164,7 +167,7 @@ const Services = () => {
                     anticipatePin: 1,
                     scrub: .4,
                 },
-                xPercent: -106 * (serviceData.length - 1),
+                xPercent: -96 * (serviceData.length - 1),
                 ease: "linear",
             })
         }
@@ -204,7 +207,7 @@ const Services = () => {
                 <div className=" serv_slide  px-3 mt-5 lg:mt-0  w-full h-[75vh]  lg:h-full gap-x-5 lg:gap-x-10 flex items-center ">
                     <div className="hidden lg:block w-[30vw] shrink-0 h-full"></div>
                     {serviceData.map((item, index) => (
-                        <div key={index} className=" w-[100vw] md:w-[55vw] bg-[#0e0e0e5d] p-3 lg:p-5  flex flex-col lg:justify-between shrink-0  h-full lg:h-[35vw] border border-[#e5e7eb44]">
+                        <div key={index} className=" w-[90vw] md:w-[55vw] bg-[#0e0e0e5d] p-5  flex flex-col lg:justify-between shrink-0  h-full lg:h-[35vw] border border-[#e5e7eb44]">
                             <div className="flex justify-between ">
                                 <div className=" text-2xl lg:text-5xl  leading-none font-semibold uppercase ">
                                     <div className=" red">
@@ -218,7 +221,7 @@ const Services = () => {
                                 </div>
                             </div>
                             <div className="flex flex-col-reverse justify-between h-full lg:h-fit lg:flex-row gap-4 lg:gap-8">
-                                <div className="aspect-video shrink-0 h-[70%] lg:h-full w-full lg:w-[60%] ">
+                                <div className="aspect-video shrink-0  h-[50%] lg:h-full w-full lg:w-[60%] ">
                                     <img className='w-full h-full object-cover' src={item.img} alt="" />
                                 </div>
                                 <div className=" flex w-full flex-col justify-between  font-semibold">

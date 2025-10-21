@@ -24,12 +24,12 @@ const Footer = () => {
 
   useGSAP(() => {
 
-    gsap.from(".anim_border", {
+    gsap.from(".footer_anim_border", {
       width: 0,
       ease: "ease-secondary",
       duration: 1,
       scrollTrigger: {
-        trigger: ".anim_border",
+        trigger: ".footer_anim_border",
         start: "top 80%",
         toggleActions: "play none none reverse",
 
@@ -68,7 +68,7 @@ const Footer = () => {
   return (
     <>
       <div className="w-full  space-y-6   ">
-        <div className=" anim_border w-full border-t pb-14 border-white/50"></div>
+        <div className=" footer_anim_border w-full border-t pb-5 lg:pb-14 border-white/50"></div>
         <div className="w-full px-3 lg:px-5 items-stretch  flex   justify-between ">
           <div
             className="flex flex-col gap-y-1 uppercase text-xl lg:text-3xl"

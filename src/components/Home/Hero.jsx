@@ -54,7 +54,7 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-full px-3 md:px-5 py-14 gap-5 md:gap-0 md:pt-44 md:pb-32 items-center flex flex-col md:flex-row ">
+            <div className="w-full px-3 md:px-5 pt-8 gap-5 md:gap-0 md:pt-44 md:pb-32 items-center flex flex-col md:flex-row ">
                 <div className=" w-full md:w-[60%]  uppercase leading-none text-4xl lg:text-7xl font-semibold ">
                     <h2>a strategy-led </h2>
                     <h2 className='red'>
