@@ -54,101 +54,111 @@ const index = () => {
 
     })
 
-useEffect(() => {
-  if (!containerRef.current || !sliderRef.current || !project?.Images?.length) return;
+useGSAP(
+  (context) => {
+    const container = containerRef.current;
+    const slider = sliderRef.current;
+    const progressOuter = prgrsbarRef.current;
+    const progressInner = prgrsbarInnerRef.current;
 
-  // Clean up all existing ScrollTriggers before re-creating
-  ScrollTrigger.getAll().forEach(st => st.kill());
+    if (!container || !slider || !project?.Images?.length) return;
 
-  const container = containerRef.current;
-  const slider = sliderRef.current;
-  const totalWidth = slider.scrollWidth - container.offsetWidth;
+    const totalWidth = slider.scrollWidth - container.offsetWidth;
+    
 
-  // Animate borders
-  gsap.utils.toArray(".pj_anim_border").forEach((border) => {
-    gsap.to(border, {
-      width: "100%",
-      ease: "ease-secondary",
-      duration: 1,
-      scrollTrigger: {
-        trigger: border,
-        start: "top 80%",
-      },
+    // Animate borders
+    gsap.utils.toArray(".pj_anim_border").forEach((border) => {
+      context.add(() =>
+        gsap.to(border, {
+          width: "100%",
+          ease: "ease-secondary",
+          duration: 1,
+          scrollTrigger: {
+            trigger: border,
+            start: "top 80%",
+          },
+        })
+      );
     });
-  });
 
-  // Horizontal scroll animation
-  const slideTween = gsap.to(slider, {
-    x: -totalWidth,
-    ease: "linear",
-    scrollTrigger: {
-      trigger: container,
-      start: "top top",
-      end: () => `+=${totalWidth}`,
-      pin: true,
-      scrub: 0.4,
-      anticipatePin: 1,
-    },
-  });
+    // Horizontal scroll
+    context.add(() =>
+      gsap.to(slider, {
+        x: -totalWidth,
+        ease: "linear",
+        scrollTrigger: {
+          trigger: container,
+          start: "top top",
+          end: () => `+=${totalWidth}`,
+          pin: true,
+          scrub: 0.4,
+          anticipatePin: 1,
+        },
+      })
+    );
 
-  // Fade effects
-  gsap.to(".fixy_img_dcd", {
-    opacity: 0,
-    duration: 0.1,
-    scrollTrigger: {
-      trigger: ".trick_di",
-      start: "top top",
-      scrub: true,
-    },
-  });
+    // Fade effects
+    context.add(() =>
+      gsap.to(".fixy_img_dcd", {
+        opacity: 0,
+        duration: 0.1,
+        scrollTrigger: {
+          trigger: ".trick_di",
+          start: "top top",
+          scrub: true,
+        },
+      })
+    );
 
-  gsap.set(".main_pdcd", { backgroundColor: "black" });
-  gsap.to(".main_pdcd", {
-    backgroundColor: "#00000000",
-    duration: 0.1,
-    scrollTrigger: {
-      trigger: ".main_pdcd",
-      start: "5% top",
-      toggleActions: "play none none reverse",
-    },
-  });
+    // Background transition
+    gsap.set(".main_pdcd", { backgroundColor: "black" });
+    context.add(() =>
+      gsap.to(".main_pdcd", {
+        backgroundColor: "#00000000",
+        duration: 0.1,
+        scrollTrigger: {
+          trigger: ".main_pdcd",
+          start: "5% top",
+          toggleActions: "play none none reverse",
+        },
+      })
+    );
 
-  // Progress bar
-  if (prgrsbarInnerRef.current) {
-    gsap.set(prgrsbarRef.current, { opacity: 1 , rotate: 0, y: 0});
-    gsap.to(prgrsbarInnerRef.current, {
-      width: "100%",
-      ease: "linear",
-      scrollTrigger: {
-        trigger: container,
-        start: "top top",
-        end: () => `+=${totalWidth}`,
-        scrub: 0.4,
-      },
-    });
-  }
+    // Progress bar
+    if (progressOuter && progressInner) {
+      gsap.set(progressOuter, { opacity: 1, rotate: 0, y: 0 });
 
-  if (prgrsbarRef.current) {
-    gsap.to(prgrsbarRef.current, {
-      rotate: 5,
-      y: 10,
-      opacity: 0,
-      scrollTrigger: {
-        trigger: container,
-        start: "bottom 95%",
-        toggleActions: "play none none reverse",
-      },
-    });
-  }
+      context.add(() =>
+        gsap.to(progressInner, {
+          width: "100%",
+          ease: "linear",
+          scrollTrigger: {
+            trigger: container,
+            start: "top top",
+            end: () => `+=${totalWidth}`,
+            scrub: 0.4,
+          },
+        })
+      );
 
-  // Force re-init after layout stabilizes
-  setTimeout(() => ScrollTrigger.refresh(), 200);
+      context.add(() =>
+        gsap.to(progressOuter, {
+          rotate: 5,
+          y: 10,
+          opacity: 0,
+          scrollTrigger: {
+            trigger: container,
+            start: "bottom 95%",
+            toggleActions: "play none none reverse",
+          },
+        })
+      );
+    }
 
-  return () => {
-    ScrollTrigger.getAll().forEach(st => st.kill());
-    gsap.killTweensOf([slider, prgrsbarInnerRef.current, prgrsbarRef.current]);
-  };
-}, [project?.id]); // key change — depend on project.id, not project.Images
+    ScrollTrigger.refresh(true);
+  },
+  { scope: containerRef, dependencies: [project?.id] }
+);
 
 
 
@@ -171,11 +181,11 @@ useEffect(() => {
                         </div>
                         <div className=" border_animm w-0 border-b border-white"></div>
                     </div>
-                    <div className="w-full  sticky z-[2] top-[50vh] text-base lg:text-xl uppercase leading-none py-4 flex flex-col gap-y-2 md:gap-y-0 md:flex-row  md:justify-between">
+                    <div className="w-full  sticky z-[2] top-[50vh] text-base lg:text-xl uppercase leading-tight py-4 flex flex-col gap-y-2 md:gap-y-0 md:flex-row  md:justify-between">
                         <div className="  w-full  md:w-1/2 flex items-center gap-2">
                             <p className=' pj_anim_txt opacity-0 w-[80%]'>{project?.tagline}</p>
                         </div>
-                        <div className=" w-full  md:w-1/2 flex justify-between">
+                        <div className=" w-full  mt-2 md:mt-0 md:w-1/2 flex justify-between">
                             <div className=" hidden md:block pj_anim_txt opacity-0 w-1/2">
                                 {/* {project?.websiteLink !== "" && (
                                     <LineBtn text="website link" href={project?.websiteLink} />
@@ -232,6 +242,7 @@ useEffect(() => {
                     </div>
 
                 </div>
+                <div key={`project-${project?.id}`} className='w-full'>
                 {
                     project?.Images?.length > 0 && (
                         <div
@@ -282,6 +293,7 @@ useEffect(() => {
                         </div>
                     )
                 }
+                </div>
 
                 <div className="w-full font-light gap-5 text-xl lg:text-3xl border-t border-b h-10 lg:h-20 border-white/50 center uppercase flex justify-between">
                     {/* Prev */}

@@ -10,7 +10,7 @@ const serviceData = [
         number: "01",
         title: "Brand Strategy & Go-to-Market",
         desc: "Before you can win, you need a plan. This is where we define your unique position in the market and craft the roadmap to launch and grow effectively.",
-        img: "https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070",
+        img: "/images/servicesHomepage/brandStrategy.webp",
         servs: [
             "Go-to-Market (GTM) Strategy",
             "Brand Positioning & Narrative",
@@ -22,7 +22,7 @@ const serviceData = [
         number: "02",
         title: "Brand Identity & Packaging",
         desc: "We design the complete sensory experience of your brand—what people see, touch, and feel. It’s more than a logo; it’s your entire visual world.",
-        img: "https://images.unsplash.com/photo-1633533451997-8b6079082e3d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1931",
+        img: "/images/servicesHomepage/brandIdentity.webp",
         servs: [
             "Brand Guidelines",
             "Packaging Design",
@@ -34,7 +34,7 @@ const serviceData = [
         number: "03",
         title: "Social Media & Performance Marketing",
         desc: "We find your audience where they are and give them a reason to engage. This is about building a community and driving measurable growth online.",
-        img: "https://images.unsplash.com/photo-1676285437506-3ad6aa7d7cad?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070",
+        img: "/images/servicesHomepage/socialMedia.webp",
         servs: [
             "SEO & Content Strategy",
             "Social Media Strategy & Management",
@@ -46,7 +46,7 @@ const serviceData = [
         number: "04",
         title: "Website Design & Development",
         desc: "Your website is your home base. We design and build beautiful, intuitive, and high-performing websites that serve as the core of your digital presence.",
-        img: "https://images.unsplash.com/photo-1599652292429-3dc38b19228f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070",
+        img: "/images/servicesHomepage/webDesign.webp",
         servs: [
             "E-commerce Solutions",
             "UX/UI Research & Design",
@@ -58,7 +58,7 @@ const serviceData = [
         number: "05",
         title: "Political & National Strategy",
         desc: "We apply our strategic and data-driven approach to campaigns of national importance, helping candidates and causes shape public opinion and drive action.",
-        img: "https://images.unsplash.com/photo-1502772066658-3006ff41449b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1293",
+        img: "/images/servicesHomepage/political.webp",
         servs: [
             "Digital Campaign Execution",
             "eGovernance & National Strategy Consulting",
@@ -69,7 +69,7 @@ const serviceData = [
         number: "06",
         title: "AI-Led Design & Photoshoots",
         desc: "Why be limited by reality? We use cutting-edge AI to create stunning, original visuals, from conceptual art to entire photoshoots, with unparalleled speed and creative freedom.",
-        img: "https://images.pexels.com/photos/9028921/pexels-photo-9028921.jpeg",
+        img: "/images/servicesHomepage/aiLed.webp",
         servs: [
             "Generative Visual Assets",
             "AI Concept Art & Moodboarding",
@@ -80,7 +80,7 @@ const serviceData = [
         number: "07",
         title: "Creative & Production",
         desc: "This is where ideas become reality. Our team manages the entire production process to create compelling content that captures attention.",
-        img: "https://images.unsplash.com/photo-1612631656340-ad1e06d3a0de?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070",
+        img: "/images/servicesHomepage/production.webp",
         servs: [
             "Photography",
             "Content Creation",
@@ -92,7 +92,7 @@ const serviceData = [
         number: "08",
         title: "Business Decks, Brochures & Collateral",
         desc: "We arm your team with the tools they need to communicate effectively. From investor pitches to sales materials, we design documents that are clear, compelling, and beautifully crafted.",
-        img: "https://images.unsplash.com/photo-1659560893493-9b565e1a26a5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1332",
+        img: "/images/servicesHomepage/business.webp",
         servs: [
             "Bespoke Presentations",
             "Sales & Marketing Collateral",
@@ -112,6 +112,7 @@ const Services = () => {
                     start: "top bottom",
                     end: "top top",
                     scrub: .4,
+                    // markers:true
                 },
                 x: 400,
                 ease: "linear",
@@ -124,6 +125,7 @@ const Services = () => {
                 start: "top top",
                 end: "bottom 80%",
                 scrub: .4,
+                // markers:true
             },
             opacity: 0,
             ease: "linear",
@@ -139,6 +141,7 @@ const Services = () => {
                     end: "+400% top",
                     anticipatePin: 1,
                     scrub: .4,
+                    // markers:true
                 },
                 xPercent: -56.1 * (serviceData.length - 1),
                 ease: "linear",
@@ -153,6 +156,7 @@ const Services = () => {
                     end: "+400% top",
                     anticipatePin: 1,
                     scrub: .4,
+                    // markers:true
                 },
                 xPercent: -53 * (serviceData.length - 1),
                 ease: "linear",
@@ -166,6 +170,7 @@ const Services = () => {
                     end: "+400% top",
                     anticipatePin: 1,
                     scrub: .4,
+                    // markers:true
                 },
                 xPercent: -96 * (serviceData.length - 1),
                 ease: "linear",
