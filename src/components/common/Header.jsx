@@ -131,7 +131,7 @@ const Header = () => {
             href="/"
             onClick={closeMenu}
             className='cursor-pointer'>
-            <img className=' w-[40vw] md:w-fit invert-100' src="/logo.svg" alt="" />
+            <img className=' w-[35vw] md:w-[12vw] invert-100' src="/logo.png" alt="" />
           </Link>
           <div className=" opacity-0 flex justify-end cursor-pointer">
             <img className='w-[50%] invert-100' src="/icons/close.svg" alt="" />
@@ -241,7 +241,7 @@ const Header = () => {
           href="/"
           //  onClick={() => navigate(router, "/")}
           className='cursor-pointer'>
-          <img className={`  w-[40vw] md:w-fit ${path === "/contact" ? "invert-100" : "invert-0"}`} src="/logo.svg" alt="" />
+          <img className={`  w-[35vw] md:w-[12vw] ${path === "/contact" ? "invert-100" : "invert-0"}`} src="/logo.png" alt="" />
         </Link>
         <div className="flex items-center gap-7">
           <Link
