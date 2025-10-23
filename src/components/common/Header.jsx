@@ -101,7 +101,7 @@ const Header = () => {
               openMenu()
             }
           }} className={` text-black cursor-pointer fixed z-[99] top-2  lg:top-9 burger right-5`}>
-            <Hamburger />
+            <Hamburger toggled={isMenuOpen} toggle={setIsMenuOpen} />
           </div>
         )
       }
@@ -114,7 +114,7 @@ const Header = () => {
               openMenu()
             }
           }} className={` ${isMenuOpen ? "text-black" : "text-white"} scale-[.8] lg:scale-100 cursor-pointer fixed z-[99]  top-2  lg:top-9 burger right-2 lg:right-5`}>
-            <Hamburger />
+           <Hamburger toggled={isMenuOpen} toggle={setIsMenuOpen} />
           </div>
         )
       }
