@@ -14,7 +14,7 @@ const menuItems = [
   { name: "About", href: "/about" },
   { name: "case studies", href: "/projects" },
   { name: "services", href: "/services" },
-  { name: "career", href: "/career" },
+  { name: "careers", href: "/career" },
   { name: "contact", href: "/contact" },
 ];
 
@@ -123,8 +123,8 @@ const Footer = () => {
           </div>
         </div>
         <div className=" translate-y-6  px-3 lg:px-5  text-xs lg:text-sm  w-full flex justify-between">
-          <p className='  opacity-50'>© 2025. All rights reserved.</p>
-          <p className='  opacity-50 capitalize'>developed by zerror studios</p>
+          <p className='  opacity-50'></p>
+          <p className='  opacity-50 capitalize'>© 2025. All rights reserved.</p>
         </div>
         <div className="w-full   relative ">
           <div className="h-[20vw] relative  overflow-hidden  ">

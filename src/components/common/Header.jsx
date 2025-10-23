@@ -11,7 +11,7 @@ const menuItems = [
   { name: "About", href: "/about" },
   { name: "case studies", href: "/projects" },
   { name: "services", href: "/services" },
-  { name: "career", href: "/career" },
+  { name: "careers", href: "/career" },
   { name: "contact", href: "/contact" },
 ];
 
@@ -129,7 +129,7 @@ const Header = () => {
         <div className="w-full flex absolute top-0 left-0 px-3 py-5 md:px-5 lg:py-11 justify-between ">
           <Link
             href="/"
-            // onClick={() => { navigate(router, "/"), closeMenu() }}
+            onClick={closeMenu}
             className='cursor-pointer'>
             <img className=' w-[40vw] md:w-fit invert-100' src="/logo.svg" alt="" />
           </Link>
@@ -165,7 +165,7 @@ const Header = () => {
             ))}
           </div>
           <motion.div
-            className="   text-sm lg:text-xl gap-y-2   uppercase  flex flex-col items-end justify-end text-end"
+            className=" hidden md:flex  text-sm lg:text-xl gap-y-2   uppercase  flex-col items-end justify-end text-end"
             variants={containerVariants}
             initial="closed"
             animate={isMenuOpen ? "open" : "closed"}
@@ -189,21 +189,45 @@ const Header = () => {
             ))}
           </motion.div>
         </motion.div>
+        <motion.div
+          className=" md:hidden   text-sm lg:text-xl gap-y-2   uppercase  flex flex-col items-end justify-end text-end"
+          variants={containerVariants}
+          initial="closed"
+          animate={isMenuOpen ? "open" : "closed"}
+        >
+          {socailLinks.map((item, i) => (
+            <a
+              href={item.href}
+              key={i}
+              className="block text-end font-semibold w-fit cursor-pointer group relative overflow-hidden"
+            >
+              <motion.h2
+                className="w-fit text-white group-hover:translate-y-[-100%] transition-all duration-300"
+                variants={textVariants}
+              >
+                {item.name}
+              </motion.h2>
+              <h2 className="absolute top-[100%] group-hover:top-0 w-fit text-[#000000] transition-all duration-300 cursor-pointer">
+                {item.name}
+              </h2>
+            </a>
+          ))}
+        </motion.div>
         <div className="w-full center">
-          <div
+          {/* <div
             style={{ clipPath: "ellipse(46% 27% at 50% 50%)" }}
             className="  lg:hidden menu_gif opacity-0"
           >
             <img className="w-[60vw] md:w-[20vw]" src="/gifs/redEye.gif" alt="" />
-          </div>
+          </div> */}
         </div>
 
-        <div
+        {/* <div
           style={{ clipPath: "ellipse(46% 27% at 50% 50%)" }}
           className=" hidden lg:block menu_gif opacity-0 top-[15%]  absolute right-5"
         >
           <img className="" src="/gifs/redEye.gif" alt="" />
-        </div>
+        </div> */}
 
 
 
@@ -214,16 +238,16 @@ const Header = () => {
 
       <div className=" header flex fixed top-0 left-0 z-[15] w-full items-center justify-between px-3 md:px-5 py-5 lg:py-10">
         <Link
-           href="/" 
+          href="/"
           //  onClick={() => navigate(router, "/")}
           className='cursor-pointer'>
           <img className={`  w-[40vw] md:w-fit ${path === "/contact" ? "invert-100" : "invert-0"}`} src="/logo.svg" alt="" />
         </Link>
         <div className="flex items-center gap-7">
           <Link
-          href="/contact"
-          // onClick={() => navigate(router, "/contact")}
-           className='hidden lg:block'>
+            href="/contact"
+            // onClick={() => navigate(router, "/contact")}
+            className='hidden lg:block'>
             <button className={` ${path === "/contact" ? "bg-black" : "bgred"} group  px-6 py-2  uppercase `}>
               <div className="relative flex items-center gap-1">
                 <div className="w-0 group-hover:w-[97%] transition-all duration-300 h-[1px] bg-white absolute bottom-0 left-0"></div>

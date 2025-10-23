@@ -2,6 +2,8 @@ import React from 'react'
 import LineBtn from '../buttons/LineBtn'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
+import { RiArrowRightUpLine } from '@remixicon/react'
+import Link from 'next/link'
 
 const Hero = () => {
 
@@ -65,10 +67,6 @@ const Hero = () => {
     return (
         <>
             <div className=" w-full h-[42vh] overflow-hidden md:h-screen relative flex items-end md:items-center ">
-                <div className="absolute vid_ovr_tx text-sm md:text-base -translate-y-6 md:translate-y-0 mix-blend-difference uppercase flex px-3 md:px-5 font-semibold w-full z-[1] justify-between">
-                    <h3 className=''>disruption</h3>
-                    <h3 className=''>by design</h3>
-                </div>
                 <div className="w-full  h-full flex justify-center items-center">
                     <div className=" h-[0%] clip_paren">
                         <div style={{ clipPath: "polygon(0 0, 0% 100%, 100% 0)" }} className="size-10 clip_rd -translate-y-5 translate-x-1/2 shrink-0 bgred"></div>
@@ -101,9 +99,15 @@ const Hero = () => {
                     </h2>
                 </div>
                 <div className=" w-full md:w-[40%] space-y-8 ">
-                    <h2 className=' text-xl  lg:w-[80%] leading-none lg:text-3xl md:leading-tight '>Attention is the new currency. <br /> And most brands are overdrawn</h2>
+                    <h2 className=' text-xl  lg:w-[80%] leading-none lg:text-3xl md:leading-tight '>Attention is the new currency. <br /> And most brands are overdrawn.</h2>
                     <p className=' text-base   leading-none lg:text-xl md:leading-tight'>We build brands that earn it back, with interest.</p>
-                    <LineBtn text={"explore now"} href={'/about'} />
+                    <Link href="/about">
+                        <button className=' group relative red flex items-center gap-1'>
+                            <div className="w-full origin-right group-hover:w-0 transition-all duration-300  h-[1px] bgred absolute bottom-0 right-0"></div>
+                            <h3 className=' text-sm lg:text-lg  group-hover:italic uppercase '>Explore Now</h3>
+                            <RiArrowRightUpLine size={20} />
+                        </button>
+                    </Link>
                 </div>
             </div >
         </>

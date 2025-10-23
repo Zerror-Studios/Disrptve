@@ -6,11 +6,12 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { SplitText } from 'gsap/dist/SplitText';
 import Iridescence from '@/components/ui/Iridescence';
 import { RiArrowRightUpLine } from '@remixicon/react';
+import Link from 'next/link';
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const teamMembers = [
     {
-        name: "Ashish Chaudhary",
+        name: "Ashish Chowdhry",
         role: "Managing Director",
         img: "/images/teamMember/ashish.webp",
         colSpan: "col-span-2",
@@ -203,21 +204,21 @@ const index = () => {
                         <div className="w-full mb-2 aspect-square rounded-2xl overflow-hidden ">
                             <img className='w-full  h-full  object-cover' src="/images/teamMember/ashish.webp" alt="" />
                         </div>
-                        <div className='red  leading-none flex items-center gap-3 font-semibold text-lg lg:text-lg'><div className="size-1 bgred"></div><h2>Ashish</h2></div>
+                        <div className='red  leading-none flex items-center gap-3 font-semibold text-lg lg:text-lg'><h2>Ashish</h2></div>
                         <p className=' text-base  lg:text-xl leading-tight '>An actor and entrepreneur with an incredible network and a legacy in advertising—his father's agency, Art, was an icon of the 80s and 90s.</p>
                     </div>
                     <div className="  overflow-hidden space-y-2  w-full ">
                         <div className="w-full mb-2 aspect-square rounded-2xl overflow-hidden ">
                             <img className='w-full  h-full  object-cover' src="/images/teamMember/kaushik.webp" alt="" />
                         </div>
-                        <div className='red  leading-none flex items-center gap-3 font-semibold text-lg lg:text-lg'><div className="size-1 bgred"></div><h2>Kaushik</h2></div>
+                        <div className='red  leading-none flex items-center gap-3 font-semibold text-lg lg:text-lg'><h2>Kaushik</h2></div>
                         <p className=' text-base  lg:text-xl leading-tight '>The seasoned strategist, who merged his own successful agency of 10+ years into this new vision, bringing a deep understanding of what it takes to win.</p>
                     </div>
                     <div className="  overflow-hidden space-y-2  w-full ">
                         <div className="w-full mb-2 aspect-square rounded-2xl overflow-hidden ">
                             <img className='w-full  h-full  object-cover' src="/images/teamMember/kanishq.webp" alt="" />
                         </div>
-                        <div className='red  leading-none flex items-center gap-3 font-semibold text-lg lg:text-lg'><div className="size-1 bgred"></div><h2>Kanishq</h2></div>
+                        <div className='red  leading-none flex items-center gap-3 font-semibold text-lg lg:text-lg'><h2>Kanishq</h2></div>
                         <p className=' text-base  lg:text-xl leading-tight '>The new-gen, with a sharp eye for design, a knack for culture, and his own entrepreneurial grit.</p>
                     </div>
                 </div>
@@ -235,9 +236,9 @@ const index = () => {
                 </div>
                 <div className=" hidden lg:block w-full h-[20vh] bg-black lg:bg-transparent z-[1] lg:pl-20 space-y-5">
                     <div className=" block relative overflow-hidden ">
-                        <div className='red nam_1 uppercase leading-none flex items-center gap-3 font-semibold text-base lg:text-2xl'><div className="size-2 bgred"></div><h2>Ashish</h2></div>
-                        <div className='red nam_2 absolute top-[100%] uppercase leading-none flex items-center gap-3 font-semibold text-base lg:text-2xl'><div className="size-2 bgred"></div><h2>Kaushik</h2></div>
-                        <div className='red nam_3 absolute top-[100%] uppercase leading-none flex items-center gap-3 font-semibold text-base lg:text-2xl'><div className="size-2 bgred"></div><h2>Kanishq</h2></div>
+                        <div className='red nam_1 uppercase leading-none flex items-center gap-3 font-semibold text-base lg:text-2xl'><h2>Ashish</h2></div>
+                        <div className='red nam_2 absolute top-[100%] uppercase leading-none flex items-center gap-3 font-semibold text-base lg:text-2xl'><h2>Kaushik</h2></div>
+                        <div className='red nam_3 absolute top-[100%] uppercase leading-none flex items-center gap-3 font-semibold text-base lg:text-2xl'><h2>Kanishq</h2></div>
                     </div>
                     <div className='  text-base  lg:text-2xl leading-none lg:leading-tight'>
                         <div className="block relative overflow-hidden ">
@@ -287,23 +288,21 @@ const index = () => {
 
             <div className="w-full  overflow-hidden relative h-screen gap-y-10 center text-center flex-col">
                 <div className="absolute wave_bg top-0 left-0 z-[-2] w-full h-full center">
-                    <Iridescence
-                        color={[.5, 0, 0]}
-                        mouseReact={false}
-                        amplitude={0.1}
-                        speed={0.5}
-                    />
+                    
+                    <img src="/gifs/work.gif" alt="" />
                 </div>
                 <h2 className='   text-4xl  lg:text-7xl uppercase'>Let's Build Something Great.</h2>
                 <div className="space-y-5 px-3 text-center w-full center flex-col">
                     <p className=' w-full md:w-[50%]  leading-none   text-xl  lg:text-3xl '>At the end of the day, we’re still driven by the spirit of that first conversation: a desire to do great work with good people. </p>
                     <p className=' w-full md:w-[50%]   leading-none   text-xl  lg:text-3xl'>If you’re building something you believe in, we’d love to have a conversation with you, too.</p>
                 </div>
+                <Link href="/contact">
                 <button className=' group relative flex items-center gap-1'>
                     <div className="w-full group-hover:w-0 transition-all duration-300  h-[1px] bg-white absolute bottom-0 right-0"></div>
                     <p className=' text-base md:text-xl group-hover:italic  '>WORK WITH US</p>
                     <RiArrowRightUpLine size={20} />
                 </button>
+                </Link>
 
             </div>
 

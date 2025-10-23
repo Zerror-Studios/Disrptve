@@ -1,12 +1,13 @@
 import { useGSAP } from '@gsap/react'
-import { RiArrowRightUpLine, RiFacebookFill, RiFacebookLine, RiInstagramFill, RiInstagramLine, RiLinkedinFill, RiLinkedinLine, RiTwitterFill, RiTwitterLine, RiYoutubeFill, RiYoutubeLine } from '@remixicon/react'
+import { RiArrowRightUpLine, RiCloseLine, RiFacebookFill, RiFacebookLine, RiInstagramFill, RiInstagramLine, RiLinkedinFill, RiLinkedinLine, RiTwitterFill, RiTwitterLine, RiYoutubeFill, RiYoutubeLine } from '@remixicon/react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
-import React from 'react'
+import React, { useState } from 'react'
 gsap.registerPlugin(ScrollTrigger)
 
 
 const index = () => {
+  const [openForm, setOpenForm] = useState(false)
 
   useGSAP(() => {
     gsap.to(".fixy_con", {
@@ -20,14 +21,88 @@ const index = () => {
   })
   return (
     <>
-      <div className="  w-full fixy_con fixed z-[-1] brightness-[1] blur-[0] top-0 left-0 h-screen lg:pt-20 bg-[#FB0401] text-black center flex-col gap-y-10 text-center">
-        <h2 className='uppercase text-4xl md:text-6xl lg:text-9xl leading-none '>Ready to Find <br /> Your dream <br /> heaven?</h2>
-        <h2 className='text-base lg:text-xl  leading-none uppercase'>Our team will contact you <br /> as soon as possible.</h2>
+      {openForm && (
+        <div className="fixed h-screen w-full z-[99] center backdrop-blur-sm">
+          <div className="w-[50%] relative p-10 bg-black">
+            <p className='text-base lg:text-xl  leading-none '>Fill in the form below, <br /> our team will contact you as soon as possible. </p>
+            <div onClick={() => setOpenForm(false)} className="absolute cursor-pointer top-5 right-5">
+              <RiCloseLine size={32} />
+            </div>
+
+            <div className="w-full">
+              <form method='POST' className="mt-12 space-y-10">
+                {/* Full Name */}
+                <div className="w-full relative">
+                  <input
+                    type="text"
+                    placeholder="Full Name"
+                    className="border-b w-full text-xl outline-none"
+                  />
+                  <h2 className='absolute right-0 top-1/2 -translate-y-1/2 text-[#FB0401] text-2xl'>*</h2>
+                </div>
+
+                {/* Email + Phone */}
+                <div className="flex gap-6">
+                  <div className=" relative w-1/2">
+
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      className="border-b w-full text-xl outline-none"
+                    />
+                    <h2 className='absolute right-0 top-1/2 -translate-y-1/2 text-[#FB0401] text-2xl'>*</h2>
+                  </div>
+                  <div className=" w-1/2 relative">
+
+                    <input
+                      type="text"
+                      placeholder="Phone"
+                      className="border-b w-full  text-xl outline-none"
+                    />
+                    <h2 className='absolute right-0 top-1/2 -translate-y-1/2 text-[#FB0401] text-2xl'>*</h2>
+                  </div>
+                </div>
+                <div className=" w-full relative">
+
+                  <textarea
+                    type="text"
+                    placeholder="Message"
+                    className="border-b w-full h-[12vw] resize-none break-words  text-xl outline-none"
+                  />
+                  <h2 className='absolute right-0 top-1/2 -translate-y-1/2 text-[#FB0401] text-2xl'>*</h2>
+                </div>
+
+                <div className="w-full center">
+                  <button className={`  bgred group  px-6 py-2  uppercase `}>
+                    <div className="relative flex items-center gap-1">
+                      <div className="w-0 group-hover:w-[97%] transition-all duration-300 h-[1px] bg-white absolute bottom-0 left-0"></div>
+                      <h3 className=" group-hover:italic uppercase">Submit</h3>
+                      <RiArrowRightUpLine size={20} />
+                    </div>
+                  </button>
+
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      )}
+
+      <div className="  w-full fixy_con fixed  brightness-[1] blur-[0] top-0 left-0 h-screen lg:pt-20 bg-[#FB0401] text-black center flex-col gap-y-10 text-center">
+        <h2 className='uppercase text-4xl md:text-6xl lg:text-9xl leading-none '>Want to <br /> build with us?</h2>
+        <button onClick={()=>setOpenForm(true)} className={`  bg-black cursor-pointer group center  px-6 py-2  uppercase `}>
+          <div className="relative cursor-pointer center text-white flex items-center gap-1">
+                <div className="w-0 group-hover:w-[97%] transition-all duration-300 h-[1px] bg-white absolute bottom-0 left-0"></div>
+            <h2 className=" text-white cursor-pointer group-hover:italic uppercase"> Fill the form</h2>
+            <RiArrowRightUpLine size={20} />
+          </div>
+        </button>
       </div>
 
-      <div className="w-full">
-        <div className="w-full slide_u h-screen"></div>
-        <div className="w-full pt-10 lg:pt-20 pb-5 bg-black  center">
+      <div className="w-full ">
+        <div className="w-full slide_u pointer-events-none h-screen"></div>
+        <div className="w-full relative pt-10 lg:pt-20 pb-5 bg-black  center">
           <div className=" w-full lg:w-[80%] px-3 lg:px-5  gap-20 flex flex-col md:flex-row justify-between items-stretch">
             <div className=" w-full md:w-1/2 h-full">
               <div className=" grid grid-cols-2 space-y-20">

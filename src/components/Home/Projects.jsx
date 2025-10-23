@@ -7,6 +7,8 @@ import Link from 'next/link';
 
 const Projects = () => {
 
+    const pattern = (i) => (i % 6) + 1;
+
     useEffect(() => {
         AOS.init({
             duration: 1500,
@@ -25,38 +27,62 @@ const Projects = () => {
                     <p className='  uppercase text-base lg:text-xl  leading-tight'>Brand Identity & Packaging / Campaigns  <br /> / Digital / Experience Design</p>
                 </div>
 
-                <div className="w-full pt-14 px-3  md:hidden">
+                {ProjectsData.length === 0 ? (
+                    <p className="text-lg text-gray-400 text-center mt-10">
+                        No projects found.
+                    </p>
+                ) : (
+                    <>
+                        <div className="w-full pt-14 px-3 md:hidden grid">
+                            {ProjectsData.slice(0, 10).map((item, index) => {
+                                const layoutType = index % 3;
 
-                    <div className="w-full grid">
-                        {ProjectsData.slice(0, 6).map((item, index) => {
-                            const layoutType = index % 3;
+                                // Layout A — full-width image with overlay text
+                                if (layoutType === 0) {
+                                    return (
+                                        <Link href={`/projects/${item.id}`} key={index}>
+                                            <div key={index} className="w-full border border-[#8585855b] relative">
+                                                <div className="w-full aspect-square overflow-hidden">
+                                                    <img
+                                                        src={item.coverImg}
+                                                        alt={item.title}
+                                                        className="w-full h-full object-cover"
+                                                    />
+                                                </div>
+                                                <div className="w-full p-3 space-y-2 absolute left-0 bottom-0 bg-black text-white">
+                                                    <h3 className="text-lg uppercase leading-none">{item.title}</h3>
+                                                    <p className="text-sm opacity-70 leading-none">{item.industry}</p>
+                                                </div>
+                                            </div>
+                                        </Link>
+                                    );
+                                }
 
-                            // Layout A — full-width image with overlay text
-                            if (layoutType === 0) {
+                                // Layout B (even index, e.g., 2nd)
+                                if (layoutType === 1) {
+                                    return (
+                                        <Link href={`/projects/${item.id}`} key={index}>
+                                            <div className="w-full flex flex-row-reverse">
+                                                <div className="w-1/2 overflow-hidden border border-[#8585855b] aspect-square">
+                                                    <img
+                                                        src={item.coverImg}
+                                                        alt={item.title}
+                                                        className="w-full h-full object-cover"
+                                                    />
+                                                </div>
+                                                <div className="w-1/2 border border-[#8585855b] aspect-square p-3 flex flex-col justify-end">
+                                                    <h3 className="text-lg uppercase leading-none">{item.title}</h3>
+                                                    <p className="text-sm opacity-70 leading-none">{item.industry}</p>
+                                                </div>
+                                            </div>
+                                        </Link>
+                                    );
+                                }
+
+                                // Layout C (odd index, e.g., 3rd)
                                 return (
                                     <Link href={`/projects/${item.id}`} key={index}>
-                                        <div key={index} className="w-full border border-[#8585855b] relative">
-                                            <div className="w-full aspect-square overflow-hidden">
-                                                <img
-                                                    src={item.coverImg}
-                                                    alt={item.title}
-                                                    className="w-full h-full object-cover"
-                                                />
-                                            </div>
-                                            <div className="w-full p-3 space-y-2 absolute left-0 bottom-0 bg-black text-white">
-                                                <h3 className="text-lg uppercase leading-none">{item.title}</h3>
-                                                <p className="text-sm opacity-70 leading-none">{item.industry}</p>
-                                            </div>
-                                        </div>
-                                    </Link>
-                                );
-                            }
-
-                            // Layout B (even index, e.g., 2nd)
-                            if (layoutType === 1) {
-                                return (
-                                    <Link href={`/projects/${item.id}`} key={index}>
-                                        <div className="w-full flex flex-row-reverse">
+                                        <div className="w-full flex">
                                             <div className="w-1/2 overflow-hidden border border-[#8585855b] aspect-square">
                                                 <img
                                                     src={item.coverImg}
@@ -71,124 +97,162 @@ const Projects = () => {
                                         </div>
                                     </Link>
                                 );
-                            }
+                            })}
+                        </div>
+                        <div className=" hidden md:block w-full pt-12 px-5 pb-32">
+                            {ProjectsData.slice(0, 10).map((project, i) => {
+                                const layout = pattern(i);
 
-                            // Layout C (odd index, e.g., 3rd)
-                            return (
-                                <Link href={`/projects/${item.id}`} key={index}>
-                                    <div className="w-full flex">
-                                        <div className="w-1/2 overflow-hidden border border-[#8585855b] aspect-square">
-                                            <img
-                                                src={item.coverImg}
-                                                alt={item.title}
-                                                className="w-full h-full object-cover"
-                                            />
+                                // 1st layout (1st, 7th, 13th, ...)
+                                if (layout === 1)
+                                    return (
+                                        <div key={project.id} className="w-full">
+                                            <Link
+                                                href={`/projects/${project.id}`}
+                                                className="group border border-[#8585855b] relative w-full flex items-end"
+                                            >
+                                                <div className="flex w-1/2 px-3 lg:px-5 py-5 items-center justify-between group-hover:text-[#FB0401]  transition-colors duration-300">
+                                                    <div>
+                                                        <h3 className="  text-xl lg:text-3xl  font-semibold leading-none uppercase">
+                                                            {project.title}
+                                                        </h3>
+                                                        <p className=" text-base  lg:text-xl ">{project?.industry || ""}</p>
+                                                    </div>
+                                                    <RiArrowRightUpLine size={32} />
+                                                </div>
+                                                <div
+
+                                                    className="aspect-[16/12] border border-[#8585855b] relative w-1/2"
+                                                >
+                                                    <img
+                                                        className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
+                                                        src={project.coverImg}
+                                                        alt={project.title}
+                                                    />
+                                                </div>
+                                            </Link>
                                         </div>
-                                        <div className="w-1/2 border border-[#8585855b] aspect-square p-3 flex flex-col justify-end">
-                                            <h3 className="text-lg uppercase leading-none">{item.title}</h3>
-                                            <p className="text-sm opacity-70 leading-none">{item.industry}</p>
+                                    );
+
+                                // 2nd & 3rd layout (paired grid)
+                                if (layout === 2 || layout === 3) {
+                                    // Render pair only once (on even index in pattern 2)
+                                    if (layout === 3) return null;
+                                    const pair = ProjectsData[i + 1] ? [project, ProjectsData[i + 1]] : [project];
+                                    return (
+                                        <div key={project.id} className="w-full flex">
+                                            {pair.map((p) => (
+                                                <Link
+                                                    key={p.id}
+                                                    href={`/projects/${p.id}`}
+
+                                                    className="group border border-[#8585855b] relative w-1/2 flex items-end"
+                                                >
+                                                    <div className="flex aspect-square w-1/2 px-3 lg:px-5 py-5 items-end justify-between group-hover:text-[#FB0401]  transition-colors duration-300">
+                                                        <div>
+                                                            <h3 className="  text-xl lg:text-3xl   leading-none font-semibold uppercase">
+                                                                {p.title}
+                                                            </h3>
+                                                            <p className=" text-base  lg:text-xl  leading-none mt-2 ">{p.industry || ""}</p>
+                                                        </div>
+                                                        <RiArrowRightUpLine size={26} />
+                                                    </div>
+                                                    <div
+                                                        className="aspect-square border w-1/2 border-[#8585855b] relative"
+                                                    >
+                                                        <img
+                                                            className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
+                                                            src={p.coverImg}
+                                                            alt={p.title}
+                                                        />
+                                                    </div>
+                                                </Link>
+                                            ))}
                                         </div>
-                                    </div>
-                                </Link>
-                            );
-                        })}
-                    </div>
+                                    );
+                                }
 
-                    <div className="w-full mt-10 center">
-                        <RedBtn text={"explore all"} href={'/projects'} />
-                    </div>
-                </div>
+                                // 4th layout (mirrored full-width)
+                                if (layout === 4)
+                                    return (
+                                        <div key={project.id} className="w-full">
+                                            <Link
+                                                href={`/projects/${project.id}`}
+                                                className="group border border-[#8585855b] relative w-full flex items-end"
+                                            >
+                                                <div
 
+                                                    className="aspect-[16/12] border border-[#8585855b] relative w-1/2"
+                                                >
+                                                    <img
+                                                        className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
+                                                        src={project.coverImg}
+                                                        alt={project.title}
+                                                    />
+                                                </div>
+                                                <div className="flex w-1/2 px-3 lg:px-5 py-5 items-center justify-between group-hover:text-[#FB0401]  transition-colors duration-300">
+                                                    <div>
+                                                        <h3 className="  text-xl lg:text-3xl  font-semibold leading-none uppercase">
+                                                            {project.title}
+                                                        </h3>
+                                                        <p className=" text-base  lg:text-xl ">{project?.industry || ""}</p>
+                                                    </div>
+                                                    <RiArrowRightUpLine size={32} />
+                                                </div>
+                                            </Link>
+                                        </div>
+                                    );
 
+                                // 5th & 6th layout (same as 2nd & 3rd)
+                                if (layout === 5 || layout === 6) {
+                                    if (layout === 6) return null;
+                                    const pair = ProjectsData[i + 1] ? [project, ProjectsData[i + 1]] : [project];
+                                    return (
+                                        <div key={project.id} className="w-full flex">
+                                            {pair.map((p) => (
+                                                <Link
+                                                    key={p.id}
+                                                    href={`/projects/${p.id}`}
 
-                <div className=" hidden  w-full md:grid-cols-4 pt-14 lg:pt-32 md:grid px-3 lg:px-5">
+                                                    className="group border border-[#8585855b] relative w-1/2 flex items-end"
+                                                >
+                                                    <div className="flex aspect-square w-1/2 px-3 lg:px-5 py-5 items-end justify-between group-hover:text-[#FB0401]  transition-colors duration-300">
+                                                        <div>
+                                                            <h3 className="  text-xl lg:text-3xl   leading-none font-semibold uppercase">
+                                                                {p.title}
+                                                            </h3>
+                                                            <p className=" text-base  lg:text-xl   leading-none mt-2 ">{p.industry || ""}</p>
+                                                        </div>
+                                                        <RiArrowRightUpLine size={26} />
+                                                    </div>
+                                                    <div
+                                                        className="aspect-square border w-1/2 border-[#8585855b] relative"
+                                                    >
+                                                        <img
+                                                            className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
+                                                            src={p.coverImg}
+                                                            alt={p.title}
+                                                        />
+                                                    </div>
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    );
+                                }
+                            })}
+                        </div>
+                    </>
+                )}
+                <div className="w-full center">
 
-                    <Link href='/projects/4' className=" group  border border-[#8585855b] relative col-span-4 flex items-end">
-                        <div className="flex w-1/2 px-3 lg:px-5 py-3 lg:py-5 items-center justify-between group-hover:text-[#FB0401] group-hover:font-semibold transition-colors duration-300">
-                            <div className="">
-                                <h2 className=' text-xl lg:text-3xl    leading-tight'>PROOST</h2>
-                                <p className=' text-base lg:text-xl '> Alcohol Beverages</p>
+                    <Link href="/projects">
+                        <button className={`  bgred group  px-6 py-2  uppercase `}>
+                            <div className="relative flex items-center gap-1">
+                                <div className="w-0 group-hover:w-[97%] transition-all duration-300 h-[1px] bg-white absolute bottom-0 left-0"></div>
+                                <h3 className=" group-hover:italic uppercase"> view all our work</h3>
+                                <RiArrowRightUpLine size={20} />
                             </div>
-                            <RiArrowRightUpLine size={32} />
-                        </div>
-                        <div className="aspect-[16/12] border border-[#8585855b]  relative w-1/2">
-                            <img className='w-full  transition-all duration-300 group-hover:scale-90 h-full object-cover' src="/images/projects/Proost/coverImg.webp" alt="" />
-                        </div>
-                    </Link>
-
-
-                    <Link href='/projects/8'
-                        className=" group  border border-[#8585855b]  relative col-span-2 flex items-end">
-                        {/* <div className="w-full group-hover:h-[25%] ease-in-out transition-all duration-300 h-0 absolute bg-[#FB0401] z-[-1] bottom-0 left-0"></div> */}
-                        <div className="flex aspect-square w-1/2 px-3 lg:px-5 py-3 lg:py-5 items-end justify-between group-hover:text-[#FB0401] ont-semibold transition-colors duration-300">
-                            <div className="">
-                                <h2 className=' text-xl lg:text-3xl   leading-tight font-semibold uppercase'>Imagine</h2>
-                                <p className=' text-base lg:text-xl '>Plant-Based Meat</p>
-                            </div>
-                            <RiArrowRightUpLine size={26} />
-                        </div>
-                        <div
-                            className="aspect-square border w-1/2 border-[#8585855b]  relative ">
-                            <img className='w-full  transition-all duration-300 group-hover:scale-90 h-full object-cover ' src="/images/projects/Imagine/coverImg.webp" alt="" />
-                        </div>
-                    </Link>
-
-
-                    <Link href='/projects/9'
-                        className=" group  border border-[#8585855b]  relative col-span-2 flex items-end">
-                        {/* <div className="w-full group-hover:h-[25%] ease-in-out transition-all duration-300 h-0 absolute bg-[#FB0401] z-[-1] bottom-0 left-0"></div> */}
-                        <div className="flex aspect-square w-1/2 px-3 lg:px-5 py-3 lg:py-5 items-end justify-between group-hover:text-[#FB0401] ont-semibold transition-colors duration-300">
-                            <div className="">
-                                <h2 className=' text-xl lg:text-3xl   leading-tight font-semibold uppercase'>SuperYou</h2>
-                                <p className=' text-base lg:text-xl '>Retail and Health & Nutrition</p>
-                            </div>
-                            <RiArrowRightUpLine size={26} />
-                        </div>
-                        <div
-                            className="aspect-square border w-1/2 border-[#8585855b]  relative ">
-                            <img className='w-full  transition-all duration-300 group-hover:scale-90 h-full object-cover object-top ' src="/images/projects/superYou/coverImg.webp" alt="" />
-                        </div>
-                    </Link>
-
-                    <Link href='/projects/1' className=" group  border border-[#8585855b] relative col-span-4 flex items-end">
-                        <div className="aspect-[16/12] border border-[#8585855b]  relative w-1/2">
-                            <img className='w-full  transition-all duration-300 group-hover:scale-90 h-full object-cover object-bottom' src="/images/projects/devgan/coverImg.webp" alt="" />
-                        </div>
-                        <div className="flex w-1/2 px-3 lg:px-5 py-3 lg:py-5 items-center justify-between group-hover:text-[#FB0401] group-hover:font-semibold transition-colors duration-300">
-                            <div className="">
-                                <h2 className=' text-xl lg:text-3xl  font-semibold uppercase  leading-tight'>Devgn CinEx</h2>
-                                <p className=' text-base lg:text-xl '>Entertainment</p>
-                            </div>
-                            <RiArrowRightUpLine size={32} />
-                        </div>
-                    </Link>
-
-                    <Link href='/projects/6'
-                        className=" group  border border-[#8585855b]  relative col-span-2 flex items-end">
-                        {/* <div className="w-full group-hover:h-[25%] ease-in-out transition-all duration-300 h-0 absolute bg-[#FB0401] z-[-1] bottom-0 left-0"></div> */}
-                        <div className="flex aspect-square w-1/2 px-3 lg:px-5 py-3 lg:py-5 items-end justify-between group-hover:text-[#FB0401] ont-semibold transition-colors duration-300">
-                            <div className="">
-                                <h2 className=' text-xl lg:text-3xl   leading-tight font-semibold uppercase'>Punjab Kings</h2>
-                                <p className=' text-base lg:text-xl '>Sports</p>
-                            </div>
-                            <RiArrowRightUpLine size={26} />
-                        </div>
-                        <div
-                            className="aspect-square border w-1/2 border-[#8585855b]  relative ">
-                            <img className='w-full  transition-all duration-300 group-hover:scale-90 h-full object-cover ' src="/images/projects/punjabKings/coverImg.webp" alt="" />
-                        </div>
-                    </Link>
-
-
-                    <Link href='/projects' className=" group cursor-pointer border border-[#8585855b]  relative col-span-2 flex items-end">
-                        {/* <div className="w-full group-hover:h-[19%] ease-in-out transition-all duration-300 h-0 absolute bg-[#FB0401] z-[-1] bottom-0 left-0"></div> */}
-                        <div className="flex w-full px-3 lg:px-5 py-3 lg:py-5 items-center justify-between group-hover:text-[#FB0401] group-hover:font-semibold transition-colors duration-300">
-                            <div className="relative">
-                                <div className="w-0 group-hover:w-[100%] transition-all duration-300  h-[2px] bg-[#FB0401] absolute bottom-0 left-0"></div>
-                                <h2 className=' text-xl lg:text-3xl  group-hover:italic uppercase '>view all our works</h2>
-                            </div>
-                            <RiArrowRightUpLine size={32} />
-                        </div>
+                        </button>
                     </Link>
                 </div>
 

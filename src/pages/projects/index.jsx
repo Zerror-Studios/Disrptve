@@ -89,7 +89,7 @@ const index = () => {
             ) : (
                 <>
                     <div className="w-full pt-14 px-3 md:hidden grid">
-                        {ProjectsData.map((item, index) => {
+                        {filteredProjects.map((item, index) => {
                             const layoutType = index % 3;
 
                             // Layout A — full-width image with overlay text
@@ -217,7 +217,7 @@ const index = () => {
                                                 >
                                                     <img
                                                         className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
-                                                        src={p.heroImg}
+                                                        src={p.coverImg}
                                                         alt={p.title}
                                                     />
                                                 </div>
@@ -285,7 +285,7 @@ const index = () => {
                                                 >
                                                     <img
                                                         className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
-                                                        src={p.heroImg}
+                                                        src={p.coverImg}
                                                         alt={p.title}
                                                     />
                                                 </div>

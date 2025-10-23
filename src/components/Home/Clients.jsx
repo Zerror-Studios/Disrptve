@@ -7,23 +7,15 @@ const Clients = () => {
     const clientsData = [
         {
             img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
-            icon: "/images/clients/candor.svg"
+            icon: "/images/clients/vishwa.svg"
         },
         {
             img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
-            icon: "/images/clients/dalhouse.svg"
+            icon: "/images/clients/rupay.svg"
         },
         {
             img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
-            icon: "/images/clients/dc.svg"
-        },
-        {
-            img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
-            icon: "/images/clients/disney.svg"
-        },
-        {
-            img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
-            icon: "/images/clients/ellementary.svg"
+            icon: "/images/clients/devgn.svg"
         },
         {
             img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
@@ -31,15 +23,7 @@ const Clients = () => {
         },
         {
             img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
-            icon: "/images/clients/fyi.svg"
-        },
-        {
-            img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
             icon: "/images/clients/golden.svg"
-        },
-        {
-            img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
-            icon: "/images/clients/guyana.svg"
         },
         {
             img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
@@ -51,11 +35,7 @@ const Clients = () => {
         },
         {
             img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
-            icon: "/images/clients/marvel.svg"
-        },
-        {
-            img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
-            icon: "/images/clients/mevejars.svg"
+            icon: "/images/clients/tata.svg"
         },
         {
             img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
@@ -75,7 +55,7 @@ const Clients = () => {
         },
         {
             img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
-            icon: "/images/clients/rupay.svg"
+            icon: "/images/clients/fyi.svg"
         },
         {
             img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
@@ -87,20 +67,38 @@ const Clients = () => {
         },
         {
             img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
-            icon: "/images/clients/tata.svg"
-        },
-        {
-            img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
             icon: "/images/clients/tlh.svg"
         },
         {
             img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
-            icon: "/images/clients/vishwa.svg"
+            icon: "/images/clients/candor.svg"
         },
         {
             img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
-            icon: "/images/clients/devgn.svg"
+            icon: "/images/clients/guyana.svg"
         },
+        {
+            img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
+            icon: "/images/clients/ellementary.svg"
+        },
+        {
+            img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
+            icon: "/images/clients/dalhouse.svg"
+        },
+        {
+            img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
+            icon: "/images/clients/mevejars.svg"
+        },
+
+
+
+
+
+
+
+
+
+
     ]
 
     const containerRef = useRef(null);
