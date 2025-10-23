@@ -221,71 +221,71 @@ const Services = () => {
                     <div className="hidden lg:block w-[30vw] shrink-0 h-full"></div>
                     {serviceData.map((item, index) => (
                         <>
-                        <div key={index} className=" md:hidden w-[90vw] md:w-[55vw] bg-[#0e0e0e5d] p-5  flex flex-col lg:justify-between shrink-0  h-full lg:h-[35vw] border border-[#e5e7eb44]">
-                            <div className="flex justify-between ">
-                                <div className=" text-2xl lg:text-5xl  leading-none font-semibold uppercase ">
-                                    <div className=" red">
-                                        <h3 className=' font-normal'>{item.title.split(" & ")[0]} & </h3>
-                                        <div className="flex items-center w-full justify-between">
-                                            <h3 className=' font-normal'>{item.title.split(" & ")[1]} </h3>
-                                            <h2 className=' text-white lg:hidden text-2xl lg:text-5xl'>{item.number}</h2>
+                            <div key={index} className=" md:hidden w-[90vw] md:w-[55vw] bg-[#0e0e0e5d] p-5  flex flex-col lg:justify-between shrink-0  h-full lg:h-[35vw] border border-[#e5e7eb44]">
+                                <div className="flex justify-between ">
+                                    <div className=" text-2xl lg:text-5xl  leading-none font-semibold uppercase ">
+                                        <div className=" red">
+                                            <h3 className=' font-normal'>{item.title.split(" & ")[0]} & </h3>
+                                            <div className="flex items-center w-full justify-between">
+                                                <h3 className=' font-normal'>{item.title.split(" & ")[1]} </h3>
+                                                <h2 className=' text-white lg:hidden text-2xl lg:text-5xl'>{item.number}</h2>
+                                            </div>
+                                        </div>
+                                        <p className=' text-base lg:text-xl  mt-7  normal-case font-light leading-none w[90%] lg:w-[75%]'>{item.desc}</p>
+                                    </div>
+                                </div>
+                                <div className="flex flex-col-reverse justify-between h-full lg:h-fit lg:flex-row gap-4 lg:gap-8">
+                                    <div className="aspect-video shrink-0  h-[50%] lg:h-full w-full lg:w-[60%] ">
+                                        <img className='w-full h-full object-cover' src={item.img} alt="" />
+                                    </div>
+                                    <div className=" flex w-full flex-col justify-between  font-semibold">
+                                        <div className=" mt-5 lg:mt-0 space-y-1 lg:space-y-3 ">
+                                            {item?.servs.map((ser, i) => (
+                                                <div key={i} className=" group  flex transition-all duration-300 gap-3 hover:px-2">
+                                                    <div className='size-1.5 shrink-0 group-hover:bg-[#FB0401]  transition-all duration-300 translate-y-1.5 bgred' ></div>
+                                                    <p className=' text-base lg:text-xl  group-hover:text-[#FB0401] transition-all duration-300 leading-none ' > {ser}</p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                        <div className=" hidden lg:block w-full text-end">
+                                            <h2 className=' text-2xl lg:text-5xl'>{item.number}</h2>
                                         </div>
                                     </div>
-                                    <p className=' text-base lg:text-xl  mt-7  normal-case font-light leading-none w[90%] lg:w-[75%]'>{item.desc}</p>
                                 </div>
                             </div>
-                            <div className="flex flex-col-reverse justify-between h-full lg:h-fit lg:flex-row gap-4 lg:gap-8">
-                                <div className="aspect-video shrink-0  h-[50%] lg:h-full w-full lg:w-[60%] ">
-                                    <img className='w-full h-full object-cover' src={item.img} alt="" />
-                                </div>
-                                <div className=" flex w-full flex-col justify-between  font-semibold">
-                                    <div className=" mt-5 lg:mt-0 space-y-1 lg:space-y-3 ">
+                            <div key={index} className=" hidden md:flex  w-[90vw] md:w-[55vw] bg-[#0e0e0e5d] p-5 flex-col lg:justify-between shrink-0  h-full lg:h-[37vw] border border-[#e5e7eb44]">
+                                <div className="flex ">
+                                    <div className=" text-2xl lg:text-5xl w-[60%]    leading-none font-semibold uppercase ">
+                                        <div className=" red">
+                                            <h3 className=' font-normal'>{item.title.split(" & ")[0]} & </h3>
+                                            <div className="flex items-center w-full justify-between">
+                                                <h3 className=' font-normal'>{item.title.split(" & ")[1]} </h3>
+                                                <h2 className=' text-white lg:hidden text-2xl lg:text-5xl'>{item.number}</h2>
+                                            </div>
+                                        </div>
+                                        <p className=' text-base lg:text-xl  mt-[2vw]  normal-case font-light leading-tight w[90%] lg:w-[90%]'>{item.desc}</p>
+                                    </div>
+                                    <div className=" pl-5 w-[40%] space-y-1 lg:space-y-3 ">
                                         {item?.servs.map((ser, i) => (
                                             <div key={i} className=" group  flex transition-all duration-300 gap-3 hover:px-2">
-                                                <div className='size-1.5 shrink-0 group-hover:bg-[#FB0401]  transition-all duration-300 translate-y-1.5 bgred' ></div>
+                                                <div className='size-1.5 shrink-0 bg-white group-hover:bg-[#FB0401]  transition-all duration-300 translate-y-1.5 ' ></div>
                                                 <p className=' text-base lg:text-xl  group-hover:text-[#FB0401] transition-all duration-300 leading-none ' > {ser}</p>
                                             </div>
                                         ))}
                                     </div>
-                                    <div className=" hidden lg:block w-full text-end">
-                                        <h2 className=' text-2xl lg:text-5xl'>{item.number}</h2>
-                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div key={index} className=" hidden md:flex  w-[90vw] md:w-[55vw] bg-[#0e0e0e5d] p-5 flex-col lg:justify-between shrink-0  h-full lg:h-[37vw] border border-[#e5e7eb44]">
-                            <div className="flex ">
-                                <div className=" text-2xl lg:text-5xl w-[60%]    leading-none font-semibold uppercase ">
-                                    <div className=" red">
-                                        <h3 className=' font-normal'>{item.title.split(" & ")[0]} & </h3>
-                                        <div className="flex items-center w-full justify-between">
-                                            <h3 className=' font-normal'>{item.title.split(" & ")[1]} </h3>
-                                            <h2 className=' text-white lg:hidden text-2xl lg:text-5xl'>{item.number}</h2>
+                                <div className="flex flex-col-reverse justify-between h-full lg:h-fit lg:flex-row gap-4 lg:gap-8">
+                                    <div className=" shrink-0  h-[50%] lg:h-[16vw] w-full lg:w-[60%] ">
+                                        <img className='w-full h-full object-cover' src={item.img} alt="" />
+                                    </div>
+                                    <div className=" flex w-full flex-col justify-between  font-semibold">
+                                        <div className=""></div>
+                                        <div className=" hidden lg:block w-full text-end">
+                                            <h2 className=' text-2xl lg:text-7xl'>{item.number}</h2>
                                         </div>
                                     </div>
-                                    <p className=' text-base lg:text-xl  mt-[2vw]  normal-case font-light leading-tight w[90%] lg:w-[90%]'>{item.desc}</p>
-                                </div>
-                                <div className=" pl-5 w-[40%] space-y-1 lg:space-y-3 ">
-                                        {item?.servs.map((ser, i) => (
-                                            <div key={i} className=" group  flex transition-all duration-300 gap-3 hover:px-2">
-                                                <div className='size-1.5 shrink-0 group-hover:bg-[#FB0401]  transition-all duration-300 translate-y-1.5 bgred' ></div>
-                                                <p className=' text-base lg:text-xl  group-hover:text-[#FB0401] transition-all duration-300 leading-none ' > {ser}</p>
-                                            </div>
-                                        ))}
-                                    </div>
-                            </div>
-                            <div className="flex flex-col-reverse justify-between h-full lg:h-fit lg:flex-row gap-4 lg:gap-8">
-                                <div className=" shrink-0  h-[50%] lg:h-[16vw] w-full lg:w-[60%] ">
-                                    <img className='w-full h-full object-cover' src={item.img} alt="" />
-                                </div>
-                                <div className=" flex w-full flex-col justify-between  font-semibold">
-                                    <div className=""></div>
-                                    <div className=" hidden lg:block w-full text-end">
-                                        <h2 className=' text-2xl lg:text-7xl'>{item.number}</h2>
-                                    </div>
                                 </div>
                             </div>
-                        </div>
                         </>
                     ))}
                 </div>

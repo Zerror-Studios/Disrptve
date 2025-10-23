@@ -1,3 +1,4 @@
+import Form from '@/components/ui/Form'
 import { useGSAP } from '@gsap/react'
 import { RiArrowRightUpLine, RiCloseLine, RiFacebookFill, RiFacebookLine, RiInstagramFill, RiInstagramLine, RiLinkedinFill, RiLinkedinLine, RiTwitterFill, RiTwitterLine, RiYoutubeFill, RiYoutubeLine } from '@remixicon/react'
 import gsap from 'gsap'
@@ -22,71 +23,7 @@ const index = () => {
   return (
     <>
       {openForm && (
-        <div className="fixed h-screen w-full z-[99] center backdrop-blur-sm">
-          <div className="w-[50%] relative p-10 bg-black">
-            <p className='text-base lg:text-xl  leading-none '>Fill in the form below, <br /> our team will contact you as soon as possible. </p>
-            <div onClick={() => setOpenForm(false)} className="absolute cursor-pointer top-5 right-5">
-              <RiCloseLine size={32} />
-            </div>
-
-            <div className="w-full">
-              <form method='POST' className="mt-12 space-y-10">
-                {/* Full Name */}
-                <div className="w-full relative">
-                  <input
-                    type="text"
-                    placeholder="Full Name"
-                    className="border-b w-full text-xl outline-none"
-                  />
-                  <h2 className='absolute right-0 top-1/2 -translate-y-1/2 text-[#FB0401] text-2xl'>*</h2>
-                </div>
-
-                {/* Email + Phone */}
-                <div className="flex gap-6">
-                  <div className=" relative w-1/2">
-
-                    <input
-                      type="email"
-                      placeholder="Email"
-                      className="border-b w-full text-xl outline-none"
-                    />
-                    <h2 className='absolute right-0 top-1/2 -translate-y-1/2 text-[#FB0401] text-2xl'>*</h2>
-                  </div>
-                  <div className=" w-1/2 relative">
-
-                    <input
-                      type="text"
-                      placeholder="Phone"
-                      className="border-b w-full  text-xl outline-none"
-                    />
-                    <h2 className='absolute right-0 top-1/2 -translate-y-1/2 text-[#FB0401] text-2xl'>*</h2>
-                  </div>
-                </div>
-                <div className=" w-full relative">
-
-                  <textarea
-                    type="text"
-                    placeholder="Message"
-                    className="border-b w-full h-[12vw] resize-none break-words  text-xl outline-none"
-                  />
-                  <h2 className='absolute right-0 top-1/2 -translate-y-1/2 text-[#FB0401] text-2xl'>*</h2>
-                </div>
-
-                <div className="w-full center">
-                  <button className={`  bgred group  px-6 py-2  uppercase `}>
-                    <div className="relative flex items-center gap-1">
-                      <div className="w-0 group-hover:w-[97%] transition-all duration-300 h-[1px] bg-white absolute bottom-0 left-0"></div>
-                      <h3 className=" group-hover:italic uppercase">Submit</h3>
-                      <RiArrowRightUpLine size={20} />
-                    </div>
-                  </button>
-
-                </div>
-              </form>
-            </div>
-
-          </div>
-        </div>
+        <Form setOpenForm={setOpenForm} />
       )}
 
       <div className="  w-full fixy_con fixed  brightness-[1] blur-[0] top-0 left-0 h-screen lg:pt-20 bg-[#FB0401] text-black center flex-col gap-y-10 text-center">

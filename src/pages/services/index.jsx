@@ -278,12 +278,7 @@ const index = () => {
     return (
         <>
             <div className="fixed wave_bg top-0 left-0 z-[-1] w-full h-full center">
-                <Iridescence
-                    color={[.5, 0, 0]}
-                    mouseReact={false}
-                    amplitude={0.1}
-                    speed={0.5}
-                />
+                    <img src="/gifs/work.gif" alt="" />
             </div>
 
             <div className=" hidden md:block  sticky_sec opacity-0 absolute top-0 w-full left-0 z-[2]  h-[100vh]  overflow-hidden">
@@ -291,7 +286,7 @@ const index = () => {
                     <div
                         className="cube absolute scale-[.4] w-[200px] top-1/2 left-1/2 h-[200px] [transform-style:preserve-3d]"
                         data-initial='{"top":40,"left":46,"rotateX":-360,"rotateY":-360,"rotateZ":-180,"z":-180000,"scale":0.4}'
-                        data-final='{"top":50,"left":20,"rotateX":0,"rotateY":1,"rotateZ":0,"z":0,"scale":1.4}'
+                        data-final='{"top":50,"left":20,"rotateX":0,"rotateY":0,"rotateZ":0,"z":0,"scale":1.4}'
                     >
                         <div
                             className="cube relative w-[200px] h-[200px] [transform-style:preserve-3d]"
@@ -393,7 +388,7 @@ const index = () => {
                                     <div className="w-full mt-2 md:mt-8  space-y-2 gap-x-5 grid md:grid-cols-1 lg:grid-cols-2">
                                         {item?.servs.map((ser, i) => (
                                             <div key={i} className="  flex gap-2">
-                                                <div className=' size-1.5 md:size-2 shrink-0  translate-y-2.5 bgred' ></div>
+                                                <div className=' size-1.5 md:size-2 shrink-0  translate-y-2.5 bg-white' ></div>
                                                 <p className=" text-base lg:text-xl " > {ser}</p>
                                             </div>
                                         ))}

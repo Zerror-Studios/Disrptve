@@ -33,7 +33,7 @@ const Projects = () => {
                     </p>
                 ) : (
                     <>
-                        <div className="w-full pt-14 px-3 md:hidden grid">
+                        <div className="w-full pt-14 pb-10 px-3 md:hidden grid">
                             {ProjectsData.slice(0, 10).map((item, index) => {
                                 const layoutType = index % 3;
 
@@ -249,7 +249,7 @@ const Projects = () => {
                         <button className={`  bgred group  px-6 py-2  uppercase `}>
                             <div className="relative flex items-center gap-1">
                                 <div className="w-0 group-hover:w-[97%] transition-all duration-300 h-[1px] bg-white absolute bottom-0 left-0"></div>
-                                <h3 className=" group-hover:italic uppercase"> view all our work</h3>
+                                <h2 className=" text-sm md:text-base group-hover:italic uppercase"> view all our work</h2>
                                 <RiArrowRightUpLine size={20} />
                             </div>
                         </button>

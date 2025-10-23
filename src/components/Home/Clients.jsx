@@ -6,87 +6,87 @@ const Clients = () => {
 
     const clientsData = [
         {
-            img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
+            img: "/images/clients/clientsBg.jpg",
             icon: "/images/clients/vishwa.svg"
         },
         {
-            img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
+            img: "/images/clients/clientsBg.jpg",
             icon: "/images/clients/rupay.svg"
         },
         {
-            img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
+            img: "/images/clients/clientsBg.jpg",
             icon: "/images/clients/devgn.svg"
         },
         {
-            img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
+            img: "/images/clients/clientsBg.jpg",
             icon: "/images/clients/flipkart.svg"
         },
         {
-            img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
+            img: "/images/clients/clientsBg.jpg",
             icon: "/images/clients/golden.svg"
         },
         {
-            img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
+            img: "/images/clients/clientsBg.jpg",
             icon: "/images/clients/imagine.svg"
         },
         {
-            img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
+            img: "/images/clients/clientsBg.jpg",
             icon: "/images/clients/kuwait.svg"
         },
         {
-            img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
+            img: "/images/clients/clientsBg.jpg",
             icon: "/images/clients/tata.svg"
         },
         {
-            img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
+            img: "/images/clients/clientsBg.jpg",
             icon: "/images/clients/piramal.svg"
         },
         {
-            img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
+            img: "/images/clients/clientsBg.jpg",
             icon: "/images/clients/prominance.svg"
         },
         {
-            img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
+            img: "/images/clients/clientsBg.jpg",
             icon: "/images/clients/proost.svg"
         },
         {
-            img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
+            img: "/images/clients/clientsBg.jpg",
             icon: "/images/clients/punjab.svg"
         },
         {
-            img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
+            img: "/images/clients/clientsBg.jpg",
             icon: "/images/clients/fyi.svg"
         },
         {
-            img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
+            img: "/images/clients/clientsBg.jpg",
             icon: "/images/clients/sdaf.svg"
         },
         {
-            img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
+            img: "/images/clients/clientsBg.jpg",
             icon: "/images/clients/superyou.svg"
         },
         {
-            img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
+            img: "/images/clients/clientsBg.jpg",
             icon: "/images/clients/tlh.svg"
         },
         {
-            img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
+            img: "/images/clients/clientsBg.jpg",
             icon: "/images/clients/candor.svg"
         },
         {
-            img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
+            img: "/images/clients/clientsBg.jpg",
             icon: "/images/clients/guyana.svg"
         },
         {
-            img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
+            img: "/images/clients/clientsBg.jpg",
             icon: "/images/clients/ellementary.svg"
         },
         {
-            img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
+            img: "/images/clients/clientsBg.jpg",
             icon: "/images/clients/dalhouse.svg"
         },
         {
-            img: "https://images.prismic.io/inertia-website/Z6Y605bqstJ9-X_I_CLINIQUE.png?auto=format%2Ccompress&rect=841%2C49%2C688%2C693&w=412&h=415",
+            img: "/images/clients/clientsBg.jpg",
             icon: "/images/clients/mevejars.svg"
         },
 
@@ -164,7 +164,7 @@ const Clients = () => {
                                         alt=""
                                     />
                                     <img
-                                        className="client-img absolute w-full h-full object-contain opacity-0 scale-105 brightness-[.8]"
+                                        className="client-img absolute w-full h-full object-cover opacity-0 "
                                         src={item.img}
                                         alt=""
                                     />
