@@ -1,4 +1,96 @@
 export const ProjectsData = [
+    {
+    id: 8,
+    title: "Imagine",
+    tagline: "End-to-end brand custodians.",
+    heroImg: "/images/projects/Imagine/heroImg.webp",
+    coverImg: "/images/projects/Imagine/coverImg.webp",
+    logo: "/images/projects/Imagine/logo.png",
+    websiteLink: "",
+    tags: [
+      "Branding",
+      "Packaging",
+      "Social Media",
+      "Performance",
+      "ORM",
+      "Quick Commerce Management",
+      "Retail Management",
+    ],
+    challenge:
+      "For a fast-growing brand in the plant-based meat industry like Imagine, managing every facet of marketing is a monumental task. They needed a single, trusted partner to ensure consistency and growth across all channels.",
+    approach:
+      "We serve as Imagine’s brand custodians — managing everything from brand strategy and packaging to ORM, performance, and retail presence, ensuring every touchpoint aligns towards market leadership.",
+    industry: "Plant-Based Meat",
+    Images: [
+      "/images/projects/Imagine/img1.webp",
+      "/images/projects/Imagine/img2.webp",
+      "/images/projects/Imagine/img3.webp",
+      "/images/projects/Imagine/img4.webp",
+      "/images/projects/Imagine/img5.webp",
+      "/images/projects/Imagine/img6.webp",
+    ],
+  },
+    {
+    id: 2,
+    title: "Devgn CinEx",
+    tagline: "Building a blockbuster brand for a cinematic icon.",
+    coverImg: "/images/projects/devgan/coverImg.webp",
+    heroImg: "/images/projects/devgan/heroImg.webp",
+    logo: "/images/projects/devgan/logo.png",
+    websiteLink: "",
+    tags: ["Brand Identity", "Naming", "Creative Strategy"],
+    challenge:
+      "When a superstar like Ajay Devgn enters the highly competitive cinema space, partnering with a large conglomerate (Vishwa Samudra), the brand needs to feel both premium and personal, while also paying homage to both brands. The task was to create a new identity from scratch that could stand alongside industry giants, reflect the founders’ legacies, and promise a world-class movie-going experience.",
+    approach:
+      "This project began with the most fundamental question: 'What should we call it?' Our team coined the name 'Devgn CinEx,' creating a direct link to its iconic founder. From there, we architected the entire brand universe. This wasn't just a logo; it was a complete visual system—from the color palette and typography to the on-screen animations and in-venue branding. We delivered a comprehensive brand identity that was modern, powerful, and ready for a nationwide rollout.",
+    industry: "Entertainment",
+    Images: [
+      "/images/projects/devgan/img1.webp",
+      "/images/projects/devgan/img2.webp",
+      "/images/projects/devgan/img3.webp",
+      "/images/projects/devgan/img4.webp",
+    ],
+  },
+    {
+    id: 5,
+    title: "Prominance",
+    tagline: "Building credibility and launching a superstar.",
+    coverImg: "/images/projects/prominance/coverImg.webp",
+    heroImg: "/images/projects/prominance/heroImg.webp",
+    logo: "/images/projects/prominance/logo.png",
+    websiteLink: "",
+    tags: ["Social Media", "Strategy", "Performance Marketing"],
+    challenge:
+      "Prominance wanted to build broader brand trust and cement its market leadership by launching Shah Rukh Khan as its brand ambassador. The task was to manage this high-profile launch while simultaneously building a credible, engaging social media presence from the ground up.",
+    approach:
+      "We developed a comprehensive social media and performance marketing plan focused on authenticity and trust. Then we strategically integrated the Shah Rukh Khan launch to amplify the brand’s credibility and core message of quality.",
+    industry: "Construction and Building Materials",
+    Images: [
+      "/images/projects/prominance/img1.webp",
+      "/images/projects/prominance/img2.webp",
+      "/images/projects/prominance/img3.webp",
+    ],
+  },
+    {
+    id: 9,
+    title: "SuperYou",
+    tagline: "Making wellness feel good online.",
+    heroImg: "/images/projects/superYou/heroImg.webp",
+    coverImg: "/images/projects/superYou/coverImg.webp",
+    logo: "/images/projects/superYou/logo.png",
+    websiteLink: "",
+    tags: ["Social Media", "Creative Strategy", "ORM"],
+    challenge:
+      "The health and nutrition space is crowded with intimidating messaging. SuperYou needed a social presence that felt vibrant, accessible, and authentic.",
+    approach:
+      "We collaborate with SuperYou’s team to define a distinct brand voice and produce AI-enhanced creative content that educates, inspires, and grows their online wellness community.",
+    industry: "Retail and Health & Nutrition",
+    Images: [
+      "/images/projects/superYou/img1.webp",
+      "/images/projects/superYou/img2.webp",
+      "/images/projects/superYou/img3.webp",
+    ],
+  },
   {
     id: 1,
     title: "Guyana National Campaign",
@@ -32,44 +124,29 @@ export const ProjectsData = [
     ],
   },
   {
-    id: 2,
-    title: "Devgn CinEx",
-    tagline: "Building a blockbuster brand for a cinematic icon.",
-    coverImg: "/images/projects/devgan/coverImg.webp",
-    heroImg: "/images/projects/devgan/heroImg.webp",
-    logo: "/images/projects/devgan/logo.png",
+    id: 10,
+    title: "Flaunt Your Ink",
+    tagline: "From brand identity to brand investment.",
+    heroImg: "/images/projects/FYI/heroImg.webp",
+    coverImg: "/images/projects/FYI/coverImg.jpg",
+    logo: "/images/projects/FYI/logo.png",
     websiteLink: "",
-    tags: ["Brand Identity", "Naming", "Creative Strategy"],
+    tags: [
+      "Brand Identity",
+      "Packaging",
+      "Celebrity Onboarding",
+      "Fundraising Strategy",
+    ],
     challenge:
-      "When a superstar like Ajay Devgn enters the highly competitive cinema space, partnering with a large conglomerate (Vishwa Samudra), the brand needs to feel both premium and personal, while also paying homage to both brands. The task was to create a new identity from scratch that could stand alongside industry giants, reflect the founders’ legacies, and promise a world-class movie-going experience.",
+      "Launching a new beauty brand requires identity, credibility, and capital. Flaunt Your Ink needed a partner to build both brand and business simultaneously.",
     approach:
-      "This project began with the most fundamental question: 'What should we call it?' Our team coined the name 'Devgn CinEx,' creating a direct link to its iconic founder. From there, we architected the entire brand universe. This wasn't just a logo; it was a complete visual system—from the color palette and typography to the on-screen animations and in-venue branding. We delivered a comprehensive brand identity that was modern, powerful, and ready for a nationwide rollout.",
-    industry: "Entertainment",
+      "We built the brand identity and packaging system, onboarded Suniel Shetty and Aalim Hakim as ambassadors, and supported their first fundraising round to fuel growth.",
+    industry: "Beauty and Personal Care",
     Images: [
-      "/images/projects/devgan/img1.webp",
-      "/images/projects/devgan/img2.webp",
-      "/images/projects/devgan/img3.webp",
-      "/images/projects/devgan/img4.webp",
+      "/images/projects/FYI/img1.webp",
     ],
   },
-  {
-    id: 3,
-    title: "Sarabh Khanijou",
-    tagline: "High fashion, imagined with Artificial Intelligence.",
-    coverImg: "/images/projects/sarabh/coverImg.webp",
-    heroImg: "/images/projects/sarabh/heroImg.webp",
-    logo: "/images/projects/sarabh/logo.png",
-    websiteLink: "",
-    tags: ["AI Photoshoot", "Creative Production", "Design"],
-    challenge:
-      "For a high-fashion designer, a lookbook or campaign shoot is a critical asset, but it’s also incredibly expensive and logistically complex, involving models, locations, photographers, and stylists. Sarabh Khanijou needed world-class visuals that would capture the essence of his collection without the prohibitive costs and time commitment of a traditional photoshoot.",
-    approach:
-      "We bypassed the physical limitations entirely. Using cutting-edge generative AI, we produced a stunning, hyper-realistic photoshoot from scratch. By collaborating closely with the designer on mood boards and creative direction, we were able to generate unique, high-fashion imagery that was indistinguishable from a real-world shoot. This innovative approach allowed for limitless creative freedom while delivering the final assets at 1/8th the cost and in a fraction of the time.",
-    industry: "Fashion",
-    Images: [
-    ],
-  },
-  {
+    {
     id: 4,
     title: "Proost Beer",
     tagline: "A brand that looks as good as it tastes.",
@@ -93,34 +170,9 @@ export const ProjectsData = [
       "/images/projects/Proost/2_Proost.jpg",
       "/images/projects/Proost/3_Proost.jpg",
       "/images/projects/Proost/4_Proost.jpg",
-      // "/images/projects/Proost/img6.webp",
-      // "/images/projects/Proost/img1.webp",
-      // "/images/projects/Proost/img2.webp",
-      // "/images/projects/Proost/img3.webp",
-      // "/images/projects/Proost/img4.webp",
-      // "/images/projects/Proost/img5.webp",
     ],
   },
-  {
-    id: 5,
-    title: "Prominance",
-    tagline: "Building credibility and launching a superstar.",
-    coverImg: "/images/projects/prominance/coverImg.webp",
-    heroImg: "/images/projects/prominance/heroImg.webp",
-    logo: "/images/projects/prominance/logo.png",
-    websiteLink: "",
-    tags: ["Social Media", "Strategy", "Performance Marketing"],
-    challenge:
-      "Prominance wanted to build broader brand trust and cement its market leadership by launching Shah Rukh Khan as its brand ambassador. The task was to manage this high-profile launch while simultaneously building a credible, engaging social media presence from the ground up.",
-    approach:
-      "We developed a comprehensive social media and performance marketing plan focused on authenticity and trust. Then we strategically integrated the Shah Rukh Khan launch to amplify the brand’s credibility and core message of quality.",
-    industry: "Construction and Building Materials",
-    Images: [
-      "/images/projects/prominance/img1.webp",
-      "/images/projects/prominance/img2.webp",
-      "/images/projects/prominance/img3.webp",
-    ],
-  },
+
   {
     id: 6,
     title: "Punjab Kings",
@@ -160,82 +212,29 @@ export const ProjectsData = [
       "/images/projects/tata/img2.webp",
     ],
   },
-
   {
-    id: 8,
-    title: "Imagine",
-    tagline: "End-to-end brand custodians.",
-    heroImg: "/images/projects/Imagine/heroImg.webp",
-    coverImg: "/images/projects/Imagine/coverImg.webp",
-    logo: "/images/projects/Imagine/logo.png",
+    id: 3,
+    title: "Sarabh Khanijou",
+    tagline: "High fashion, imagined with Artificial Intelligence.",
+    coverImg: "/images/projects/sarabh/coverImg.webp",
+    heroImg: "/images/projects/sarabh/heroImg.webp",
+    logo: "/images/projects/sarabh/logo.png",
     websiteLink: "",
-    tags: [
-      "Branding",
-      "Packaging",
-      "Social Media",
-      "Performance",
-      "ORM",
-      "Quick Commerce Management",
-      "Retail Management",
-    ],
+    tags: ["AI Photoshoot", "Creative Production", "Design"],
     challenge:
-      "For a fast-growing brand in the plant-based meat industry like Imagine, managing every facet of marketing is a monumental task. They needed a single, trusted partner to ensure consistency and growth across all channels.",
+      "For a high-fashion designer, a lookbook or campaign shoot is a critical asset, but it’s also incredibly expensive and logistically complex, involving models, locations, photographers, and stylists. Sarabh Khanijou needed world-class visuals that would capture the essence of his collection without the prohibitive costs and time commitment of a traditional photoshoot.",
     approach:
-      "We serve as Imagine’s brand custodians — managing everything from brand strategy and packaging to ORM, performance, and retail presence, ensuring every touchpoint aligns towards market leadership.",
-    industry: "Plant-Based Meat",
+      "We bypassed the physical limitations entirely. Using cutting-edge generative AI, we produced a stunning, hyper-realistic photoshoot from scratch. By collaborating closely with the designer on mood boards and creative direction, we were able to generate unique, high-fashion imagery that was indistinguishable from a real-world shoot. This innovative approach allowed for limitless creative freedom while delivering the final assets at 1/8th the cost and in a fraction of the time.",
+    industry: "Fashion",
     Images: [
-      "/images/projects/Imagine/img1.webp",
-      "/images/projects/Imagine/img2.webp",
-      "/images/projects/Imagine/img3.webp",
-      "/images/projects/Imagine/img4.webp",
-      "/images/projects/Imagine/img5.webp",
-      "/images/projects/Imagine/img6.webp",
-    ],
-  },
-  {
-    id: 9,
-    title: "SuperYou",
-    tagline: "Making wellness feel good online.",
-    heroImg: "/images/projects/superYou/heroImg.webp",
-    coverImg: "/images/projects/superYou/coverImg.webp",
-    logo: "/images/projects/superYou/logo.png",
-    websiteLink: "",
-    tags: ["Social Media", "Creative Strategy", "ORM"],
-    challenge:
-      "The health and nutrition space is crowded with intimidating messaging. SuperYou needed a social presence that felt vibrant, accessible, and authentic.",
-    approach:
-      "We collaborate with SuperYou’s team to define a distinct brand voice and produce AI-enhanced creative content that educates, inspires, and grows their online wellness community.",
-    industry: "Retail and Health & Nutrition",
-    Images: [
-      "/images/projects/superYou/img1.webp",
-      "/images/projects/superYou/img2.webp",
-      "/images/projects/superYou/img3.webp",
     ],
   },
 
-  {
-    id: 10,
-    title: "Flaunt Your Ink",
-    tagline: "From brand identity to brand investment.",
-    heroImg: "/images/projects/FYI/heroImg.webp",
-    coverImg: "/images/projects/FYI/coverImg.jpg",
-    logo: "/images/projects/FYI/logo.png",
-    websiteLink: "",
-    tags: [
-      "Brand Identity",
-      "Packaging",
-      "Celebrity Onboarding",
-      "Fundraising Strategy",
-    ],
-    challenge:
-      "Launching a new beauty brand requires identity, credibility, and capital. Flaunt Your Ink needed a partner to build both brand and business simultaneously.",
-    approach:
-      "We built the brand identity and packaging system, onboarded Suniel Shetty and Aalim Hakim as ambassadors, and supported their first fundraising round to fuel growth.",
-    industry: "Beauty and Personal Care",
-    Images: [
-      "/images/projects/FYI/img1.webp",
-    ],
-  },
+
+
+
+
+
 
   {
     id: 11,
@@ -331,29 +330,23 @@ export const ProjectsData = [
       "/images/projects/imw/img5.webp",
     ],
   },
-  // {
-  //   id: 15,
-  //   title: "Piramal Nextgen",
-  //   tagline: "Crafting essential corporate tools.",
-  //   heroImg: "/images/projects/prominance/heroImg.webp",
-  //   logo: "/images/projects/Proost/logo.png",
-  //   websiteLink: "",
-  //   tags: ["Website", "Brochure Design"],
-  //   challenge:
-  //     "Piramal Nextgen needed a website and brochure reflecting its high-end architecture and turnkey work with sophistication and clarity.",
-  //   approach:
-  //     "We designed and developed their website and corporate brochure as foundational tools for showcasing portfolio and client communication.",
-  //   industry: "Interior Design, Architecture, and Turnkey Contracting",
-  //   Images: [
-  //     "/images/projects/guyana/img1.webp",
-  //     "/images/projects/guyana/img2.webp",
-  //     "/images/projects/guyana/img3.webp",
-  //     "/images/projects/guyana/img4.webp",
-  //     "/images/projects/guyana/img5.webp",
-  //     "/images/projects/guyana/img6.webp",
-  //     "/images/projects/guyana/img7.webp",
-  //   ],
-  // },
+  {
+    id: 15,
+    title: "Piramal Nextgen",
+    tagline: "Crafting essential corporate tools.",
+    heroImg: "",
+    coverImg: "",
+    logo: "/images/projects/piramal/logo.png",
+    websiteLink: "",
+    tags: ["Website", "Brochure Design"],
+    challenge:
+      "Piramal Nextgen needed a website and brochure reflecting its high-end architecture and turnkey work with sophistication and clarity.",
+    approach:
+      "We designed and developed their website and corporate brochure as foundational tools for showcasing portfolio and client communication.",
+    industry: "Interior Design, Architecture, and Turnkey Contracting",
+    Images: [
+    ],
+  },
   {
     id: 16,
     title: "VS Corporate",
@@ -382,119 +375,89 @@ export const ProjectsData = [
       "/images/projects/vsCorporate/img11.webp",
     ],
   },
-  // {
-  //   id: 17,
-  //   title: "Dalhousie Public School",
-  //   tagline: "Bringing a legacy brand online.",
-  //   heroImg: "/images/projects/prominance/heroImg.webp",
-  //   logo: "/images/projects/Proost/logo.png",
-  //   websiteLink: "",
-  //   tags: ["Website Design", "Development"],
-  //   challenge:
-  //     "Dalhousie Public School needed a modern website reflecting its rich legacy and serving a new generation of digitally native parents.",
-  //   approach:
-  //     "We designed and developed an elegant, intuitive website that communicates the school’s values and showcases its campus effectively.",
-  //   industry: "Education",
-  //   Images: [
-  //     "/images/projects/guyana/img1.webp",
-  //     "/images/projects/guyana/img2.webp",
-  //     "/images/projects/guyana/img3.webp",
-  //     "/images/projects/guyana/img4.webp",
-  //     "/images/projects/guyana/img5.webp",
-  //     "/images/projects/guyana/img6.webp",
-  //     "/images/projects/guyana/img7.webp",
-  //   ],
-  // },
-  // {
-  //   id: 18,
-  //   title: "Candor Foods",
-  //   tagline: "Food that looks good everywhere.",
-  //   heroImg: "/images/projects/prominance/heroImg.webp",
-  //   logo: "/images/projects/Proost/logo.png",
-  //   websiteLink: "",
-  //   tags: ["Social Media", "Packaging"],
-  //   challenge:
-  //     "Candor Foods needed a cohesive visual identity across packaging and social media to make their food look as appetizing online as on-shelf.",
-  //   approach:
-  //     "We designed clean, eye-catching packaging and managed social media with consistent, delicious visuals at every touchpoint.",
-  //   industry: "Food and Beverage",
-  //   Images: [
-  //     "/images/projects/guyana/img1.webp",
-  //     "/images/projects/guyana/img2.webp",
-  //     "/images/projects/guyana/img3.webp",
-  //     "/images/projects/guyana/img4.webp",
-  //     "/images/projects/guyana/img5.webp",
-  //     "/images/projects/guyana/img6.webp",
-  //     "/images/projects/guyana/img7.webp",
-  //   ],
-  // },
-  // {
-  //   id: 19,
-  //   title: "The Laundry House (TLH)",
-  //   tagline: "The strategy behind the expansion.",
-  //   heroImg: "/images/projects/prominance/heroImg.webp",
-  //   logo: "/images/projects/Proost/logo.png",
-  //   websiteLink: "",
-  //   tags: ["Franchise Strategy", "Social Media"],
-  //   challenge:
-  //     "Scaling through franchising required TLH to develop a solid operational foundation alongside brand management.",
-  //   approach:
-  //     "We developed their franchise expansion strategy, operational blueprints, and managed their social media presence to support growth.",
-  //   industry: "Consumer Services",
-  //   Images: [
-  //     "/images/projects/guyana/img1.webp",
-  //     "/images/projects/guyana/img2.webp",
-  //     "/images/projects/guyana/img3.webp",
-  //     "/images/projects/guyana/img4.webp",
-  //     "/images/projects/guyana/img5.webp",
-  //     "/images/projects/guyana/img6.webp",
-  //     "/images/projects/guyana/img7.webp",
-  //   ],
-  // },
-  // {
-  //   id: 20,
-  //   title: "Ellementary",
-  //   tagline: "Consistent, beautiful social content.",
-  //   heroImg: "/images/projects/prominance/heroImg.webp",
-  //   logo: "/images/projects/Proost/logo.png",
-  //   websiteLink: "",
-  //   tags: ["Social Media"],
-  //   challenge:
-  //     "Ellementary needed consistently high-quality, on-brand social content that reflected their design aesthetic.",
-  //   approach:
-  //     "We managed their social channels, crafting visually stunning and cohesive content to engage and grow their audience.",
-  //   industry: "Home & Decor / Retail",
-  //   Images: [
-  //     "/images/projects/guyana/img1.webp",
-  //     "/images/projects/guyana/img2.webp",
-  //     "/images/projects/guyana/img3.webp",
-  //     "/images/projects/guyana/img4.webp",
-  //     "/images/projects/guyana/img5.webp",
-  //     "/images/projects/guyana/img6.webp",
-  //     "/images/projects/guyana/img7.webp",
-  //   ],
-  // },
-  // {
-  //   id: 21,
-  //   title: "Kuwait Airlines",
-  //   tagline: "Agile design support for a global carrier.",
-  //   heroImg: "/images/projects/prominance/heroImg.webp",
-  //   logo: "/images/projects/Proost/logo.png",
-  //   websiteLink: "",
-  //   tags: ["Design", "Social Media Creatives"],
-  //   challenge:
-  //     "Kuwait Airlines required a nimble design partner to handle fast-paced creative needs for global marketing operations.",
-  //   approach:
-  //     "We provided continuous design support, producing a range of creatives and ensuring quick, high-quality output across platforms.",
-  //   industry: "Airlines and Aviation",
-  //   Images: [
-  //     "/images/projects/guyana/img1.webp",
-  //     "/images/projects/guyana/img2.webp",
-  //     "/images/projects/guyana/img3.webp",
-  //     "/images/projects/guyana/img4.webp",
-  //     "/images/projects/guyana/img5.webp",
-  //     "/images/projects/guyana/img6.webp",
-  //     "/images/projects/guyana/img7.webp",
-  //   ],
-  // },
+  {
+    id: 17,
+    title: "Dalhousie Public School",
+    tagline: "Bringing a legacy brand online.",
+    heroImg: "",
+    coverImg: "",
+    logo: "/images/projects/dalhousie/logo.svg",
+    websiteLink: "",
+    tags: ["Website Design", "Development"],
+    challenge:
+      "Dalhousie Public School needed a modern website reflecting its rich legacy and serving a new generation of digitally native parents.",
+    approach:
+      "We designed and developed an elegant, intuitive website that communicates the school’s values and showcases its campus effectively.",
+    industry: "Education",
+    Images: [
+    ],
+  },
+  {
+    id: 18,
+    title: "Candor Foods",
+    tagline: "Food that looks good everywhere.",
+    heroImg: "",
+    coverImg: "",
+    logo: "/images/projects/candor/logo.svg",
+    websiteLink: "",
+    tags: ["Social Media", "Packaging"],
+    challenge:
+      "Candor Foods needed a cohesive visual identity across packaging and social media to make their food look as appetizing online as on-shelf.",
+    approach:
+      "We designed clean, eye-catching packaging and managed social media with consistent, delicious visuals at every touchpoint.",
+    industry: "Food and Beverage",
+    Images: [
+    ],
+  },
+  {
+    id: 19,
+    title: "The Laundry House",
+    tagline: "The strategy behind the expansion.",
+    heroImg: "",
+    coverImg: "",
+    logo: "/images/projects/tlh/logo.svg",
+    websiteLink: "",
+    tags: ["Franchise Strategy", "Social Media"],
+    challenge:
+      "Scaling through franchising required TLH to develop a solid operational foundation alongside brand management.",
+    approach:
+      "We developed their franchise expansion strategy, operational blueprints, and managed their social media presence to support growth.",
+    industry: "Consumer Services",
+    Images: [
+    ],
+  },
+  {
+    id: 20,
+    title: "Ellementary",
+    tagline: "Consistent, beautiful social content.",
+    heroImg: "",
+    coverImg: "",
+    logo: "/images/projects/ellementary/logo.svg",
+    websiteLink: "",
+    tags: ["Social Media"],
+    challenge:
+      "Ellementary needed consistently high-quality, on-brand social content that reflected their design aesthetic.",
+    approach:
+      "We managed their social channels, crafting visually stunning and cohesive content to engage and grow their audience.",
+    industry: "Home & Decor / Retail",
+    Images: [
+    ],
+  },
+  {
+    id: 21,
+    title: "Kuwait Airlines",
+    tagline: "Agile design support for a global carrier.",
+    heroImg: "",
+    coverImg: "",
+    logo: "/images/projects/kuwait/logo.svg",
+    websiteLink: "",
+    tags: ["Design", "Social Media Creatives"],
+    challenge:
+      "Kuwait Airlines required a nimble design partner to handle fast-paced creative needs for global marketing operations.",
+    approach:
+      "We provided continuous design support, producing a range of creatives and ensuring quick, high-quality output across platforms.",
+    industry: "Airlines and Aviation",
+    Images: [
+    ],
+  },
 ];

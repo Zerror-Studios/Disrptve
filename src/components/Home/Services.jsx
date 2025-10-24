@@ -145,7 +145,7 @@ const Services = () => {
                     scrub: .4,
                     // markers:true
                 },
-                xPercent: -56.1 * (serviceData.length - 1),
+                xPercent: -62 * (serviceData.length - 1),
                 ease: "linear",
             })
 
@@ -221,7 +221,9 @@ const Services = () => {
                     <div className="hidden lg:block w-[30vw] shrink-0 h-full"></div>
                     {serviceData.map((item, index) => (
                         <>
-                            <div key={index} className=" lg:hidden w-[90vw] md:w-[55vw] bg-[#0e0e0e5d] p-5  flex flex-col lg:justify-between shrink-0  h-full lg:h-[35vw] border border-[#e5e7eb44]">
+
+                            {/* for mobile */}
+                            <div key={index} className=" lg:hidden w-[90vw] md:w-[55vw] bg-[#0e0e0e5d] p-5  flex flex-col lg:justify-between shrink-0  h-full lg:h-[35vw] border border-[#e5e7eb44] overflow-hidden">
                                 <div className="flex justify-between ">
                                     <div className=" text-2xl lg:text-5xl  leading-none font-semibold uppercase ">
                                         <div className=" red">
@@ -253,33 +255,33 @@ const Services = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div key={index} className=" hidden lg:flex  w-[90vw] md:w-[55vw] bg-[#0e0e0e5d] p-5 flex-col lg:justify-between shrink-0  h-full lg:h-[37vw] border border-[#e5e7eb44]">
-                                <div className="flex ">
-                                    <div className=" text-2xl lg:text-5xl w-[60%]    leading-none font-semibold uppercase ">
-                                        <div className=" red">
-                                            <h3 className=' font-normal'>{item.title.split(" & ")[0]} & </h3>
-                                            <div className="flex items-center w-full justify-between">
-                                                <h3 className=' font-normal'>{item.title.split(" & ")[1]} </h3>
-                                                <h2 className=' text-white lg:hidden text-2xl lg:text-5xl'>{item.number}</h2>
-                                            </div>
+
+                            {/* for desktop */}
+                            <div key={index} className=" hidden lg:flex  w-[90vw] md:w-[60vw] bg-[#0e0e0e5d] p-5 flex-col lg:justify-between shrink-0  h-full lg:h-[37vw] border border-[#e5e7eb44]">
+                                <div className=" text-2xl lg:text-5xl    leading-none font-semibold uppercase ">
+                                    <div className=" red">
+                                        <h3 className=' font-normal'>{item.title.split(" & ")[0]} & </h3>
+                                        <div className="flex items-center w-full justify-between">
+                                            <h3 className=' font-normal'>{item.title.split(" & ")[1]} </h3>
+                                            <h2 className=' text-white lg:hidden text-2xl lg:text-5xl'>{item.number}</h2>
                                         </div>
-                                        <p className=' text-base lg:text-xl  mt-[2vw]  normal-case font-light leading-tight w[90%] lg:w-[90%]'>{item.desc}</p>
                                     </div>
-                                    <div className=" pl-5 w-[40%] space-y-1 lg:space-y-3 ">
-                                        {item?.servs.map((ser, i) => (
-                                            <div key={i} className=" group  flex transition-all duration-300 gap-3 hover:px-2">
-                                                <div className='size-1.5 shrink-0 bg-white group-hover:bg-[#FB0401]  transition-all duration-300 translate-y-1.5 ' ></div>
-                                                <p className=' text-base lg:text-xl  group-hover:text-[#FB0401] transition-all duration-300 leading-none ' > {ser}</p>
-                                            </div>
-                                        ))}
-                                    </div>
+                                    <p className=' text-base lg:text-xl  mt-[1.2vw]  normal-case  leading-tight w-[60%]'>{item.desc}</p>
                                 </div>
-                                <div className="flex flex-col-reverse justify-between h-full lg:h-fit lg:flex-row gap-4 lg:gap-8">
-                                    <div className=" shrink-0  h-[50%] lg:h-[16vw] w-full lg:w-[60%] ">
+
+                                <div className="flex flex-col-reverse justify-between h-full lg:h-fit lg:flex-row gap-4 lg:gap-6">
+                                    <div className=" shrink-0  h-[50%] lg:h-[19vw] w-full lg:w-[60%] ">
                                         <img className='w-full h-full object-cover' src={item.img} alt="" />
                                     </div>
                                     <div className=" flex w-full flex-col justify-between  font-semibold">
-                                        <div className=""></div>
+                                        <div className=" -translate-y-1.5 space-y-2">
+                                            {item?.servs.map((ser, i) => (
+                                                <div key={i} className=" group  flex transition-all duration-300 gap-3 hover:px-2">
+                                                    <div className='size-1.5 shrink-0 bg-white group-hover:bg-[#FB0401]  transition-all duration-300 translate-y-2.5 ' ></div>
+                                                    <p className=' text-base lg:text-xl  group-hover:text-[#FB0401] transition-all duration-300 leading-tight ' > {ser}</p>
+                                                </div>
+                                            ))}
+                                        </div>
                                         <div className=" hidden lg:block w-full text-end">
                                             <h2 className=' text-2xl lg:text-7xl'>{item.number}</h2>
                                         </div>

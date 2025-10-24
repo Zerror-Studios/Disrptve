@@ -54,37 +54,8 @@ const index = () => {
                       <RiArrowRightUpLine size={20} />
                     </div>
                   </a>
-                  <a href="">
-                    <div className="flex mb-1 group  w-fit relative items-center gap-2">
-                      <div className="absolute group-hover:w-full rounded-full transition-all duration-300 w-0 h-[1px] bgred bottom-0 left-0"></div>
-                      <p className=' text-base lg:text-xl  lg:w-[180px] group-hover:italic' >kanishq@disrptve.com</p>
-                      <RiArrowRightUpLine size={20} />
-                    </div>
-                  </a>
-                  <a href="">
-                    <div className="flex mb-1 group  w-fit relative items-center gap-2">
-                      <div className="absolute group-hover:w-full rounded-full transition-all duration-300 w-0 h-[1px] bgred bottom-0 left-0"></div>
-                      <p className=' text-base lg:text-xl  lg:w-[180px] group-hover:italic' >kaushik@disrptve.com</p>
-                      <RiArrowRightUpLine size={20} />
-                    </div>
-                  </a>
                 </div>
-                <div className="">
-                  <h3 className=' mb-2 text-base lg:text-xl uppercase  opacity-70'>contact</h3>
-                  <a href="" className='flex mb-1 group  w-fit relative items-center gap-2'>
-                    <div className="absolute group-hover:w-full rounded-full transition-all duration-300 w-0 h-[1px] bgred bottom-0 left-0"></div>
-                    <p className=' text-base lg:text-xl group-hover:italic' >
-                      +91 97693 31076
-                    </p>
-                  </a>
-                  <a href="" className='flex mb-1 group  w-fit relative items-center gap-2'>
-                    <div className="absolute group-hover:w-full rounded-full transition-all duration-300 w-0 h-[1px] bgred bottom-0 left-0"></div>
-                    <p className=' text-base lg:text-xl group-hover:italic' >
-                      +91 91672 10094
-                    </p>
-                  </a>
-                </div>
-                <div className="">
+                <div className=" mb-20">
                   <h3 className=' mb-2 text-base lg:text-xl uppercase  opacity-70'>socials</h3>
                   <div className="flex gap-4">
                     <a href="https://www.instagram.com/bedisrptve?igsh=MWw3enZqcWZnYmZkbQ==" target="_blank" >

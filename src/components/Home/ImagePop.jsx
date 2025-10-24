@@ -2,9 +2,9 @@ import { motion, AnimatePresence, useSpring } from "framer-motion";
 import React, { useRef, useState, useCallback, useEffect } from "react";
 import RedBtn from "../buttons/RedBtn";
 
-const TRAIL_IMAGE_COUNT = 20;
-const TRAIL_IMAGE_LIFESPAN = 600;
-const MIN_DISTANCE = 180;
+const TRAIL_TEXT_LIFESPAN = 3000;
+const MIN_DISTANCE = 8;
+const MAX_COUNT_PER_WORD = 50;
 
 const springConfig = {
     stiffness: 150,
@@ -12,25 +12,24 @@ const springConfig = {
     mass: 0.1,
 };
 
-const ImagePop = () => {
+const WORDS = [
+    "expertise",
+    "creative vision",
+    "innovation",
+    "refined craft",
+    "impact",
+    "strategic insight",
+];
 
+const TextPop = () => {
     const containerRef = useRef(null);
-    const [trailImages, setTrailImages] = useState([]);
+    const [trailTexts, setTrailTexts] = useState([]);
     const lastPos = useRef({ x: 0, y: 0 });
-    const preloadedImages = useRef([]);
+    const wordIndex = useRef(0);
+    const wordCount = useRef(0);
 
     const springX = useSpring(0, springConfig);
     const springY = useSpring(0, springConfig);
-
-    // Preload all images on mount
-    useEffect(() => {
-        const images = Array.from({ length: TRAIL_IMAGE_COUNT }, (_, i) => {
-            const img = new Image();
-            img.src = `/images/ImagesPop/images${String(i + 1).padStart(2, "0")}.jpg`;
-            return img;
-        });
-        preloadedImages.current = images;
-    }, []);
 
     const handleMouseMove = useCallback(
         (e) => {
@@ -54,20 +53,28 @@ const ImagePop = () => {
             if (distance >= MIN_DISTANCE) {
                 lastPos.current = { x, y };
 
-                // Pick a random preloaded image
-                const randomIndex = Math.floor(Math.random() * preloadedImages.current.length);
-                const newImage = {
-                    id: Date.now(),
+                // Sequential looping logic
+                const currentWord = WORDS[wordIndex.current];
+                wordCount.current += 1;
+
+                if (wordCount.current >= MAX_COUNT_PER_WORD) {
+                    wordCount.current = 0;
+                    wordIndex.current = (wordIndex.current + 1) % WORDS.length;
+                }
+
+                const newText = {
+                    id: Date.now() + Math.random(),
                     x,
                     y,
-                    src: preloadedImages.current[randomIndex].src,
+                    text: currentWord,
                 };
 
-                setTrailImages((prev) => [...prev, newImage]);
+                setTrailTexts((prev) => [...prev, newText]);
 
+                // remove after lifespan
                 setTimeout(() => {
-                    setTrailImages((prev) => prev.filter((img) => img.id !== newImage.id));
-                }, TRAIL_IMAGE_LIFESPAN);
+                    setTrailTexts((prev) => prev.filter((t) => t.id !== newText.id));
+                }, TRAIL_TEXT_LIFESPAN);
             }
         });
 
@@ -79,43 +86,50 @@ const ImagePop = () => {
             ref={containerRef}
             onMouseEnter={handleMouseMove}
             onMouseMove={handleMouseMove}
-            className="image_pop_paren  flex center flex-col uppercase text-4xl lg:text-7xl font-semibold text-center w-full h-[80vh] lg:h-screen"
-            style={{ position: "relative", overflow: "hidden" }}
+            className="text_pop_parent flex center flex-col uppercase text-4xl lg:text-7xl font-semibold text-center w-full h-[80vh] lg:h-screen relative overflow-hidden"
         >
             <AnimatePresence>
-                {trailImages.map((img) => (
-                    <motion.img
-                        key={img.id}
-                        src={img.src}
-                        initial={{ scale: 0.4, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        exit={{ scale: 0.4, opacity: 0 }}
+                {trailTexts.map((t) => (
+                    <motion.h3
+                        key={t.id}
+                        initial={{ opacity: 1, scale: 1, x: "-50%", y: "-50%" }}
+                        animate={{
+                            scale: 0.5,
+                            opacity: [1, 1, 0],
+                            x: "-50%",
+                            y: "-50%",
+                        }}
+                        exit={{ opacity: 0 }}
                         transition={{
-                            duration: 0.8,
-                            ease: [0.16, 1, 0.35, 1],
+                            scale: { duration: .8, ease: [0.19, 1, 0.22, 1]},
+                            opacity: { delay: 0.8, duration: 0.2, ease: [0.175, 0.885, 0.32, 1.275] },
                         }}
-                        className="absolute w-[23vw] aspect-video object-cover pointer-events-none"
+                        className="absolute origin-center pointer-events-none text-white/90 font-semibold text-xl"
                         style={{
-                            left: img.x - 170 + "px",
-                            top: img.y - 100 + "px",
+                            left: `${t.x}px`,
+                            top: `${t.y}px`,
+                            position: "absolute",
+                            transformOrigin: "center center",
+                            whiteSpace: "nowrap",
                         }}
-                    />
+                    >
+                        {t.text}
+                    </motion.h3>
                 ))}
             </AnimatePresence>
-            <div className="">
-                <h2>Explore our case</h2>
-                <h2 className="red"> credentials,</h2>
-                <h2 className="red">studies, and</h2>
-                <div className=" flex flex-col lg:flex-row lg:gap-4">
-                    <h2 className="red whitespace-nowrap">capabilities </h2>
-                    <h2> in detail.</h2>
-                </div>
+
+            <div>
+                <h2>Dive into our</h2>
+                <h2 className="red">vision, craft, and</h2>
+                <h2 className="red">expertise</h2>
+                <h2>that shape impact.</h2>
             </div>
-            <div className=" text-sm lg:text-base mt-12">
-                <RedBtn text='Download' />
+
+            <div className="text-sm lg:text-base mt-12">
+                <RedBtn text="Download our Deck" />
             </div>
         </div>
     );
 };
 
-export default ImagePop;
+export default TextPop;

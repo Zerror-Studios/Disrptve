@@ -98,11 +98,20 @@ const index = () => {
                                     <Link href={`/projects/${item.id}`} key={index}>
                                         <div key={index} className="w-full border border-[#8585855b] relative">
                                             <div className="w-full aspect-square overflow-hidden">
-                                                <img
-                                                    src={item.coverImg}
-                                                    alt={item.title}
-                                                    className="w-full h-full object-cover"
-                                                />
+                                                {item.coverImg === "" ? (
+                                                    <img
+                                                        className="w-full transition-all duration-300 group-hover:scale-90 h-full object-contain"
+                                                        src={item.logo}
+                                                        alt={item.title}
+                                                    />
+                                                ) : (
+
+                                                    <img
+                                                        className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
+                                                        src={item.coverImg}
+                                                        alt={item.title}
+                                                    />
+                                                )}
                                             </div>
                                             <div className="w-full p-3 space-y-2 absolute left-0 bottom-0 bg-black text-white">
                                                 <h3 className="text-lg uppercase leading-none">{item.title}</h3>
@@ -119,11 +128,20 @@ const index = () => {
                                     <Link href={`/projects/${item.id}`} key={index}>
                                         <div className="w-full flex flex-row-reverse">
                                             <div className="w-1/2 overflow-hidden border border-[#8585855b] aspect-square">
-                                                <img
-                                                    src={item.coverImg}
-                                                    alt={item.title}
-                                                    className="w-full h-full object-cover"
-                                                />
+                                                {item.coverImg === "" ? (
+                                                    <img
+                                                        className="w-full transition-all duration-300 group-hover:scale-90 h-full object-contain"
+                                                        src={item.logo}
+                                                        alt={item.title}
+                                                    />
+                                                ) : (
+
+                                                    <img
+                                                        className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
+                                                        src={item.coverImg}
+                                                        alt={item.title}
+                                                    />
+                                                )}
                                             </div>
                                             <div className="w-1/2 border border-[#8585855b] aspect-square p-3 flex flex-col justify-end">
                                                 <h3 className="text-lg uppercase leading-none">{item.title}</h3>
@@ -139,11 +157,20 @@ const index = () => {
                                 <Link href={`/projects/${item.id}`} key={index}>
                                     <div className="w-full flex">
                                         <div className="w-1/2 overflow-hidden border border-[#8585855b] aspect-square">
-                                            <img
-                                                src={item.coverImg}
-                                                alt={item.title}
-                                                className="w-full h-full object-cover"
-                                            />
+                                            {item.coverImg === "" ? (
+                                                <img
+                                                    className="w-full transition-all duration-300 group-hover:scale-90 h-full object-contain"
+                                                    src={item.logo}
+                                                    alt={item.title}
+                                                />
+                                            ) : (
+
+                                                <img
+                                                    className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
+                                                    src={item.coverImg}
+                                                    alt={item.title}
+                                                />
+                                            )}
                                         </div>
                                         <div className="w-1/2 border border-[#8585855b] aspect-square p-3 flex flex-col justify-end">
                                             <h3 className="text-lg uppercase leading-none">{item.title}</h3>
@@ -179,11 +206,20 @@ const index = () => {
 
                                                 className="aspect-[16/12] border border-[#8585855b] relative w-1/2"
                                             >
-                                                <img
-                                                    className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
-                                                    src={project.coverImg}
-                                                    alt={project.title}
-                                                />
+                                                {project.coverImg === "" ? (
+                                                    <img
+                                                        className="w-full transition-all duration-300 group-hover:scale-90 h-full object-contain"
+                                                        src={project.logo}
+                                                        alt={project.title}
+                                                    />
+                                                ) : (
+
+                                                    <img
+                                                        className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
+                                                        src={project.coverImg}
+                                                        alt={project.title}
+                                                    />
+                                                )}
                                             </div>
                                         </Link>
                                     </div>
@@ -215,11 +251,20 @@ const index = () => {
                                                 <div
                                                     className="aspect-square border w-1/2 border-[#8585855b] relative"
                                                 >
-                                                    <img
-                                                        className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
-                                                        src={p.coverImg}
-                                                        alt={p.title}
-                                                    />
+                                                    {p.coverImg === "" ? (
+                                                        <img
+                                                            className="w-full transition-all duration-300 group-hover:scale-90 h-full object-contain"
+                                                            src={p.logo}
+                                                            alt={p.title}
+                                                        />
+                                                    ) : (
+
+                                                        <img
+                                                            className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
+                                                            src={p.coverImg}
+                                                            alt={p.title}
+                                                        />
+                                                    )}
                                                 </div>
                                             </Link>
                                         ))}
@@ -239,11 +284,20 @@ const index = () => {
 
                                                 className="aspect-[16/12] border border-[#8585855b] relative w-1/2"
                                             >
-                                                <img
-                                                    className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
-                                                    src={project.coverImg}
-                                                    alt={project.title}
-                                                />
+                                                {project.coverImg === "" ? (
+                                                    <img
+                                                        className="w-full transition-all duration-300 group-hover:scale-90 h-full object-contain"
+                                                        src={project.logo}
+                                                        alt={project.title}
+                                                    />
+                                                ) : (
+
+                                                    <img
+                                                        className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
+                                                        src={project.coverImg}
+                                                        alt={project.title}
+                                                    />
+                                                )}
                                             </div>
                                             <div className="flex w-1/2 px-3 lg:px-5 py-5 items-center justify-between group-hover:text-[#FB0401]  transition-colors duration-300">
                                                 <div>
@@ -283,11 +337,20 @@ const index = () => {
                                                 <div
                                                     className="aspect-square border w-1/2 border-[#8585855b] relative"
                                                 >
-                                                    <img
-                                                        className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
-                                                        src={p.coverImg}
-                                                        alt={p.title}
-                                                    />
+                                                    {p.coverImg === "" ? (
+                                                        <img
+                                                            className="w-full transition-all duration-300 group-hover:scale-90 h-full object-contain"
+                                                            src={p.logo}
+                                                            alt={p.title}
+                                                        />
+                                                    ) : (
+
+                                                        <img
+                                                            className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
+                                                            src={p.coverImg}
+                                                            alt={p.title}
+                                                        />
+                                                    )}
                                                 </div>
                                             </Link>
                                         ))}

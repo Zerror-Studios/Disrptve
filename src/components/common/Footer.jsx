@@ -93,16 +93,15 @@ const Footer = () => {
               </Link>
             ))}
           </div>
-          <div className=" flex flex-col text-end justify-between">
-            <div className=" space-y-2  text-sm lg:text-xl">
-              <p>
+          <div className=" flex flex-col items-end text-end  gap-y-5 justify-end">
+            <div className="   text-sm lg:text-xl">
+              <p className='opacity-0'>
                 +91 97693 31076
               </p>
-              <p>
+              <p className='opacity-0'>
                 +91 91672 10094
               </p>
               <p>team@disrptve.com</p>
-
             </div>
             <div className=" w-full justify-end flex">
               <div className="flex gap-4">
