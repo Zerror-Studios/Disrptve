@@ -218,7 +218,7 @@ export const ProjectsData = [
     title: "Flaunt Your Ink",
     tagline: "From brand identity to brand investment.",
     heroImg: "/images/projects/FYI/heroImg.webp",
-    coverImg: "/images/projects/FYI/heroImg.webp",
+    coverImg: "/images/projects/FYI/coverImg.jpg",
     logo: "/images/projects/FYI/logo.png",
     websiteLink: "",
     tags: [
