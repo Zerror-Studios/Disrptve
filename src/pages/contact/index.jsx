@@ -22,15 +22,13 @@ const index = () => {
   })
   return (
     <>
-      {openForm && (
-        <Form setOpenForm={setOpenForm} />
-      )}
+      <Form openForm={openForm} setOpenForm={setOpenForm} />
 
       <div className="  w-full fixy_con fixed  brightness-[1] blur-[0] top-0 left-0 h-screen lg:pt-20 bg-[#FB0401] text-black center flex-col gap-y-10 text-center">
         <h2 className='uppercase text-4xl md:text-6xl lg:text-9xl leading-none '>Want to <br /> build with us?</h2>
-        <button onClick={()=>setOpenForm(true)} className={`  bg-black cursor-pointer group center  px-6 py-2  uppercase `}>
+        <button onClick={() => setOpenForm(true)} className={`  bg-black cursor-pointer group center  px-6 py-2  uppercase `}>
           <div className="relative cursor-pointer center text-white flex items-center gap-1">
-                <div className="w-0 group-hover:w-[97%] transition-all duration-300 h-[1px] bg-white absolute bottom-0 left-0"></div>
+            <div className="w-0 group-hover:w-[97%] transition-all duration-300 h-[1px] bg-white absolute bottom-0 left-0"></div>
             <h2 className=" text-white cursor-pointer group-hover:italic uppercase"> Fill the form</h2>
             <RiArrowRightUpLine size={20} />
           </div>

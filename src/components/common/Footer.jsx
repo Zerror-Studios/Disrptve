@@ -128,10 +128,10 @@ const Footer = () => {
         </div>
         <div className="w-full   relative ">
           <div className="h-[20vw] relative  overflow-hidden  ">
-            <h2 className='font-bold absolute top-0  footer_txt leading-none uppercase text-[20.2vw] whitespace-nowrap lg:text-[20.5vw] text-[#FB0401] mix-blend-difference'>
+            <h2 className='font-bold absolute top-0  footer_txt leading-[19.8vw] uppercase text-[20.2vw] whitespace-nowrap lg:text-[20.5vw] text-[#FB0401] mix-blend-difference'>
               disrptve
             </h2>
-            <h2 className='font-bold absolute top-[100%] footer_txt_2  leading-none uppercase text-[20.2vw] whitespace-nowrap lg:text-[20.5vw] text-[#FB0401] mix-blend-difference'>
+            <h2 className='font-bold absolute top-[100%] footer_txt_2  leading-[19.8vw] uppercase text-[20.2vw] whitespace-nowrap lg:text-[20.5vw] text-[#FB0401] mix-blend-difference'>
               disrptve
             </h2>
           </div>

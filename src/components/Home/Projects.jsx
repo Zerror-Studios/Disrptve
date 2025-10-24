@@ -99,7 +99,7 @@ const Projects = () => {
                                 );
                             })}
                         </div>
-                        <div className=" hidden md:block w-full pt-12 px-5 pb-32">
+                        <div className=" hidden md:block w-full pt-12 px-5 md:pb-12 lg:pb-32">
                             {ProjectsData.slice(0, 10).map((project, i) => {
                                 const layout = pattern(i);
 

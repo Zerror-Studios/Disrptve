@@ -150,7 +150,7 @@ const Clients = () => {
                 <div className="w-full my-12 lg:my-32 px-3 lg:px-5">
                     <div
                         ref={containerRef}
-                        className="w-full border border-[#8585855b] grid grid-cols-3 lg:grid-cols-6"
+                        className="w-full border border-[#8585855b] grid grid-cols-3 md:grid-cols-6"
                     >
                         {clientsData
                             .map((item, index) => (

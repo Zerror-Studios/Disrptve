@@ -288,8 +288,7 @@ const index = () => {
 
             <div className="w-full  overflow-hidden relative h-screen gap-y-10 center text-center flex-col">
                 <div className="absolute wave_bg top-0 left-0 z-[-2] w-full h-full center">
-                    
-                    <img src="/gifs/work.gif" alt="" />
+                    <img className='w-full h-full object-cover' src="/gifs/work.gif" alt="" />
                 </div>
                 <h2 className='   text-4xl  lg:text-7xl uppercase'>Let's Build Something Great.</h2>
                 <div className="space-y-5 px-3 text-center w-full center flex-col">
@@ -297,13 +296,12 @@ const index = () => {
                     <p className=' w-full md:w-[50%]   leading-none   text-xl  lg:text-3xl'>If you’re building something you believe in, we’d love to have a conversation with you, too.</p>
                 </div>
                 <Link href="/contact">
-                <button className=' group relative flex items-center gap-1'>
-                    <div className="w-full group-hover:w-0 transition-all duration-300  h-[1px] bg-white absolute bottom-0 right-0"></div>
-                    <p className=' text-base md:text-xl group-hover:italic  '>WORK WITH US</p>
-                    <RiArrowRightUpLine size={20} />
-                </button>
+                    <button className=' group relative flex items-center gap-1'>
+                        <div className="w-full group-hover:w-0 transition-all duration-300  h-[1px] bg-white absolute bottom-0 right-0"></div>
+                        <p className=' text-base md:text-xl group-hover:italic  '>WORK WITH US</p>
+                        <RiArrowRightUpLine size={20} />
+                    </button>
                 </Link>
-
             </div>
 
             <div className=" py-14 lg:py-20  px-3  lg:px-5 ">

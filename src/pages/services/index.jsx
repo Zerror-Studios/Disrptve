@@ -278,7 +278,7 @@ const index = () => {
     return (
         <>
             <div className="fixed wave_bg top-0 left-0 z-[-1] w-full h-full center">
-                    <img src="/gifs/work.gif" alt="" />
+                    <img className="w-full h-full object-cover" src="/gifs/work.gif" alt="" />
             </div>
 
             <div className=" hidden md:block  sticky_sec opacity-0 absolute top-0 w-full left-0 z-[2]  h-[100vh]  overflow-hidden">
@@ -292,30 +292,24 @@ const index = () => {
                             className="cube relative w-[200px] h-[200px] [transform-style:preserve-3d]"
                         >
                             <div className="absolute inset-0 [backface-visibility:hidden] [transform:translateZ(100px)] overflow-hidden">
-                                <video
-                                    src="/video/logo_loop.mp4"
-                                    autoPlay
-                                    loop
-                                    muted
-                                    playsInline
+                                <img
+                                    src="/images/servicesHomepage/6.webp"
+                                    alt="Up Face"
                                     className="w-full h-full object-cover"
                                 />
                             </div>
 
                             <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)_translateZ(100px)] overflow-hidden">
-                                <video
-                                    src="/video/show_reel.mp4"
-                                    autoPlay
-                                    loop
-                                    muted
-                                    playsInline
+                                <img
+                                    src="/images/servicesHomepage/3.webp"
+                                    alt="Down Face"
                                     className="w-full h-full object-cover"
                                 />
                             </div>
 
                             <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(90deg)_translateZ(100px)] overflow-hidden">
                                 <img
-                                    src="https://ning-h.com/wp-content/uploads/2025/06/cube_vtm.webp"
+                                    src="/images/servicesHomepage/4.webp"
                                     alt="Right Face"
                                     className="w-full h-full object-cover"
                                 />
@@ -323,7 +317,7 @@ const index = () => {
 
                             <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(-90deg)_translateZ(100px)] overflow-hidden">
                                 <img
-                                    src="https://ning-h.com/wp-content/uploads/2025/06/24_cover.webp"
+                                    src="/images/servicesHomepage/7.webp"
                                     alt="Left Face"
                                     className="w-full h-full object-cover"
                                 />
@@ -331,7 +325,7 @@ const index = () => {
 
                             <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateX(90deg)_translateZ(100px)] overflow-hidden">
                                 <img
-                                    src="https://ning-h.com/wp-content/uploads/2025/06/cube_gag.webp"
+                                    src="/images/servicesHomepage/1.webp"
                                     alt="Top Face"
                                     className="w-full h-full object-cover"
                                 />
@@ -339,7 +333,7 @@ const index = () => {
 
                             <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateX(-90deg)_translateZ(100px)] overflow-hidden">
                                 <img
-                                    src="https://ning-h.com/wp-content/uploads/2025/06/cube_gag.webp"
+                                    src="/images/servicesHomepage/8.webp"
                                     alt="Bottom Face"
                                     className="w-full h-full object-cover"
                                 />

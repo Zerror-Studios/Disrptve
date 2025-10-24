@@ -12,7 +12,7 @@ const serviceData = [
         number: "01",
         title: "Brand Strategy & Go-to-Market",
         desc: "Before you can win, you need a plan. This is where we define your unique position in the market and craft the roadmap to launch and grow effectively.",
-        img: "/images/servicesHomepage/brandStrategy.webp",
+        img: "/images/servicesHomepage/1.webp",
         servs: [
             "Go-to-Market (GTM) Strategy",
             "Brand Positioning & Narrative",
@@ -24,7 +24,7 @@ const serviceData = [
         number: "02",
         title: "Brand Identity & Packaging",
         desc: "We design the complete sensory experience of your brand—what people see, touch, and feel. It’s more than a logo; it’s your entire visual world.",
-        img: "/images/servicesHomepage/brandIdentity.webp",
+        img: "/images/servicesHomepage/2.webp",
         servs: [
             "Brand Guidelines",
             "Packaging Design",
@@ -36,7 +36,7 @@ const serviceData = [
         number: "03",
         title: "Social Media & Performance Marketing",
         desc: "We find your audience where they are and give them a reason to engage. This is about building a community and driving measurable growth online.",
-        img: "/images/servicesHomepage/socialMedia.webp",
+        img: "/images/servicesHomepage/3.webp",
         servs: [
             "SEO & Content Strategy",
             "Social Media Strategy & Management",
@@ -48,7 +48,7 @@ const serviceData = [
         number: "04",
         title: "Website Design & Development",
         desc: "Your website is your home base. We design and build beautiful, intuitive, and high-performing websites that serve as the core of your digital presence.",
-        img: "/images/servicesHomepage/webDesign.webp",
+        img: "/images/servicesHomepage/4.webp",
         servs: [
             "E-commerce Solutions",
             "UX/UI Research & Design",
@@ -60,7 +60,7 @@ const serviceData = [
         number: "05",
         title: "Political & National Strategy",
         desc: "We apply our strategic and data-driven approach to campaigns of national importance, helping candidates and causes shape public opinion and drive action.",
-        img: "/images/servicesHomepage/political.webp",
+        img: "/images/servicesHomepage/5.webp",
         servs: [
             "Digital Campaign Execution",
             "eGovernance & National Strategy Consulting",
@@ -71,7 +71,7 @@ const serviceData = [
         number: "06",
         title: "AI-Led Design & Photoshoots",
         desc: "Why be limited by reality? We use cutting-edge AI to create stunning, original visuals, from conceptual art to entire photoshoots, with unparalleled speed and creative freedom.",
-        img: "/images/servicesHomepage/aiLed.webp",
+        img: "/images/servicesHomepage/6.webp",
         servs: [
             "Generative Visual Assets",
             "AI Concept Art & Moodboarding",
@@ -82,7 +82,7 @@ const serviceData = [
         number: "07",
         title: "Creative & Production",
         desc: "This is where ideas become reality. Our team manages the entire production process to create compelling content that captures attention.",
-        img: "/images/servicesHomepage/production.webp",
+        img: "/images/servicesHomepage/7.webp",
         servs: [
             "Photography",
             "Content Creation",
@@ -94,7 +94,7 @@ const serviceData = [
         number: "08",
         title: "Business Decks, Brochures & Collateral",
         desc: "We arm your team with the tools they need to communicate effectively. From investor pitches to sales materials, we design documents that are clear, compelling, and beautifully crafted.",
-        img: "/images/servicesHomepage/business.webp",
+        img: "/images/servicesHomepage/8.webp",
         servs: [
             "Bespoke Presentations",
             "Sales & Marketing Collateral",
@@ -221,7 +221,7 @@ const Services = () => {
                     <div className="hidden lg:block w-[30vw] shrink-0 h-full"></div>
                     {serviceData.map((item, index) => (
                         <>
-                            <div key={index} className=" md:hidden w-[90vw] md:w-[55vw] bg-[#0e0e0e5d] p-5  flex flex-col lg:justify-between shrink-0  h-full lg:h-[35vw] border border-[#e5e7eb44]">
+                            <div key={index} className=" lg:hidden w-[90vw] md:w-[55vw] bg-[#0e0e0e5d] p-5  flex flex-col lg:justify-between shrink-0  h-full lg:h-[35vw] border border-[#e5e7eb44]">
                                 <div className="flex justify-between ">
                                     <div className=" text-2xl lg:text-5xl  leading-none font-semibold uppercase ">
                                         <div className=" red">
@@ -242,7 +242,7 @@ const Services = () => {
                                         <div className=" mt-5 lg:mt-0 space-y-1 lg:space-y-3 ">
                                             {item?.servs.map((ser, i) => (
                                                 <div key={i} className=" group  flex transition-all duration-300 gap-3 hover:px-2">
-                                                    <div className='size-1.5 shrink-0 group-hover:bg-[#FB0401]  transition-all duration-300 translate-y-1.5 bgred' ></div>
+                                                    <div className='size-1.5 shrink-0 group-hover:bg-[#FB0401]  transition-all duration-300 translate-y-1 bg-white' ></div>
                                                     <p className=' text-base lg:text-xl  group-hover:text-[#FB0401] transition-all duration-300 leading-none ' > {ser}</p>
                                                 </div>
                                             ))}
@@ -253,7 +253,7 @@ const Services = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div key={index} className=" hidden md:flex  w-[90vw] md:w-[55vw] bg-[#0e0e0e5d] p-5 flex-col lg:justify-between shrink-0  h-full lg:h-[37vw] border border-[#e5e7eb44]">
+                            <div key={index} className=" hidden lg:flex  w-[90vw] md:w-[55vw] bg-[#0e0e0e5d] p-5 flex-col lg:justify-between shrink-0  h-full lg:h-[37vw] border border-[#e5e7eb44]">
                                 <div className="flex ">
                                     <div className=" text-2xl lg:text-5xl w-[60%]    leading-none font-semibold uppercase ">
                                         <div className=" red">
