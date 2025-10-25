@@ -74,6 +74,9 @@ const Clients = () => {
         {
             icon: "/images/clients/23_AGP.png"
         },
+        {
+            icon: "/images/clients/24_Pune United.png"
+        },
     ]
 
     const containerRef = useRef(null);

@@ -22,10 +22,14 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { fullName, email, phone, message } = req.body;
+    const { fullName, email, phone, message, services } = req.body;
 
     if (!fullName || !email || !phone || !message) {
       return res.status(400).json({ error: "All required fields must be filled" });
+    }
+
+    if (!services || services.length === 0) {
+      return res.status(400).json({ error: "Please select at least one service." });
     }
 
     const sheets = await authenticate();
@@ -36,34 +40,42 @@ export default async function handler(req, res) {
     const [datePart] = dateInKolkata.split(",");
     const formattedDate = datePart.trim();
 
-    // Fetch existing rows
+    // ✅ Fetch existing rows to check duplicates by email
     const getRows = await sheets.spreadsheets.values.get({
       spreadsheetId,
-      range: "Sheet1!A:E",
+      range: "Sheet1!A:F", // now includes services column
     });
 
     const rows = getRows.data.values || [];
-    let emailColumnIndex = 2; // Column C (Email)
-    let existingRowIndex = rows.findIndex(
+    const emailColumnIndex = 2; // Column C (Email)
+    const existingRowIndex = rows.findIndex(
       (row, index) => index > 0 && row[emailColumnIndex] === email
     );
 
-    const newRow = [formattedDate, fullName, email, phone, message];
+    // ✅ Convert array of services into a string
+    const servicesString = Array.isArray(services)
+      ? services.join(", ")
+      : services;
+
+    // ✅ Add new column for services
+    const newRow = [formattedDate, fullName, email, phone, message, servicesString];
 
     if (existingRowIndex !== -1) {
+      // Update existing row
       const rowNumber = existingRowIndex + 1;
       await sheets.spreadsheets.values.update({
         spreadsheetId,
-        range: `Sheet1!A${rowNumber}:E${rowNumber}`,
+        range: `Sheet1!A${rowNumber}:F${rowNumber}`,
         valueInputOption: "RAW",
         requestBody: {
           values: [newRow],
         },
       });
     } else {
+      // Append new row
       await sheets.spreadsheets.values.append({
         spreadsheetId,
-        range: "Sheet1!A:E",
+        range: "Sheet1!A:F",
         valueInputOption: "RAW",
         insertDataOption: "INSERT_ROWS",
         requestBody: {
@@ -72,7 +84,7 @@ export default async function handler(req, res) {
       });
     }
 
-    // Send Email
+    // ✅ Send Email with services included
     const transport = nodemailer.createTransport({
       service: "gmail",
       host: "smtp.gmail.com",
@@ -99,6 +111,7 @@ export default async function handler(req, res) {
                 <tr><td style="border:1px solid #ddd;padding:8px;"><b>Email</b></td><td style="border:1px solid #ddd;padding:8px;">${email}</td></tr>
                 <tr><td style="border:1px solid #ddd;padding:8px;"><b>Phone</b></td><td style="border:1px solid #ddd;padding:8px;">${phone}</td></tr>
                 <tr><td style="border:1px solid #ddd;padding:8px;"><b>Message</b></td><td style="border:1px solid #ddd;padding:8px;white-space:pre-wrap;">${message}</td></tr>
+                <tr><td style="border:1px solid #ddd;padding:8px;"><b>Selected Services</b></td><td style="border:1px solid #ddd;padding:8px;white-space:pre-wrap;">${servicesString}</td></tr>
               </table>
               <p style="text-align:center;margin-top:20px;font-size:14px;color:#888;">This is an automated email — please do not reply.</p>
             </div>

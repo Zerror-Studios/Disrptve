@@ -47,3 +47,12 @@ button {
 [data-aos="clip"].aos-animate {
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
+.custom_scroller::-webkit-scrollbar{
+  background-color: white;
+  border-radius: 1000px;
+  width: 5px;
+}
+.custom_scroller::-webkit-scrollbar-thumb{
+  background-color: #FB0401;
+  border-radius: 1000px;
+}
