@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { initCubeScrollAnimation } from "@/components/ui/initCubeScrollAnimation";
 import Iridescence from "@/components/ui/Iridescence";
 import { useGSAP } from "@gsap/react";
+import SeoHeader from "@/components/seo/SeoHeader";
 gsap.registerPlugin(ScrollTrigger);
 
 const serviceData = [
@@ -277,6 +278,8 @@ const index = () => {
 
     return (
         <>
+      <SeoHeader meta={meta} />
+
             <div className="fixed wave_bg top-0 left-0 z-[-1] w-full h-full center">
                     <img className="w-full h-full object-cover" src="/gifs/work.gif" alt="" />
             </div>
@@ -436,3 +439,33 @@ const index = () => {
 };
 
 export default index;
+
+const meta = {
+    title: "Marketing Services - Digital, Brand Strategy & AI Design",
+    description:
+      "Full-service marketing agency offering brand strategy, digital marketing, social media, web design, AI design, and political campaign services.",
+    canonical: "https://disrptve.vercel.app/services",
+    og: {
+      title: "Marketing Services - Digital, Brand Strategy & AI Design",
+      description:
+        "Full-service marketing agency offering brand strategy, digital marketing, social media, web design, AI design, and political campaign services.",
+      image: "https://disrptve.vercel.app/logo-og.png",
+      url: "https://disrptve.vercel.app/services",
+      type: "website",
+      site_name: "DISRPTVE",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Marketing Services - Digital, Brand Strategy & AI Design",
+      description:
+        "Full-service marketing agency offering brand strategy, digital marketing, social media, web design, AI design, and political campaign services.",
+      image: "https://disrptve.vercel.app/logo-og.png",
+      site: "@disrptve",
+    },
+    robots: "index,follow",
+    keywords:
+      "marketing services, digital marketing services, brand strategy, social media management, web design, AI design, political campaigns",
+    author: "DISRPTVE",
+    viewport: "width=device-width, initial-scale=1.0",
+    themeColor: "#000000",
+  };

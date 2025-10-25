@@ -128,7 +128,7 @@ export const ProjectsData = [
     title: "Flaunt Your Ink",
     tagline: "From brand identity to brand investment.",
     heroImg: "/images/projects/FYI/heroImg.webp",
-    coverImg: "/images/projects/FYI/coverImg.jpg",
+    coverImg: "/images/projects/FYI/coverImg.webp",
     logo: "/images/projects/FYI/logo.png",
     websiteLink: "",
     tags: [
@@ -150,8 +150,8 @@ export const ProjectsData = [
     id: 4,
     title: "Proost Beer",
     tagline: "A brand that looks as good as it tastes.",
-    coverImg: "/images/projects/Proost/coverImg.webp",
-    heroImg: "/images/projects/Proost/1_Proost.jpg",
+    coverImg: "/images/projects/Proost/coverVid.gif",
+    heroImg: "/images/projects/Proost/1_Proost.webp",
     logo: "/images/projects/Proost/logo.png",
     websiteLink: "",
     tags: [
@@ -166,10 +166,10 @@ export const ProjectsData = [
       "We designed the complete brand experience — from logo and visual identity to packaging and Go-to-Market strategy. The can itself became a piece of art, and we built a full communication matrix giving Proost a clear roadmap on how, where, and to whom to speak.",
     industry: "Alcohol Beverages",
     Images: [
-      "/images/projects/Proost/1_Proost.jpg",
-      "/images/projects/Proost/2_Proost.jpg",
-      "/images/projects/Proost/3_Proost.jpg",
-      "/images/projects/Proost/4_Proost.jpg",
+      "/images/projects/Proost/1_Proost.webp",
+      "/images/projects/Proost/2_Proost.webp",
+      "/images/projects/Proost/3_Proost.webp",
+      "/images/projects/Proost/4_Proost.webp",
     ],
   },
 

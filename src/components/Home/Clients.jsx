@@ -6,99 +6,74 @@ const Clients = () => {
 
     const clientsData = [
         {
-            img: "/images/clients/clientsBg.jpg",
-            icon: "/images/clients/vishwa.svg"
+            icon: "/images/clients/1_Vishwa_Samudra.png"
         },
         {
-            img: "/images/clients/clientsBg.jpg",
-            icon: "/images/clients/rupay.svg"
+            icon: "/images/clients/2_Rupay.png"
         },
         {
-            img: "/images/clients/clientsBg.jpg",
-            icon: "/images/clients/devgn.svg"
+            icon: "/images/clients/3_Devgn.png"
         },
         {
-            img: "/images/clients/clientsBg.jpg",
-            icon: "/images/clients/flipkart.svg"
+            icon: "/images/clients/4_Flipkart.png"
         },
         {
-            img: "/images/clients/clientsBg.jpg",
-            icon: "/images/clients/golden.svg"
+            icon: "/images/clients/5_Golden.png"
         },
         {
-            img: "/images/clients/clientsBg.jpg",
-            icon: "/images/clients/imagine.svg"
+            icon: "/images/clients/6_Imagine.png"
         },
         {
-            img: "/images/clients/clientsBg.jpg",
-            icon: "/images/clients/kuwait.svg"
+            icon: "/images/clients/7_Kuwait.png"
         },
         {
-            img: "/images/clients/clientsBg.jpg",
-            icon: "/images/clients/tata.svg"
+            icon: "/images/clients/8_TATA.png"
         },
         {
-            img: "/images/clients/clientsBg.jpg",
-            icon: "/images/clients/piramal.svg"
+            icon: "/images/clients/9_Piramal.png"
         },
         {
-            img: "/images/clients/clientsBg.jpg",
-            icon: "/images/clients/prominance.svg"
+            icon: "/images/clients/10_Prominance.png"
         },
         {
-            img: "/images/clients/clientsBg.jpg",
-            icon: "/images/clients/proost.svg"
+            icon: "/images/clients/11_Proost.png"
         },
         {
-            img: "/images/clients/clientsBg.jpg",
-            icon: "/images/clients/punjab.svg"
+            icon: "/images/clients/12_Punjab Kings.png"
         },
         {
-            img: "/images/clients/clientsBg.jpg",
-            icon: "/images/clients/fyi.svg"
+            icon: "/images/clients/13_Flaunt Your Ink.png"
         },
         {
-            img: "/images/clients/clientsBg.jpg",
-            icon: "/images/clients/sdaf.svg"
+            icon: "/images/clients/14_SDAF.png"
         },
         {
-            img: "/images/clients/clientsBg.jpg",
-            icon: "/images/clients/superyou.svg"
+            icon: "/images/clients/15_Superyou.png"
         },
         {
-            img: "/images/clients/clientsBg.jpg",
-            icon: "/images/clients/tlh.svg"
+            icon: "/images/clients/16_TLH.png"
         },
         {
-            img: "/images/clients/clientsBg.jpg",
-            icon: "/images/clients/candor.svg"
+            icon: "/images/clients/17_Candor_Foods.png"
         },
         {
-            img: "/images/clients/clientsBg.jpg",
-            icon: "/images/clients/guyana.svg"
+            icon: "/images/clients/18_Guyana.png"
         },
         {
-            img: "/images/clients/clientsBg.jpg",
-            icon: "/images/clients/ellementary.svg"
+            icon: "/images/clients/19_Ellementry.png"
         },
         {
-            img: "/images/clients/clientsBg.jpg",
-            icon: "/images/clients/dalhouse.svg"
+            icon: "/images/clients/20_Dalhousie.png"
         },
         {
-            img: "/images/clients/clientsBg.jpg",
-            icon: "/images/clients/mevejars.svg"
+            icon: "/images/clients/21_Meve_Jars.png"
         },
-
-
-
-
-
-
-
-
-
-
+        {
+            icon: "/images/clients/22_IMW.png"
+        },
+        {
+            icon: "/images/clients/23_AGP.png"
+        },
     ]
 
     const containerRef = useRef(null);
@@ -159,13 +134,13 @@ const Clients = () => {
                                     className="client-box aspect-square border border-[#8585855b] overflow-hidden relative flex items-center justify-center"
                                 >
                                     <img
-                                        className="client-icon grayscale-100 absolute z-[1] w-[60%] "
+                                        className="client-icon grayscale-100 absolute z-[1] w-[90%] "
                                         src={item.icon}
                                         alt=""
                                     />
                                     <img
                                         className="client-img absolute w-full h-full object-cover opacity-0 "
-                                        src={item.img}
+                                        src="/images/clients/clientsBg.jpg"
                                         alt=""
                                     />
                                 </div>

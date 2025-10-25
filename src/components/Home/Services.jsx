@@ -220,10 +220,9 @@ const Services = () => {
                 <div className=" serv_slide  px-3 mt-5 lg:mt-0  w-full h-[75vh]  lg:h-full gap-x-5 lg:gap-x-10 flex items-center ">
                     <div className="hidden lg:block w-[30vw] shrink-0 h-full"></div>
                     {serviceData.map((item, index) => (
-                        <>
-
+                        <div key={index}>
                             {/* for mobile */}
-                            <div key={index} className=" lg:hidden w-[90vw] md:w-[55vw] bg-[#0e0e0e5d] p-5  flex flex-col lg:justify-between shrink-0  h-full lg:h-[35vw] border border-[#e5e7eb44] overflow-hidden">
+                            <div key={`mob_${index}`} className=" lg:hidden w-[90vw] md:w-[55vw] bg-[#0e0e0e5d] p-5  flex flex-col lg:justify-between shrink-0  h-full lg:h-[35vw] border border-[#e5e7eb44] overflow-hidden">
                                 <div className="flex justify-between ">
                                     <div className=" text-2xl lg:text-5xl  leading-none font-semibold uppercase ">
                                         <div className=" red">
@@ -257,7 +256,7 @@ const Services = () => {
                             </div>
 
                             {/* for desktop */}
-                            <div key={index} className=" hidden lg:flex  w-[90vw] md:w-[60vw] bg-[#0e0e0e5d] p-5 flex-col lg:justify-between shrink-0  h-full lg:h-[37vw] border border-[#e5e7eb44]">
+                            <div  key={`desk_${index}`} className=" hidden lg:flex  w-[90vw] md:w-[60vw] bg-[#0e0e0e5d] p-5 flex-col lg:justify-between shrink-0  h-full lg:h-[37vw] border border-[#e5e7eb44]">
                                 <div className=" text-2xl lg:text-5xl    leading-none font-semibold uppercase ">
                                     <div className=" red">
                                         <h3 className=' font-normal'>{item.title.split(" & ")[0]} & </h3>
@@ -288,7 +287,7 @@ const Services = () => {
                                     </div>
                                 </div>
                             </div>
-                        </>
+                        </div>
                     ))}
                 </div>
 

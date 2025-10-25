@@ -3,6 +3,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 import AOS from "aos";
 import { ProjectsData } from '@/store/ProjectsData';
 import Link from 'next/link';
+import SeoHeader from '@/components/seo/SeoHeader';
 const index = () => {
     const [activeFilter, setActiveFilter] = useState("All");
     const filters = useMemo(() => {
@@ -50,6 +51,8 @@ const index = () => {
 
     return (
         <>
+            <SeoHeader meta={meta} />
+
             <div className="w-full h-[50vh] lg:h-[70vh] px-3 lg:px-5 flex items-end">
 
                 <div className="w-full flex flex-wrap space-y-3 group mb-10">
@@ -367,3 +370,35 @@ const index = () => {
 }
 
 export default index
+
+
+
+const meta = {
+    title: "Our Case Studies - Marketing Case Studies & Portfolio | DISRPTVE",
+    description:
+        "Explore our portfolio of successful brand campaigns, digital marketing projects, and creative excellence across industries.",
+    canonical: "https://disrptve.vercel.app/projects",
+    og: {
+        title: "Our Case Studies - Marketing Case Studies & Portfolio | DISRPTVE",
+        description:
+            "Explore our portfolio of successful brand campaigns, digital marketing projects, and creative excellence across industries.",
+        image: "https://disrptve.vercel.app/logo-og.png",
+        url: "https://disrptve.vercel.app/projects",
+        type: "website",
+        site_name: "DISRPTVE",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Our Case Studies - Marketing Case Studies & Portfolio | DISRPTVE",
+        description:
+            "Explore our portfolio of successful brand campaigns, digital marketing projects, and creative excellence across industries.",
+        image: "https://disrptve.vercel.app/logo-og.png",
+        site: "@disrptve",
+    },
+    robots: "index,follow",
+    keywords:
+        "marketing portfolio, case studies, brand campaigns, creative projects, marketing work, agency portfolio",
+    author: "DISRPTVE",
+    viewport: "width=device-width, initial-scale=1.0",
+    themeColor: "#000000",
+};

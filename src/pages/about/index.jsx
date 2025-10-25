@@ -7,6 +7,7 @@ import { SplitText } from 'gsap/dist/SplitText';
 import Iridescence from '@/components/ui/Iridescence';
 import { RiArrowRightUpLine } from '@remixicon/react';
 import Link from 'next/link';
+import SeoHeader from '@/components/seo/SeoHeader';
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const teamMembers = [
@@ -26,14 +27,14 @@ const teamMembers = [
     {
         name: "Chetan Chopra",
         role: "Chief Business Officer",
-        img: "/images/teamMember/ashish.webp",
+        img: "/images/teamMember/chetan.jpeg",
         colSpan: "col-span-2 col-start-4",
         extraClasses: "mt-[19.5vw]",
     },
     {
         name: "Karan Adodra",
         role: "Head of Content",
-        img: "/images/teamMember/kanishq.webp",
+        img: "/images/teamMember/karan.png",
         colSpan: "col-span-1 col-start-6",
         extraClasses: "mt-[19.5vw]",
     },
@@ -64,6 +65,12 @@ const index = () => {
 
     useGSAP(() => {
 
+        gsap.to(".red_globe_bg", {
+            top: 0,
+            duration: 1.2,
+            delay: .5,
+            ease: "ease-secondary"
+        })
         gsap.from(".her_txt_anim", {
             width: "50%",
             duration: 1,
@@ -110,24 +117,18 @@ const index = () => {
         splitSets.forEach((set) => fadeInChars(set.a.chars));
 
         tl.to(".nm_2", { opacity: 1 }, ">")
+            .to(".crd_1", { z: 30, rotateY: 2, rotate: 0, scale: 1.05, ease: "linear", }, "<")
             .to(".nam_2, .par1_b, .par2_b, .par3_b, .par4_b", { top: "0%" }, "<")
             .to(".nam_1, .par1_a, .par2_a, .par3_a, .par4_a", { yPercent: -100, opacity: 0 }, "<")
-            .to(".nm_1", { opacity: 0.3 }, "<")
-            .to(".crd_1", { scale: 0.9 }, "<")
-            .from(".crd_2", { top: "100%", duration: 1 }, "<")
-            .to(".mix_img_1", { opacity: 0, duration: .15 }, "<+=1.0");
+            .to(".crd_1", { rotateY: -70, x: "-150%", opacity: 0, ease: "linear", }, "+=0.2")
 
         splitSets.forEach((set) => fadeInChars(set.b.chars));
 
         tl.to(".nm_3", { opacity: 1 }, ">")
+            .to(".crd_2", { z: 30, rotateY: 2, rotate: 0, scale: 1.05, ease: "linear", }, "<")
             .to(".nam_3, .par1_c, .par2_c, .par3_c, .par4_c", { top: "0%" }, "<")
             .to(".nam_2, .par1_b, .par2_b, .par3_b, .par4_b", { yPercent: -100, opacity: 0 }, "<")
-            .to(".nm_2", { opacity: 0.3 }, "<")
-            .to(".crd_1", { scale: 0.8 }, "<")
-            .to(".crd_2", { scale: 0.9 }, "<")
-            .from(".crd_3", { top: "100%", duration: 1 }, "<")
-            .to(".mix_img_2", { opacity: 0, duration: .15 }, "<+=1.0")
-            .to(".crd_1", { opacity: .7, duration: .15 }, "<");
+            .to(".crd_2", { rotateY: -70, x: "-150%", opacity: 0, ease: "linear", }, "+=0.2")
 
         splitSets.forEach((set) => fadeInChars(set.c.chars));
 
@@ -157,8 +158,11 @@ const index = () => {
 
     return (
         <>
-            <div className="w-full  z-[-2] h-screen fixed center ">
-                <img className=' scale-[1.5]' src="/gifs/globe.gif" alt="" />
+
+      <SeoHeader meta={meta} />
+        
+            <div className=" red_globe_bg w-full  z-[-2] h-screen top-[100vh] fixed center ">
+                <img className=' w-[70vw] ' src="/gifs/globe.gif" alt="" />
             </div>
 
             <div className="  abt_her_prn w-full overflow-hidden relative  px-3  lg:px-5 text-4xl md:text-6xl lg:text-9xl uppercase flex-col h-[50vh] lg:h-screen center">
@@ -223,15 +227,27 @@ const index = () => {
                     </div>
                 </div>
 
-                <div className=" hidden lg:flex w-full h-[30vh] overflow-hidden lg:h-full  -translate-y-20 relative items-center justify-center">
-                    <div className=" crd_1 absolute translate-y-10 overflow-hidden  aspect-square w-[60%] lg:w-[80%] bgred rounded-2xl">
-                        <img className='w-full h-full mix_img_1 object-cover' src="/images/teamMember/ashish.webp" alt="" />
+                <div className=" hidden lg:flex team-wrapper perspective-distant transform-3d w-full h-full relative  items-center justify-center">
+                    <div className="crd_item crd_1 absolute -rotate-4  z-[10] aspect-square w-[80%] rounded-2xl overflow-hidden">
+                        <img
+                            className="w-full h-full object-cover"
+                            src="/images/teamMember/ashish.webp"
+                            alt="Ashish"
+                        />
                     </div>
-                    <div className=" crd_2 absolute translate-y-20 overflow-hidden aspect-square w-[60%] lg:w-[80%] bgred rounded-2xl">
-                        <img className='w-full h-full mix_img_2 object-cover' src="/images/teamMember/kaushik.webp" alt="" />
+                    <div className="crd_item crd_2 z-[6] absolute rotate-4 aspect-square w-[80%] rounded-2xl overflow-hidden">
+                        <img
+                            className="w-full h-full object-cover"
+                            src="/images/teamMember/kaushik.webp"
+                            alt="Kaushik"
+                        />
                     </div>
-                    <div className="crd_3 absolute  translate-y-32 overflow-hidden aspect-square w-[60%] lg:w-[80%] bg-[#D9D9D9] rounded-2xl">
-                        <img className='w-full h-full object-cover' src="/images/teamMember/kanishq.webp" alt="" />
+                    <div className="crd_item crd_3 z-[2] absolute grayscale-100  aspect-square w-[80%] rounded-2xl overflow-hidden">
+                        <img
+                            className="w-full h-full object-cover"
+                            src="/images/teamMember/kanishq.jpeg"
+                            alt="Kanishq"
+                        />
                     </div>
                 </div>
                 <div className=" hidden lg:block w-full h-[20vh] bg-black lg:bg-transparent z-[1] lg:pl-20 space-y-5">
@@ -304,7 +320,7 @@ const index = () => {
                 </Link>
             </div>
 
-            <div className=" py-14 lg:py-20  px-3  lg:px-5 ">
+            <div className=" py-14 lg:py-28  px-3  lg:px-5 ">
                 <h2 className='   uppercase   text-lg  lg:text-2xl font-semibold mb-5 red'>our team</h2>
                 <div className="w-full lg:hidden grid grid-cols-2 items-stretch gap-y-10 md:grid-cols-4 gap-3 md:gap-x-5">
                     {teamMembers.map((member, i) => (
@@ -367,3 +383,36 @@ const index = () => {
 }
 
 export default index
+
+
+
+
+const meta = {
+    title: "About DISRPTVE - Strategy-Led Marketing Agency Team",
+    description:
+      "Founded in 2023, DISRPTVE combines proven strategy, entertainment networks, and modern design to build brands that earn attention with interest.",
+    canonical: "https://disrptve.vercel.app/about",
+    og: {
+      title: "About DISRPTVE - Strategy-Led Marketing Agency Team",
+      description:
+        "Founded in 2023, DISRPTVE combines proven strategy, entertainment networks, and modern design to build brands that earn attention with interest.",
+      image: "https://disrptve.vercel.app/logo-og.png",
+      url: "https://disrptve.vercel.app/about",
+      type: "website",
+      site_name: "DISRPTVE",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "About DISRPTVE - Strategy-Led Marketing Agency Team",
+      description:
+        "Founded in 2023, DISRPTVE combines proven strategy, entertainment networks, and modern design to build brands that earn attention with interest.",
+      image: "https://disrptve.vercel.app/logo-og.png",
+      site: "@disrptve",
+    },
+    robots: "index,follow",
+    keywords:
+      "about DISRPTVE, marketing agency team, Mumbai agency, brand strategy experts, creative agency founders",
+    author: "DISRPTVE",
+    viewport: "width=device-width, initial-scale=1.0",
+    themeColor: "#000000",
+  };

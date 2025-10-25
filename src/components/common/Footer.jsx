@@ -69,7 +69,9 @@ const Footer = () => {
     <>
       <div className="w-full relative  space-y-6   ">
         <div className="absolute w-full h-full bg-black z-[-1] pointer-events-none"></div>
-        <div className=" footer_anim_border w-full border-t pb-5 lg:pb-14 border-white/50"></div>
+        <div className="w-full px-3 lg:px-5">
+        <div className=" footer_anim_border w-full border-t pb-5 lg:pb-14 border-white/30"></div>
+        </div>
         <div className="w-full px-3 lg:px-5 items-stretch  flex   justify-between ">
           <div
             className="flex flex-col gap-y-1 uppercase text-xl lg:text-3xl"
@@ -121,8 +123,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className=" translate-y-6  px-3 lg:px-5  text-xs lg:text-sm  w-full flex justify-between">
-          <p className='  opacity-50'></p>
+        <div className=" translate-y-6  px-3 lg:px-5  text-xs lg:text-sm  w-full ">
           <p className='  opacity-50 capitalize'>© 2025. All rights reserved.</p>
         </div>
         <div className="w-full   relative ">

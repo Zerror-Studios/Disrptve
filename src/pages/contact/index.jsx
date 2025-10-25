@@ -1,3 +1,4 @@
+import SeoHeader from '@/components/seo/SeoHeader'
 import Form from '@/components/ui/Form'
 import { useGSAP } from '@gsap/react'
 import { RiArrowRightUpLine, RiCloseLine, RiFacebookFill, RiFacebookLine, RiInstagramFill, RiInstagramLine, RiLinkedinFill, RiLinkedinLine, RiTwitterFill, RiTwitterLine, RiYoutubeFill, RiYoutubeLine } from '@remixicon/react'
@@ -22,6 +23,8 @@ const index = () => {
   })
   return (
     <>
+      <SeoHeader meta={meta} />
+
       <Form openForm={openForm} setOpenForm={setOpenForm} />
 
       <div className="  w-full fixy_con fixed  brightness-[1] blur-[0] top-0 left-0 h-screen lg:pt-20 bg-[#FB0401] text-black center flex-col gap-y-10 text-center">
@@ -91,3 +94,34 @@ const index = () => {
 }
 
 export default index
+
+
+const meta = {
+  title: "Contact DISRPTVE - Mumbai Marketing Agency | Get in Touch",
+  description:
+    "Contact DISRPTVE for strategy-led marketing solutions. Based in Mumbai, serving brands globally. Let's build something great together.",
+  canonical: "https://disrptve.vercel.app/contact",
+  og: {
+    title: "Contact DISRPTVE - Mumbai Marketing Agency | Get in Touch",
+    description:
+      "Contact DISRPTVE for strategy-led marketing solutions. Based in Mumbai, serving brands globally. Let's build something great together.",
+    image: "https://disrptve.vercel.app/logo-og.png",
+    url: "https://disrptve.vercel.app/contact",
+    type: "website",
+    site_name: "DISRPTVE",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact DISRPTVE - Mumbai Marketing Agency | Get in Touch",
+    description:
+      "Contact DISRPTVE for strategy-led marketing solutions. Based in Mumbai, serving brands globally. Let's build something great together.",
+    image: "https://disrptve.vercel.app/logo-og.png",
+    site: "@disrptve",
+  },
+  robots: "index,follow",
+  keywords:
+    "contact marketing agency, Mumbai agency contact, marketing consultation, get in touch, agency enquiry",
+  author: "DISRPTVE",
+  viewport: "width=device-width, initial-scale=1.0",
+  themeColor: "#000000",
+};

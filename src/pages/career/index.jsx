@@ -1,3 +1,4 @@
+import SeoHeader from '@/components/seo/SeoHeader'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
@@ -59,6 +60,8 @@ const index = () => {
 
     return (
         <>
+          <SeoHeader meta={meta} />
+
             <div className="w-full h-[70vh] lg:h-screen prx_pren overflow-hidden">
                 <img className='w-full h-full object-cover brightness-90 prx_img' src="/images/career.jpg" alt="" />
             </div>
@@ -91,3 +94,35 @@ const index = () => {
 }
 
 export default index
+
+
+
+const meta = {
+    title: "Careers at DISRPTVE - Join Our Marketing Agency Team",
+    description:
+      "Join DISRPTVE's creative team in Mumbai. Explore opportunities in brand strategy, digital marketing, design, and social media management.",
+    canonical: "https://disrptve.vercel.app/career",
+    og: {
+      title: "Careers at DISRPTVE - Join Our Marketing Agency Team",
+      description:
+        "Join DISRPTVE's creative team in Mumbai. Explore opportunities in brand strategy, digital marketing, design, and social media management.",
+      image: "https://disrptve.vercel.app/logo-og.png",
+      url: "https://disrptve.vercel.app/career",
+      type: "website",
+      site_name: "DISRPTVE",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Careers at DISRPTVE - Join Our Marketing Agency Team",
+      description:
+        "Join DISRPTVE's creative team in Mumbai. Explore opportunities in brand strategy, digital marketing, design, and social media management.",
+      image: "https://disrptve.vercel.app/logo-og.png",
+      site: "@disrptve",
+    },
+    robots: "index,follow",
+    keywords:
+      "marketing careers, agency jobs Mumbai, creative jobs, digital marketing careers, brand strategy jobs",
+    author: "DISRPTVE",
+    viewport: "width=device-width, initial-scale=1.0",
+    themeColor: "#000000",
+  };
