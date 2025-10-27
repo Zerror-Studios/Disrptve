@@ -1,6 +1,7 @@
 export const ProjectsData = [
   {
     id: 8,
+    desc:"For Imagine, we serve as their brand custodians, handling everything from branding and packaging to social media management and performance marketing and activations.",
     title: "Imagine",
     tagline: "End-to-end brand custodians.",
     coverImg: "/images/projects/Imagine/coverImg.webp",
@@ -20,7 +21,7 @@ export const ProjectsData = [
       "For a fast-growing brand in the plant-based meat industry like Imagine, managing every facet of marketing—from brand perception to retail sales—is a monumental task. They needed a single, trusted partner who could act as an extension of their team, ensuring consistency and driving growth across all channels.",
     approach:
       "We operate as Imagine’s end-to-end brand custodians through a deep, integrated partnership. Our role spans brand strategy, packaging design, social media, performance marketing, and online reputation management (ORM). We also oversee their presence on quick commerce platforms and manage retail marketing and activations. This unified approach ensures every touchpoint works in harmony toward one goal — sustained market leadership.",
-    industry: "Plant-Based Meat",
+    industry: " Plant Based Meat Industry",
     Images: [
       "/images/projects/Imagine/img1.webp",
       "/images/projects/Imagine/img2.webp",
@@ -32,6 +33,7 @@ export const ProjectsData = [
   },
   {
     id: 2,
+    desc:"This wasn't just a logo. We created the entire brand identity for Ajay Devgn's new cinema chain, from coining the name 'Devgn CinEx' to designing its complete visual universe.",
     title: "Devgn CinEx",
     tagline: "Building a blockbuster brand for a cinematic icon.",
     coverImg: "/images/projects/devgan/coverImg.webp",
@@ -53,6 +55,7 @@ export const ProjectsData = [
   },
   {
     id: 5,
+    desc:"Building a credible social presence, managing a celebrity ambassador launch. We developed and are executing a comprehensive social media strategy to position Prominance as a leader in their category, building trust and engagement with their audience, as they launched Shah Rukh Khan as their new brand ambassador.",
     title: "Prominance",
     tagline: "Building credibility and launching a superstar.",
     coverImg: "/images/projects/prominance/coverImg.webp",
@@ -64,7 +67,7 @@ export const ProjectsData = [
       "As a leader in the building materials industry, Prominance primarily engaged with a B2B audience. The brand aimed to build broader trust and reinforce its market leadership by introducing Shah Rukh Khan as its brand ambassador. The challenge was to manage this high-profile launch while simultaneously establishing a credible and engaging social media presence from scratch.",
     approach:
       "We implemented a two-pronged strategy. First, we developed and continue to execute a comprehensive social media and performance marketing plan focused on building an authentic community and positioning Prominance as a thought leader. Once that foundation was in place, we seamlessly integrated the Shah Rukh Khan launch into the ecosystem—making the partnership feel purposeful and amplifying the brand’s message of quality and reliability.",
-    industry: "Construction and Building Materials",
+    industry: "Construction and Building Materials Industry ",
     Images: [
       "/images/projects/prominance/img1.webp",
       "/images/projects/prominance/img2.webp",
@@ -73,6 +76,7 @@ export const ProjectsData = [
   },
   {
     id: 9,
+    desc:"We work on social media strategy for SuperYou, hand in with their extremely talented in-house team. Our work involves crafting a distinct voice and producing a steady stream of creative content (powered by AI where applicable) designed to grow their community and build brand love.",
     title: "SuperYou",
     tagline: "Making wellness feel good online.",
     coverImg: "/images/projects/superYou/coverImg.webp",
@@ -84,7 +88,7 @@ export const ProjectsData = [
       "The health and nutrition space is crowded with clinical and often intimidating messaging. SuperYou needed a social media presence that felt vibrant, approachable, and as full of life as its products—building a community around positivity and real-world wellness.",
     approach:
       "We work closely with SuperYou’s talented in-house team to craft a social media strategy that defines a distinct, friendly, and authoritative brand voice. Our creative production leverages AI to deliver unique, visually engaging content designed to educate, inspire, and grow their community. Alongside this, our ORM efforts ensure that conversations around the brand stay positive, supportive, and aligned with its uplifting ethos.",
-    industry: "Retail and Health & Nutrition",
+    industry: "Retail and Health and Nutrition Industry",
     Images: [
       "/images/projects/superYou/img1.webp",
       "/images/projects/superYou/img2.webp",
@@ -93,6 +97,7 @@ export const ProjectsData = [
   },
   {
     id: 1,
+    desc:"We were entrusted to run a full-scale national campaign from the ground up. Our work spanned everything from digital strategy, content seeding, narrative building, social listening to on-ground activations, managing the exit poll and crafting campaign speeches.",
     title: "Guyana National Campaign",
     tagline: "Shaping a national conversation, from the ground up.",
     coverImg: "/images/projects/guyana/coverImg.webp",
@@ -125,6 +130,7 @@ export const ProjectsData = [
   },
   {
     id: 10,
+    desc:"Our partnership with Flaunt Your Ink went far beyond design. We began by creating a complete brand identity and packaging system that felt fresh and confident. We then leveraged our network to strategically onboard superstars Suniel Shetty and Aalim Hakim as brand ambassadors. To cap it all off, we provided crucial support for their first successful fundraising round, helping build the business, not just the brand.",
     title: "Flaunt Your Ink",
     tagline: "From brand identity to brand investment.",
     coverImg: "/images/projects/FYI/coverImg.webp",
@@ -139,13 +145,16 @@ export const ProjectsData = [
     ],
     challenge:
       "Launching a new brand in the competitive beauty and personal care industry requires more than a great product—it demands a powerful identity, instant credibility, and the capital to grow. Flaunt Your Ink needed a partner who could build the brand and the business simultaneously.",
+
     approach:
       "Our partnership was truly foundational. We began by crafting a complete brand identity and packaging system that felt bold, confident, and market-ready. Leveraging our network, we strategically onboarded Suniel Shetty and Aalim Hakim as brand ambassadors, giving the brand instant star power. To accelerate growth, we also guided the team through their first successful fundraising round—shaping their pitch and helping them secure investment to scale.",
-    industry: "Beauty and Personal Care",
+
+    industry: "Beauty and Personal Care Industry",
     Images: ["/images/projects/FYI/img1.webp"],
   },
   {
     id: 4,
+    desc:"For this craft beer brand, we designed a full brand identity that would stand out on the shelf and online. From the logo and visual language to the can itself, we crafted a brand people want to hold.",
     title: "Proost Beer",
     tagline: "A brand that looks as good as it tastes.",
     coverImg: "/images/projects/Proost/coverVid.gif",
@@ -172,6 +181,7 @@ export const ProjectsData = [
   },
   {
     id: 6,
+    desc:"We saw an opportunity to harness fan passion. We built and executed the community strategy for the team's unofficial fan page and squad, creating a thriving digital home for their most dedicated supporters.",
     title: "Punjab Kings",
     tagline: "Turning passive fans into an active movement.",
     coverImg: "/images/projects/punjabKings/coverImg.webp",
@@ -192,6 +202,7 @@ export const ProjectsData = [
   },
   {
     id: 7,
+    desc:"We worked with Tata to build excitement for the Harrier EV launch. Our team developed key elements of the launch strategy, edited the launch video, and created a wave of social media content.",
     title: "Tata EV - Harrier Launch",
     tagline: "Driving the launch of an electric icon.",
     coverImg: "/images/projects/tata/coverImg.webp",
@@ -211,6 +222,7 @@ export const ProjectsData = [
   },
   {
     id: 3,
+    desc:"We produced a stunning, hyper-realistic photoshoot for the Delhi-based designer entirely with AI. The result? World-class visuals delivered at 1/8th the cost and a fraction of the time of a traditional shoot.",
     title: "Sarabh Khanijou",
     tagline: "High fashion, imagined with Artificial Intelligence.",
     coverImg: "/images/projects/sarabh/coverImg.webp",
@@ -228,6 +240,7 @@ export const ProjectsData = [
   },
   {
     id: 11,
+    desc:"We built the Pune United brand from scratch, designing the team's identity and jerseys, managing their social media debut, and providing live coverage for their events. ",
     title: "Pune United",
     tagline: "Launching a team, not just a logo.",
     coverImg: "/images/projects/puneUnited/coverImg.webp",
@@ -254,6 +267,7 @@ export const ProjectsData = [
   },
   {
     id: 12,
+    desc:"We strategically onboarded Shamita Shetty as a co-founder to launch Meve Jars. Our team then managed the entire production and execution of the launch photoshoot and designed the product packaging.",
     title: "Meve Jars",
     tagline: "Launching a brand with star power.",
     coverImg: "/images/projects/meve/heroImg.webp",
@@ -265,7 +279,7 @@ export const ProjectsData = [
       "To break through the crowded and competitive health food market, Meve Jars needed a launch that felt significant, trustworthy, and capable of generating immediate buzz. The goal was to position the brand as a premium and credible player from day one.",
     approach:
       "We architected a launch strategy built around celebrity co-ownership to establish instant credibility. Our team strategically onboarded Shamita Shetty as co-founder, instantly elevating the brand’s profile. We then managed the full-scale production and execution of the launch photoshoot, creating a premium suite of visual assets. Finally, we designed the product packaging to ensure the on-shelf experience matched the brand’s elevated positioning and high-impact debut.",
-    industry: "Health and Wellness Food",
+    industry: "Health and Wellness Food Industry",
     Images: [
       "/images/projects/meve/img1.webp",
       "/images/projects/meve/img2.webp",
@@ -274,6 +288,7 @@ export const ProjectsData = [
   },
   {
     id: 13,
+    desc:"For the SDAF event, we handled it all: full event coverage, social media management, identity creation, and even the design of the guest gift boxes.",
     title: "Shivdutt Das Art Foundation",
     tagline: "Crafting a Foundation for the Arts.",
     heroImg: "/images/projects/sdaf/heroImg.webp",
@@ -292,7 +307,7 @@ export const ProjectsData = [
       "Launching a new art foundation requires more than a great inaugural event — it demands prestige, a compelling voice, and a community built from day one. The Shivdutt Das Art Foundation needed a brand and strategy that would position it as a cultural institution from its very first showcase, 'Timeless Frames.'",
     approach:
       "Our partnership is both foundational and ongoing. We began by crafting a strong digital home through a beautifully designed website, establishing the foundation’s voice and presence. For the inaugural event, 'Timeless Frames,' we delivered an end-to-end experience — from creating the event identity and managing social media build-up to designing bespoke invitations for a high-profile guest list. We also executed live coverage and designed elegant gift boxes for an unforgettable takeaway. Beyond launch, we continue to manage their digital presence and act as a strategic partner shaping the foundation’s long-term vision in the arts and culture space.",
-    industry: "Arts and Culture",
+    industry: "Arts and Culture Industry",
     Images: [
       "/images/projects/sdaf/img1.webp",
       "/images/projects/sdaf/img2.webp",
@@ -300,6 +315,7 @@ export const ProjectsData = [
   },
   {
     id: 14,
+    desc:"We were tasked with creating a high-impact brochure for this major industry event, translating complex information into a beautifully designed and easy-to-navigate format.",
     title: "India Maritime Week",
     tagline: "Corporate design that commands attention.",
     heroImg: "/images/projects/imw/heroImg.webp",
@@ -322,6 +338,7 @@ export const ProjectsData = [
   },
   {
     id: 15,
+    desc:"We designed and developed the official website and corporate brochure for Piramal Nextgen, creating key assets for their digital and physical presence.",
     title: "Piramal Nextgen",
     tagline: "Crafting essential corporate tools.",
     heroImg: "",
@@ -333,11 +350,12 @@ export const ProjectsData = [
       "For a high-end firm in the architecture and turnkey contracting space, every asset must reflect the quality and precision of its work. Piramal Nextgen needed a website and corporate brochure that would serve as the foundational pillars of its marketing, instantly communicating credibility and expertise.",
     approach:
       "We designed and developed the essential tools for their digital and physical presence — a sophisticated website that showcases their portfolio with clarity and style, and a corporate brochure that acts as a powerful leave-behind for clients and presentations. Together, these assets now serve as the cornerstone of their client-facing communication.",
-    industry: "Interior Design, Architecture, and Turnkey Contracting",
+    industry: "  Interior Design, Architecture, and Turnkey Contracting Industry,",
     Images: [],
   },
   {
     id: 16,
+    desc:"Leadership requires a clear narrative. We manage the professional LinkedIn presence for top executives at Vishwa Samudra, shaping their personal brands and establishing them as thought leaders in their industry.",
     title: "VS Corporate",
     tagline: "Giving executives a powerful voice.",
     heroImg: "/images/projects/vsCorporate/heroImg.webp",
@@ -366,6 +384,7 @@ export const ProjectsData = [
   },
   {
     id: 17,
+    desc:"We designed and developed a modern, intuitive website for the esteemed school, updating their digital presence to match their real-world reputation.",
     title: "Dalhousie Public School",
     tagline: "Bringing a legacy brand online.",
     heroImg: "",
@@ -377,11 +396,12 @@ export const ProjectsData = [
       "Many legacy institutions have reputations that far exceed their digital presence. Dalhousie Public School needed a modern website that would honor its heritage while appealing to today’s digitally native parents and prospective students.",
     approach:
       "We designed and developed a new digital home that balances tradition with technology. The elegant, intuitive website highlights the school’s values, showcases its campus, and serves as an essential resource for parents, students, and alumni — bringing its legacy to life online.",
-    industry: "Education",
+    industry: "Educational ",
     Images: [],
   },
   {
     id: 18,
+    desc:"Our team managed the social media presence for Candor Foods and designed their product packaging, ensuring the brand looked delicious both online and on the shelf.",
     title: "Candor Foods",
     tagline: "Food that looks good everywhere.",
     heroImg: "",
@@ -393,11 +413,12 @@ export const ProjectsData = [
       "In the competitive food and beverage space, products must look as appealing online as they do on-shelf. Candor Foods needed a cohesive brand identity that translated beautifully across packaging and social media.",
     approach:
       "We unified their visual identity across physical and digital touchpoints. Our team designed clean, eye-catching packaging that stood out in retail spaces, and built a social media presence full of appetizing, on-brand visuals — ensuring the brand looked delicious everywhere it appeared.",
-    industry: "Food and Beverage",
+    industry: "Food and Beverage Industry",
     Images: [],
   },
   {
     id: 19,
+    desc:"We developed the mainline franchise expansion strategy for TLH, creating the foundational SLAs and managing their social media to support their growth.",
     title: "The Laundry House",
     tagline: "The strategy behind the expansion.",
     heroImg: "",
@@ -409,11 +430,12 @@ export const ProjectsData = [
       "Scaling a service brand through franchising requires a strong operational base and consistent communication. The Laundry House needed both — a growth strategy and brand management that could support expansion.",
     approach:
       "We developed TLH’s franchise expansion blueprint, including Service-Level Agreements and operational systems to ensure scalable success. Alongside, we managed their social media presence to strengthen the brand and attract both customers and potential franchise partners.",
-    industry: "Consumer Services",
+    industry: "Consumer Services Industry",
     Images: [],
   },
   {
     id: 20,
+    desc:"We managed the social media presence for Ellementary, creating a consistent aesthetic and engaging content to grow their audience. ",
     title: "Ellementary",
     tagline: "Consistent, beautiful social content.",
     heroImg: "",
@@ -430,6 +452,7 @@ export const ProjectsData = [
   },
   {
     id: 21,
+    desc:" We provided ongoing design support for Kuwait Airlines, creating a range of social media creatives and other design assets to support their marketing efforts.",
     title: "Kuwait Airlines",
     tagline: "Agile design support for a global carrier.",
     heroImg: "",
@@ -441,7 +464,7 @@ export const ProjectsData = [
       "A global airline operates at a relentless pace, constantly needing high-quality creative assets for campaigns, promotions, and regional communication. Kuwait Airlines needed a reliable, agile design partner to support their fast-moving operations.",
     approach:
       "We provided ongoing design and creative support, functioning as an extension of their internal marketing team. Our work ensured timely delivery of visually polished, brand-aligned assets across social and digital platforms — helping the airline maintain global consistency with local agility.",
-    industry: "Airlines and Aviation",
+    industry: "Airlines and Aviation Industry ",
     Images: [],
   },
 

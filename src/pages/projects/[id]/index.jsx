@@ -207,7 +207,7 @@ const index = () => {
                 <div className="w-full flex p-5 ">
                     <div className="hidden md:block w-1/2"></div>
                     <div className=" w-full md:w-1/2">
-                        <p className=' text-base lg:text-xl'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum odio distinctio consectetur soluta eos nemo possimus delectus magnam quisquam voluptatibus illum at dolor recusandae tenetur officia, hic id cumque optio.</p>
+                        <p className=' text-base lg:text-xl'>{project?.desc}</p>
                     </div>
                 </div>
 
