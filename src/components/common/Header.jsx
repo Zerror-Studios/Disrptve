@@ -94,10 +94,7 @@ const Header = () => {
 
   return (
     <>
-
-      <Form openForm={openForm} setOpenForm={setOpenForm} />
-
-      {
+      {/* {
         path === "/contact" && (
           <div onClick={() => {
             if (isMenuOpen) {
@@ -109,9 +106,9 @@ const Header = () => {
             <Hamburger toggled={isMenuOpen} toggle={setIsMenuOpen} />
           </div>
         )
-      }
-      {
-        path !== "/contact" && (
+      } */}
+      {/* {
+        path !== "/contact" && ( */}
           <div onClick={() => {
             if (isMenuOpen) {
               closeMenu()
@@ -121,8 +118,8 @@ const Header = () => {
           }} className={` ${isMenuOpen ? "text-black" : "text-white"} scale-[.8] lg:scale-100 cursor-pointer fixed z-[99]  top-1.5  lg:top-9 burger right-2 lg:right-5`}>
             <Hamburger toggled={isMenuOpen} toggle={setIsMenuOpen} />
           </div>
-        )
-      }
+        {/* )
+      } */}
 
 
       <div className="blur_div h-screen w-full fixed z-[10] bg-[#000000] opacity-0 pointer-events-none"></div>
@@ -246,25 +243,25 @@ const Header = () => {
           href="/"
           //  onClick={() => navigate(router, "/")}
           className='cursor-pointer'>
-          <img className={`  w-[35vw] md:w-[12vw] ${path === "/contact" ? "invert-100" : "invert-0"}`} src="/logo.png" alt="" />
+          <img className={`  w-[35vw] md:w-[12vw] ${path === "/contact" ? "invert-0" : "invert-0"}`} src="/logo.png" alt="" />
         </Link>
         <div className="flex items-center gap-7">
 
           {
             path !== "/contact" && (
-              <div
-                onClick={() => setOpenForm(true)}
-                // href="/contact"
+              <Link
+                // onClick={() => setOpenForm(true)}
+                href="/contact"
                 // onClick={() => navigate(router, "/contact")}
                 className='hidden lg:block'>
                 <button className={` ${path === "/contact" ? "bg-black" : "bgred"} group  px-6 py-2  uppercase `}>
                   <div className="relative flex items-center gap-1">
                     <div className="w-0 group-hover:w-[97%] transition-all duration-300 h-[1px] bg-white absolute bottom-0 left-0"></div>
-                    <h2 className=" group-hover:italic uppercase"> get in touch</h2>
+                    <h2 className=" group-hover:italic uppercase"> Let's talk</h2>
                     <RiArrowRightUpLine size={20} />
                   </div>
                 </button>
-              </div>
+              </Link>
             )}
           <div className=" cursor-pointer opacity-0 ">
             <img className={`${path === "/contact" ? "invert-100" : "invert-0"}`} src="/icons/menu.svg" alt="" />

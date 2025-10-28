@@ -134,7 +134,6 @@ export const ProjectsData = [
       "/images/projects/guyana/img4.webp",
       "/images/projects/guyana/img5.webp",
       "/images/projects/guyana/img6.webp",
-      "/images/projects/guyana/img7.webp",
     ],
   },
   {
@@ -264,6 +263,10 @@ export const ProjectsData = [
       "We bypassed the physical limitations entirely. Using cutting-edge generative AI, we produced a stunning, hyper-realistic photoshoot from scratch. By collaborating closely with the designer on mood boards and creative direction, we were able to generate unique, high-fashion imagery that was indistinguishable from a real-world shoot. This innovative approach allowed for limitless creative freedom while delivering the final assets at 1/8th the cost and in a fraction of the time.",
     industry: "Fashion",
     Images: [
+      "/images/projects/sarabh/img1.webp",
+      "/images/projects/sarabh/img2.webp",
+      "/images/projects/sarabh/img3.webp",
+      "/images/projects/sarabh/img4.webp",
     ],
   },
   {
@@ -293,7 +296,7 @@ export const ProjectsData = [
     desc: "We strategically onboarded Shamita Shetty as a co-founder to launch Meve Jars. Our team then managed the entire production and execution of the launch photoshoot and designed the product packaging.",
     title: "Meve Jars",
     tagline: "Launching a brand with star power.",
-    coverImg: "/images/projects/meve/heroImg.webp",
+    coverImg: "/images/projects/meve/coverImg.webp",
     heroImg: "/images/projects/meve/heroImg.webp",
     logo: "/images/projects/meve/logo.png",
     websiteLink: "",
@@ -307,6 +310,7 @@ export const ProjectsData = [
       "/images/projects/meve/img1.webp",
       "/images/projects/meve/img2.webp",
       "/images/projects/meve/img3.webp",
+      "/images/projects/meve/img4.webp",
     ],
   },
   {
@@ -364,7 +368,7 @@ export const ProjectsData = [
     desc: "We designed and developed the official website and corporate brochure for Piramal Nextgen, creating key assets for their digital and physical presence.",
     title: "Piramal Nextgen",
     tagline: "Crafting essential corporate tools.",
-    heroImg: "",
+    heroImg: "/images/projects/piramal/heroImg.webp",
     coverImg: "",
     logo: "/images/projects/piramal/logo.png",
     websiteLink: "",
@@ -374,7 +378,11 @@ export const ProjectsData = [
     approach:
       "We designed and developed the essential tools for their digital and physical presence — a sophisticated website that showcases their portfolio with clarity and style, and a corporate brochure that acts as a powerful leave-behind for clients and presentations. Together, these assets now serve as the cornerstone of their client-facing communication.",
     industry: "  Interior Design, Architecture, and Turnkey Contracting Industry,",
-    Images: [],
+    Images: [
+      "/images/projects/piramal/img1.webp",
+      "/images/projects/piramal/img2.webp",
+      "/images/projects/piramal/img3.webp",
+    ],
   },
   {
     id: 16,
@@ -410,7 +418,7 @@ export const ProjectsData = [
     desc: "We designed and developed a modern, intuitive website for the esteemed school, updating their digital presence to match their real-world reputation.",
     title: "Dalhousie Public School",
     tagline: "Bringing a legacy brand online.",
-    heroImg: "",
+    heroImg: "/images/projects/dalhousie/heroImg.webp",
     coverImg: "",
     logo: "/images/projects/dalhousie/logo.svg",
     websiteLink: "",
@@ -420,7 +428,11 @@ export const ProjectsData = [
     approach:
       "We designed and developed a new digital home that balances tradition with technology. The elegant, intuitive website highlights the school’s values, showcases its campus, and serves as an essential resource for parents, students, and alumni — bringing its legacy to life online.",
     industry: "Educational ",
-    Images: [],
+    Images: [
+      "/images/projects/dalhousie/img1.webp",
+      "/images/projects/dalhousie/img2.webp",
+      "/images/projects/dalhousie/img3.webp",
+    ],
   },
   {
     id: 18,
@@ -444,7 +456,7 @@ export const ProjectsData = [
     desc: "We developed the mainline franchise expansion strategy for TLH, creating the foundational SLAs and managing their social media to support their growth.",
     title: "The Laundry House",
     tagline: "The strategy behind the expansion.",
-    heroImg: "",
+    heroImg: "/images/projects/tlh/heroImg.webp",
     coverImg: "",
     logo: "/images/projects/tlh/logo.svg",
     websiteLink: "",
@@ -454,7 +466,11 @@ export const ProjectsData = [
     approach:
       "We developed TLH’s franchise expansion blueprint, including Service-Level Agreements and operational systems to ensure scalable success. Alongside, we managed their social media presence to strengthen the brand and attract both customers and potential franchise partners.",
     industry: "Consumer Services Industry",
-    Images: [],
+    Images: [
+      "/images/projects/tlh/img1.webp",
+      "/images/projects/tlh/img2.webp",
+      "/images/projects/tlh/img3.webp",
+    ],
   },
   {
     id: 20,

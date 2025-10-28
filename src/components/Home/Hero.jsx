@@ -89,7 +89,7 @@ const Hero = () => {
                         <div style={{ clipPath: "polygon(0 0, 0% 100%, 90% 0)" }} className="size-14 clip_rd -translate-y-7 translate-x-1/2 shrink-0 bgred"></div>
                     </div>
                     <video
-                        className="w-[0%] clip_vid h-[0%] object-cover"
+                        className="w-[0%] clip_vid h-[0%] contrast-[.9] object-cover"
                         loop muted playsInline
                         id="heroVideo"
                         src="/video/show_reel.mp4"
