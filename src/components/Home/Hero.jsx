@@ -67,7 +67,7 @@ const Hero = () => {
         if (window.innerWidth <= 768) return
         gsap.to(".clip_vid", {
             y: 200,
-            ease:"linear",
+            ease: "linear",
             scrollTrigger: {
                 trigger: ".hero_paren",
                 start: "top top",
@@ -115,7 +115,7 @@ const Hero = () => {
                     <Link href="/about">
                         <button className=' group relative red flex items-center gap-1'>
                             <div className="w-full origin-right group-hover:w-0 transition-all duration-300  h-[1px] bgred absolute bottom-0 right-0"></div>
-                            <h3 className=' text-sm lg:text-lg  group-hover:italic uppercase '>Explore Now</h3>
+                            <h3 className=' text-sm lg:text-lg  group-hover:italic uppercase '>about us</h3>
                             <RiArrowRightUpLine size={20} />
                         </button>
                     </Link>
