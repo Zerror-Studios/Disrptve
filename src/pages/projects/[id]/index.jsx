@@ -215,7 +215,7 @@ const index = () => {
                     <div className="w-full">
                         <div className=" w-full ">
                             <h3 className=' uppercase  text-xl lg:text-3xl '>The Challenge</h3>
-                            <div className="pj_anim_border py-2 w-0  border-b border-white "></div>
+                            <div className="pj_anim_border py-2 w-full  border-b border-white "></div>
                         </div>
                         <div className="py-4 text-base lg:text-xl">
                             <p>{project?.challenge}</p>
@@ -224,7 +224,7 @@ const index = () => {
                     <div className="w-full">
                         <div className=" w-full  ">
                             <h3 className=' uppercase  text-xl lg:text-3xl '>Our Approach</h3>
-                            <div className="pj_anim_border py-2 w-0  border-b border-white "></div>
+                            <div className="pj_anim_border py-2 w-full  border-b border-white "></div>
                         </div>
                         <div className="py-4 text-base lg:text-xl">
                             <p>{project?.approach}</p>
@@ -233,7 +233,7 @@ const index = () => {
                     <div className="w-full">
                         <div className=" w-full  ">
                             <h3 className=' uppercase  text-xl lg:text-3xl '>Our Role</h3>
-                            <div className="pj_anim_border py-2 w-0  border-b border-white "></div>
+                            <div className="pj_anim_border py-2 w-full  border-b border-white "></div>
                         </div>
                         <div className="py-4 space-y-4">
                             {project?.tags.map((tag, i) => (

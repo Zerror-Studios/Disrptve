@@ -295,8 +295,12 @@ const index = () => {
                             className="cube relative w-[200px] h-[200px] [transform-style:preserve-3d]"
                         >
                             <div className="absolute inset-0 [backface-visibility:hidden] [transform:translateZ(100px)] overflow-hidden">
-                                <img
-                                    src="/images/servicesHomepage/6.webp"
+                                <video
+                                    loop
+                                    autoPlay
+                                    muted
+                                    playsInline
+                                    src="/video/show_reel.mp4"
                                     alt="Up Face"
                                     className="w-full h-full object-cover"
                                 />
@@ -304,7 +308,7 @@ const index = () => {
 
                             <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)_translateZ(100px)] overflow-hidden">
                                 <img
-                                    src="/images/servicesHomepage/3.webp"
+                                    src="/images/servicesHomepage/whatwedo_strategy.webp"
                                     alt="Down Face"
                                     className="w-full h-full object-cover"
                                 />
@@ -312,7 +316,7 @@ const index = () => {
 
                             <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(90deg)_translateZ(100px)] overflow-hidden">
                                 <img
-                                    src="/images/servicesHomepage/4.webp"
+                                    src="/images/servicesHomepage/whatwedo_ai.webp"
                                     alt="Right Face"
                                     className="w-full h-full object-cover"
                                 />
@@ -320,7 +324,7 @@ const index = () => {
 
                             <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(-90deg)_translateZ(100px)] overflow-hidden">
                                 <img
-                                    src="/images/servicesHomepage/7.webp"
+                                    src="/images/servicesHomepage/whatwedo_decks.webp"
                                     alt="Left Face"
                                     className="w-full h-full object-cover"
                                 />
@@ -328,7 +332,7 @@ const index = () => {
 
                             <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateX(90deg)_translateZ(100px)] overflow-hidden">
                                 <img
-                                    src="/images/servicesHomepage/1.webp"
+                                    src="/images/servicesHomepage/whatwedo_socialmedia.webp"
                                     alt="Top Face"
                                     className="w-full h-full object-cover"
                                 />
@@ -336,7 +340,7 @@ const index = () => {
 
                             <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateX(-90deg)_translateZ(100px)] overflow-hidden">
                                 <img
-                                    src="/images/servicesHomepage/8.webp"
+                                    src="/images/servicesHomepage/whatwedo_website.webp"
                                     alt="Bottom Face"
                                     className="w-full h-full object-cover"
                                 />

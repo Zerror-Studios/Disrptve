@@ -12,7 +12,7 @@ const serviceData = [
         number: "01",
         title: "Brand Strategy & Go-to-Market",
         desc: "Before you can win, you need a plan. This is where we define your unique position in the market and craft the roadmap to launch and grow effectively.",
-        img: "/images/servicesHomepage/1.webp",
+        img: "/images/servicesHomepage/whatwedo_strategy.webp",
         servs: [
             "Go-to-Market (GTM) Strategy",
             "Brand Positioning & Narrative",
@@ -36,7 +36,7 @@ const serviceData = [
         number: "03",
         title: "Social Media & Performance Marketing",
         desc: "We find your audience where they are and give them a reason to engage. This is about building a community and driving measurable growth online.",
-        img: "/images/servicesHomepage/3.webp",
+        img: "/images/servicesHomepage/whatwedo_socialmedia.webp",
         servs: [
             "SEO & Content Strategy",
             "Social Media Strategy & Management",
@@ -48,7 +48,7 @@ const serviceData = [
         number: "04",
         title: "Website Design & Development",
         desc: "Your website is your home base. We design and build beautiful, intuitive, and high-performing websites that serve as the core of your digital presence.",
-        img: "/images/servicesHomepage/4.webp",
+        img: "/images/servicesHomepage/whatwedo_website.webp",
         servs: [
             "E-commerce Solutions",
             "UX/UI Research & Design",
@@ -71,7 +71,7 @@ const serviceData = [
         number: "06",
         title: "AI-Led Design & Photoshoots",
         desc: "Why be limited by reality? We use cutting-edge AI to create stunning, original visuals, from conceptual art to entire photoshoots, with unparalleled speed and creative freedom.",
-        img: "/images/servicesHomepage/6.webp",
+        img: "/images/servicesHomepage/whatwedo_ai.webp",
         servs: [
             "Generative Visual Assets",
             "AI Concept Art & Moodboarding",
@@ -94,7 +94,7 @@ const serviceData = [
         number: "08",
         title: "Business Decks, Brochures & Collateral",
         desc: "We arm your team with the tools they need to communicate effectively. From investor pitches to sales materials, we design documents that are clear, compelling, and beautifully crafted.",
-        img: "/images/servicesHomepage/8.webp",
+        img: "/images/servicesHomepage/whatwedo_decks.webp",
         servs: [
             "Bespoke Presentations",
             "Sales & Marketing Collateral",
