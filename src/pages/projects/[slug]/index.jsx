@@ -9,18 +9,12 @@ import Link from 'next/link';
 gsap.registerPlugin(ScrollTrigger);
 
 
-const ProjectDetail = () => {
+const ProjectDetail = ({ project, currentIndex }) => {
 
     const containerRef = useRef(null);
     const sliderRef = useRef(null);
     const prgrsbarRef = useRef(null);
     const prgrsbarInnerRef = useRef(null);
-    const id = useParams()
-    var currentIndex
-    const project = ProjectsData.find((p) => p?.id == id?.id)
-    if (project) {
-        currentIndex = ProjectsData.findIndex(work => work.id === Number(id?.id));
-    }
 
     useGSAP(() => {
 
@@ -268,7 +262,7 @@ const ProjectDetail = () => {
                         scroll={false}
                         href={`/projects/${ProjectsData[
                             (currentIndex - 1 + ProjectsData.length) % ProjectsData.length
-                        ]?.id
+                        ]?.slug
                             }`}
                         className="flex group gap-2 items-center"
                     >
@@ -286,7 +280,7 @@ const ProjectDetail = () => {
                         scroll={false}
                         href={`/projects/${ProjectsData[
                             (currentIndex + 1) % ProjectsData.length
-                        ]?.id
+                        ]?.slug
                             }`}
                         className="flex gap-2 items-center group"
                     >
@@ -311,3 +305,30 @@ const ProjectDetail = () => {
 }
 
 export default ProjectDetail
+
+
+export async function getServerSideProps(context) {
+    console.log(context);
+    const { slug } = context.params;
+
+    const project =
+        ProjectsData.find(
+            (p) =>
+                p.slug === slug
+        ) || null;
+
+    if (!project) {
+        return {
+            notFound: true,
+        };
+    }
+
+    const currentIndex = ProjectsData.findIndex((p) => p.slug === project.slug);
+
+    return {
+        props: {
+            project,
+            currentIndex,
+        },
+    };
+}

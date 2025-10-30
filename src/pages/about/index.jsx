@@ -56,6 +56,13 @@ const teamMembers = [
         name: "Chetan Chopra",
         role: "Chief Business Officer",
         img: "/images/teamMember/chetan.jpeg",
+        colSpan: "col-span-2 col-start-4",
+        extraClasses: "mt-[15.5vw]",
+    },
+    {
+        name: "Ajay",
+        role: "Chief Business Officer",
+        // img: "/images/teamMember/chetan.jpeg",
         colSpan: "col-span-1 col-start-6",
         extraClasses: "mt-[-4.5vw]",
     },

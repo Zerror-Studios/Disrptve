@@ -198,7 +198,7 @@ const Projects = () => {
                                 return (
                                     <div key={project.id} className="w-full">
                                         <Link
-                                            href={`/projects/${project.id}`}
+                                            href={`/projects/${project.slug}`}
                                             className="group border border-[#8585855b] relative w-full flex items-end"
                                         >
                                             <div className="flex  w-1/2   px-3 lg:px-5 py-5 items-end justify-between   transition-colors duration-300">
@@ -244,7 +244,7 @@ const Projects = () => {
                                         {pair.map((p) => (
                                             <Link
                                                 key={p.id}
-                                                href={`/projects/${p.id}`}
+                                                href={`/projects/${p.slug}`}
 
                                                 className="group border border-[#8585855b] relative w-1/2 flex items-end"
                                             >
@@ -287,7 +287,7 @@ const Projects = () => {
                                 return (
                                     <div key={project.id} className="w-full">
                                         <Link
-                                            href={`/projects/${project.id}`}
+                                            href={`/projects/${project.slug}`}
                                             className="group border border-[#8585855b] relative w-full flex items-end"
                                         >
                                             <div
@@ -332,7 +332,7 @@ const Projects = () => {
                                         {pair.map((p) => (
                                             <Link
                                                 key={p.id}
-                                                href={`/projects/${p.id}`}
+                                                href={`/projects/${p.slug}`}
 
                                                 className="group border border-[#8585855b] relative w-1/2 flex items-end"
                                             >

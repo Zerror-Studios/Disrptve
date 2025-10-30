@@ -40,7 +40,7 @@ const Projects = () => {
 
                                 if (layoutType === 0) {
                                     return (
-                                        <Link scroll={false} href={`/projects/${item.id}`} key={index}>
+                                        <Link scroll={false} href={`/projects/${item.slug}`} key={index}>
                                             <div key={index} className="w-full border border-[#8585855b] relative">
                                                 <div className="w-full aspect-square overflow-hidden">
                                                     <img
@@ -60,7 +60,7 @@ const Projects = () => {
 
                                 if (layoutType === 1) {
                                     return (
-                                        <Link scroll={false} href={`/projects/${item.id}`} key={index}>
+                                        <Link scroll={false} href={`/projects/${item.slug}`} key={index}>
                                             <div className="w-full flex flex-row-reverse">
                                                 <div className="w-1/2 overflow-hidden border border-[#8585855b] aspect-square">
                                                     <img
@@ -80,7 +80,7 @@ const Projects = () => {
 
                                 // Layout C (odd index, e.g., 3rd)
                                 return (
-                                    <Link scroll={false} href={`/projects/${item.id}`} key={index}>
+                                    <Link scroll={false} href={`/projects/${item.slug}`} key={index}>
                                         <div className="w-full flex">
                                             <div className="w-1/2 overflow-hidden border border-[#8585855b] aspect-square">
                                                 <img
@@ -110,7 +110,7 @@ const Projects = () => {
                                     return (
                                         <div key={project.id} className="w-full">
                                             <Link
-                                                href={`/projects/${project.id}`}
+                                                href={`/projects/${project.slug}`}
                                                 className="group border border-[#8585855b] relative w-full flex items-end"
                                             >
                                                 <div className="flex  w-1/2   px-3 lg:px-5 py-5 items-end justify-between   transition-colors duration-300">
@@ -156,7 +156,7 @@ const Projects = () => {
                                             {pair.map((p) => (
                                                 <Link
                                                     key={p.id}
-                                                    href={`/projects/${p.id}`}
+                                                    href={`/projects/${p.slug}`}
 
                                                     className="group border border-[#8585855b] relative w-1/2 flex items-end"
                                                 >
@@ -199,7 +199,7 @@ const Projects = () => {
                                     return (
                                         <div key={project.id} className="w-full">
                                             <Link
-                                                href={`/projects/${project.id}`}
+                                                href={`/projects/${project.slug}`}
                                                 className="group border border-[#8585855b] relative w-full flex items-end"
                                             >
                                                 <div
@@ -244,7 +244,7 @@ const Projects = () => {
                                             {pair.map((p) => (
                                                 <Link
                                                     key={p.id}
-                                                    href={`/projects/${p.id}`}
+                                                    href={`/projects/${p.slug}`}
 
                                                     className="group border border-[#8585855b] relative w-1/2 flex items-end"
                                                 >

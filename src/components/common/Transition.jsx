@@ -13,7 +13,6 @@ export default function Transition({ children, routeKey }) {
   const blocksRef = useRef([]);
   const [grid, setGrid] = useState({ cols: 1, rows: 1 });
 
-  // Create responsive grid
   useEffect(() => {
     const size = 50;
     const handleResize = () => {
@@ -64,25 +63,23 @@ export default function Transition({ children, routeKey }) {
         });
       });
 
-    // Step 1: Fade in the blocks to cover the screen
     fadeIn().then(() => {
-      // Step 2: Replace page content
       setDisplayChildren(children);
     });
   }, [routeKey]);
 
-  // Step 3: When the new content has rendered, scroll to top and fade out blocks
   useEffect(() => {
     if (!screenRef.current) return;
 
-    // Scroll instantly before fade-out begins
-    window.scrollTo({ top: 0, behavior: "instant" || "auto" });
+    const lenis = window.lenis; 
+    if (lenis) lenis.scrollTo(0, { immediate: true }); 
 
-    // Start fade-out transition
+
     const el = screenRef.current;
     gsap.to(blocksRef.current, {
       autoAlpha: 0,
       duration: 0.25,
+      delay: 0.25,
       ease: "ease-secondary",
       stagger: { amount: 0.3, from: "random" },
       onComplete: () => {
@@ -91,7 +88,7 @@ export default function Transition({ children, routeKey }) {
           duration: 0.2,
           ease: "ease-secondary",
         });
-         ScrollTrigger.refresh();
+        ScrollTrigger.refresh();
       },
     });
   }, [displayChildren]);
