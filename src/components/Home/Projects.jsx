@@ -33,11 +33,11 @@ const Projects = () => {
                     </p>
                 ) : (
                     <>
+                        {/* /for mobile/ */}
                         <div className="w-full pt-14 pb-10 px-3 md:hidden grid">
                             {ProjectsData.slice(0, 10).map((item, index) => {
                                 const layoutType = index % 3;
 
-                                // Layout A — full-width image with overlay text
                                 if (layoutType === 0) {
                                     return (
                                         <Link scroll={false} href={`/projects/${item.id}`} key={index}>
@@ -58,7 +58,6 @@ const Projects = () => {
                                     );
                                 }
 
-                                // Layout B (even index, e.g., 2nd)
                                 if (layoutType === 1) {
                                     return (
                                         <Link scroll={false} href={`/projects/${item.id}`} key={index}>
@@ -99,6 +98,9 @@ const Projects = () => {
                                 );
                             })}
                         </div>
+
+
+                        {/* /for desktop/ */}
                         <div className=" hidden md:block w-full pt-12 px-5 md:pb-12 lg:pb-32">
                             {ProjectsData.slice(0, 10).map((project, i) => {
                                 const layout = pattern(i);
@@ -111,7 +113,8 @@ const Projects = () => {
                                                 href={`/projects/${project.id}`}
                                                 className="group border border-[#8585855b] relative w-full flex items-end"
                                             >
-                                                <div className="flex w-1/2 px-3 lg:px-5 py-5 items-center justify-between group-hover:text-[#FB0401]  transition-colors duration-300">
+                                                <div className="flex  relative w-1/2   px-3 lg:px-5 py-5 items-end justify-between   transition-colors duration-300">
+                                                    <div className="absolute group-hover:h-full w-full transition-all duration-300  z-[-1] h-0 bg-[#FB0401]  left-0 bottom-0"></div>
                                                     <div>
                                                         <h3 className="  text-xl lg:text-3xl  font-semibold leading-none uppercase">
                                                             {project.title}
@@ -121,7 +124,6 @@ const Projects = () => {
                                                     <RiArrowRightUpLine size={32} />
                                                 </div>
                                                 <div
-
                                                     className="aspect-[16/12] border border-[#8585855b] relative w-1/2"
                                                 >
                                                     <img
@@ -148,7 +150,8 @@ const Projects = () => {
 
                                                     className="group border border-[#8585855b] relative w-1/2 flex items-end"
                                                 >
-                                                    <div className="flex aspect-square w-1/2 px-3 lg:px-5 py-5 items-end justify-between group-hover:text-[#FB0401]  transition-colors duration-300">
+                                                    <div className="flex relative  w-1/2 px-3 lg:px-5 py-5 items-end justify-between  transition-colors duration-300">
+                                                        <div className="absolute group-hover:h-full w-full transition-all duration-300  z-[-1] h-0 bg-[#FB0401]  left-0 bottom-0"></div>
                                                         <div>
                                                             <h3 className="  text-xl lg:text-3xl   leading-none font-semibold uppercase">
                                                                 {p.title}
@@ -181,7 +184,6 @@ const Projects = () => {
                                                 className="group border border-[#8585855b] relative w-full flex items-end"
                                             >
                                                 <div
-
                                                     className="aspect-[16/12] border border-[#8585855b] relative w-1/2"
                                                 >
                                                     <img
@@ -190,7 +192,8 @@ const Projects = () => {
                                                         alt={project.title}
                                                     />
                                                 </div>
-                                                <div className="flex w-1/2 px-3 lg:px-5 py-5 items-center justify-between group-hover:text-[#FB0401]  transition-colors duration-300">
+                                                <div className="flex relative w-1/2 px-3 lg:px-5 py-5 items-center justify-between   transition-colors duration-300">
+                                                <div className="absolute group-hover:h-full w-full transition-all duration-300  z-[-1] h-0 bg-[#FB0401]  left-0 bottom-0"></div>
                                                     <div>
                                                         <h3 className="  text-xl lg:text-3xl  font-semibold leading-none uppercase">
                                                             {project.title}
@@ -216,7 +219,8 @@ const Projects = () => {
 
                                                     className="group border border-[#8585855b] relative w-1/2 flex items-end"
                                                 >
-                                                    <div className="flex aspect-square w-1/2 px-3 lg:px-5 py-5 items-end justify-between group-hover:text-[#FB0401]  transition-colors duration-300">
+                                                    <div className="flex relative w-1/2 px-3 lg:px-5 py-5 items-end justify-between   transition-colors duration-300">
+                                                <div className="absolute group-hover:h-full w-full transition-all duration-300  z-[-1] h-0 bg-[#FB0401]  left-0 bottom-0"></div>
                                                         <div>
                                                             <h3 className="  text-xl lg:text-3xl   leading-none font-semibold uppercase">
                                                                 {p.title}

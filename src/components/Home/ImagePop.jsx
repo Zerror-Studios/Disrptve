@@ -98,7 +98,7 @@ const TextPop = () => {
           <motion.h3
             key={t.id}
             initial={{ scale: 1 }}
-            animate={{ scale: 0.5 }}
+            animate={{ scale: 0.55 }}
             exit={{  }}
             transition={{
               duration: TRAIL_TEXT_LIFESPAN / 2000,
@@ -118,8 +118,8 @@ const TextPop = () => {
       </AnimatePresence>
 
       <div className="">
-        <h2>Explore our case</h2>
-        <h2 className="red">studies, and</h2>
+        <h2>Explore our </h2>
+        <h2 className="red">case studies &</h2>
         <h2 className="red">capabilities</h2>
         <h2>in detail.</h2>
       </div>

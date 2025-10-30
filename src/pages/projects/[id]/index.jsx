@@ -124,36 +124,28 @@ const index = () => {
                 })
             );
 
-            // Progress bar
-            if (progressOuter && progressInner) {
-                gsap.set(progressOuter, { opacity: 1, rotate: 0, y: 0 });
+            // Scroll-driven number counter animation
+            if (progressOuter) {
+                const numCount = project?.Images.length;
 
-                context.add(() =>
-                    gsap.to(progressInner, {
-                        width: "100%",
-                        ease: "linear",
+                // Get the height of one number (after render)
+                const numberHeight = progressOuter.firstChild?.offsetHeight || 0;
+
+                context.add(() => {
+                    gsap.to(progressOuter, {
+                        y: () => -(numberHeight * (numCount - 1)), // move by pixel height of one number per slide
+                        ease: "none",
                         scrollTrigger: {
                             trigger: container,
                             start: "top top",
                             end: () => `+=${totalWidth}`,
-                            scrub: 0.4,
+                            scrub: true,
                         },
-                    })
-                );
-
-                context.add(() =>
-                    gsap.to(progressOuter, {
-                        rotate: 5,
-                        y: 10,
-                        opacity: 0,
-                        scrollTrigger: {
-                            trigger: container,
-                            start: "bottom 95%",
-                            toggleActions: "play none none reverse",
-                        },
-                    })
-                );
+                    });
+                });
             }
+
+
 
             ScrollTrigger.refresh(true);
         },
@@ -271,29 +263,19 @@ const index = () => {
                                     ))}
                                 </div>
 
-                                <div className="w-full absolute bottom-24 md:bottom-[2vw] center">
-                                    <div
-                                        style={{
-                                            gridTemplateColumns:
-                                                window.innerWidth < 640
-                                                    ? `repeat(15, 1fr)` // mobile
-                                                    : `repeat(30, 1fr)`, // tablet and up
-                                        }}
-                                        ref={prgrsbarRef}
-                                        className=" pgrs_bar w-[30%] md:w-[18%] relative  h-5 grid"
-                                    >
-                                        <div
-                                            ref={prgrsbarInnerRef}
-                                            className=" anim_cont_wid  absolute h-full w-0 border border-[#ffff] bg-black"></div>
-                                        {[...Array(30)].map((_, i) => (
-                                            <div
-                                                key={i}
-                                                className="border-r border-[#ffff] w-full h-full"
-                                            ></div>
-                                        ))}
+                                <div className="w-full absolute bottom-24 md:bottom-[2vw] flex justify-center items-center">
+                                    <div className="text-xl md:text-2xl flex items-center gap-3 overflow-hidden h-7">
+                                        <div className=" h-full -translate-y-[2px] flex flex-col justify-start items-center overflow-hidden">
+                                            <div ref={prgrsbarRef} className="num_slider flex flex-col">
+                                                {project?.Images.map((_, i) => (
+                                                    <p key={i} className="text-white">{i + 1}</p>
+                                                ))}
+                                            </div>
+                                        </div>
+                                        <p className="text-white/60">|</p>
+                                        <p className="text-white">{project?.Images.length}</p>
                                     </div>
                                 </div>
-
                             </div>
                         )
                     }
@@ -301,7 +283,8 @@ const index = () => {
 
                 <div className="w-full font-light gap-5 text-xl lg:text-3xl border-t border-b h-10 lg:h-20 border-white/50 center uppercase flex justify-between">
                     {/* Prev */}
-                    <Link scroll={false}
+                    <Link
+                        scroll={false}
                         href={`/projects/${ProjectsData[
                             (currentIndex - 1 + ProjectsData.length) % ProjectsData.length
                         ]?.id
@@ -318,7 +301,8 @@ const index = () => {
                     <div className="h-full w-[1px] bg-white/50"></div>
 
                     {/* Next */}
-                    <Link scroll={false}
+                    <Link
+                        scroll={false}
                         href={`/projects/${ProjectsData[
                             (currentIndex + 1) % ProjectsData.length
                         ]?.id

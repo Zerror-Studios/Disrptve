@@ -98,7 +98,7 @@ const index = () => {
                             // Layout A — full-width image with overlay text
                             if (layoutType === 0) {
                                 return (
-                                    <Link  scroll={false} href={`/projects/${item.id}`} key={index}>
+                                    <Link href={`/projects/${item.id}`} key={index}>
                                         <div key={index} className="w-full border border-[#8585855b] relative">
                                             <div className="w-full aspect-square overflow-hidden">
                                                 {item.coverImg === "" ? (
@@ -128,7 +128,7 @@ const index = () => {
                             // Layout B (even index, e.g., 2nd)
                             if (layoutType === 1) {
                                 return (
-                                    <Link  scroll={false} href={`/projects/${item.id}`} key={index}>
+                                    <Link href={`/projects/${item.id}`} key={index}>
                                         <div className="w-full flex flex-row-reverse">
                                             <div className="w-1/2 overflow-hidden border border-[#8585855b] aspect-square">
                                                 {item.coverImg === "" ? (
@@ -157,7 +157,7 @@ const index = () => {
 
                             // Layout C (odd index, e.g., 3rd)
                             return (
-                                <Link  scroll={false} href={`/projects/${item.id}`} key={index}>
+                                <Link href={`/projects/${item.id}`} key={index}>
                                     <div className="w-full flex">
                                         <div className="w-1/2 overflow-hidden border border-[#8585855b] aspect-square">
                                             {item.coverImg === "" ? (
@@ -184,6 +184,8 @@ const index = () => {
                             );
                         })}
                     </div>
+
+
                     <div className=" hidden md:block w-full pt-12 px-5 pb-32">
                         {filteredProjects.map((project, i) => {
                             const layout = pattern(i);
@@ -192,11 +194,12 @@ const index = () => {
                             if (layout === 1)
                                 return (
                                     <div key={project.id} className="w-full">
-                                        <Link  scroll={false}
+                                        <Link
                                             href={`/projects/${project.id}`}
                                             className="group border border-[#8585855b] relative w-full flex items-end"
                                         >
-                                            <div className="flex w-1/2 px-3 lg:px-5 py-5 items-center justify-between group-hover:text-[#FB0401]  transition-colors duration-300">
+                                            <div className="flex  relative w-1/2   px-3 lg:px-5 py-5 items-end justify-between   transition-colors duration-300">
+                                                <div className="absolute group-hover:h-full w-full transition-all duration-300  z-[-1] h-0 bg-[#FB0401]  left-0 bottom-0"></div>
                                                 <div>
                                                     <h3 className="  text-xl lg:text-3xl  font-semibold leading-none uppercase">
                                                         {project.title}
@@ -236,13 +239,14 @@ const index = () => {
                                 return (
                                     <div key={project.id} className="w-full flex">
                                         {pair.map((p) => (
-                                            <Link  scroll={false}
+                                            <Link
                                                 key={p.id}
                                                 href={`/projects/${p.id}`}
 
                                                 className="group border border-[#8585855b] relative w-1/2 flex items-end"
                                             >
-                                                <div className="flex aspect-square w-1/2 px-3 lg:px-5 py-5 items-end justify-between group-hover:text-[#FB0401]  transition-colors duration-300">
+                                                <div className="flex relative  w-1/2 px-3 lg:px-5 py-5 items-end justify-between  transition-colors duration-300">
+                                                    <div className="absolute group-hover:h-full w-full transition-all duration-300  z-[-1] h-0 bg-[#FB0401]  left-0 bottom-0"></div>
                                                     <div>
                                                         <h3 className="  text-xl lg:text-3xl   leading-none font-semibold uppercase">
                                                             {p.title}
@@ -279,7 +283,7 @@ const index = () => {
                             if (layout === 4)
                                 return (
                                     <div key={project.id} className="w-full">
-                                        <Link  scroll={false}
+                                        <Link
                                             href={`/projects/${project.id}`}
                                             className="group border border-[#8585855b] relative w-full flex items-end"
                                         >
@@ -302,7 +306,8 @@ const index = () => {
                                                     />
                                                 )}
                                             </div>
-                                            <div className="flex w-1/2 px-3 lg:px-5 py-5 items-center justify-between group-hover:text-[#FB0401]  transition-colors duration-300">
+                                            <div className="flex relative w-1/2 px-3 lg:px-5 py-5 items-center justify-between   transition-colors duration-300">
+                                                <div className="absolute group-hover:h-full w-full transition-all duration-300  z-[-1] h-0 bg-[#FB0401]  left-0 bottom-0"></div>
                                                 <div>
                                                     <h3 className="  text-xl lg:text-3xl  font-semibold leading-none uppercase">
                                                         {project.title}
@@ -322,13 +327,14 @@ const index = () => {
                                 return (
                                     <div key={project.id} className="w-full flex">
                                         {pair.map((p) => (
-                                            <Link  scroll={false}
+                                            <Link
                                                 key={p.id}
                                                 href={`/projects/${p.id}`}
 
                                                 className="group border border-[#8585855b] relative w-1/2 flex items-end"
                                             >
-                                                <div className="flex aspect-square w-1/2 px-3 lg:px-5 py-5 items-end justify-between group-hover:text-[#FB0401]  transition-colors duration-300">
+                                                <div className="flex relative w-1/2 px-3 lg:px-5 py-5 items-end justify-between   transition-colors duration-300">
+                                                    <div className="absolute group-hover:h-full w-full transition-all duration-300  z-[-1] h-0 bg-[#FB0401]  left-0 bottom-0"></div>
                                                     <div>
                                                         <h3 className="  text-xl lg:text-3xl   leading-none font-semibold uppercase">
                                                             {p.title}
