@@ -61,7 +61,7 @@ const teamMembers = [
     },
 ];
 
-const index = () => {
+const About = () => {
 
     useGSAP(() => {
 
@@ -387,7 +387,7 @@ const index = () => {
 
 }
 
-export default index
+export default About
 
 
 

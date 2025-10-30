@@ -8,7 +8,7 @@ import React, { useState } from 'react'
 gsap.registerPlugin(ScrollTrigger)
 
 
-const index = () => {
+const Contact = () => {
   const [openForm, setOpenForm] = useState(false)
 
   useGSAP(() => {
@@ -95,7 +95,7 @@ const index = () => {
   )
 }
 
-export default index
+export default Contact
 
 
 const meta = {

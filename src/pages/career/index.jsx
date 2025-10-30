@@ -7,7 +7,7 @@ import Link from 'next/link'
 import React from 'react'
 gsap.registerPlugin(ScrollTrigger)
 
-const index = () => {
+const Careers = () => {
 
     useGSAP(() => {
 
@@ -40,7 +40,7 @@ const index = () => {
 
     return (
         <>
-          <SeoHeader meta={meta} />
+            <SeoHeader meta={meta} />
 
             <div className="w-full h-[70vh] lg:h-screen prx_pren overflow-hidden">
                 <img className='w-full h-full object-cover brightness-90 prx_img' src="/images/career.jpg" alt="" />
@@ -52,17 +52,29 @@ const index = () => {
                 <div className=" w-full">
                     <div className="my-20 ser_pren">
                         {JobOpenings.map((item, index) => (
-                            <Link scroll={false} href={`/career/${item.id}`} key={index} className=" group relative cursor-pointer transition-all duration-300  w-full h-24  flex items-center justify-between">
-                                <div className=" serv_anim_bord absolute bottom-0 h-full w-0 border-b border-white/30  hover:border-b-white/100 transition-colors duration-300"></div>
-                                <p className=' group-hover:pl-5 transition-all duration-300  capitalize text-xl lg:text-3xl'>{item.title}</p>
+                            <Link
+                                scroll={false}
+                                href={`/career/${item.slug}`}
+                                key={index}
+                                className="group relative cursor-pointer transition-all duration-300 w-full h-24 flex items-center justify-between"
+                            >
+                                <div className="serv_anim_bord absolute bottom-0 h-full w-0 border-b border-white/30 hover:border-b-white/100 transition-colors duration-300"></div>
+                                <p className="group-hover:pl-5 transition-all duration-300 capitalize text-xl lg:text-3xl">
+                                    {item.title}
+                                </p>
                                 <div className="flex group-hover:pr-5 transition-all duration-300 text-base lg:text-xl h-full items-center gap-4">
-                                    <p className=''>{item.location}</p>
-                                    <div className="w-[1px] bg-white h-[20%]"></div>
-                                    <p className=''>{item.type}</p>
-                                    <img className=' w-4 -rotate-45 invert-100' src="/icons/arrow_small.svg" alt="" />
+                                    <p>{item.location}</p>
+                                    <div className="w-[1px] bg-white h-[20%]" />
+                                    <p>{item.type}</p>
+                                    <img
+                                        className="w-4 -rotate-45 invert-100"
+                                        src="/icons/arrow_small.svg"
+                                        alt=""
+                                    />
                                 </div>
                             </Link>
                         ))}
+
                     </div>
                 </div>
                 <div className="">
@@ -73,36 +85,35 @@ const index = () => {
     )
 }
 
-export default index
-
+export default Careers
 
 
 const meta = {
     title: "Careers at DISRPTVE - Join Our Marketing Agency Team",
     description:
-      "Join DISRPTVE's creative team in Mumbai. Explore opportunities in brand strategy, digital marketing, design, and social media management.",
+        "Join DISRPTVE's creative team in Mumbai. Explore opportunities in brand strategy, digital marketing, design, and social media management.",
     canonical: "https://disrptve.vercel.app/career",
     og: {
-      title: "Careers at DISRPTVE - Join Our Marketing Agency Team",
-      description:
-        "Join DISRPTVE's creative team in Mumbai. Explore opportunities in brand strategy, digital marketing, design, and social media management.",
-      image: "https://disrptve.vercel.app/logo-og.png",
-      url: "https://disrptve.vercel.app/career",
-      type: "website",
-      site_name: "DISRPTVE",
+        title: "Careers at DISRPTVE - Join Our Marketing Agency Team",
+        description:
+            "Join DISRPTVE's creative team in Mumbai. Explore opportunities in brand strategy, digital marketing, design, and social media management.",
+        image: "https://disrptve.vercel.app/logo-og.png",
+        url: "https://disrptve.vercel.app/career",
+        type: "website",
+        site_name: "DISRPTVE",
     },
     twitter: {
-      card: "summary_large_image",
-      title: "Careers at DISRPTVE - Join Our Marketing Agency Team",
-      description:
-        "Join DISRPTVE's creative team in Mumbai. Explore opportunities in brand strategy, digital marketing, design, and social media management.",
-      image: "https://disrptve.vercel.app/logo-og.png",
-      site: "@disrptve",
+        card: "summary_large_image",
+        title: "Careers at DISRPTVE - Join Our Marketing Agency Team",
+        description:
+            "Join DISRPTVE's creative team in Mumbai. Explore opportunities in brand strategy, digital marketing, design, and social media management.",
+        image: "https://disrptve.vercel.app/logo-og.png",
+        site: "@disrptve",
     },
     robots: "index,follow",
     keywords:
-      "marketing careers, agency jobs Mumbai, creative jobs, digital marketing careers, brand strategy jobs",
+        "marketing careers, agency jobs Mumbai, creative jobs, digital marketing careers, brand strategy jobs",
     author: "DISRPTVE",
     viewport: "width=device-width, initial-scale=1.0",
     themeColor: "#000000",
-  };
+};

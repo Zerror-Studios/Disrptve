@@ -4,7 +4,10 @@ import AOS from "aos";
 import { ProjectsData } from '@/store/ProjectsData';
 import Link from 'next/link';
 import SeoHeader from '@/components/seo/SeoHeader';
-const index = () => {
+
+
+const Projects = () => {
+
     const [activeFilter, setActiveFilter] = useState("All");
     const filters = useMemo(() => {
         const tagCount = {};
@@ -98,7 +101,7 @@ const index = () => {
                             // Layout A — full-width image with overlay text
                             if (layoutType === 0) {
                                 return (
-                                    <Link href={`/projects/${item.id}`} key={index}>
+                                    <Link href={`/projects/${item.slug}`} key={index}>
                                         <div key={index} className="w-full border border-[#8585855b] relative">
                                             <div className="w-full aspect-square overflow-hidden">
                                                 {item.coverImg === "" ? (
@@ -128,7 +131,7 @@ const index = () => {
                             // Layout B (even index, e.g., 2nd)
                             if (layoutType === 1) {
                                 return (
-                                    <Link href={`/projects/${item.id}`} key={index}>
+                                    <Link href={`/projects/${item.slug}`} key={index}>
                                         <div className="w-full flex flex-row-reverse">
                                             <div className="w-1/2 overflow-hidden border border-[#8585855b] aspect-square">
                                                 {item.coverImg === "" ? (
@@ -157,7 +160,7 @@ const index = () => {
 
                             // Layout C (odd index, e.g., 3rd)
                             return (
-                                <Link href={`/projects/${item.id}`} key={index}>
+                                <Link href={`/projects/${item.slug}`} key={index}>
                                     <div className="w-full flex">
                                         <div className="w-1/2 overflow-hidden border border-[#8585855b] aspect-square">
                                             {item.coverImg === "" ? (
@@ -198,7 +201,7 @@ const index = () => {
                                             href={`/projects/${project.id}`}
                                             className="group border border-[#8585855b] relative w-full flex items-end"
                                         >
-                                            <div className="flex  relative w-1/2   px-3 lg:px-5 py-5 items-end justify-between   transition-colors duration-300">
+                                            <div className="flex  w-1/2   px-3 lg:px-5 py-5 items-end justify-between   transition-colors duration-300">
                                                 <div className="absolute group-hover:h-full w-full transition-all duration-300  z-[-1] h-0 bg-[#FB0401]  left-0 bottom-0"></div>
                                                 <div>
                                                     <h3 className="  text-xl lg:text-3xl  font-semibold leading-none uppercase">
@@ -245,7 +248,7 @@ const index = () => {
 
                                                 className="group border border-[#8585855b] relative w-1/2 flex items-end"
                                             >
-                                                <div className="flex relative  w-1/2 px-3 lg:px-5 py-5 items-end justify-between  transition-colors duration-300">
+                                                <div className="flex   w-1/2 px-3 lg:px-5 py-5 items-end justify-between  transition-colors duration-300">
                                                     <div className="absolute group-hover:h-full w-full transition-all duration-300  z-[-1] h-0 bg-[#FB0401]  left-0 bottom-0"></div>
                                                     <div>
                                                         <h3 className="  text-xl lg:text-3xl   leading-none font-semibold uppercase">
@@ -306,7 +309,7 @@ const index = () => {
                                                     />
                                                 )}
                                             </div>
-                                            <div className="flex relative w-1/2 px-3 lg:px-5 py-5 items-center justify-between   transition-colors duration-300">
+                                            <div className="flex  w-1/2 px-3 lg:px-5 py-5 items-center justify-between   transition-colors duration-300">
                                                 <div className="absolute group-hover:h-full w-full transition-all duration-300  z-[-1] h-0 bg-[#FB0401]  left-0 bottom-0"></div>
                                                 <div>
                                                     <h3 className="  text-xl lg:text-3xl  font-semibold leading-none uppercase">
@@ -333,7 +336,7 @@ const index = () => {
 
                                                 className="group border border-[#8585855b] relative w-1/2 flex items-end"
                                             >
-                                                <div className="flex relative w-1/2 px-3 lg:px-5 py-5 items-end justify-between   transition-colors duration-300">
+                                                <div className="flex  w-1/2 px-3 lg:px-5 py-5 items-end justify-between   transition-colors duration-300">
                                                     <div className="absolute group-hover:h-full w-full transition-all duration-300  z-[-1] h-0 bg-[#FB0401]  left-0 bottom-0"></div>
                                                     <div>
                                                         <h3 className="  text-xl lg:text-3xl   leading-none font-semibold uppercase">
@@ -375,7 +378,7 @@ const index = () => {
     )
 }
 
-export default index
+export default Projects
 
 
 

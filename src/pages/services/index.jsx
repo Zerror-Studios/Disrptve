@@ -155,7 +155,7 @@ const serviceImgs = [
     },
 ];
 
-const index = () => {
+const Services = () => {
     useGSAP(() => {
         const stickySection = document.querySelector(".sticky_sec");
         const cubesContainer = document.querySelector(".cubes");
@@ -442,7 +442,7 @@ const index = () => {
     );
 };
 
-export default index;
+export default Services;
 
 const meta = {
     title: "Marketing Services - Digital, Brand Strategy & AI Design",

@@ -3,7 +3,7 @@ import { RiArrowRightUpLine } from "@remixicon/react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const CareerForm = ({ job }) => {
+const CareerForm = ({ job, setSuccess }) => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -14,8 +14,6 @@ const CareerForm = ({ job }) => {
   });
 
   const [loading, setLoading] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false); // ✅ controls success card visibility
-  const [fadeOutForm, setFadeOutForm] = useState(false); // ✅ for smooth transition
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -73,13 +71,7 @@ const CareerForm = ({ job }) => {
 
       if (res.ok) {
         toast.success("Application submitted successfully!");
-
-        // Smoothly hide the form and show success card
-        setFadeOutForm(true);
-        setTimeout(() => {
-          setShowSuccess(true);
-        }, 500); // match CSS transition duration
-
+        setSuccess(true);
         setFormData({
           fullName: "",
           email: "",
@@ -103,31 +95,9 @@ const CareerForm = ({ job }) => {
     <>
       <ToastContainer />
 
-      {/* ✅ Success Card (initially hidden, fades in after success) */}
-      <div
-        className={`success_crd fixed inset-0 z-50 flex items-center justify-center transition-opacity duration-500 ${
-          showSuccess ? "opacity-100 visible" : "opacity-0 invisible"
-        }`}
-      >
-        <div className="w-[30vw] relative aspect-[4/3] border space-y-8 border-white/20 center flex-col text-center bg-[#0E0E0E] rounded-lg">
-          <p
-            className="absolute top-5 right-5 cursor-pointer text-xl"
-            onClick={() => setShowSuccess(false)} // hide success card
-          >
-            ✕
-          </p>
-          <h2 className="red uppercase text-5xl">Success</h2>
-          <p className="text-base lg:text-xl w-[90%]">
-            We've got it. We'll review your application and be in touch if it's a fit.
-          </p>
-        </div>
-      </div>
-
       {/* ✅ Form (fades out on submit) */}
       <div
-        className={`frm_parent w-full mb-14 lg:mb-32 transition-opacity duration-500 ${
-          fadeOutForm ? "opacity-0 pointer-events-none" : "opacity-100"
-        }`}
+        className={`frm_parent w-full mb-14 lg:mb-32 transition-opacity duration-500 `}
       >
         <div className="w-full lg:flex justify-center mb-12">
           <h3 className="text-xl lg:text-3xl uppercase">
@@ -267,9 +237,8 @@ const CareerForm = ({ job }) => {
               <button
                 type="submit"
                 disabled={loading}
-                className={`bgred group px-6 py-2 uppercase transition-all duration-300 ${
-                  loading ? "opacity-50 cursor-not-allowed" : "hover:opacity-90"
-                }`}
+                className={`bgred group px-6 py-2 uppercase transition-all duration-300 ${loading ? "opacity-50 cursor-not-allowed" : "hover:opacity-90"
+                  }`}
               >
                 <div className="relative flex items-center gap-1">
                   <div className="w-0 group-hover:w-[97%] transition-all duration-300 h-[1px] bg-white absolute bottom-0 left-0"></div>

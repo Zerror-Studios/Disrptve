@@ -9,7 +9,7 @@ import Link from 'next/link';
 gsap.registerPlugin(ScrollTrigger);
 
 
-const index = () => {
+const ProjectDetail = () => {
 
     const containerRef = useRef(null);
     const sliderRef = useRef(null);
@@ -33,23 +33,6 @@ const index = () => {
             opacity: 1,
             delay: 1,
             stagger: .2
-        })
-
-        gsap.to(".clm_1", {
-            rotate: 5,
-            xPercent: -50,
-            yPercent: 200,
-            duration: 1.5,
-            delay: 1.5,
-            ease: "ease-secondary"
-        })
-        gsap.to(".clm_2", {
-            rotate: -5,
-            xPercent: 50,
-            yPercent: 200,
-            duration: 1.5,
-            delay: 1.5,
-            ease: "ease-secondary"
         })
 
     })
@@ -166,8 +149,6 @@ const index = () => {
             </div>
             <div className="absolute overflow-hidden h-[100vh]  w-full top-0 left-0 z-[-1]">
                 <div className="w-full h-[70vh] bg-black"></div>
-                <div className="w-full clm_1 h-[15vh] bg-black"></div>
-                <div className="w-full clm_2 h-[15vh] bg-black"></div>
             </div>
             <div className="w-full px-5 ">
                 <div className="w-full h-[185vh] ">
@@ -329,4 +310,4 @@ const index = () => {
     )
 }
 
-export default index
+export default ProjectDetail

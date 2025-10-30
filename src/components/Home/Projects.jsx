@@ -109,11 +109,11 @@ const Projects = () => {
                                 if (layout === 1)
                                     return (
                                         <div key={project.id} className="w-full">
-                                            <Link scroll={false}
+                                            <Link
                                                 href={`/projects/${project.id}`}
                                                 className="group border border-[#8585855b] relative w-full flex items-end"
                                             >
-                                                <div className="flex  relative w-1/2   px-3 lg:px-5 py-5 items-end justify-between   transition-colors duration-300">
+                                                <div className="flex  w-1/2   px-3 lg:px-5 py-5 items-end justify-between   transition-colors duration-300">
                                                     <div className="absolute group-hover:h-full w-full transition-all duration-300  z-[-1] h-0 bg-[#FB0401]  left-0 bottom-0"></div>
                                                     <div>
                                                         <h3 className="  text-xl lg:text-3xl  font-semibold leading-none uppercase">
@@ -124,13 +124,23 @@ const Projects = () => {
                                                     <RiArrowRightUpLine size={32} />
                                                 </div>
                                                 <div
+
                                                     className="aspect-[16/12] border border-[#8585855b] relative w-1/2"
                                                 >
-                                                    <img
-                                                        className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
-                                                        src={project.coverImg}
-                                                        alt={project.title}
-                                                    />
+                                                    {project.coverImg === "" ? (
+                                                        <img
+                                                            className="w-full transition-all duration-300 group-hover:scale-90 h-full object-contain"
+                                                            src={project.logo}
+                                                            alt={project.title}
+                                                        />
+                                                    ) : (
+
+                                                        <img
+                                                            className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
+                                                            src={project.coverImg}
+                                                            alt={project.title}
+                                                        />
+                                                    )}
                                                 </div>
                                             </Link>
                                         </div>
@@ -144,13 +154,13 @@ const Projects = () => {
                                     return (
                                         <div key={project.id} className="w-full flex">
                                             {pair.map((p) => (
-                                                <Link scroll={false}
+                                                <Link
                                                     key={p.id}
                                                     href={`/projects/${p.id}`}
 
                                                     className="group border border-[#8585855b] relative w-1/2 flex items-end"
                                                 >
-                                                    <div className="flex relative  w-1/2 px-3 lg:px-5 py-5 items-end justify-between  transition-colors duration-300">
+                                                    <div className="flex   w-1/2 px-3 lg:px-5 py-5 items-end justify-between  transition-colors duration-300">
                                                         <div className="absolute group-hover:h-full w-full transition-all duration-300  z-[-1] h-0 bg-[#FB0401]  left-0 bottom-0"></div>
                                                         <div>
                                                             <h3 className="  text-xl lg:text-3xl   leading-none font-semibold uppercase">
@@ -163,11 +173,20 @@ const Projects = () => {
                                                     <div
                                                         className="aspect-square border w-1/2 border-[#8585855b] relative"
                                                     >
-                                                        <img
-                                                            className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
-                                                            src={p.coverImg}
-                                                            alt={p.title}
-                                                        />
+                                                        {p.coverImg === "" ? (
+                                                            <img
+                                                                className="w-full transition-all duration-300 group-hover:scale-90 h-full object-contain"
+                                                                src={p.logo}
+                                                                alt={p.title}
+                                                            />
+                                                        ) : (
+
+                                                            <img
+                                                                className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
+                                                                src={p.coverImg}
+                                                                alt={p.title}
+                                                            />
+                                                        )}
                                                     </div>
                                                 </Link>
                                             ))}
@@ -179,21 +198,31 @@ const Projects = () => {
                                 if (layout === 4)
                                     return (
                                         <div key={project.id} className="w-full">
-                                            <Link scroll={false}
+                                            <Link
                                                 href={`/projects/${project.id}`}
                                                 className="group border border-[#8585855b] relative w-full flex items-end"
                                             >
                                                 <div
+
                                                     className="aspect-[16/12] border border-[#8585855b] relative w-1/2"
                                                 >
-                                                    <img
-                                                        className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
-                                                        src={project.coverImg}
-                                                        alt={project.title}
-                                                    />
+                                                    {project.coverImg === "" ? (
+                                                        <img
+                                                            className="w-full transition-all duration-300 group-hover:scale-90 h-full object-contain"
+                                                            src={project.logo}
+                                                            alt={project.title}
+                                                        />
+                                                    ) : (
+
+                                                        <img
+                                                            className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
+                                                            src={project.coverImg}
+                                                            alt={project.title}
+                                                        />
+                                                    )}
                                                 </div>
-                                                <div className="flex relative w-1/2 px-3 lg:px-5 py-5 items-center justify-between   transition-colors duration-300">
-                                                <div className="absolute group-hover:h-full w-full transition-all duration-300  z-[-1] h-0 bg-[#FB0401]  left-0 bottom-0"></div>
+                                                <div className="flex  w-1/2 px-3 lg:px-5 py-5 items-center justify-between   transition-colors duration-300">
+                                                    <div className="absolute group-hover:h-full w-full transition-all duration-300  z-[-1] h-0 bg-[#FB0401]  left-0 bottom-0"></div>
                                                     <div>
                                                         <h3 className="  text-xl lg:text-3xl  font-semibold leading-none uppercase">
                                                             {project.title}
@@ -213,14 +242,14 @@ const Projects = () => {
                                     return (
                                         <div key={project.id} className="w-full flex">
                                             {pair.map((p) => (
-                                                <Link scroll={false}
+                                                <Link
                                                     key={p.id}
                                                     href={`/projects/${p.id}`}
 
                                                     className="group border border-[#8585855b] relative w-1/2 flex items-end"
                                                 >
-                                                    <div className="flex relative w-1/2 px-3 lg:px-5 py-5 items-end justify-between   transition-colors duration-300">
-                                                <div className="absolute group-hover:h-full w-full transition-all duration-300  z-[-1] h-0 bg-[#FB0401]  left-0 bottom-0"></div>
+                                                    <div className="flex  w-1/2 px-3 lg:px-5 py-5 items-end justify-between   transition-colors duration-300">
+                                                        <div className="absolute group-hover:h-full w-full transition-all duration-300  z-[-1] h-0 bg-[#FB0401]  left-0 bottom-0"></div>
                                                         <div>
                                                             <h3 className="  text-xl lg:text-3xl   leading-none font-semibold uppercase">
                                                                 {p.title}
@@ -232,11 +261,20 @@ const Projects = () => {
                                                     <div
                                                         className="aspect-square border w-1/2 border-[#8585855b] relative"
                                                     >
-                                                        <img
-                                                            className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
-                                                            src={p.coverImg}
-                                                            alt={p.title}
-                                                        />
+                                                        {p.coverImg === "" ? (
+                                                            <img
+                                                                className="w-full transition-all duration-300 group-hover:scale-90 h-full object-contain"
+                                                                src={p.logo}
+                                                                alt={p.title}
+                                                            />
+                                                        ) : (
+
+                                                            <img
+                                                                className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
+                                                                src={p.coverImg}
+                                                                alt={p.title}
+                                                            />
+                                                        )}
                                                     </div>
                                                 </Link>
                                             ))}

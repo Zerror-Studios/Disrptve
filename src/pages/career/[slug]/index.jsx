@@ -1,17 +1,16 @@
-import RedBtn from '@/components/buttons/RedBtn'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-import React from 'react'
+import React, { useState } from 'react'
 import { useGSAP } from '@gsap/react';
 import CareerForm from '@/components/ui/CareerForm';
 import { JobOpenings } from '@/store/JobOpenings';
-import { useParams } from 'next/navigation';
 import { RiArrowRightUpLine } from '@remixicon/react';
 gsap.registerPlugin(ScrollTrigger);
 
-const index = () => {
-    const id = useParams()
-    const job = JobOpenings.find((p) => p?.id == id?.id)
+const CareerDetail = ({ job }) => {
+    const [success, setSuccess] = useState(false)
+    const [hideSuccess, setHideSuccess] = useState(false)
+
     useGSAP(() => {
         gsap.utils.toArray(".carr_anim_border").forEach((border) => {
             gsap.to(border, {
@@ -32,13 +31,13 @@ const index = () => {
             <div className="w-full h-screen center text-center space-y-10 flex-col">
                 <h2 className='uppercase  text-4xl lg:text-7xl'>{job?.title}</h2>
                 <a href="#career-form">
-                 <button className={`  bgred group  px-6 py-2  uppercase `}>
-                <div className="relative flex items-center gap-1">
-                    <div className="w-0 group-hover:w-[97%] transition-all duration-300 h-[1px] bg-white absolute bottom-0 left-0"></div>
-                    <h3 className=" text-sm md:text-base group-hover:italic uppercase">Apply For This Role</h3>
-                    <RiArrowRightUpLine size={20} />
-                </div>
-            </button>
+                    <button className={`  bgred group  px-6 py-2  uppercase `}>
+                        <div className="relative flex items-center gap-1">
+                            <div className="w-0 group-hover:w-[97%] transition-all duration-300 h-[1px] bg-white absolute bottom-0 left-0"></div>
+                            <h3 className=" text-sm md:text-base group-hover:italic uppercase">Apply For This Role</h3>
+                            <RiArrowRightUpLine size={20} />
+                        </div>
+                    </button>
                 </a>
             </div>
             <div className="w-full  gap-24  px-3 lg:px-5  pb-14 lg:pb-20  ">
@@ -121,13 +120,48 @@ const index = () => {
                 </div>
             </div>
 
-            <div id='career-form' className=" lg:mt-20 pt-12 w-full center">
-                <div className=" w-full px-3 lg:px-0 lg:w-[50%]">
-                    <CareerForm job={job} />
-                </div>
-            </div>
+            {
+                hideSuccess === false && (
+                    success === true ? (
+                        <div
+                            className={`success_crd fixed z-[9999999999] top-0 left-0 w-full h-screen bg-black/20 backdrop-blur-[5px]  flex items-center justify-center transition-opacity duration-500  "`}
+                        >
+                            <div className="w-[30vw] relative aspect-[4/3] border space-y-8 border-white/20 center flex-col text-center bg-black">
+                                <p
+                                    onClick={() => setHideSuccess(true)}
+                                    className="absolute top-5 right-5 cursor-pointer text-xl"
+                                >
+                                    ✕
+                                </p>
+                                <h2 className="red uppercase text-5xl">Success</h2>
+                                <p className="text-base lg:text-xl w-[90%]">
+                                    We've got it. We'll review your application and be in touch if it's a fit.
+                                </p>
+                            </div>
+                        </div>
+                    ) : (
+                        <div id='career-form' className=" lg:mt-20 pt-12 w-full center">
+                            <div className=" w-full px-3 lg:px-0 lg:w-[50%]">
+                                <CareerForm job={job} setSuccess={setSuccess} />
+                            </div>
+                        </div>
+                    )
+                )
+            }
+
+
         </>
     )
 }
 
-export default index
+export default CareerDetail
+
+
+
+export async function getServerSideProps({ params }) {
+    const job = JobOpenings.find(
+        (job) => job.slug === params.slug
+    );
+
+    return { props: { job } };
+}
