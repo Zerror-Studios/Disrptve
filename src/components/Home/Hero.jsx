@@ -80,7 +80,6 @@ const Hero = () => {
 
     });
 
-
     return (
         <>
             <div className=" hero_paren w-full h-[42vh] overflow-hidden md:h-screen relative flex items-end md:items-center ">
@@ -99,20 +98,20 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-full px-3 md:px-5 pt-8 gap-5 md:gap-0 md:pt-44 md:pb-32 items-center flex flex-col md:flex-row ">
-                <div className=" w-full md:w-[60%]  uppercase leading-none text-4xl lg:text-7xl font-semibold ">
-                    <h2>a strategy-led </h2>
+            <div className="w-full px-3 md:px-5 pt-10 gap-5 md:gap-0 md:pt-44 md:pb-32 items-center flex flex-col md:flex-row ">
+                <div className=" w-full md:w-[60%]   uppercase leading-none text-4xl lg:text-7xl font-semibold ">
+                    <h2> A Strategy Led </h2>
                     <h2 className='red'>
-                        marketing
+                        Integrated Growth
                     </h2>
                     <h2 className='red'>
-                        agency.
+                        Marketing Agency.
                     </h2>
                 </div>
                 <div className=" w-full md:w-[40%] space-y-8 ">
                     <h2 className=' text-xl  lg:w-[80%] leading-none lg:text-3xl md:leading-tight '>Attention is the new currency. <br /> And most brands are overdrawn.</h2>
                     <p className=' text-base   leading-none lg:text-xl md:leading-tight'>We build brands that earn it back, with interest.</p>
-                    <Link href="/about">
+                    <Link scroll={false} href="/about">
                         <button className=' group relative red flex items-center gap-1'>
                             <div className="w-full origin-right group-hover:w-0 transition-all duration-300  h-[1px] bgred absolute bottom-0 right-0"></div>
                             <h3 className=' text-sm lg:text-lg  group-hover:italic uppercase '>about us</h3>

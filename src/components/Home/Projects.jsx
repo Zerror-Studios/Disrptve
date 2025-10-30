@@ -40,7 +40,7 @@ const Projects = () => {
                                 // Layout A — full-width image with overlay text
                                 if (layoutType === 0) {
                                     return (
-                                        <Link href={`/projects/${item.id}`} key={index}>
+                                        <Link scroll={false} href={`/projects/${item.id}`} key={index}>
                                             <div key={index} className="w-full border border-[#8585855b] relative">
                                                 <div className="w-full aspect-square overflow-hidden">
                                                     <img
@@ -61,7 +61,7 @@ const Projects = () => {
                                 // Layout B (even index, e.g., 2nd)
                                 if (layoutType === 1) {
                                     return (
-                                        <Link href={`/projects/${item.id}`} key={index}>
+                                        <Link scroll={false} href={`/projects/${item.id}`} key={index}>
                                             <div className="w-full flex flex-row-reverse">
                                                 <div className="w-1/2 overflow-hidden border border-[#8585855b] aspect-square">
                                                     <img
@@ -81,7 +81,7 @@ const Projects = () => {
 
                                 // Layout C (odd index, e.g., 3rd)
                                 return (
-                                    <Link href={`/projects/${item.id}`} key={index}>
+                                    <Link scroll={false} href={`/projects/${item.id}`} key={index}>
                                         <div className="w-full flex">
                                             <div className="w-1/2 overflow-hidden border border-[#8585855b] aspect-square">
                                                 <img
@@ -107,7 +107,7 @@ const Projects = () => {
                                 if (layout === 1)
                                     return (
                                         <div key={project.id} className="w-full">
-                                            <Link
+                                            <Link scroll={false}
                                                 href={`/projects/${project.id}`}
                                                 className="group border border-[#8585855b] relative w-full flex items-end"
                                             >
@@ -142,7 +142,7 @@ const Projects = () => {
                                     return (
                                         <div key={project.id} className="w-full flex">
                                             {pair.map((p) => (
-                                                <Link
+                                                <Link scroll={false}
                                                     key={p.id}
                                                     href={`/projects/${p.id}`}
 
@@ -176,7 +176,7 @@ const Projects = () => {
                                 if (layout === 4)
                                     return (
                                         <div key={project.id} className="w-full">
-                                            <Link
+                                            <Link scroll={false}
                                                 href={`/projects/${project.id}`}
                                                 className="group border border-[#8585855b] relative w-full flex items-end"
                                             >
@@ -210,7 +210,7 @@ const Projects = () => {
                                     return (
                                         <div key={project.id} className="w-full flex">
                                             {pair.map((p) => (
-                                                <Link
+                                                <Link scroll={false}
                                                     key={p.id}
                                                     href={`/projects/${p.id}`}
 
@@ -245,7 +245,7 @@ const Projects = () => {
                 )}
                 <div className="w-full center">
 
-                    <Link href="/projects">
+                    <Link scroll={false} href="/projects">
                         <button className={`  bgred group  px-6 py-2  uppercase `}>
                             <div className="relative flex items-center gap-1">
                                 <div className="w-0 group-hover:w-[97%] transition-all duration-300 h-[1px] bg-white absolute bottom-0 left-0"></div>

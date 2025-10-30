@@ -25,9 +25,9 @@ const teamMembers = [
         colSpan: "col-span-1 col-start-3",
     },
     {
-        name: "Chetan Chopra",
-        role: "Chief Business Officer",
-        img: "/images/teamMember/chetan.jpeg",
+        name: "Kaushik Sundararajan",
+        role: "Chief Executive Officer",
+        img: "/images/teamMember/kaushik.webp",
         colSpan: "col-span-2 col-start-4",
         extraClasses: "mt-[19.5vw]",
     },
@@ -53,9 +53,9 @@ const teamMembers = [
         extraClasses: "mt-[-4.5vw]",
     },
     {
-        name: "Kaushik Sundararajan",
-        role: "Chief Executive Officer",
-        img: "/images/teamMember/kaushik.webp",
+        name: "Chetan Chopra",
+        role: "Chief Business Officer",
+        img: "/images/teamMember/chetan.jpeg",
         colSpan: "col-span-1 col-start-6",
         extraClasses: "mt-[-4.5vw]",
     },
@@ -159,8 +159,8 @@ const index = () => {
     return (
         <>
 
-      <SeoHeader meta={meta} />
-        
+            <SeoHeader meta={meta} />
+
             <div className=" red_globe_bg w-full  z-[-2] h-screen top-[100vh] fixed center ">
                 <img className=' w-[70vw] ' src="/gifs/globe.gif" alt="" />
             </div>
@@ -311,7 +311,7 @@ const index = () => {
                     <p className=' w-full md:w-[50%]  leading-none   text-xl  lg:text-3xl '>At the end of the day, we’re still driven by the spirit of that first conversation: a desire to do great work with good people. </p>
                     <p className=' w-full md:w-[50%]   leading-none   text-xl  lg:text-3xl'>If you’re building something you believe in, we’d love to have a conversation with you, too.</p>
                 </div>
-                <Link href="/contact">
+                <Link scroll={false} href="/contact">
                     <button className=' group relative flex items-center gap-1'>
                         <div className="w-full group-hover:w-0 transition-all duration-300  h-[1px] bg-white absolute bottom-0 right-0"></div>
                         <p className=' text-base md:text-xl group-hover:italic  '>WORK WITH US</p>
@@ -322,6 +322,7 @@ const index = () => {
 
             <div className=" py-14 lg:py-28  px-3  lg:px-5 ">
                 <h2 className='   uppercase   text-lg  lg:text-2xl font-semibold mb-5 red'>our team</h2>
+                {/* for mobile */}
                 <div className="w-full lg:hidden grid grid-cols-2 items-stretch gap-y-10 md:grid-cols-4 gap-3 md:gap-x-5">
                     {teamMembers.map((member, i) => (
                         <div
@@ -348,11 +349,13 @@ const index = () => {
                     ))}
                 </div>
 
+
+                {/* for desktop */}
                 <div className="w-full hidden lg:grid grid-cols-6 gap-5">
                     {teamMembers.map((member, i) => (
                         <div
                             key={i}
-                            className={`${member.colSpan} flex w-full flex-col items-start ${member.extraClasses || ""}`}
+                            className={`${member.colSpan} flex  group w-full flex-col items-start ${member.extraClasses || ""}`}
                         >
                             <div className="flex   w-full items-center justify-between">
                                 <div className=''>
@@ -360,16 +363,18 @@ const index = () => {
                                     <p className="text-base opacity-70 mb-3">{member.role}</p>
                                 </div>
                             </div>
+                            <div className="w-full overflow-hidden block group-hover:rounded-xl transition-all duration-300 ">
                             <div
                                 data-aos-anchor-placement="top-bottom"
                                 data-aos="clip"
-                                className=" w-full bg-[#D9D9D9]">
+                                className=" w-full overflow-hidden block bg-[#D9D9D9]">
                                 <img
                                     src={member.img}
                                     alt={member.name}
-                                    className="w-full grayscale-100 aspect-[3/4] object-cover"
-                                />
+                                    className="w-full group-hover:scale-[1.05] transition-transform duration-300  grayscale-100 aspect-[3/4] object-cover"
+                                    />
                             </div>
+                                    </div>
                         </div>
                     ))}
                 </div>
@@ -390,29 +395,29 @@ export default index
 const meta = {
     title: "About DISRPTVE - Strategy-Led Marketing Agency Team",
     description:
-      "Founded in 2023, DISRPTVE combines proven strategy, entertainment networks, and modern design to build brands that earn attention with interest.",
+        "Founded in 2023, DISRPTVE combines proven strategy, entertainment networks, and modern design to build brands that earn attention with interest.",
     canonical: "https://disrptve.vercel.app/about",
     og: {
-      title: "About DISRPTVE - Strategy-Led Marketing Agency Team",
-      description:
-        "Founded in 2023, DISRPTVE combines proven strategy, entertainment networks, and modern design to build brands that earn attention with interest.",
-      image: "https://disrptve.vercel.app/logo-og.png",
-      url: "https://disrptve.vercel.app/about",
-      type: "website",
-      site_name: "DISRPTVE",
+        title: "About DISRPTVE - Strategy-Led Marketing Agency Team",
+        description:
+            "Founded in 2023, DISRPTVE combines proven strategy, entertainment networks, and modern design to build brands that earn attention with interest.",
+        image: "https://disrptve.vercel.app/logo-og.png",
+        url: "https://disrptve.vercel.app/about",
+        type: "website",
+        site_name: "DISRPTVE",
     },
     twitter: {
-      card: "summary_large_image",
-      title: "About DISRPTVE - Strategy-Led Marketing Agency Team",
-      description:
-        "Founded in 2023, DISRPTVE combines proven strategy, entertainment networks, and modern design to build brands that earn attention with interest.",
-      image: "https://disrptve.vercel.app/logo-og.png",
-      site: "@disrptve",
+        card: "summary_large_image",
+        title: "About DISRPTVE - Strategy-Led Marketing Agency Team",
+        description:
+            "Founded in 2023, DISRPTVE combines proven strategy, entertainment networks, and modern design to build brands that earn attention with interest.",
+        image: "https://disrptve.vercel.app/logo-og.png",
+        site: "@disrptve",
     },
     robots: "index,follow",
     keywords:
-      "about DISRPTVE, marketing agency team, Mumbai agency, brand strategy experts, creative agency founders",
+        "about DISRPTVE, marketing agency team, Mumbai agency, brand strategy experts, creative agency founders",
     author: "DISRPTVE",
     viewport: "width=device-width, initial-scale=1.0",
     themeColor: "#000000",
-  };
+};

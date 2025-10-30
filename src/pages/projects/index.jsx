@@ -98,7 +98,7 @@ const index = () => {
                             // Layout A — full-width image with overlay text
                             if (layoutType === 0) {
                                 return (
-                                    <Link href={`/projects/${item.id}`} key={index}>
+                                    <Link  scroll={false} href={`/projects/${item.id}`} key={index}>
                                         <div key={index} className="w-full border border-[#8585855b] relative">
                                             <div className="w-full aspect-square overflow-hidden">
                                                 {item.coverImg === "" ? (
@@ -128,7 +128,7 @@ const index = () => {
                             // Layout B (even index, e.g., 2nd)
                             if (layoutType === 1) {
                                 return (
-                                    <Link href={`/projects/${item.id}`} key={index}>
+                                    <Link  scroll={false} href={`/projects/${item.id}`} key={index}>
                                         <div className="w-full flex flex-row-reverse">
                                             <div className="w-1/2 overflow-hidden border border-[#8585855b] aspect-square">
                                                 {item.coverImg === "" ? (
@@ -157,7 +157,7 @@ const index = () => {
 
                             // Layout C (odd index, e.g., 3rd)
                             return (
-                                <Link href={`/projects/${item.id}`} key={index}>
+                                <Link  scroll={false} href={`/projects/${item.id}`} key={index}>
                                     <div className="w-full flex">
                                         <div className="w-1/2 overflow-hidden border border-[#8585855b] aspect-square">
                                             {item.coverImg === "" ? (
@@ -192,7 +192,7 @@ const index = () => {
                             if (layout === 1)
                                 return (
                                     <div key={project.id} className="w-full">
-                                        <Link
+                                        <Link  scroll={false}
                                             href={`/projects/${project.id}`}
                                             className="group border border-[#8585855b] relative w-full flex items-end"
                                         >
@@ -236,7 +236,7 @@ const index = () => {
                                 return (
                                     <div key={project.id} className="w-full flex">
                                         {pair.map((p) => (
-                                            <Link
+                                            <Link  scroll={false}
                                                 key={p.id}
                                                 href={`/projects/${p.id}`}
 
@@ -279,7 +279,7 @@ const index = () => {
                             if (layout === 4)
                                 return (
                                     <div key={project.id} className="w-full">
-                                        <Link
+                                        <Link  scroll={false}
                                             href={`/projects/${project.id}`}
                                             className="group border border-[#8585855b] relative w-full flex items-end"
                                         >
@@ -322,7 +322,7 @@ const index = () => {
                                 return (
                                     <div key={project.id} className="w-full flex">
                                         {pair.map((p) => (
-                                            <Link
+                                            <Link  scroll={false}
                                                 key={p.id}
                                                 href={`/projects/${p.id}`}
 

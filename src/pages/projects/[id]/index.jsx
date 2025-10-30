@@ -301,7 +301,7 @@ const index = () => {
 
                 <div className="w-full font-light gap-5 text-xl lg:text-3xl border-t border-b h-10 lg:h-20 border-white/50 center uppercase flex justify-between">
                     {/* Prev */}
-                    <Link
+                    <Link scroll={false}
                         href={`/projects/${ProjectsData[
                             (currentIndex - 1 + ProjectsData.length) % ProjectsData.length
                         ]?.id
@@ -318,7 +318,7 @@ const index = () => {
                     <div className="h-full w-[1px] bg-white/50"></div>
 
                     {/* Next */}
-                    <Link
+                    <Link scroll={false}
                         href={`/projects/${ProjectsData[
                             (currentIndex + 1) % ProjectsData.length
                         ]?.id

@@ -1,31 +1,11 @@
 import SeoHeader from '@/components/seo/SeoHeader'
+import { JobOpenings } from '@/store/JobOpenings'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import Link from 'next/link'
 import React from 'react'
 gsap.registerPlugin(ScrollTrigger)
-
-const JobOpenings = [
-    {
-        id: 1,
-        title: "Video Editor",
-        location: "Mumbai",
-        type: "Hybrid",
-    },
-    {
-        id: 2,
-        title: "Graphic Designer ",
-        location: "Bangalore",
-        type: "Remote",
-    },
-    {
-        id: 3,
-        title: "Content Writer",
-        location: "Delhi",
-        type: "On-site",
-    },
-];
 
 const index = () => {
 
@@ -72,7 +52,7 @@ const index = () => {
                 <div className=" w-full">
                     <div className="my-20 ser_pren">
                         {JobOpenings.map((item, index) => (
-                            <Link href={`/career/${item.id}`} key={index} className=" group relative cursor-pointer transition-all duration-300  w-full h-24  flex items-center justify-between">
+                            <Link scroll={false} href={`/career/${item.id}`} key={index} className=" group relative cursor-pointer transition-all duration-300  w-full h-24  flex items-center justify-between">
                                 <div className=" serv_anim_bord absolute bottom-0 h-full w-0 border-b border-white/30  hover:border-b-white/100 transition-colors duration-300"></div>
                                 <p className=' group-hover:pl-5 transition-all duration-300  capitalize text-xl lg:text-3xl'>{item.title}</p>
                                 <div className="flex group-hover:pr-5 transition-all duration-300 text-base lg:text-xl h-full items-center gap-4">

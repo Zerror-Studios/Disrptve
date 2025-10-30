@@ -160,7 +160,7 @@ const Services = () => {
                     scrub: .4,
                     // markers:true
                 },
-                xPercent: -53 * (serviceData.length - 1),
+                xPercent: -70 * (serviceData.length - 1),
                 ease: "linear",
             })
         } else {
@@ -183,7 +183,7 @@ const Services = () => {
 
     return (
         <>
-            <div className="serv_paren my-14 lg:my-0 w-full relative h-screen overflow-hidden ">
+            <div className="serv_paren  my-14 lg:my-0 w-full relative h-screen overflow-hidden ">
 
                 <div className=" lg:hidden    w-full flex z-[1] items-center  px-3">
                     <div className=" w-full pt-16    flex flex-col justify-between ">
@@ -206,7 +206,7 @@ const Services = () => {
                         </div>
                         <div className="space-y-4">
                             <p className='text-xl  leading-tight '>We’re a full-service agency, which means we can help from the first spark of an idea to the final, polished execution. Our work is broken down into these core areas.</p>
-                            <Link href="/services">
+                            <Link scroll={false} href="/services">
                                 <button className=' group relative red flex items-center gap-1'>
                                     <div className="w-full origin-right group-hover:w-0 transition-all duration-300  h-[1px] bgred absolute bottom-0 right-0"></div>
                                     <h3 className=' text-sm lg:text-lg  group-hover:italic uppercase '>Explore Now</h3>
@@ -217,59 +217,56 @@ const Services = () => {
                     </div>
                 </div>
 
-                <div className=" serv_slide  px-3 mt-5 lg:mt-0  w-full h-[75vh]  lg:h-full gap-x-5 lg:gap-x-10 flex items-center ">
+                <div className=" serv_slide   px-3 mt-5 lg:mt-0  w-full h-[75vh]  lg:h-full gap-x-5 lg:gap-x-10 flex items-center ">
                     <div className="hidden lg:block w-[30vw] shrink-0 h-full"></div>
                     {serviceData.map((item, index) => (
-                        <div key={index}>
+                        <div key={index} className='h-full lg:h-fit'>
                             {/* for mobile */}
-                            <div key={`mob_${index}`} className=" lg:hidden w-[90vw] md:w-[55vw] bg-[#0e0e0e5d] p-5  flex flex-col lg:justify-between shrink-0  h-full lg:h-[35vw] border border-[#e5e7eb44] overflow-hidden">
-                                <div className="flex justify-between ">
-                                    <div className=" text-2xl lg:text-5xl  leading-none font-semibold uppercase ">
+                            <div key={`mob_${index}`} className=" md:hidden w-[90vw] md:w-[55vw] bg-[#0e0e0e5d] p-5  flex flex-col justify-between shrink-0   h-full lg:h-[35vw] border border-[#e5e7eb44] overflow-hidden">
+                                    <div className=" text-2xl   lg:text-5xl space-y-5  leading-none font-semibold uppercase ">
                                         <div className=" red">
-                                            <h3 className=' font-normal'>{item.title.split(" & ")[0]} & </h3>
-                                            <div className="flex items-center w-full justify-between">
-                                                <h3 className=' font-normal'>{item.title.split(" & ")[1]} </h3>
+                                            <div className="flex  items-start w-full justify-between">
+                                                <h3 className=' font-normal'>{item.title.split(" & ")[0]} & </h3>
                                                 <h2 className=' text-white lg:hidden text-2xl lg:text-5xl'>{item.number}</h2>
                                             </div>
+                                            <h3 className=' font-normal'>{item.title.split(" & ")[1]} </h3>
                                         </div>
-                                        <p className=' text-base lg:text-xl  mt-7  normal-case font-light leading-none w[90%] lg:w-[75%]'>{item.desc}</p>
-                                    </div>
-                                </div>
-                                <div className="flex flex-col-reverse justify-between h-full lg:h-fit lg:flex-row gap-4 lg:gap-8">
-                                    <div className="aspect-video shrink-0  h-[50%] lg:h-full w-full lg:w-[60%] ">
-                                        <img className='w-full h-full object-cover' src={item.img} alt="" />
-                                    </div>
-                                    <div className=" flex w-full flex-col justify-between  font-semibold">
-                                        <div className=" mt-5 lg:mt-0 space-y-1 lg:space-y-3 ">
-                                            {item?.servs.map((ser, i) => (
-                                                <div key={i} className=" group  flex transition-all duration-300 gap-3 hover:px-2">
-                                                    <div className='size-1.5 shrink-0 group-hover:bg-[#FB0401]  transition-all duration-300 translate-y-1 bg-white' ></div>
-                                                    <p className=' text-base lg:text-xl  group-hover:text-[#FB0401] transition-all duration-300 leading-none ' > {ser}</p>
-                                                </div>
-                                            ))}
-                                        </div>
-                                        <div className=" hidden lg:block w-full text-end">
-                                            <h2 className=' text-2xl lg:text-5xl'>{item.number}</h2>
+                                        <p className=' text-base lg:text-xl  normal-case font-light leading-none  lg:w-[75%]'>{item.desc}</p>
+                                        <div className=" flex w-full flex-col justify-between  font-semibold">
+                                            <div className="  lg:mt-0 space-y-2 lg:space-y-3 ">
+                                                {item?.servs.map((ser, i) => (
+                                                    <div key={i} className=" group  flex transition-all duration-300 gap-3 hover:px-2">
+                                                        <div className='size-1.5 shrink-0 group-hover:bg-[#FB0401]  transition-all duration-300 translate-y-1 bg-white' ></div>
+                                                        <p className=' text-base lg:text-xl  group-hover:text-[#FB0401] transition-all duration-300 leading-none ' > {ser}</p>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                            <div className=" hidden lg:block w-full text-end">
+                                                <h2 className=' text-2xl lg:text-5xl'>{item.number}</h2>
+                                            </div>
                                         </div>
                                     </div>
+                            
+                                <div className="aspect-video overflow-hidden shrink-0  w-full ">
+                                    <img className='w-full h-full object-cover' src={item.img} alt="" />
                                 </div>
                             </div>
 
                             {/* for desktop */}
-                            <div  key={`desk_${index}`} className=" hidden lg:flex  w-[90vw] md:w-[60vw] bg-[#0e0e0e5d] p-5 flex-col lg:justify-between shrink-0  h-full lg:h-[37vw] border border-[#e5e7eb44]">
+                            <div key={`desk_${index}`} className=" hidden md:flex  w-[90vw] md:w-[70vw] lg:w-[60vw] bg-[#0e0e0e5d] p-5 flex-col md:justify-between shrink-0  h-full md:h-[65vh] lg:h-[37vw] border border-[#e5e7eb44]">
                                 <div className=" text-2xl lg:text-5xl    leading-none font-semibold uppercase ">
                                     <div className=" red">
-                                        <h3 className=' font-normal'>{item.title.split(" & ")[0]} & </h3>
-                                        <div className="flex items-center w-full justify-between">
+                                            <div className="flex  items-start w-full justify-between">
+                                                <h3 className=' font-normal'>{item.title.split(" & ")[0]} & </h3>
+                                                <h2 className=' text-white lg:hidden text-2xl lg:text-5xl'>{item.number}</h2>
+                                            </div>
                                             <h3 className=' font-normal'>{item.title.split(" & ")[1]} </h3>
-                                            <h2 className=' text-white lg:hidden text-2xl lg:text-5xl'>{item.number}</h2>
                                         </div>
-                                    </div>
-                                    <p className=' text-base lg:text-xl  mt-[1.2vw]  normal-case  leading-tight w-[60%]'>{item.desc}</p>
+                                    <p className=' text-base lg:text-xl  mt-[1.2vw]  normal-case  leading-tight w-[90%] lg:w-[60%]'>{item.desc}</p>
                                 </div>
 
-                                <div className="flex flex-col-reverse justify-between h-full lg:h-fit lg:flex-row gap-4 lg:gap-6">
-                                    <div className=" shrink-0  h-[50%] lg:h-[19vw] w-full lg:w-[60%] ">
+                                <div className="flex flex-col-reverse justify-between h-full md:h-fit md:flex-row gap-4 md:gap-6">
+                                    <div className=" shrink-0  h-[50%] md:h-[19vw] w-full md:w-[60%] ">
                                         <img className='w-full h-full object-cover' src={item.img} alt="" />
                                     </div>
                                     <div className=" flex w-full flex-col justify-between  font-semibold">
@@ -282,7 +279,7 @@ const Services = () => {
                                             ))}
                                         </div>
                                         <div className=" hidden lg:block w-full text-end">
-                                            <h2 className=' text-2xl lg:text-7xl'>{item.number}</h2>
+                                            <h2 className=' text-2xl md:text-4xl lg:text-7xl'>{item.number}</h2>
                                         </div>
                                     </div>
                                 </div>

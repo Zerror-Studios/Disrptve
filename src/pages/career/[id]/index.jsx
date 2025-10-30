@@ -3,10 +3,15 @@ import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import React from 'react'
 import { useGSAP } from '@gsap/react';
+import CareerForm from '@/components/ui/CareerForm';
+import { JobOpenings } from '@/store/JobOpenings';
+import { useParams } from 'next/navigation';
+import { RiArrowRightUpLine } from '@remixicon/react';
 gsap.registerPlugin(ScrollTrigger);
 
 const index = () => {
-
+    const id = useParams()
+    const job = JobOpenings.find((p) => p?.id == id?.id)
     useGSAP(() => {
         gsap.utils.toArray(".carr_anim_border").forEach((border) => {
             gsap.to(border, {
@@ -25,8 +30,16 @@ const index = () => {
     return (
         <>
             <div className="w-full h-screen center text-center space-y-10 flex-col">
-                <h2 className='uppercase  text-4xl lg:text-7xl'>social media manager</h2>
-                <RedBtn text="apply now" />
+                <h2 className='uppercase  text-4xl lg:text-7xl'>{job?.title}</h2>
+                <a href="#career-form">
+                 <button className={`  bgred group  px-6 py-2  uppercase `}>
+                <div className="relative flex items-center gap-1">
+                    <div className="w-0 group-hover:w-[97%] transition-all duration-300 h-[1px] bg-white absolute bottom-0 left-0"></div>
+                    <h3 className=" text-sm md:text-base group-hover:italic uppercase">Apply For This Role</h3>
+                    <RiArrowRightUpLine size={20} />
+                </div>
+            </button>
+                </a>
             </div>
             <div className="w-full  gap-24  px-3 lg:px-5  pb-14 lg:pb-20  ">
                 <div className=" carr_anim_border w-0 pt-5 border-t border-white "></div>
@@ -105,6 +118,12 @@ const index = () => {
                             <p>Track, analyze, and optimize for performance</p>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div id='career-form' className=" lg:mt-20 pt-12 w-full center">
+                <div className=" w-full px-3 lg:px-0 lg:w-[50%]">
+                    <CareerForm job={job} />
                 </div>
             </div>
         </>

@@ -12,6 +12,7 @@
     "@gsap/react": "^2.1.2",
     "@remixicon/react": "^4.6.0",
     "aos": "^2.3.4",
+    "formidable": "^3.5.4",
     "framer-motion": "^12.23.22",
     "google-auth-library": "^9.15.1",
     "googleapis": "^146.0.0",

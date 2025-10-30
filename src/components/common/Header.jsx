@@ -130,6 +130,7 @@ const Header = () => {
         className="menu w-full fixed flex flex-col justify-between lg:justify-end  bg-[#FB0401] z-[16] px-3 md:px-5 py-11 top-0 left-0  h-screen">
         <div className="w-full flex absolute top-0 left-0 px-3 py-5 md:px-5 lg:py-11 justify-between ">
           <Link
+            scroll={false}
             href="/"
             onClick={closeMenu}
             className='cursor-pointer'>
@@ -148,6 +149,7 @@ const Header = () => {
           <div className="">
             {menuItems.map((item, i) => (
               <Link
+                scroll={false}
                 key={i}
                 href={item.href}
                 onClick={closeMenu}
@@ -240,6 +242,7 @@ const Header = () => {
 
       <div className=" header flex fixed top-0 left-0 z-[15] w-full items-center justify-between px-3 md:px-5 py-5 lg:py-10">
         <Link
+        scroll={false}
           href="/"
           //  onClick={() => navigate(router, "/")}
           className='cursor-pointer'>
@@ -250,6 +253,7 @@ const Header = () => {
           {
             path !== "/contact" && (
               <Link
+              scroll={false}
                 // onClick={() => setOpenForm(true)}
                 href="/contact"
                 // onClick={() => navigate(router, "/contact")}
