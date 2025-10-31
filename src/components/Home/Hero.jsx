@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import LineBtn from '../buttons/LineBtn'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
@@ -9,43 +9,33 @@ import Link from 'next/link'
 
 const Hero = () => {
 
-    useGSAP(() => {
+    useEffect(() => {
+        const videos = document.querySelectorAll("video");
 
-        const video = document.getElementById("heroVideo");
-        const tryPlay = () => {
-            if (video && video.paused) {
-                const playPromise = video.play();
-                if (playPromise !== undefined) {
-                    playPromise.catch(() => {
-                        const resumePlay = () => {
-                            video.play();
-                            document.removeEventListener('touchstart', resumePlay);
-                            document.removeEventListener('click', resumePlay);
-                        };
-                        document.addEventListener('touchstart', resumePlay);
-                        document.addEventListener('click', resumePlay);
-                    });
-                }
+        // ✅ Attempt to autoplay all videos on mount (for iOS)
+        videos.forEach(video => {
+            video.muted = true; // ensure muted
+            video.playsInline = true; // allow inline playback on iOS
+            video.currentTime = 0;
+            // try autoplay programmatically
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(() => {
+                    // if autoplay is blocked, wait for first user interaction
+                    const handleUserGesture = () => {
+                        video.play();
+                        window.removeEventListener('touchstart', handleUserGesture);
+                        window.removeEventListener('click', handleUserGesture);
+                    };
+                    window.addEventListener('touchstart', handleUserGesture, { once: true });
+                    window.addEventListener('click', handleUserGesture, { once: true });
+                });
             }
-        };
-        setTimeout(tryPlay, 800);
-        video.muted = true;
-        video.playsInline = true;
-        video.currentTime = 0;
-        const playPromise = video.play();
-        if (playPromise !== undefined) {
-            playPromise.catch(() => {
-                const handleUserGesture = () => {
-                    video.play();
-                    window.removeEventListener('touchstart', handleUserGesture);
-                    window.removeEventListener('click', handleUserGesture);
-                };
-                window.addEventListener('touchstart', handleUserGesture, { once: true });
-                window.addEventListener('click', handleUserGesture, { once: true });
-            });
-        }
+        });
+    }, [])
 
 
+    useGSAP(() => {
         var tl = gsap.timeline()
         tl.to(".clip_paren_1", {
             y: 6,
@@ -93,7 +83,7 @@ const Hero = () => {
             y: 200,
             ease: "linear",
             scrollTrigger: {
-            trigger: ".hero_paren",
+                trigger: ".hero_paren",
                 start: "top top",
                 end: "bottom top",
                 // markers: true,
@@ -114,12 +104,8 @@ const Hero = () => {
                     <video
                         className="w-[0%] clip_vid h-[0%] contrast-[.9] object-cover"
                         loop
-                        autoPlay
                         muted
                         playsInline
-                        preload="auto"
-                        webkit-playsinline="true"
-                        x-webkit-airplay="deny"
                         id="heroVideo"
                         src="/video/show_reel.mp4"
                     ></video>
