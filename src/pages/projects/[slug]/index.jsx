@@ -282,7 +282,7 @@ const ProjectDetail = ({ project, currentIndex }) => {
                 <div className="w-full font-light gap-5 text-xl lg:text-3xl border-t border-b h-10 lg:h-20 border-white/50 center uppercase flex justify-between">
                     {/* Prev */}
                     <Link
-                        scroll={false}
+                        // scroll={false}
                         href={`/projects/${ProjectsData[
                             (currentIndex - 1 + ProjectsData.length) % ProjectsData.length
                         ]?.slug
@@ -300,7 +300,7 @@ const ProjectDetail = ({ project, currentIndex }) => {
 
                     {/* Next */}
                     <Link
-                        scroll={false}
+                        // scroll={false}
                         href={`/projects/${ProjectsData[
                             (currentIndex + 1) % ProjectsData.length
                         ]?.slug

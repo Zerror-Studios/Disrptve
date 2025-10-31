@@ -183,7 +183,7 @@ const Services = () => {
 
     return (
         <>
-            <div className="serv_paren  my-14 lg:my-0 w-full relative h-screen overflow-hidden ">
+            <div className="serv_paren  opa_hero opacity-0 my-14 lg:my-0 w-full relative h-screen overflow-hidden ">
 
                 <div className=" lg:hidden    w-full flex z-[1] items-center  px-3">
                     <div className=" w-full pt-16    flex flex-col justify-between ">

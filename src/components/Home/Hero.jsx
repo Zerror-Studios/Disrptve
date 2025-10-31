@@ -36,12 +36,12 @@ const Hero = () => {
 
 
     useGSAP(() => {
-        var tl = gsap.timeline()
+        if (window.innerWidth < 768) return
+        var tl = gsap.timeline({ delay: 0.5 })
         tl.to(".clip_paren_1", {
             y: 6,
             x: -5,
             duration: 0.5,
-            delay: 0.5,
             ease: "in-out-quint",
         })
         tl.to(".clip_paren_2", {
@@ -94,22 +94,76 @@ const Hero = () => {
 
     });
 
+    useGSAP(() => {
+        var tl = gsap.timeline()
+        tl.to(".load_clip_paren_1", {
+            y: 6,
+            x: -5,
+            duration: 0.5,
+            delay: 0.5,
+            ease: "in-out-quint",
+        })
+        tl.to(".load_clip_paren_2", {
+            y: -6,
+            x: 5,
+            duration: 0.5,
+            ease: "in-out-quint",
+        }, "<")
+
+
+        tl.to(".load_clip_vid", {
+            height: "100%",
+            width: "100vw",
+            duration: 1,
+            ease: "in-out-quint",
+        });
+
+        tl.to(".load_clip_paren", {
+            height: "100%",
+            duration: 1,
+            ease: "in-out-quint",
+        }, "<");
+
+        tl.to(".clip_vid", {
+            opacity: 1,
+            duration: 0.5,
+            ease: "in-out-quint",
+        }, "<+=0.5");
+        tl.to(".opa_hero", {
+            opacity: 1,
+            duration: 0.5,
+            stagger: 0.1,
+            ease: "in-out-quint",
+            }, "<+=0.2");
+    });
+
     return (
         <>
-            <div className=" hero_paren mt-[60px] lg:mt-0 w-full aspect-video overflow-hidden md:h-screen relative flex items-end md:items-center ">
+            <div className=" md:hidden w-full fixed top-0 left-0  h-screen center  overflow-hidden pointer-events-none">
+                <div className=" md:hidden h-[0%]  load_clip_paren_1 load_clip_paren">
+                    <div style={{ clipPath: "polygon(0 0, 0% 100%, 90% 0)" }} className="size-14 clip_rd -translate-y-7 translate-x-1/2 shrink-0 bgred"></div>
+                </div>
+                <div
+                    className="w-[0%] shrink-0 load_clip_vid md:hidden h-[0%] "></div>
+                <div className="md:hidden h-[0%]  load_clip_paren_2 load_clip_paren flex w-14 justify-end items-end">
+                    <div style={{ clipPath: "polygon(100% 0, 10% 100%, 100% 100%)" }} className="size-14 clip_rd translate-y-7 -translate-x-1/2 shrink-0 bgred"></div>
+                </div>
+            </div>
+            <div className=" hero_paren mt-[60px] md:mt-0 w-full aspect-video overflow-hidden md:h-screen relative flex items-end md:items-center ">
                 <div className="w-full  h-full flex justify-center items-center">
-                    <div className=" h-[0%] clip_paren_1 clip_paren">
+                    <div className=" hidden md:block h-[0%] clip_paren_1 clip_paren">
                         <div style={{ clipPath: "polygon(0 0, 0% 100%, 90% 0)" }} className="size-14 clip_rd -translate-y-7 translate-x-1/2 shrink-0 bgred"></div>
                     </div>
                     <video
-                        className="w-[0%] clip_vid h-[0%] contrast-[.9] object-cover"
+                        className=" w-full md:w-[0%] clip_vid h-full opacity-0 md:opacity-100 md:h-[0%] contrast-[.9] object-cover"
                         loop
                         muted
+                        autoPlay
                         playsInline
                         id="heroVideo"
                         src="/video/show_reel.mp4"
                     ></video>
-                    <div className="h-[0%] clip_paren_2 clip_paren flex items-end">
+                    <div className=" hidden h-[0%] clip_paren_2 clip_paren md:flex items-end">
                         <div style={{ clipPath: "polygon(100% 0, 10% 100%, 100% 100%)" }} className="size-14 clip_rd translate-y-7 -translate-x-1/2 shrink-0 bgred"></div>
                     </div>
                 </div>

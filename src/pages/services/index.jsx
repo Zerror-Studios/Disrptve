@@ -275,16 +275,40 @@ const Services = () => {
         });
     });
 
+    useGSAP(() => {
+        if (window.innerWidth >= 1024) return
+        gsap.to(".mobile_cube", {
+            rotateY: 360,
+            rotateX: 360,
+            // scale: 1,
+            scrollTrigger: {
+                trigger: ".anim_star",
+                start: "top top",
+                scrub: true
+            }
+        })
+        gsap.to(".mob_cub_pren", {
+            scale: 1.2,
+            scrollTrigger: {
+                trigger: ".anim_star",
+                start: "top top",
+                scrub: true
+            }
+        })
+    })
+
 
     return (
         <>
-      <SeoHeader meta={meta} />
+            <SeoHeader meta={meta} />
 
             <div className="fixed wave_bg top-0 left-0 z-[-1] w-full h-screen center">
-                    <img className="w-full h-full object-cover" src="/gifs/work.gif" alt="" />
+                <img className="w-full h-full object-cover" src="/gifs/work.gif" alt="" />
             </div>
 
-            <div className=" hidden md:block  sticky_sec opacity-0 absolute top-0 w-full left-0 z-[2]  h-[100vh]  overflow-hidden">
+
+
+            <div className=" hidden lg:block  sticky_sec opacity-0 absolute top-0 w-full left-0 z-[2]  h-[100vh]  overflow-hidden">
                 <div className="cubes">
                     <div
                         className="cube absolute scale-[.4] w-[200px] top-1/2 left-1/2 h-[200px] [transform-style:preserve-3d]"
@@ -350,8 +374,67 @@ const Services = () => {
                 </div>
             </div>
 
-            <div className=" anim_star  h-screen flex items-end w-full">
-                <div className="w-full lg:hidden mb-10  h-[45vh] flex flex-col justify-end p-3 lg:p-5 uppercase text-4xl lg:text-7xl ">
+            <div className=" anim_star  h-screen flex flex-col justify-end w-full">
+                <div className=" w-full center lg:hidden ">
+                    <div className="mob_cub_pren  scale-50 ">
+                        <div
+                            className=" lg:hidden mobile_cube  w-[200px] h-[200px] [transform-style:preserve-3d]"
+                        >
+                            <div
+                                className=" relative w-[200px] h-[200px] [transform-style:preserve-3d]"
+                            >
+                                <div className="absolute inset-0 [backface-visibility:hidden] [transform:translateZ(100px)] overflow-hidden">
+                                    <img
+                                        src="/images/servicesHomepage/whatwedo_strategy.webp"
+                                        alt="Down Face"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+
+                                <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)_translateZ(100px)] overflow-hidden">
+                                    <img
+                                        src="/images/servicesHomepage/whatwedo_website.webp"
+                                        alt="Down Face"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+
+                                <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(90deg)_translateZ(100px)] overflow-hidden">
+                                    <img
+                                        src="/images/servicesHomepage/whatwedo_ai.webp"
+                                        alt="Right Face"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+
+                                <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(-90deg)_translateZ(100px)] overflow-hidden">
+                                    <img
+                                        src="/images/servicesHomepage/whatwedo_decks.webp"
+                                        alt="Left Face"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+
+                                <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateX(90deg)_translateZ(100px)] overflow-hidden">
+                                    <img
+                                        src="/images/servicesHomepage/whatwedo_socialmedia.webp"
+                                        alt="Top Face"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+
+                                <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateX(-90deg)_translateZ(100px)] overflow-hidden">
+                                    <img
+                                        src="/images/servicesHomepage/whatwedo_website.webp"
+                                        alt="Bottom Face"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="w-full lg:hidden mb-20  h-[45vh] flex flex-col justify-end p-3 lg:p-5 uppercase text-4xl lg:text-7xl ">
                     <h2 className="leading-none">
                         A service is just a tool.
                         It’s the strategy behind
@@ -372,7 +455,7 @@ const Services = () => {
             </div>
 
             <div className="w-full flex pt-10 lg:pt-32 px-5 ">
-                <div className=" hidden md:block w-[40%] h-full"></div>
+                <div className=" hidden lg:block w-[40%] h-full"></div>
                 <div className=" w-full lg:w-[60%]  h-full">
                     {serviceData.map((item, i) => (
                         <div key={i} className="w-full pb-10 lg:pb-24">
@@ -381,7 +464,7 @@ const Services = () => {
                                 <h3 className=" text-xl lg:text-3xl font-semibold">0{i + 1}</h3>
                             </div>
                             <div className=" py-2 lg:py-5 h-full w-full lg:gap-5 flex flex-col md:flex-row">
-                                <div className=" w-full md:w-[40%]  text-xl lg:text-3xl font-semibold leading-none uppercase  h-full ">
+                                <div className=" w-full lg:w-[40%]  text-xl lg:text-3xl font-semibold leading-none uppercase  h-full ">
                                     <h3>{item.title}</h3>
                                 </div>
                                 <div className=" w-full my-2 md:my-0 md:w-[60%]  h-full">
@@ -447,29 +530,29 @@ export default Services;
 const meta = {
     title: "Marketing Services - Digital, Brand Strategy & AI Design",
     description:
-      "Full-service marketing agency offering brand strategy, digital marketing, social media, web design, AI design, and political campaign services.",
+        "Full-service marketing agency offering brand strategy, digital marketing, social media, web design, AI design, and political campaign services.",
     canonical: "https://disrptve.vercel.app/services",
     og: {
-      title: "Marketing Services - Digital, Brand Strategy & AI Design",
-      description:
-        "Full-service marketing agency offering brand strategy, digital marketing, social media, web design, AI design, and political campaign services.",
-      image: "https://disrptve.vercel.app/logo-og.png",
-      url: "https://disrptve.vercel.app/services",
-      type: "website",
-      site_name: "DISRPTVE",
+        title: "Marketing Services - Digital, Brand Strategy & AI Design",
+        description:
+            "Full-service marketing agency offering brand strategy, digital marketing, social media, web design, AI design, and political campaign services.",
+        image: "https://disrptve.vercel.app/logo-og.png",
+        url: "https://disrptve.vercel.app/services",
+        type: "website",
+        site_name: "DISRPTVE",
     },
     twitter: {
-      card: "summary_large_image",
-      title: "Marketing Services - Digital, Brand Strategy & AI Design",
-      description:
-        "Full-service marketing agency offering brand strategy, digital marketing, social media, web design, AI design, and political campaign services.",
-      image: "https://disrptve.vercel.app/logo-og.png",
-      site: "@disrptve",
+        card: "summary_large_image",
+        title: "Marketing Services - Digital, Brand Strategy & AI Design",
+        description:
+            "Full-service marketing agency offering brand strategy, digital marketing, social media, web design, AI design, and political campaign services.",
+        image: "https://disrptve.vercel.app/logo-og.png",
+        site: "@disrptve",
     },
     robots: "index,follow",
     keywords:
-      "marketing services, digital marketing services, brand strategy, social media management, web design, AI design, political campaigns",
+        "marketing services, digital marketing services, brand strategy, social media management, web design, AI design, political campaigns",
     author: "DISRPTVE",
     viewport: "width=device-width, initial-scale=1.0",
     themeColor: "#000000",
-  };
+};
