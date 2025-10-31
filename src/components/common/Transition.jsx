@@ -80,7 +80,6 @@ export default function Transition({ children, routeKey }) {
     gsap.to(blocksRef.current, {
       autoAlpha: 0,
       duration: 0.25,
-      delay: 0.25,
       ease: "ease-secondary",
       stagger: { amount: 0.3, from: "random" },
       onComplete: () => {

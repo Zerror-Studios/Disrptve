@@ -169,9 +169,9 @@ const ProjectDetail = ({ project, currentIndex }) => {
                     </div>
                 </div>
             </div>
-            <div className="w-full main_pdcd  relative bg-black">
+            <div className=" pt-14 md:pt-0 w-full main_pdcd  relative bg-black">
                 <div className=" hidden md:block main_pdcd trick_di w-full absolute bg-black h-24 -translate-y-24"></div>
-                <div className=" mt-14 md:hidden w-full aspect-video">
+                <div className="  md:hidden w-full aspect-video">
                     {project?.heroImg === "" ? (
                     <img className='w-full h-full object-contain' src={project?.logo} alt="" />
                 ) : (
@@ -250,7 +250,7 @@ const ProjectDetail = ({ project, currentIndex }) => {
                                     {project?.Images.map((imgSrc, i) => (
                                         <div
                                             key={i}
-                                            className=" h-[27vh] md:h-[75vh] shrink-0 w-[90vw] lg:w-[70vw] flex justify-center items-center"
+                                            className=" aspect-video shrink-0 w-[90vw] lg:w-[70vw] flex justify-center items-center"
                                         >
                                             <img
                                                 src={imgSrc}

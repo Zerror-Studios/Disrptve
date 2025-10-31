@@ -149,13 +149,13 @@ const Hero = () => {
                     <div style={{ clipPath: "polygon(100% 0, 10% 100%, 100% 100%)" }} className="size-14 clip_rd translate-y-7 -translate-x-1/2 shrink-0 bgred"></div>
                 </div>
             </div>
-            <div className=" hero_paren mt-[60px] md:mt-0 w-full aspect-video overflow-hidden md:h-screen relative flex items-end md:items-center ">
+            <div className=" hero_paren w-full pt-14 md:pt-0 overflow-hidden md:h-screen relative flex items-end md:items-center ">
                 <div className="w-full  h-full flex justify-center items-center">
                     <div className=" hidden md:block h-[0%] clip_paren_1 clip_paren">
                         <div style={{ clipPath: "polygon(0 0, 0% 100%, 90% 0)" }} className="size-14 clip_rd -translate-y-7 translate-x-1/2 shrink-0 bgred"></div>
                     </div>
                     <video
-                        className=" w-full md:w-[0%] clip_vid h-full opacity-0 md:opacity-100 md:h-[0%] contrast-[.9] object-cover"
+                        className=" w-full md:w-[0%] clip_vid aspect-video opacity-0 md:opacity-100 md:h-[0%] contrast-[.9] object-cover"
                         loop
                         muted
                         autoPlay
