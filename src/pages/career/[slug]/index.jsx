@@ -28,17 +28,17 @@ const CareerDetail = ({ job }) => {
         <>
             <div className="px-3 lg:px-5 pt-32">
                 <h2 className='uppercase  text-4xl  lg:text-7xl'>{job?.title}</h2>
-            </div>
-            <div className=" flex flex-col md:flex-row  md:gap-x-[10vw] px-3 lg:px-5">
-                <div className="left_car w-full  md:w-1/2">
                 <div className=" carr_anim_border mt-4  w-0 border-t border-white "></div>
-                    <div className="w-full py-5 md:py-8 pb-14 md:pb-20">
-                        <h2 className='  text-xl  lg:text-3xl mb-3 red  uppercase'>About</h2>
+            </div>
+            <div className=" flex pt-10 flex-col md:flex-row  md:gap-x-[10vw] px-3 lg:px-5">
+                <div className="left_car w-full  md:w-1/2">
+                    <div className="w-full mb-12 lg:mb-16 ">
+                        <h2 className='  text-xl  lg:text-3xl mb-2 md:mb-3  red  uppercase'>About</h2>
                         <div className="w-full ">
-                            <div className="  w-full h-full mb-5  ">
-                                <p className=' w-full  text-base lg:text-xl'>At Disrptve, we don’t just run social  we create conversations that stick. If you’re obsessed with culture, trends, and building communities that matter, this one’s for you.</p>
+                            <div className="  w-full h-full   ">
+                                <p className=' w-full  text-base mb-2 md:mb-3 leading-tight lg:text-xl'>At Disrptve, we don’t just run social  we create conversations that stick. If you’re obsessed with culture, trends, and building communities that matter, this one’s for you.</p>
                             </div>
-                            <div className=" w-full  text-base lg:text-xl  h-full grid space-y-6 lg:space-y-10 grid-cols-2 lg:grid-cols-3">
+                            <div className=" w-full  text-base lg:text-xl  h-full grid gap-y-5  grid-cols-2 lg:grid-cols-3">
                                 <div className="">
                                     <h3 className=' uppercase opacity-50' >type</h3>
                                     <p className='' >Full Time, Hybrid</p>
@@ -62,13 +62,12 @@ const CareerDetail = ({ job }) => {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full   ">
-                        <div className=" carr_anim_border w-0  border-t border-white "></div>
-                        <div className="w-full py-5 md:py-8 pb-14 md:pb-20 ">
+                    <div className="w-full  mb-12 lg:mb-16  ">
+                        <div className="w-full   ">
                             <div className="  w-full h-full  leading-tight">
-                                <h2 className='  text-xl  lg:text-3xl red  mb-3 uppercase'>What We’re Looking For</h2>
+                                <h2 className='  text-xl  lg:text-3xl mb-2 md:mb-3 red   uppercase'>What We’re Looking For</h2>
                             </div>
-                            <div className="   w-full h-full space-y-2  text-base lg:text-xl">
+                            <div className="   w-full h-full leading-tight space-y-2  text-base lg:text-xl">
                                 <div className="  flex gap-2">
                                     <div className=' size-1.5 md:size-2 shrink-0  translate-y-2.5 bg-white' ></div>
                                     <p>2–4 years of experience managing social media for brands.</p>
@@ -89,12 +88,11 @@ const CareerDetail = ({ job }) => {
                         </div>
                     </div>
                     <div className="w-full">
-                        <div className=" carr_anim_border w-0 border-t border-white "></div>
-                        <div className="w-full py-5 md:py-8 pb-14 md:pb-20 ">
-                            <div className="  w-full h-full  mb-3 leading-tight">
-                                <h2 className='  text-xl  lg:text-3xl red uppercase'>What You’ll Do</h2>
+                        <div className="w-full   ">
+                            <div className="  w-full h-full   leading-tight">
+                                <h2 className='  text-xl  lg:text-3xl mb-2 md:mb-3 red uppercase'>What You’ll Do</h2>
                             </div>
-                            <div className=" mt-3 md:mt-0 space-y-2  w-full h-full text-base lg:text-xl">
+                            <div className=" mt-3 leading-tight md:mt-0 space-y-2  w-full h-full text-base lg:text-xl">
                                 <div className="  flex gap-2">
                                     <div className=' size-1.5 md:size-2 shrink-0  translate-y-2.5 bg-white' ></div>
                                     <p>Own and grow brand voices across social platforms</p>
@@ -111,8 +109,7 @@ const CareerDetail = ({ job }) => {
                         </div>
                     </div>
                 </div>
-                <div className="right_car w-full  md:w-1/2 md:py-12  md:pb-20">
-                <div className=" md:hidden carr_anim_border mt-4 mb-5  w-0 border-t border-white "></div>
+                <div className="right_car w-full  pt-12 md:pt-0 md:w-1/2 ">
                     <CareerForm job={job} />
                 </div>
             </div>

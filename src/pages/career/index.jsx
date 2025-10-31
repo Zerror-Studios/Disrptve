@@ -53,16 +53,16 @@ const Careers = () => {
                     <div className="my-20 ser_pren">
                         {JobOpenings.map((item, index) => (
                             <Link
-                                scroll={false}
+                                // scroll={false}
                                 href={`/career/${item.slug}`}
                                 key={index}
-                                className="group relative cursor-pointer transition-all duration-300 w-full h-24 flex items-center justify-between"
+                                className="group relative cursor-pointer transition-all duration-300 w-full h-20 lg:h-24 flex items-center justify-between"
                             >
                                 <div className="serv_anim_bord absolute bottom-0 h-full w-0 border-b border-white/30 hover:border-b-white/100 transition-colors duration-300"></div>
                                 <p className="group-hover:pl-5 transition-all duration-300 capitalize text-xl lg:text-3xl">
                                     {item.title}
                                 </p>
-                                <div className="flex group-hover:pr-5 transition-all duration-300 text-base lg:text-xl h-full items-center gap-4">
+                                <div className="flex group-hover:pr-5 transition-all duration-300 text-sm lg:text-xl h-full items-center gap-2 md:gap-4">
                                     <p>{item.location}</p>
                                     <div className="w-[1px] bg-white h-[20%]" />
                                     <p>{item.type}</p>

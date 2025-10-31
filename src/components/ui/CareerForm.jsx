@@ -104,7 +104,7 @@ const CareerForm = ({ job }) => {
           </h2>
         </div>
 
-        <p className="text-base lg:text-xl ">
+        <p className="text-base leading-tight lg:text-xl ">
           We're always looking for creative talent obsessed with culture and design. <br /> Apply below and show us what makes you stand out.</p>
         <div className="w-full mt-10">
           <form
@@ -179,13 +179,13 @@ const CareerForm = ({ job }) => {
             {/* Optional Message */}
             <div>
               <h3 className="text-sm font-medium lg:text-base uppercase mb-4">
-                Tell us why you're a fit (Optional)
+                Tell us why you're fit (Optional)
               </h3>
               <textarea
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                className="border-b border-white/30 w-full h-[6vw] resize-none text-lg outline-none bg-transparent"
+                className="border-b border-white/30 w-full h-[10vh] scroller_none md:h-[6vw] resize-none text-lg outline-none bg-transparent"
               />
             </div>
 
