@@ -3,7 +3,7 @@ import { RiArrowRightUpLine } from "@remixicon/react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const CareerForm = ({ job, setSuccess }) => {
+const CareerForm = ({ job }) => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -71,7 +71,6 @@ const CareerForm = ({ job, setSuccess }) => {
 
       if (res.ok) {
         toast.success("Application submitted successfully!");
-        setSuccess(true);
         setFormData({
           fullName: "",
           email: "",
@@ -99,17 +98,14 @@ const CareerForm = ({ job, setSuccess }) => {
       <div
         className={`frm_parent w-full mb-14 lg:mb-32 transition-opacity duration-500 `}
       >
-        <div className="w-full lg:flex justify-center mb-12">
-          <h3 className="text-xl lg:text-3xl uppercase">
+        <div className="w-full mb-3  ">
+          <h2 className="text-xl lg:text-3xl red uppercase">
             Apply for {job?.title || "the position"}
-          </h3>
+          </h2>
         </div>
 
-        <p className="text-base lg:text-xl leading-none">
-          We’re always looking for creative talent obsessed with culture and design.
-          Apply below and show us what makes you stand out.
-        </p>
-
+        <p className="text-base lg:text-xl ">
+          We're always looking for creative talent obsessed with culture and design. <br /> Apply below and show us what makes you stand out.</p>
         <div className="w-full mt-10">
           <form
             onSubmit={handleSubmit}
@@ -119,7 +115,7 @@ const CareerForm = ({ job, setSuccess }) => {
             {/* Full Name */}
             <div>
               <h3 className="text-sm font-medium lg:text-base uppercase mb-4">
-                Full Name <sup className="text-[#FB0401] text-sm">*</sup>
+                Full Name <sup className="text-[#D70000] text-sm">*</sup>
               </h3>
               <input
                 type="text"
@@ -134,7 +130,7 @@ const CareerForm = ({ job, setSuccess }) => {
             {/* Email */}
             <div>
               <h3 className="text-sm font-medium lg:text-base uppercase mb-4">
-                Email <sup className="text-[#FB0401] text-sm">*</sup>
+                Email <sup className="text-[#D70000] text-sm">*</sup>
               </h3>
               <input
                 type="email"
@@ -149,7 +145,7 @@ const CareerForm = ({ job, setSuccess }) => {
             {/* Phone */}
             <div>
               <h3 className="text-sm font-medium lg:text-base uppercase mb-4">
-                Phone <sup className="text-[#FB0401] text-sm">*</sup>
+                Phone <sup className="text-[#D70000] text-sm">*</sup>
               </h3>
               <input
                 type="tel"
@@ -168,7 +164,7 @@ const CareerForm = ({ job, setSuccess }) => {
             <div>
               <h3 className="text-sm font-medium lg:text-base uppercase mb-4">
                 Link to Portfolio / Website{" "}
-                <sup className="text-[#FB0401] text-sm">*</sup>
+                <sup className="text-[#D70000] text-sm">*</sup>
               </h3>
               <input
                 type="url"
@@ -196,7 +192,7 @@ const CareerForm = ({ job, setSuccess }) => {
             {/* Resume Upload */}
             <div>
               <h3 className="text-sm font-medium lg:text-base uppercase mb-4">
-                Upload Resume / CV <sup className="text-[#FB0401] text-sm">*</sup>
+                Upload Resume / CV <sup className="text-[#D70000] text-sm">*</sup>
               </h3>
 
               <div className="relative inline-block">
@@ -211,9 +207,11 @@ const CareerForm = ({ job, setSuccess }) => {
                 {!formData.resume ? (
                   <label
                     htmlFor="resume"
-                    className="cursor-pointer border border-white rounded-full px-3 py-1.5 text-sm md:text-base text-white hover:bg-[#FB0401] hover:border-[#FB0401] transition-all duration-300 inline-flex items-center justify-center"
+                    className="cursor-pointer border border-white rounded-full px-3 py-1.5 text-sm md:text-base text-white hover:bg-[#D70000] hover:border-[#D70000] transition-all duration-300 inline-flex items-center justify-center"
                   >
-                    Select File
+                    <p>
+                      Select File
+                    </p>
                   </label>
                 ) : (
                   <div className="flex items-center gap-2 border border-white rounded-full px-3 py-1.5 text-sm md:text-base text-white transition-all duration-300">
@@ -221,7 +219,7 @@ const CareerForm = ({ job, setSuccess }) => {
                     <button
                       type="button"
                       onClick={() => setFormData((prev) => ({ ...prev, resume: null }))}
-                      className="ml-1 text-white hover:text-[#FB0401] transition-colors duration-300"
+                      className="ml-1 text-white hover:text-[#D70000] transition-colors duration-300"
                     >
                       ✕
                     </button>
@@ -243,7 +241,7 @@ const CareerForm = ({ job, setSuccess }) => {
                 <div className="relative flex items-center gap-1">
                   <div className="w-0 group-hover:w-[97%] transition-all duration-300 h-[1px] bg-white absolute bottom-0 left-0"></div>
                   <h2 className="text-sm md:text-base group-hover:italic uppercase">
-                    {loading ? "Submitting..." : "Submit Application"}
+                    {loading ? "Submitting..." : "Submit"}
                   </h2>
                   <RiArrowRightUpLine size={20} />
                 </div>

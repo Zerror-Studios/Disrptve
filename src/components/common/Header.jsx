@@ -109,16 +109,16 @@ const Header = () => {
       } */}
       {/* {
         path !== "/contact" && ( */}
-          <div onClick={() => {
-            if (isMenuOpen) {
-              closeMenu()
-            } else {
-              openMenu()
-            }
-          }} className={` ${isMenuOpen ? "text-black" : "text-white"} opacity-0 scale-[.8] lg:scale-100 cursor-pointer fixed z-[99]  top-1.5  lg:top-9 burger right-2 lg:right-5`}>
-            <Hamburger toggled={isMenuOpen} toggle={setIsMenuOpen} />
-          </div>
-        {/* )
+      <div onClick={() => {
+        if (isMenuOpen) {
+          closeMenu()
+        } else {
+          openMenu()
+        }
+      }} className={` ${isMenuOpen ? "text-black" : "text-white"} opacity-0 scale-[.8] lg:scale-100 cursor-pointer fixed z-[99]  top-1.5  lg:top-9 burger right-2 lg:right-5`}>
+        <Hamburger toggled={isMenuOpen} toggle={setIsMenuOpen} />
+      </div>
+      {/* )
       } */}
 
 
@@ -127,7 +127,7 @@ const Header = () => {
       {/* Open Menu */}
       <div
         style={{ clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 0%)" }}
-        className="menu w-full fixed flex flex-col justify-between lg:justify-end  bg-[#FB0401] z-[16] px-3 md:px-5 py-11 top-0 left-0  h-screen">
+        className="menu w-full fixed flex flex-col justify-between lg:justify-end  bg-[#D70000] z-[16] px-3 md:px-5 py-11 top-0 left-0  h-screen">
         <div className="w-full flex absolute top-0 left-0 px-3 py-5 md:px-5 lg:py-11 justify-between ">
           <Link
             scroll={false}
@@ -242,7 +242,7 @@ const Header = () => {
 
       <div className=" header -translate-y-full flex fixed top-0 left-0 z-[15] w-full items-center justify-between px-3 md:px-5 py-5 lg:py-10">
         <Link
-        scroll={false}
+          scroll={false}
           href="/"
           //  onClick={() => navigate(router, "/")}
           className='cursor-pointer'>
@@ -253,7 +253,7 @@ const Header = () => {
           {
             path !== "/contact" && (
               <Link
-              scroll={false}
+                scroll={false}
                 // onClick={() => setOpenForm(true)}
                 href="/contact"
                 // onClick={() => navigate(router, "/contact")}

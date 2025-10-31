@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
 
       <div className=" hidden lg:block fixed z-[-1] top-0 left-0  w-full h-screen center ">
         <LiquidEther
-          colors={['#FB0401', '#FB0401', '#FB0401']}
+          colors={['#D70000', '#D70000', '#D70000']}
           mouseForce={20}
           cursorSize={20}
           isViscous={false}

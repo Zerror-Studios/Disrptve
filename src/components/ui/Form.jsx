@@ -133,7 +133,7 @@ const Form = ({ openForm, setOpenForm }) => {
             {/* Full Name */}
             <div className="w-full relative">
               <h3 className="text-sm font-medium lg:text-base uppercase mb-6">
-                Name <sup className="text-[#FB0401] text-sm">*</sup>
+                Name <sup className="text-[#D70000] text-sm">*</sup>
               </h3>
               <input
                 type="text"
@@ -148,7 +148,7 @@ const Form = ({ openForm, setOpenForm }) => {
             {/* Email */}
             <div className="relative w-full">
               <h3 className="text-sm font-medium lg:text-base uppercase mb-6">
-                Email <sup className="text-[#FB0401] text-sm">*</sup>
+                Email <sup className="text-[#D70000] text-sm">*</sup>
               </h3>
               <input
                 type="email"
@@ -170,7 +170,7 @@ const Form = ({ openForm, setOpenForm }) => {
                 name="phone"
                 value={formData.phone}
                 autoComplete='off'
-               onChange={(e) => {
+                onChange={(e) => {
                   const value = e.target.value;
                   if (/^\d*$/.test(value)) handleChange(e);
                 }}
@@ -181,7 +181,7 @@ const Form = ({ openForm, setOpenForm }) => {
             {/* Company */}
             <div className="w-full relative">
               <h3 className="text-sm font-medium lg:text-base uppercase mb-6">
-                Company <sup className="text-[#FB0401] text-sm">*</sup>
+                Company <sup className="text-[#D70000] text-sm">*</sup>
               </h3>
               <input
                 type="text"
@@ -196,7 +196,7 @@ const Form = ({ openForm, setOpenForm }) => {
             {/* Services Selection */}
             <div>
               <h3 className="text-sm font-medium lg:text-base uppercase">
-                Select services <sup className="text-[#FB0401] text-sm">*</sup>
+                Select services <sup className="text-[#D70000] text-sm">*</sup>
               </h3>
               <div className="w-full my-8 flex flex-wrap gap-3">
                 {services.map((item, i) => {
@@ -206,10 +206,9 @@ const Form = ({ openForm, setOpenForm }) => {
                       key={i}
                       onClick={() => toggleService(item)}
                       className={`cursor-pointer transition-all duration-300 border rounded-full px-3 py-1.5 text-sm md:text-base 
-                        ${
-                          selected
-                            ? "bg-[#FB0401] text-white border-[#FB0401]"
-                            : "border-white text-white hover:bg-white/10"
+                        ${selected
+                          ? "bg-[#D70000] text-white border-[#D70000]"
+                          : "border-white text-white hover:bg-white/10"
                         }`}
                     >
                       {item}
@@ -222,7 +221,7 @@ const Form = ({ openForm, setOpenForm }) => {
             {/* Message */}
             <div className="w-full relative">
               <h3 className="text-sm font-medium lg:text-base uppercase mb-6">
-                Tell us a bit about your project <sup className="text-[#FB0401] text-sm">*</sup>
+                Tell us a bit about your project <sup className="text-[#D70000] text-sm">*</sup>
               </h3>
               <textarea
                 name="message"

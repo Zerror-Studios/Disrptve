@@ -25,7 +25,7 @@ const Contact = () => {
     <>
       <SeoHeader meta={meta} />
 
-      <div className="  w-full fixy_con fixed  brightness-[1] blur-[0] top-0 left-0 h-screen lg:pt-20 bg-[#FB0401] text-black center flex-col gap-y-10 text-center">
+      <div className="  w-full fixy_con fixed  brightness-[1] blur-[0] top-0 left-0 h-screen lg:pt-20 bg-[#D70000] text-black center flex-col gap-y-10 text-center">
         <h2 className='uppercase text-4xl md:text-6xl lg:text-9xl text-white leading-none '>Want to <br /> build with us?</h2>
 
         <a
@@ -66,13 +66,13 @@ const Contact = () => {
                   <h3 className=' mb-2 text-base lg:text-xl uppercase  opacity-70'>socials</h3>
                   <div className="flex gap-4">
                     <a href="https://www.instagram.com/bedisrptve?igsh=MWw3enZqcWZnYmZkbQ==" target="_blank" >
-                      <div className="  size-12 group hover:bg-[#FB0401] transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
+                      <div className="  size-12 group hover:bg-[#D70000] transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
                         <RiInstagramLine size={20} className='group-hover:opacity-0 transition-all duration-300  ' />
                         <RiInstagramFill size={20} className='absolute group-hover:opacity-100 text-[#000000] opacity-0 transition-all duration-300  ' />
                       </div>
                     </a>
                     <a href="https://www.linkedin.com/company/disrptve/" target="_blank">
-                      <div className="  size-12 group hover:bg-[#FB0401] transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
+                      <div className="  size-12 group hover:bg-[#D70000] transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
                         <RiLinkedinLine size={20} className='group-hover:opacity-0 transition-all duration-300  ' />
                         <RiLinkedinFill size={20} className='absolute group-hover:opacity-100 text-[#000000] opacity-0 transition-all duration-300  ' />
                       </div>

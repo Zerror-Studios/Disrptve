@@ -10,11 +10,11 @@ body {
   background-color: #000000;
   color: white;
 }
-.bgred{
-  background-color: #FB0401;
+.bgred {
+  background-color: #d70000;
 }
-.red{
-  color: #FB0401;
+.red {
+  color: #d70000;
 }
 body::-webkit-scrollbar {
   display: none;
@@ -33,7 +33,7 @@ button {
 .another-circle {
   stroke-dasharray: 227;
   stroke-dashoffset: 227;
-  transition: stroke-dashoffset .5s linear;
+  transition: stroke-dashoffset 0.5s linear;
 }
 .scroll-btn:hover .another-circle {
   stroke-dashoffset: 0;
@@ -41,18 +41,18 @@ button {
 
 [data-aos="clip"] {
   clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
-  transition: clip-path 2s cubic-bezier(0.83,0,0.17,1);
+  transition: clip-path 2s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
 [data-aos="clip"].aos-animate {
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
-.custom_scroller::-webkit-scrollbar{
+.custom_scroller::-webkit-scrollbar {
   background-color: white;
   border-radius: 1000px;
   width: 5px;
 }
-.custom_scroller::-webkit-scrollbar-thumb{
-  background-color: #FB0401;
+.custom_scroller::-webkit-scrollbar-thumb {
+  background-color: #d70000;
   border-radius: 1000px;
 }

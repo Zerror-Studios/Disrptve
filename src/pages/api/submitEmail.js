@@ -114,7 +114,7 @@ export default async function handler(req, res) {
         <html>
           <body style="font-family: Arial, sans-serif; color: #333;">
             <div style="padding:20px;background:#f9f9f9;border-radius:8px;">
-              <h2 style="color:#FB0401;text-align:center;">DISRPTIVE New Contact Form Submission</h2>
+              <h2 style="color:#D70000;text-align:center;">DISRPTIVE New Contact Form Submission</h2>
               <table style="width:100%;border-collapse:collapse;margin-top:20px;">
                 <tr><td style="border:1px solid #ddd;padding:8px;"><b>Date</b></td><td style="border:1px solid #ddd;padding:8px;">${formattedDate}</td></tr>
                 <tr><td style="border:1px solid #ddd;padding:8px;"><b>Full Name</b></td><td style="border:1px solid #ddd;padding:8px;">${fullName}</td></tr>

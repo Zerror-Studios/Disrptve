@@ -290,7 +290,7 @@ const About = () => {
             </div>
 
             <div className=" conv_parent  w-full mb-14 lg:mb-20 flex flex-col md:flex-row gap-y-10 gap-x-10 items-stretch  px-3  lg:px-5 ">
-                <div className=" red_bx_ey w-full md:w-1/2 space-y-8 bg-black relative p-5 lg:p-8 flex flex-col justify-between h-full border border-[#FB0401]">
+                <div className=" red_bx_ey w-full md:w-1/2 space-y-8 bg-black relative p-5 lg:p-8 flex flex-col justify-between h-full border border-[#D70000]">
                     <img className='rotate-180 w-[35%] lg:w-[25%] absolute top-0 right-0' src="/gifs/blocks.gif" alt="" />
                     <h2 className='  uppercase relative z-[1]  text-4xl  lg:text-7xl red leading-none'>From <br /> Conversation <br /> to Campaign</h2>
                     <h2 className=' text-xl lg:text-3xl '>That simple idea grew. Fast.</h2>
@@ -371,17 +371,17 @@ const About = () => {
                                 </div>
                             </div>
                             <div className="w-full overflow-hidden block group-hover:rounded-xl transition-all duration-300 ">
-                            <div
-                                data-aos-anchor-placement="top-bottom"
-                                data-aos="clip"
-                                className=" w-full overflow-hidden block bg-[#D9D9D9]">
-                                <img
-                                    src={member.img}
-                                    alt={member.name}
-                                    className="w-full group-hover:scale-[1.05] transition-transform duration-300  grayscale-100 aspect-[3/4] object-cover"
+                                <div
+                                    data-aos-anchor-placement="top-bottom"
+                                    data-aos="clip"
+                                    className=" w-full overflow-hidden block bg-[#D9D9D9]">
+                                    <img
+                                        src={member.img}
+                                        alt={member.name}
+                                        className="w-full group-hover:scale-[1.05] transition-transform duration-300  grayscale-100 aspect-[3/4] object-cover"
                                     />
+                                </div>
                             </div>
-                                    </div>
                         </div>
                     ))}
                 </div>

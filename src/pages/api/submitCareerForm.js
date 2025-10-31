@@ -126,7 +126,7 @@ export default async function handler(req, res) {
       subject: "New Career Form Submission",
       html: `
         <div style="font-family:Arial,sans-serif;background:#f9f9f9;padding:20px;border-radius:8px;">
-          <h2 style="color:#FB0401;">New Career Form Submission</h2>
+          <h2 style="color:#D70000;">New Career Form Submission</h2>
           <table style="width:100%;border-collapse:collapse;margin-top:20px;">
             <tr><td><b>Date</b></td><td>${formattedDate}</td></tr>
             <tr><td><b>Full Name</b></td><td>${fullName}</td></tr>

@@ -114,7 +114,7 @@ const Projects = () => {
                                                 className="group border border-[#8585855b] relative w-full flex items-end"
                                             >
                                                 <div className="flex  w-1/2   px-3 lg:px-5 py-5 items-end justify-between   transition-colors duration-300">
-                                                    <div className="absolute group-hover:h-full w-full transition-all duration-300  z-[-1] h-0 bg-[#FB0401]  left-0 bottom-0"></div>
+                                                    <div className="absolute group-hover:h-full w-full transition-all duration-300  z-[-1] h-0 bg-[#D70000]  left-0 bottom-0"></div>
                                                     <div>
                                                         <h3 className="  text-xl lg:text-3xl  font-semibold leading-none uppercase">
                                                             {project.title}
@@ -161,7 +161,7 @@ const Projects = () => {
                                                     className="group border border-[#8585855b] relative w-1/2 flex items-end"
                                                 >
                                                     <div className="flex   w-1/2 px-3 lg:px-5 py-5 items-end justify-between  transition-colors duration-300">
-                                                        <div className="absolute group-hover:h-full w-full transition-all duration-300  z-[-1] h-0 bg-[#FB0401]  left-0 bottom-0"></div>
+                                                        <div className="absolute group-hover:h-full w-full transition-all duration-300  z-[-1] h-0 bg-[#D70000]  left-0 bottom-0"></div>
                                                         <div>
                                                             <h3 className="  text-xl lg:text-3xl   leading-none font-semibold uppercase">
                                                                 {p.title}
@@ -222,7 +222,7 @@ const Projects = () => {
                                                     )}
                                                 </div>
                                                 <div className="flex  w-1/2 px-3 lg:px-5 py-5 items-center justify-between   transition-colors duration-300">
-                                                    <div className="absolute group-hover:h-full w-full transition-all duration-300  z-[-1] h-0 bg-[#FB0401]  left-0 bottom-0"></div>
+                                                    <div className="absolute group-hover:h-full w-full transition-all duration-300  z-[-1] h-0 bg-[#D70000]  left-0 bottom-0"></div>
                                                     <div>
                                                         <h3 className="  text-xl lg:text-3xl  font-semibold leading-none uppercase">
                                                             {project.title}
@@ -249,7 +249,7 @@ const Projects = () => {
                                                     className="group border border-[#8585855b] relative w-1/2 flex items-end"
                                                 >
                                                     <div className="flex  w-1/2 px-3 lg:px-5 py-5 items-end justify-between   transition-colors duration-300">
-                                                        <div className="absolute group-hover:h-full w-full transition-all duration-300  z-[-1] h-0 bg-[#FB0401]  left-0 bottom-0"></div>
+                                                        <div className="absolute group-hover:h-full w-full transition-all duration-300  z-[-1] h-0 bg-[#D70000]  left-0 bottom-0"></div>
                                                         <div>
                                                             <h3 className="  text-xl lg:text-3xl   leading-none font-semibold uppercase">
                                                                 {p.title}

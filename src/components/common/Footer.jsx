@@ -70,7 +70,7 @@ const Footer = () => {
       <div className="w-full relative  space-y-6   ">
         <div className="absolute w-full h-full bg-black z-[-1] pointer-events-none"></div>
         <div className="w-full px-3 lg:px-5">
-        <div className=" footer_anim_border w-full border-t pb-2 lg:pb-14 border-white/30"></div>
+          <div className=" footer_anim_border w-full border-t pb-2 lg:pb-14 border-white/30"></div>
         </div>
         <div className="w-full px-3 lg:px-5 items-stretch  flex   justify-between ">
           <div
@@ -108,13 +108,13 @@ const Footer = () => {
             <div className=" w-full justify-end flex">
               <div className="flex gap-4">
                 <a href="https://www.instagram.com/bedisrptve?igsh=MWw3enZqcWZnYmZkbQ==" target="_blank" >
-                  <div className="  size-12 group hover:bg-[#FB0401] transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
+                  <div className="  size-12 group hover:bg-[#D70000] transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
                     <RiInstagramLine size={20} className='group-hover:opacity-0 transition-all duration-300  ' />
                     <RiInstagramFill size={20} className='absolute group-hover:opacity-100 text-[#000000] opacity-0 transition-all duration-300  ' />
                   </div>
                 </a>
                 <a href="https://www.linkedin.com/company/disrptve/" target="_blank">
-                  <div className="  size-12 group hover:bg-[#FB0401] transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
+                  <div className="  size-12 group hover:bg-[#D70000] transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
                     <RiLinkedinLine size={20} className='group-hover:opacity-0 transition-all duration-300  ' />
                     <RiLinkedinFill size={20} className='absolute group-hover:opacity-100 text-[#000000] opacity-0 transition-all duration-300  ' />
                   </div>
@@ -128,10 +128,10 @@ const Footer = () => {
         </div>
         <div className="w-full   relative ">
           <div className="h-[20vw] relative  overflow-hidden  ">
-            <h2 className='font-bold absolute top-0  footer_txt leading-[19.8vw] uppercase text-[20.2vw] whitespace-nowrap lg:text-[20.5vw] text-[#FB0401] mix-blend-difference'>
+            <h2 className='font-bold absolute top-0  footer_txt leading-[19.8vw] uppercase text-[20.2vw] whitespace-nowrap lg:text-[20.5vw] text-[#ff1111] mix-blend-difference'>
               disrptve
             </h2>
-            <h2 className='font-bold absolute top-[100%] footer_txt_2  leading-[19.8vw] uppercase text-[20.2vw] whitespace-nowrap lg:text-[20.5vw] text-[#FB0401] mix-blend-difference'>
+            <h2 className='font-bold absolute top-[100%] footer_txt_2  leading-[19.8vw] uppercase text-[20.2vw] whitespace-nowrap lg:text-[20.5vw] text-[#ff1111] mix-blend-difference'>
               disrptve
             </h2>
           </div>
