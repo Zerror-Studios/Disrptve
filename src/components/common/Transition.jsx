@@ -68,30 +68,40 @@ export default function Transition({ children, routeKey }) {
     });
   }, [routeKey]);
 
-  useEffect(() => {
-    if (!screenRef.current) return;
-    
-    window.scrollTo({ top: 0, behavior: "instant" || "auto" });
-    const lenis = window.lenis; 
-    if (lenis) lenis.scrollTo(0, { immediate: true }); 
+useEffect(() => {
+  if (!screenRef.current) return;
 
+  // Wait for a frame to ensure layout + repaint
+  requestAnimationFrame(() => {
+    // Try Lenis first
+    const lenis = window.lenis;
+    if (lenis && typeof lenis.scrollTo === "function") {
+      lenis.scrollTo(0, { immediate: true });
+    } else {
+      // Fallback for Safari / non-Lenis cases
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }
+  });
 
-    const el = screenRef.current;
-    gsap.to(blocksRef.current, {
-      autoAlpha: 0,
-      duration: 0.25,
-      ease: "ease-secondary",
-      stagger: { amount: 0.3, from: "random" },
-      onComplete: () => {
-        gsap.to(el, {
-          autoAlpha: 0,
-          duration: 0.2,
-          ease: "ease-secondary",
-        });
-        ScrollTrigger.refresh();
-      },
-    });
-  }, [displayChildren]);
+  const el = screenRef.current;
+  gsap.to(blocksRef.current, {
+    autoAlpha: 0,
+    duration: 0.25,
+    ease: "ease-secondary",
+    stagger: { amount: 0.3, from: "random" },
+    onComplete: () => {
+      gsap.to(el, {
+        autoAlpha: 0,
+        duration: 0.2,
+        ease: "ease-secondary",
+      });
+      ScrollTrigger.refresh();
+    },
+  });
+}, [displayChildren]);
+
 
   return (
     <>
