@@ -128,7 +128,12 @@ const CareerDetail = ({ job }) => {
                         >
                             <div className="w-[30vw] relative aspect-[4/3] border space-y-8 border-white/20 center flex-col text-center bg-black">
                                 <p
-                                    onClick={() => setHideSuccess(true)}
+                                    onClick={() => {
+                                        setHideSuccess(true)
+                                        window.scrollTo(0, 0);
+                                        const lenis = window.lenis;
+                                        if (lenis) lenis.scrollTo(0, { immediate: true });
+                                    }}
                                     className="absolute top-5 right-5 cursor-pointer text-xl"
                                 >
                                     ✕

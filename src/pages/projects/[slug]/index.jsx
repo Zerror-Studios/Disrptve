@@ -134,12 +134,21 @@ const ProjectDetail = ({ project, currentIndex }) => {
 
     return (
         <>
-            <div className="fixed fixy_img_dcd z-[-1] top-0 left-0 w-full h-screen">
-                {project?.heroImg === "" ? (
-                    <img className='w-full h-full object-contain' src={project?.logo} alt="" />
-                ) : (
-                    <img className='w-full h-full object-cover' src={project?.heroImg} alt="" />
-                )}
+            <div className="fixed fixy_img_dcd center z-[-1] top-0 left-0 w-full h-screen">
+                <div className=" lg:hidden">
+                    {project?.heroImg === "" ? (
+                        <img className='w-full h-full object-contain' src={project?.logo} alt="" />
+                    ) : (
+                        <img className='w-full h-full object-contain' src={project?.heroImg} alt="" />
+                    )}
+                </div>
+                <div className="hidden lg:block">
+                    {project?.heroImg === "" ? (
+                        <img className='w-full h-full object-contain' src={project?.logo} alt="" />
+                    ) : (
+                        <img className='w-full h-full object-cover' src={project?.heroImg} alt="" />
+                    )}
+                </div>
             </div>
             <div className="absolute overflow-hidden h-[100vh]  w-full top-0 left-0 z-[-1]">
                 <div className="w-full h-[70vh] bg-black"></div>
@@ -154,7 +163,7 @@ const ProjectDetail = ({ project, currentIndex }) => {
                     </div>
                     <div className="w-full  sticky z-[2] top-[50vh] text-base lg:text-xl uppercase leading-tight py-4 flex flex-col gap-y-2 md:gap-y-0 md:flex-row  md:justify-between">
                         <div className="  w-full  md:w-1/2 flex items-center gap-2">
-                            <p className=' pj_anim_txt opacity-0 w-[80%]'>{project?.tagline}</p>
+                            <p className=' pj_anim_txt opacity-0 w-full lg:w-[80%]'>{project?.tagline}</p>
                         </div>
                         <div className=" w-full  mt-2 md:mt-0 md:w-1/2 flex justify-between">
                             <div className=" hidden md:block pj_anim_txt opacity-0 w-1/2">
@@ -308,7 +317,6 @@ export default ProjectDetail
 
 
 export async function getServerSideProps(context) {
-    console.log(context);
     const { slug } = context.params;
 
     const project =

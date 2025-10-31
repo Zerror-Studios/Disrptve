@@ -10,8 +10,25 @@ import Link from 'next/link'
 const Hero = () => {
 
     useGSAP(() => {
-        const video = document.getElementById("heroVideo");
 
+        const video = document.getElementById("heroVideo");
+        const tryPlay = () => {
+            if (video && video.paused) {
+                const playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(() => {
+                        const resumePlay = () => {
+                            video.play();
+                            document.removeEventListener('touchstart', resumePlay);
+                            document.removeEventListener('click', resumePlay);
+                        };
+                        document.addEventListener('touchstart', resumePlay);
+                        document.addEventListener('click', resumePlay);
+                    });
+                }
+            }
+        };
+        setTimeout(tryPlay, 800);
         video.muted = true;
         video.playsInline = true;
         video.currentTime = 0;
@@ -89,7 +106,13 @@ const Hero = () => {
                     </div>
                     <video
                         className="w-[0%] clip_vid h-[0%] contrast-[.9] object-cover"
-                        loop muted playsInline
+                        loop
+                        autoPlay
+                        muted
+                        playsInline
+                        preload="auto"
+                        webkit-playsinline="true"
+                        x-webkit-airplay="deny"
                         id="heroVideo"
                         src="/video/show_reel.mp4"
                     ></video>

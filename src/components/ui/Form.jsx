@@ -166,11 +166,14 @@ const Form = ({ openForm, setOpenForm }) => {
                 Contact
               </h3>
               <input
-                type="text"
+                type="tel"
                 name="phone"
                 value={formData.phone}
                 autoComplete='off'
-                onChange={handleChange}
+               onChange={(e) => {
+                  const value = e.target.value;
+                  if (/^\d*$/.test(value)) handleChange(e);
+                }}
                 className="border-b border-white/30 w-full text-lg outline-none bg-transparent"
               />
             </div>

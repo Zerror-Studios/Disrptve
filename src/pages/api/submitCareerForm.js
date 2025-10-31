@@ -76,7 +76,7 @@ export default async function handler(req, res) {
     const fileName = `resumes/${Date.now()}-${path.basename(resume.originalFilename)}`;
 
     const uploadParams = {
-      Bucket: process.env.S3_BUCKET_NAME,
+      Bucket: "disrptive",
       Key: fileName,
       Body: fileBuffer,
       ContentType: resume.mimetype,
@@ -102,7 +102,7 @@ export default async function handler(req, res) {
 
     await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: "Sheet2!A:G", 
+      range: "Sheet2!A:G",
       valueInputOption: "USER_ENTERED",
       insertDataOption: "INSERT_ROWS",
       requestBody: { values: [newRow] },
