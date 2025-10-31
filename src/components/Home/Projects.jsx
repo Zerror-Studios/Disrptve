@@ -42,14 +42,14 @@ const Projects = () => {
                                     return (
                                         <Link scroll={false} href={`/projects/${item.slug}`} key={index}>
                                             <div key={index} className="w-full border border-[#8585855b] relative">
-                                                <div className="w-full aspect-square overflow-hidden">
+                                                <div className="w-full aspect-[16/12] overflow-hidden">
                                                     <img
                                                         src={item.coverImg}
                                                         alt={item.title}
                                                         className="w-full h-full object-cover"
                                                     />
                                                 </div>
-                                                <div className="w-full p-3 space-y-2 absolute left-0 bottom-0 bg-black text-white">
+                                                <div className="w-full p-3 space-y-2  bg-black text-white">
                                                     <h3 className="text-lg uppercase leading-none">{item.title}</h3>
                                                     <p className="text-sm opacity-70 leading-none">{item.industry}</p>
                                                 </div>

@@ -70,7 +70,7 @@ const Footer = () => {
       <div className="w-full relative  space-y-6   ">
         <div className="absolute w-full h-full bg-black z-[-1] pointer-events-none"></div>
         <div className="w-full px-3 lg:px-5">
-        <div className=" footer_anim_border w-full border-t pb-5 lg:pb-14 border-white/30"></div>
+        <div className=" footer_anim_border w-full border-t pb-2 lg:pb-14 border-white/30"></div>
         </div>
         <div className="w-full px-3 lg:px-5 items-stretch  flex   justify-between ">
           <div

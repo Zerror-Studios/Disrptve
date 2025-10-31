@@ -81,12 +81,19 @@ const Hero = () => {
             ease: "in-out-quint",
         }, "<+=0.5");
 
+        tl.to(".opa_hero", {
+            opacity: 1,
+            duration: 0.5,
+            stagger: 0.1,
+            ease: "in-out-quint",
+        })
+
         if (window.innerWidth <= 768) return
         gsap.to(".clip_vid", {
             y: 200,
             ease: "linear",
             scrollTrigger: {
-                trigger: ".hero_paren",
+            trigger: ".hero_paren",
                 start: "top top",
                 end: "bottom top",
                 // markers: true,
@@ -99,7 +106,7 @@ const Hero = () => {
 
     return (
         <>
-            <div className=" hero_paren w-full h-[42vh] overflow-hidden md:h-screen relative flex items-end md:items-center ">
+            <div className=" hero_paren mt-[60px] lg:mt-0 w-full aspect-video overflow-hidden md:h-screen relative flex items-end md:items-center ">
                 <div className="w-full  h-full flex justify-center items-center">
                     <div className=" h-[0%] clip_paren_1 clip_paren">
                         <div style={{ clipPath: "polygon(0 0, 0% 100%, 90% 0)" }} className="size-14 clip_rd -translate-y-7 translate-x-1/2 shrink-0 bgred"></div>
@@ -121,8 +128,8 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-full px-3 md:px-5 pt-10 gap-5 md:gap-0 md:pt-44 md:pb-32 items-center flex flex-col md:flex-row ">
-                <div className=" w-full md:w-[60%]   uppercase leading-none text-4xl lg:text-7xl font-semibold ">
+            <div className=" w-full px-3 md:px-5 pt-10 gap-5 md:gap-0 md:pt-44 md:pb-32 items-center flex flex-col md:flex-row ">
+                <div className=" opa_hero opacity-0 w-full md:w-[60%]   uppercase leading-none text-4xl lg:text-7xl font-semibold ">
                     <h2> A Strategy Led </h2>
                     <h2 className='red'>
                         Integrated Growth
@@ -132,10 +139,10 @@ const Hero = () => {
                     </h2>
                 </div>
                 <div className=" w-full md:w-[40%] space-y-8 ">
-                    <h2 className=' text-xl  lg:w-[80%] leading-none lg:text-3xl md:leading-tight '>Attention is the new currency. <br /> And most brands are overdrawn.</h2>
-                    <p className=' text-base   leading-none lg:text-xl md:leading-tight'>We build brands that earn it back, with interest.</p>
+                    <h2 className=' opa_hero opacity-0 text-xl  lg:w-[80%] leading-none lg:text-3xl md:leading-tight '>Attention is the new currency. <br /> And most brands are overdrawn.</h2>
+                    <p className=' opa_hero opacity-0 text-base   leading-none lg:text-xl md:leading-tight'>We build brands that earn it back, with interest.</p>
                     <Link scroll={false} href="/about">
-                        <button className=' group relative red flex items-center gap-1'>
+                        <button className=' opa_hero opacity-0 group relative red flex items-center gap-1'>
                             <div className="w-full origin-right group-hover:w-0 transition-all duration-300  h-[1px] bgred absolute bottom-0 right-0"></div>
                             <h3 className=' text-sm lg:text-lg  group-hover:italic uppercase '>about us</h3>
                             <RiArrowRightUpLine size={20} />

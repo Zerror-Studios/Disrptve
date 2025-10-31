@@ -77,17 +77,17 @@ const Header = () => {
   };
 
   useGSAP(() => {
-    gsap.from(".header", {
-      yPercent: -100,
-      duration: .5,
+    gsap.to(".header ", {
+      transform: "translateY(0)",
+      duration: 1,
       ease: "ease-secondary",
-      delay: 1
+      delay: 2
     })
-    gsap.from(".burger", {
-      opacity: 0,
+    gsap.to(".burger", {
+      opacity: 1,
       duration: .5,
       ease: "ease-secondary",
-      delay: 1.5
+      delay: 2
     })
   })
 
@@ -115,7 +115,7 @@ const Header = () => {
             } else {
               openMenu()
             }
-          }} className={` ${isMenuOpen ? "text-black" : "text-white"} scale-[.8] lg:scale-100 cursor-pointer fixed z-[99]  top-1.5  lg:top-9 burger right-2 lg:right-5`}>
+          }} className={` ${isMenuOpen ? "text-black" : "text-white"} opacity-0 scale-[.8] lg:scale-100 cursor-pointer fixed z-[99]  top-1.5  lg:top-9 burger right-2 lg:right-5`}>
             <Hamburger toggled={isMenuOpen} toggle={setIsMenuOpen} />
           </div>
         {/* )
@@ -240,7 +240,7 @@ const Header = () => {
 
 
 
-      <div className=" header flex fixed top-0 left-0 z-[15] w-full items-center justify-between px-3 md:px-5 py-5 lg:py-10">
+      <div className=" header -translate-y-full flex fixed top-0 left-0 z-[15] w-full items-center justify-between px-3 md:px-5 py-5 lg:py-10">
         <Link
         scroll={false}
           href="/"

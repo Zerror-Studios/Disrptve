@@ -169,7 +169,7 @@ const About = () => {
             <SeoHeader meta={meta} />
 
             <div className=" red_globe_bg w-full  z-[-2] h-screen top-[100vh] fixed center ">
-                <img className=' w-[70vw] ' src="/gifs/globe.gif" alt="" />
+                <img className=' scale-[1.7] md:scale-100 w-full lg:w-[70vw] ' src="/gifs/globe.gif" alt="" />
             </div>
 
             <div className="  abt_her_prn w-full overflow-hidden relative  px-3  lg:px-5 text-4xl md:text-6xl lg:text-9xl uppercase flex-col h-[50vh] lg:h-screen center">

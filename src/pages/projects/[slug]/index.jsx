@@ -134,26 +134,17 @@ const ProjectDetail = ({ project, currentIndex }) => {
 
     return (
         <>
-            <div className="fixed fixy_img_dcd center z-[-1] top-0 left-0 w-full h-screen">
-                <div className=" lg:hidden">
-                    {project?.heroImg === "" ? (
-                        <img className='w-full h-full object-contain' src={project?.logo} alt="" />
-                    ) : (
-                        <img className='w-full h-full object-contain' src={project?.heroImg} alt="" />
-                    )}
-                </div>
-                <div className="hidden lg:block">
-                    {project?.heroImg === "" ? (
-                        <img className='w-full h-full object-contain' src={project?.logo} alt="" />
-                    ) : (
-                        <img className='w-full h-full object-cover' src={project?.heroImg} alt="" />
-                    )}
-                </div>
+            <div className=" hidden md:block  fixed fixy_img_dcd z-[-1] top-0 left-0 w-full h-screen">
+                {project?.heroImg === "" ? (
+                    <img className='w-full h-full object-contain' src={project?.logo} alt="" />
+                ) : (
+                    <img className='w-full h-full object-cover' src={project?.heroImg} alt="" />
+                )}
             </div>
-            <div className="absolute overflow-hidden h-[100vh]  w-full top-0 left-0 z-[-1]">
+            <div className=" hidden md:block absolute overflow-hidden h-[100vh]  w-full top-0 left-0 z-[-1]">
                 <div className="w-full h-[70vh] bg-black"></div>
             </div>
-            <div className="w-full px-5 ">
+            <div className=" hidden md:block w-full px-3  lg:px-5 ">
                 <div className="w-full h-[185vh] ">
                     <div className="w-full h-[55vh] flex flex-col justify-end  ">
                         <div className=" w-full text-4xl lg:text-7xl font-semibold uppercase  py-4">
@@ -163,7 +154,7 @@ const ProjectDetail = ({ project, currentIndex }) => {
                     </div>
                     <div className="w-full  sticky z-[2] top-[50vh] text-base lg:text-xl uppercase leading-tight py-4 flex flex-col gap-y-2 md:gap-y-0 md:flex-row  md:justify-between">
                         <div className="  w-full  md:w-1/2 flex items-center gap-2">
-                            <p className=' pj_anim_txt opacity-0 w-full lg:w-[80%]'>{project?.tagline}</p>
+                            <p className=' pj_anim_txt opacity-0 w-[80%]'>{project?.tagline}</p>
                         </div>
                         <div className=" w-full  mt-2 md:mt-0 md:w-1/2 flex justify-between">
                             <div className=" hidden md:block pj_anim_txt opacity-0 w-1/2">
@@ -179,19 +170,42 @@ const ProjectDetail = ({ project, currentIndex }) => {
                 </div>
             </div>
             <div className="w-full main_pdcd  relative bg-black">
-                <div className=" main_pdcd trick_di w-full absolute bg-black h-24 -translate-y-24"></div>
-                <div className="w-full flex p-5 ">
-                    <div className="hidden md:block w-1/2"></div>
-                    <div className=" w-full md:w-1/2">
+                <div className=" hidden md:block main_pdcd trick_di w-full absolute bg-black h-24 -translate-y-24"></div>
+                <div className=" mt-14 md:hidden w-full aspect-video">
+                    {project?.heroImg === "" ? (
+                    <img className='w-full h-full object-contain' src={project?.logo} alt="" />
+                ) : (
+                    <img className='w-full h-full object-cover' src={project?.heroImg} alt="" />
+                )}
+                </div>
+                
+
+                <div className="md:hidden w-full px-3  lg:px-5 ">
+                    <div className=" w-full text-4xl lg:text-7xl font-semibold uppercase  pt-6">
+                        <h3 className=' '>{project?.title}</h3>
+                    </div>
+                    <div className="  w-full  md:w-1/2 flex items-center pt-2 gap-2">
+                        <p className='  text-base uppercase leading-tight lg:text-xl  w-[100%]'>{project?.tagline}</p>
+                    </div>
+                    <div className=" text-base uppercase pt-2 leading-tight lg:text-xl  ">
+                        <p>{project?.industry}</p>
+                    </div>
+                </div>
+                <div className=" md:hidden mb-7 mt-5 border_animm w-0 border-b border-white"></div>
+
+
+                <div className="w-full flex p-3 md:p-5 ">
+                    <div className="hidden lg:block w-1/2"></div>
+                    <div className=" w-full lg:w-1/2">
                         <p className=' text-base lg:text-xl'>{project?.desc}</p>
                     </div>
                 </div>
 
-                <div className="w-full grid grid-cols-1 lg:grid-cols-3 text-base lg:text-xl px-5 gap-x-20 gap-y-10 mt-20 lg:mt-44">
+                <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-base lg:text-xl px-3  lg:px-5 gap-x-20 gap-y-10 mt-10 lg:mt-44">
                     <div className="w-full">
                         <div className=" w-full ">
                             <h3 className=' uppercase  text-xl lg:text-3xl '>The Challenge</h3>
-                            <div className="pj_anim_border py-2 w-full  border-b border-white "></div>
+                            <div className="border_animm py-2 w-0  border-b border-white "></div>
                         </div>
                         <div className="py-4 text-base lg:text-xl">
                             <p>{project?.challenge}</p>
@@ -200,7 +214,7 @@ const ProjectDetail = ({ project, currentIndex }) => {
                     <div className="w-full">
                         <div className=" w-full  ">
                             <h3 className=' uppercase  text-xl lg:text-3xl '>Our Approach</h3>
-                            <div className="pj_anim_border py-2 w-full  border-b border-white "></div>
+                            <div className="border_animm py-2 w-0  border-b border-white "></div>
                         </div>
                         <div className="py-4 text-base lg:text-xl">
                             <p>{project?.approach}</p>
@@ -209,7 +223,7 @@ const ProjectDetail = ({ project, currentIndex }) => {
                     <div className="w-full">
                         <div className=" w-full  ">
                             <h3 className=' uppercase  text-xl lg:text-3xl '>Our Role</h3>
-                            <div className="pj_anim_border py-2 w-full  border-b border-white "></div>
+                            <div className="border_animm py-2 w-0  border-b border-white "></div>
                         </div>
                         <div className="py-4 space-y-4">
                             {project?.tags.map((tag, i) => (
@@ -249,7 +263,7 @@ const ProjectDetail = ({ project, currentIndex }) => {
 
                                 <div className="w-full absolute bottom-24 md:bottom-[2vw] flex justify-center items-center">
                                     <div className="text-xl md:text-2xl flex items-center gap-3 overflow-hidden h-7">
-                                        <div className=" h-full -translate-y-[2px] flex flex-col justify-start items-center overflow-hidden">
+                                        <div className=" h-full lg:-translate-y-[2px] flex flex-col justify-start items-center overflow-hidden">
                                             <div ref={prgrsbarRef} className="num_slider flex flex-col">
                                                 {project?.Images.map((_, i) => (
                                                     <p key={i} className="text-white">{i + 1}</p>

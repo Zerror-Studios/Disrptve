@@ -280,7 +280,7 @@ const Services = () => {
         <>
       <SeoHeader meta={meta} />
 
-            <div className="fixed wave_bg top-0 left-0 z-[-1] w-full h-full center">
+            <div className="fixed wave_bg top-0 left-0 z-[-1] w-full h-screen center">
                     <img className="w-full h-full object-cover" src="/gifs/work.gif" alt="" />
             </div>
 
@@ -350,8 +350,8 @@ const Services = () => {
                 </div>
             </div>
 
-            <div className=" anim_star h-[100dvh] lg:h-screen flex items-end w-full">
-                <div className="w-full lg:hidden mb-5  h-[45vh] flex flex-col justify-end p-3 lg:p-5 uppercase text-4xl lg:text-7xl ">
+            <div className=" anim_star  h-screen flex items-end w-full">
+                <div className="w-full lg:hidden mb-10  h-[45vh] flex flex-col justify-end p-3 lg:p-5 uppercase text-4xl lg:text-7xl ">
                     <h2 className="leading-none">
                         A service is just a tool.
                         It’s the strategy behind

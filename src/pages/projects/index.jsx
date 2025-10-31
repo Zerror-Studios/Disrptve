@@ -56,9 +56,9 @@ const Projects = () => {
         <>
             <SeoHeader meta={meta} />
 
-            <div className="w-full h-[50vh] lg:h-[70vh] px-3 lg:px-5 flex items-end">
+            <div className="w-full h-[40vh] lg:h-[70vh] px-3 lg:px-5 flex items-end">
 
-                <div className="w-full flex flex-wrap space-y-3 group mb-10">
+                <div className="w-full flex flex-wrap lg:space-y-3 group lg:mb-10">
                     {filters.map((item, i) => (
                         <div
                             key={i}
@@ -103,7 +103,7 @@ const Projects = () => {
                                 return (
                                     <Link href={`/projects/${item.slug}`} key={index}>
                                         <div key={index} className="w-full border border-[#8585855b] relative">
-                                            <div className="w-full aspect-square overflow-hidden">
+                                            <div className="w-full aspect-[16/12] overflow-hidden">
                                                 {item.coverImg === "" ? (
                                                     <img
                                                         className="w-full transition-all duration-300 group-hover:scale-90 h-full object-contain"
@@ -119,7 +119,7 @@ const Projects = () => {
                                                     />
                                                 )}
                                             </div>
-                                            <div className="w-full p-3 space-y-2 absolute left-0 bottom-0 bg-black text-white">
+                                            <div className="w-full p-3 space-y-2  bg-black text-white">
                                                 <h3 className="text-lg uppercase leading-none">{item.title}</h3>
                                                 <p className="text-sm opacity-70 leading-none">{item.industry}</p>
                                             </div>
