@@ -285,6 +285,7 @@ const ProjectDetail = ({ project, currentIndex }) => {
                 <div className="w-full font-light gap-5 text-xl lg:text-3xl border-t border-b h-10 lg:h-20 border-white/50 center uppercase flex justify-between">
                     {/* Prev */}
                     <Link
+                        prefetch
                         title='link'
                         // scroll={false}
                         href={`/case-studies/${ProjectsData[
@@ -304,6 +305,7 @@ const ProjectDetail = ({ project, currentIndex }) => {
 
                     {/* Next */}
                     <Link
+                        prefetch
                         title='link'
                         // scroll={false}
                         href={`/case-studies/${ProjectsData[
