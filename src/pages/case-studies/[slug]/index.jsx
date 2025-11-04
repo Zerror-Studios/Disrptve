@@ -10,13 +10,7 @@ import SeoHeader from '@/components/seo/SeoHeader';
 gsap.registerPlugin(ScrollTrigger);
 
 
-const ProjectDetail = () => {
-
-    const params = useParams()
-    const project = ProjectsData.find(
-        (p) => p.slug === params?.slug
-    );
-    const currentIndex = ProjectsData.findIndex((p) => p.slug === project?.slug);
+const ProjectDetail = ({ project, currentIndex }) => {
 
     const containerRef = useRef(null);
     const sliderRef = useRef(null);
@@ -343,30 +337,30 @@ const ProjectDetail = () => {
 export default ProjectDetail
 
 
-// export async function getServerSideProps(context) {
-//     const { slug } = context.params;
+export async function getServerSideProps(context) {
+    const { slug } = context.params;
 
-//     const project =
-//         ProjectsData.find(
-//             (p) =>
-//                 p.slug === slug
-//         ) || null;
+    const project =
+        ProjectsData.find(
+            (p) =>
+                p.slug === slug
+        ) || null;
 
-//     if (!project) {
-//         return {
-//             notFound: true,
-//         };
-//     }
+    if (!project) {
+        return {
+            notFound: true,
+        };
+    }
 
-//     const currentIndex = ProjectsData.findIndex((p) => p.slug === project.slug);
+    const currentIndex = ProjectsData.findIndex((p) => p.slug === project.slug);
 
-//     return {
-//         props: {
-//             project,
-//             currentIndex,
-//         },
-//     };
-// }
+    return {
+        props: {
+            project,
+            currentIndex,
+        },
+    };
+}
 
 
 
