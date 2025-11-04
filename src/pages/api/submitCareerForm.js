@@ -14,8 +14,8 @@ export const config = {
 async function authenticate() {
   const auth = new google.auth.GoogleAuth({
     credentials: {
-      client_email: process.env.GOOGLE_CLIENT_EMAIL,
-      private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, "\n"),
+      client_email: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_EMAIL,
+      private_key: process.env.NEXT_PUBLIC_GOOGLE_PRIVATE_KEY.replace(/\\n/g, "\n"),
     },
     scopes: ["https://www.googleapis.com/auth/spreadsheets"],
   });
@@ -24,10 +24,10 @@ async function authenticate() {
 
 // ---- AWS S3 Client ----
 const s3 = new S3Client({
-  region: process.env.AWS_REGION,
+  region: process.env.NEXT_PUBLIC_AWS_REGION,
   credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    accessKeyId: process.env.NEXT_PUBLIC_AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.NEXT_PUBLIC_AWS_SECRET_ACCESS_KEY,
   },
 });
 
@@ -84,11 +84,11 @@ export default async function handler(req, res) {
 
     await s3.send(new PutObjectCommand(uploadParams));
 
-    const resumeUrl = `https://${process.env.S3_BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${fileName}`;
+    const resumeUrl = `https://${process.env.NEXT_PUBLIC_S3_BUCKET_NAME}.s3.${process.env.NEXT_PUBLIC_AWS_REGION}.amazonaws.com/${fileName}`;
 
     // ---- Append Data to Google Sheet ----
     const sheets = await authenticate();
-    const spreadsheetId = process.env.GOOGLE_SHEET_ID;
+    const spreadsheetId = process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID;
 
     const newRow = [
       formattedDate, // Date
@@ -115,13 +115,13 @@ export default async function handler(req, res) {
       port: 465,
       secure: true,
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: process.env.NEXT_PUBLIC_EMAIL_USER,
+        pass: process.env.NEXT_PUBLIC_EMAIL_PASS,
       },
     });
 
     const mailOptions = {
-      from: process.env.EMAIL_USER,
+      from: process.env.NEXT_PUBLIC_EMAIL_USER,
       to: ["bestscenebs01@gmail.com"],
       subject: "New Career Form Submission",
       html: `

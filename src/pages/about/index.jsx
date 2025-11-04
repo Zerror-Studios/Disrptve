@@ -17,24 +17,14 @@ const teamMembers = [
         img: "/images/teamMember/ashish.webp",
     },
     {
-        name: "Kanishq Chhabria",
-        role: "Chief Operating Officer",
-        img: "/images/teamMember/kanishq.webp",
-    },
-    {
         name: "Kaushik Sundararajan",
         role: "Chief Executive Officer",
         img: "/images/teamMember/kaushik.webp",
     },
     {
-        name: "Chetan Chopra",
-        role: "Chief Business Officer",
-        img: "/images/teamMember/chetan.jpeg",
-    },
-    {
-        name: "Karan Adodra",
-        role: "Head of Content",
-        img: "/images/teamMember/karan.webp",
+        name: "Kanishq Chhabria",
+        role: "Chief Operating Officer",
+        img: "/images/teamMember/kanishq.webp",
     },
     {
         name: "Rachit Rajguru",
@@ -42,14 +32,24 @@ const teamMembers = [
         img: "/images/teamMember/rachit.webp",
     },
     {
-        name: "Ayush Panchal",
-        role: "Head of Branding/ Packaging",
-        img: "/images/teamMember/aayush.webp",
+        name: "Chetan Chopra",
+        role: "Chief Business Officer",
+        img: "/images/teamMember/chetan.jpeg",
     },
     {
         name: "Ajay Panchal",
         role: "Head of UI/UX",
         img: "/images/teamMember/ajay.webp",
+    },
+    {
+        name: "Ayush Panchal",
+        role: "Head of Branding/ Packaging",
+        img: "/images/teamMember/aayush.webp",
+    },
+    {
+        name: "Karan Adodra",
+        role: "Head of Content",
+        img: "/images/teamMember/karan.webp",
     },
 ];
 
