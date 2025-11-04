@@ -41,32 +41,35 @@ const Careers = () => {
     return (
         <>
             <SeoHeader meta={meta} />
-
-            <div className="w-full h-[70vh] lg:h-screen prx_pren overflow-hidden">
-                <img className='w-full h-full object-cover brightness-90 prx_img' src="/images/career.jpg" alt="loading" title="Disrptive" />
-            </div>
-            <div id='career' className=" px-3 lg:px-5 py-14 lg:py-20 ">
+            <div id='career' className=" px-3 lg:px-5 py-20 lg:py-32 ">
                 <div className="w-full flex flex-col md:flex-row justify-between ">
-                    <h1 className='  uppercase text-4xl lg:text-7xl red'>openings</h1>
+                    <h1 className=' uppercase text-4xl lg:text-7xl red'>openings</h1>
                 </div>
                 <div className=" w-full">
-                    <div className="my-20 ser_pren">
+                    <div className=" my-12  space-y-8  md:space-y-0 lg:my-20 ser_pren">
                         {JobOpenings.map((item, index) => (
                             <Link
                                 // scroll={false}
                                 title='link'
                                 href={`/career/${item.slug}`}
                                 key={index}
-                                className="group relative cursor-pointer transition-all duration-300 w-full h-20 lg:h-24 flex items-center justify-between"
+                                className="group relative cursor-pointer transition-all duration-300 pb-3 w-full lg:h-24 flex items-center justify-between"
                             >
                                 <div className="serv_anim_bord absolute bottom-0 h-full w-0 border-b border-white/30 hover:border-b-white/100 transition-colors duration-300"></div>
-                                <p className="group-hover:pl-5 transition-all duration-300 capitalize text-xl lg:text-3xl">
-                                    {item.title}
-                                </p>
+                                <div className="">
+                                    <p className="group-hover:pl-5 transition-all duration-300 capitalize text-xl lg:text-3xl">
+                                        {item.title}
+                                    </p>
+                                    <div className=" md:hidden  text-sm opacity-70 flex items-center gap-2">
+                                        <p>{item.location}</p>
+                                        <p>|</p>
+                                        <p>{item.type}</p>
+                                    </div>
+                                </div>
                                 <div className="flex group-hover:pr-5 transition-all duration-300 text-sm lg:text-xl h-full items-center gap-2 md:gap-4">
-                                    <p>{item.location}</p>
-                                    <div className="w-[1px] bg-white h-[20%]" />
-                                    <p>{item.type}</p>
+                                    <p className='hidden md:block'>{item.location}</p>
+                                    <div className=" hidden md:block w-[1px] bg-white h-[20%]" />
+                                    <p className='hidden md:block'>{item.type}</p>
                                     <img
                                         className="w-4 -rotate-45 invert-100"
                                         src="/icons/arrow_small.svg"
