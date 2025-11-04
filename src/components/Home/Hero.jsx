@@ -170,18 +170,18 @@ const Hero = () => {
             </div>
             <div className=" w-full px-3 md:px-5 pt-10 gap-5 md:gap-0 md:pt-44 md:pb-32 items-center flex flex-col md:flex-row ">
                 <div className=" opa_hero opacity-0 w-full md:w-[60%]   uppercase leading-none text-4xl lg:text-7xl font-semibold ">
-                    <h2> A Strategy Led </h2>
-                    <h2 className='red'>
+                    <h1> A Strategy Led </h1>
+                    <h1 className='red'>
                         Integrated Growth
-                    </h2>
-                    <h2 className='red'>
+                    </h1>
+                    <h1 className='red'>
                         Marketing Agency.
-                    </h2>
+                    </h1>
                 </div>
                 <div className=" w-full md:w-[40%] space-y-8 ">
                     <h2 className=' opa_hero opacity-0 text-xl  lg:w-[80%] leading-none lg:text-3xl md:leading-tight '>Attention is the new currency. <br /> And most brands are overdrawn.</h2>
                     <p className=' opa_hero opacity-0 text-base   leading-none lg:text-xl md:leading-tight'>We build brands that earn it back, with interest.</p>
-                    <Link scroll={false} href="/about">
+                    <Link title="link" scroll={false} href="/about">
                         <button className=' opa_hero opacity-0 group relative red flex items-center gap-1'>
                             <div className="w-full origin-right group-hover:w-0 transition-all duration-300  h-[1px] bgred absolute bottom-0 right-0"></div>
                             <h3 className=' text-sm lg:text-lg  group-hover:italic uppercase '>about us</h3>

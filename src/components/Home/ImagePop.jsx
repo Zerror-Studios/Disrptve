@@ -99,7 +99,7 @@ const TextPop = () => {
             key={t.id}
             initial={{ scale: 1 }}
             animate={{ scale: 0.55 }}
-            exit={{  }}
+            exit={{}}
             transition={{
               duration: TRAIL_TEXT_LIFESPAN / 2000,
               ease: [0.22, 1, 0.36, 1],
@@ -108,7 +108,7 @@ const TextPop = () => {
             style={{
               left: `${t.x}px`,
               top: `${t.y}px`,
-            //   transform: "translate(-50%, -50%)",
+              //   transform: "translate(-50%, -50%)",
               whiteSpace: "nowrap",
             }}
           >
@@ -125,15 +125,15 @@ const TextPop = () => {
       </div>
 
       <div className="text-sm relative z-[1] lg:text-base mt-12">
-         <a href="https://docs.google.com/presentation/d/1BEQxetUTZTY6-0YxjrLKsfljOPqqJY1-HzT6tjYvfqE/edit?slide=id.g38123aab2f1_3_969#slide=id.g38123aab2f1_3_96900"  target="_blank" >
-            <button className={`  bgred group  px-6 py-2  uppercase `}>
-                <div className="relative flex items-center gap-1">
-                    <div className="w-0 group-hover:w-[97%] transition-all duration-300 h-[1px] bg-white absolute bottom-0 left-0"></div>
-                    <h3 className=" text-sm md:text-base group-hover:italic uppercase"> View our deck</h3>
-                    <RiArrowRightUpLine size={20} />
-                </div>
-            </button>
-            </a>
+        <a title="link" href="https://docs.google.com/presentation/d/1BEQxetUTZTY6-0YxjrLKsfljOPqqJY1-HzT6tjYvfqE/edit?slide=id.g38123aab2f1_3_969#slide=id.g38123aab2f1_3_96900" target="_blank" >
+          <button className={`  bgred group  px-6 py-2  uppercase `}>
+            <div className="relative flex items-center gap-1">
+              <div className="w-0 group-hover:w-[97%] transition-all duration-300 h-[1px] bg-white absolute bottom-0 left-0"></div>
+              <h3 className=" text-sm md:text-base group-hover:italic uppercase"> View our deck</h3>
+              <RiArrowRightUpLine size={20} />
+            </div>
+          </button>
+        </a>
       </div>
     </div>
   );

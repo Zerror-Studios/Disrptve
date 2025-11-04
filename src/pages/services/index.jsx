@@ -303,7 +303,7 @@ const Services = () => {
             <SeoHeader meta={meta} />
 
             <div className="fixed wave_bg top-0 left-0 z-[-1] w-full h-screen center">
-                <img className="w-full h-full object-cover" src="/gifs/work.gif" alt="" />
+                <img className="w-full h-full object-cover" src="/gifs/work.gif" alt="loading" title="Disrptive" />
             </div>
 
 
@@ -334,6 +334,7 @@ const Services = () => {
                                 <img
                                     src="/images/servicesHomepage/whatwedo_strategy.webp"
                                     alt="Down Face"
+                                    title="Cube face"
                                     className="w-full h-full object-cover"
                                 />
                             </div>
@@ -342,6 +343,7 @@ const Services = () => {
                                 <img
                                     src="/images/servicesHomepage/whatwedo_ai.webp"
                                     alt="Right Face"
+                                    title="Cube face"
                                     className="w-full h-full object-cover"
                                 />
                             </div>
@@ -350,6 +352,7 @@ const Services = () => {
                                 <img
                                     src="/images/servicesHomepage/whatwedo_decks.webp"
                                     alt="Left Face"
+                                    title="Cube face"
                                     className="w-full h-full object-cover"
                                 />
                             </div>
@@ -358,6 +361,7 @@ const Services = () => {
                                 <img
                                     src="/images/servicesHomepage/whatwedo_socialmedia.webp"
                                     alt="Top Face"
+                                    title="Cube face"
                                     className="w-full h-full object-cover"
                                 />
                             </div>
@@ -366,6 +370,7 @@ const Services = () => {
                                 <img
                                     src="/images/servicesHomepage/whatwedo_website.webp"
                                     alt="Bottom Face"
+                                    title="Cube face"
                                     className="w-full h-full object-cover"
                                 />
                             </div>
@@ -387,6 +392,7 @@ const Services = () => {
                                     <img
                                         src="/images/servicesHomepage/whatwedo_strategy.webp"
                                         alt="Down Face"
+                                        title="Cube face"
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
@@ -395,6 +401,7 @@ const Services = () => {
                                     <img
                                         src="/images/servicesHomepage/whatwedo_website.webp"
                                         alt="Down Face"
+                                        title="Cube face"
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
@@ -403,6 +410,7 @@ const Services = () => {
                                     <img
                                         src="/images/servicesHomepage/whatwedo_ai.webp"
                                         alt="Right Face"
+                                        title="Cube face"
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
@@ -411,6 +419,7 @@ const Services = () => {
                                     <img
                                         src="/images/servicesHomepage/whatwedo_decks.webp"
                                         alt="Left Face"
+                                        title="Cube face"
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
@@ -419,6 +428,7 @@ const Services = () => {
                                     <img
                                         src="/images/servicesHomepage/whatwedo_socialmedia.webp"
                                         alt="Top Face"
+                                        title="Cube face"
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
@@ -427,6 +437,7 @@ const Services = () => {
                                     <img
                                         src="/images/servicesHomepage/whatwedo_website.webp"
                                         alt="Bottom Face"
+                                        title="Cube face"
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
@@ -435,21 +446,21 @@ const Services = () => {
                     </div>
                 </div>
                 <div className="w-full lg:hidden mb-20  h-[45vh] flex flex-col justify-end p-3 lg:p-5 uppercase text-4xl lg:text-7xl ">
-                    <h2 className="leading-none">
+                    <h1 className="leading-none">
                         A service is just a tool.
                         It’s the strategy behind
                         it that creates the impact.
-                    </h2>
+                    </h1>
                     <p className=" text-lg lg:text-2xl  leading-none mt-5 normal-case md:w-[60%] lg:w-[40%]">We believe in a strategy-first approach to everything we do. The capabilities listed here are the tools we use to execute on a clear, well-defined plan. </p>
                 </div>
                 <div className="w-full hidden   lg:flex flex-col justify-end p-3 lg:p-5 uppercase text-4xl lg:text-7xl ">
-                    <h2 className="">A service is just a tool.</h2>
-                    <h2 className="">
+                    <h1 className="">A service is just a tool.</h1>
+                    <h1 className="">
                         It’s the strategy behind
-                    </h2>
-                    <h2 className="">
+                    </h1>
+                    <h1 className="">
                         it that creates the impact.
-                    </h2>
+                    </h1>
                     <p className=" text-lg lg:text-2xl  leading-none mt-5 normal-case md:w-[60%] lg:w-[40%]">We believe in a strategy-first approach to everything we do. The capabilities listed here are the tools we use to execute on a clear, well-defined plan. </p>
                 </div>
             </div>
@@ -498,7 +509,7 @@ const Services = () => {
                         </div>
                         <div className=" mt-5  w-full lg:w-[40%]  flex items-center justify-center lg:justify-end ">
                             <div className="w-[100%] md:w-[40%] lg:w-[70%]">
-                                <img className="w-full" src="/gifs/sandClock.gif" alt="" />
+                                <img className="w-full" src="/gifs/sandClock.gif" alt="loading" title="Disrptive" />
                             </div>
                         </div>
                     </div>
@@ -512,7 +523,7 @@ const Services = () => {
                             <div key={i} className=" shrink-0 text-black text-center center relative w-[100vw] md:w-[30vw] aspect-[3/4]">
                                 <div className="absolute bottom-0 w-full z-[1] h-44 bg-gradient-to-b from-transparent to-white"></div>
                                 <h2 className="  text-xl lg:text-3xl absolute bottom-5 z-[2] uppercase">{item.title}</h2>
-                                <img className="w-full h-full object-cover " src={item.img} alt="" />
+                                <img className="w-full h-full object-cover " src={item.img} alt="loading" title="Disrptive" />
                             </div>
                         ))}
                     </div>

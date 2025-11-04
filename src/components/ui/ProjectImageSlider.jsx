@@ -116,6 +116,7 @@ export default function ProjectImageSlider({ images = [] }) {
             <img
               src={imgSrc}
               alt={`project-image-${i}`}
+              title={`project-image-${i}`}
               className="w-full h-full object-cover"
             />
           </div>

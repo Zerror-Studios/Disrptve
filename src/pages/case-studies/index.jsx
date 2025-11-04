@@ -56,7 +56,8 @@ const Projects = () => {
         <>
             <SeoHeader meta={meta} />
 
-            <div className="w-full h-[40vh] lg:h-[70vh] px-3 lg:px-5 flex items-end">
+            <div className="w-full h-[40vh] relative lg:h-[70vh] px-3 lg:px-5 flex items-end">
+                <h1 className=' absolute opacity-0'>Explore our case studies</h1>
 
                 <div className="w-full flex flex-wrap lg:space-y-3 group lg:mb-10">
                     {filters.map((item, i) => (
@@ -101,7 +102,7 @@ const Projects = () => {
                             // Layout A — full-width image with overlay text
                             if (layoutType === 0) {
                                 return (
-                                    <Link href={`/projects/${item.slug}`} key={index}>
+                                    <Link title="link" href={`/case-studies/${item.slug}`} key={index}>
                                         <div key={index} className="w-full border border-[#8585855b] relative">
                                             <div className="w-full aspect-[16/12] overflow-hidden">
                                                 {item.coverImg === "" ? (
@@ -109,6 +110,7 @@ const Projects = () => {
                                                         className="w-full transition-all duration-300 group-hover:scale-90 h-full object-contain"
                                                         src={item.logo}
                                                         alt={item.title}
+                                                        title={item.title}
                                                     />
                                                 ) : (
 
@@ -116,6 +118,7 @@ const Projects = () => {
                                                         className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
                                                         src={item.coverImg}
                                                         alt={item.title}
+                                                        title={item.title}
                                                     />
                                                 )}
                                             </div>
@@ -131,7 +134,7 @@ const Projects = () => {
                             // Layout B (even index, e.g., 2nd)
                             if (layoutType === 1) {
                                 return (
-                                    <Link href={`/projects/${item.slug}`} key={index}>
+                                    <Link title="link" href={`/case-studies/${item.slug}`} key={index}>
                                         <div className="w-full flex flex-row-reverse">
                                             <div className="w-1/2 overflow-hidden border border-[#8585855b] aspect-square">
                                                 {item.coverImg === "" ? (
@@ -139,6 +142,7 @@ const Projects = () => {
                                                         className="w-full transition-all duration-300 group-hover:scale-90 h-full object-contain"
                                                         src={item.logo}
                                                         alt={item.title}
+                                                        title={item.title}
                                                     />
                                                 ) : (
 
@@ -146,6 +150,7 @@ const Projects = () => {
                                                         className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
                                                         src={item.coverImg}
                                                         alt={item.title}
+                                                        title={item.title}
                                                     />
                                                 )}
                                             </div>
@@ -160,7 +165,7 @@ const Projects = () => {
 
                             // Layout C (odd index, e.g., 3rd)
                             return (
-                                <Link href={`/projects/${item.slug}`} key={index}>
+                                <Link title="link" href={`/case-studies/${item.slug}`} key={index}>
                                     <div className="w-full flex">
                                         <div className="w-1/2 overflow-hidden border border-[#8585855b] aspect-square">
                                             {item.coverImg === "" ? (
@@ -168,6 +173,7 @@ const Projects = () => {
                                                     className="w-full transition-all duration-300 group-hover:scale-90 h-full object-contain"
                                                     src={item.logo}
                                                     alt={item.title}
+                                                    title={item.title}
                                                 />
                                             ) : (
 
@@ -175,6 +181,7 @@ const Projects = () => {
                                                     className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
                                                     src={item.coverImg}
                                                     alt={item.title}
+                                                    title={item.title}
                                                 />
                                             )}
                                         </div>
@@ -198,7 +205,8 @@ const Projects = () => {
                                 return (
                                     <div key={project.id} className="w-full">
                                         <Link
-                                            href={`/projects/${project.slug}`}
+                                        title='link'
+                                            href={`/case-studies/${project.slug}`}
                                             className="group border border-[#8585855b] relative w-full flex items-end"
                                         >
                                             <div className="flex  w-1/2   px-3 lg:px-5 py-5 items-end justify-between   transition-colors duration-300">
@@ -220,6 +228,7 @@ const Projects = () => {
                                                         className="w-full transition-all duration-300 group-hover:scale-90 h-full object-contain"
                                                         src={project.logo}
                                                         alt={project.title}
+                                                        title={project.title}
                                                     />
                                                 ) : (
 
@@ -227,6 +236,7 @@ const Projects = () => {
                                                         className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
                                                         src={project.coverImg}
                                                         alt={project.title}
+                                                        title={project.title}
                                                     />
                                                 )}
                                             </div>
@@ -244,7 +254,8 @@ const Projects = () => {
                                         {pair.map((p) => (
                                             <Link
                                                 key={p.id}
-                                                href={`/projects/${p.slug}`}
+                                                title='link'
+                                                href={`/case-studies/${p.slug}`}
 
                                                 className="group border border-[#8585855b] relative w-1/2 flex items-end"
                                             >
@@ -266,6 +277,7 @@ const Projects = () => {
                                                             className="w-full transition-all duration-300 group-hover:scale-90 h-full object-contain"
                                                             src={p.logo}
                                                             alt={p.title}
+                                                            title={p.title}
                                                         />
                                                     ) : (
 
@@ -273,6 +285,7 @@ const Projects = () => {
                                                             className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
                                                             src={p.coverImg}
                                                             alt={p.title}
+                                                            title={p.title}
                                                         />
                                                     )}
                                                 </div>
@@ -287,7 +300,8 @@ const Projects = () => {
                                 return (
                                     <div key={project.id} className="w-full">
                                         <Link
-                                            href={`/projects/${project.slug}`}
+                                        title='link'
+                                            href={`/case-studies/${project.slug}`}
                                             className="group border border-[#8585855b] relative w-full flex items-end"
                                         >
                                             <div
@@ -299,6 +313,7 @@ const Projects = () => {
                                                         className="w-full transition-all duration-300 group-hover:scale-90 h-full object-contain"
                                                         src={project.logo}
                                                         alt={project.title}
+                                                        title={project.title}
                                                     />
                                                 ) : (
 
@@ -306,6 +321,7 @@ const Projects = () => {
                                                         className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
                                                         src={project.coverImg}
                                                         alt={project.title}
+                                                        title={project.title}
                                                     />
                                                 )}
                                             </div>
@@ -332,8 +348,8 @@ const Projects = () => {
                                         {pair.map((p) => (
                                             <Link
                                                 key={p.id}
-                                                href={`/projects/${p.slug}`}
-
+                                                href={`/case-studies/${p.slug}`}
+                                            title='link'
                                                 className="group border border-[#8585855b] relative w-1/2 flex items-end"
                                             >
                                                 <div className="flex  w-1/2 px-3 lg:px-5 py-5 items-end justify-between   transition-colors duration-300">
@@ -354,6 +370,7 @@ const Projects = () => {
                                                             className="w-full transition-all duration-300 group-hover:scale-90 h-full object-contain"
                                                             src={p.logo}
                                                             alt={p.title}
+                                                            title={p.title}
                                                         />
                                                     ) : (
 
@@ -361,6 +378,7 @@ const Projects = () => {
                                                             className="w-full transition-all duration-300 group-hover:scale-90 h-full object-cover"
                                                             src={p.coverImg}
                                                             alt={p.title}
+                                                            title={p.title}
                                                         />
                                                     )}
                                                 </div>
@@ -386,13 +404,13 @@ const meta = {
     title: "Our Case Studies - Marketing Case Studies & Portfolio | DISRPTVE",
     description:
         "Explore our portfolio of successful brand campaigns, digital marketing projects, and creative excellence across industries.",
-    canonical: "https://disrptve.vercel.app/projects",
+    canonical: "https://disrptve.vercel.app/case-studies",
     og: {
         title: "Our Case Studies - Marketing Case Studies & Portfolio | DISRPTVE",
         description:
             "Explore our portfolio of successful brand campaigns, digital marketing projects, and creative excellence across industries.",
         image: "https://disrptve.vercel.app/logo-og.png",
-        url: "https://disrptve.vercel.app/projects",
+        url: "https://disrptve.vercel.app/case-studies",
         type: "website",
         site_name: "DISRPTVE",
     },

@@ -144,7 +144,7 @@ const index = () => {
                                 <div className="  aspect-[3/4] relative">
                                     <img
                                         data-aos-anchor-placement="top-bottom"
-                                        data-aos="clip" src={flipImg[0]} alt=""
+                                        data-aos="clip" src={flipImg[0]} alt="loading" title="Disrptive"
                                         className=" img_sticky_rot w-full h-full  object-cover mb-2" />
 
                                     <div className=" sticky_about opacity-0 absolute -bottom-13 flex w-full items-start justify-between">
@@ -152,7 +152,7 @@ const index = () => {
                                             <h2 className="font-medium leading-none">HENRY YEOMANS</h2>
                                             <p className="text-sm opacity-70 mb-3">Partner, Creative Director</p>
                                         </div>
-                                        <img className=' w-4  invert-100 -rotate-90' src="/icons/arrow_small.svg" alt="" />
+                                        <img className=' w-4  invert-100 -rotate-90' src="/icons/arrow_small.svg" alt="loading" title="Disrptive" />
                                     </div>
                                 </div>
                             </div>
@@ -162,7 +162,7 @@ const index = () => {
 
 
                 <div className=" about_vid  absolute top-0 left-0 z-[-1] w-full h-[80vw] pointer-events-none">
-                    <img className='w-full h-full object-cover' src="https://images.prismic.io/malvah-v2/974b2180-2936-483d-82c7-4ff9b0286179_Hero.bw.2.jpg?auto=compress,format" alt="" />
+                    <img className='w-full h-full object-cover' src="https://images.prismic.io/malvah-v2/974b2180-2936-483d-82c7-4ff9b0286179_Hero.bw.2.jpg?auto=compress,format" alt="loading" title="Disrptive" />
                 </div>
 
                 <div className="w-full relative h-screen   center text-center">
@@ -174,7 +174,7 @@ const index = () => {
                         <div className="w-[25vw] ">
                             <img
                                 data-aos-anchor-placement="top-bottom"
-                                data-aos="clip" className=' aspect-[3/4] w-full object-cover' src="https://images.prismic.io/malvah-v2/bf6fc68f-b97c-4904-a2a2-489924668e23_01..jpg?auto=compress,format" alt="" />
+                                data-aos="clip" className=' aspect-[3/4] w-full object-cover' src="https://images.prismic.io/malvah-v2/bf6fc68f-b97c-4904-a2a2-489924668e23_01..jpg?auto=compress,format" alt="loading" title="Disrptive" />
                             <p className='text-xl leading-tight mt-2' >We extended the mandate to re-engineer Guyana for the next five years.</p>
                         </div>
                     </div>
@@ -189,7 +189,7 @@ const index = () => {
                         <div className="w-[50vw] ">
                             <img 
                             data-aos-anchor-placement="top-bottom"
-                                    data-aos="clip" className=' aspect-[4/3] w-full object-cover' src="https://images.prismic.io/malvah-v2/18c08b41-8e6f-467a-bc92-6ecd39c4a437_03_Para2.jpg?auto=compress,format" alt="" />
+                                    data-aos="clip" className=' aspect-[4/3] w-full object-cover' src="https://images.prismic.io/malvah-v2/18c08b41-8e6f-467a-bc92-6ecd39c4a437_03_Para2.jpg?auto=compress,format" alt="loading" title="Disrptive" />
                             <p className='text-2xl leading-tight mt-2' >We extended the mandate to re-engineer Guyana for the next five years.</p>
                         </div>
                     </div>
@@ -221,7 +221,7 @@ const index = () => {
                             <Marquee>
                                 <div key={index} className="flex gap-5">
                                     {[...clientsData, ...clientsData].map((item, index) => (
-                                        <img className=' w-[7vw]  invert-100' src={item.icon} alt="" />
+                                        <img className=' w-[7vw]  invert-100' src={item.icon} alt="loading" title="Disrptive" />
                                     ))}
                                 </div>
                             </Marquee>
@@ -243,10 +243,10 @@ const index = () => {
                                         <h2 className="font-medium leading-none">HENRY YEOMANS</h2>
                                         <p className="text-sm opacity-70 mb-3">Partner, Creative Director</p>
                                     </div>
-                                    <img className=' w-4  invert-100 -rotate-90' src="/icons/arrow_small.svg" alt="" />
+                                    <img className=' w-4  invert-100 -rotate-90' src="/icons/arrow_small.svg" alt="loading" title="Disrptive" />
                                 </div>
                                 <img
-                                    src="https://images.prismic.io/inertia-website/Z73zTZ7c43Q3gNtv_BC20240408-05-0731.jpg?auto=format%2Ccompress&rect=0%2C297%2C1366%2C1539&w=750&h=845" alt=""
+                                    src="https://images.prismic.io/inertia-website/Z73zTZ7c43Q3gNtv_BC20240408-05-0731.jpg?auto=format%2Ccompress&rect=0%2C297%2C1366%2C1539&w=750&h=845" alt="loading" title="Disrptive"
                                     className="w-full opacity-0 aspect-[3/4] object-cover mb-2" />
 
                             </div>
@@ -257,11 +257,11 @@ const index = () => {
                                         <h2 className="font-medium leading-none">JACK LIETTI</h2>
                                         <p className="text-sm opacity-70 mb-3">Senior 3D Artist</p>
                                     </div>
-                                    <img className=' w-4 invert-100 rotate-90' src="/icons/arrow_small.svg" alt="" />
+                                    <img className=' w-4 invert-100 rotate-90' src="/icons/arrow_small.svg" alt="loading" title="Disrptive" />
                                 </div>
                                 <img
                                     data-aos-anchor-placement="top-bottom"
-                                    data-aos="clip" src="https://images.prismic.io/inertia-website/Z73zUZ7c43Q3gNty_BC20240408-16-1699-BW.jpg?auto=format%2Ccompress&rect=0%2C64%2C4736%2C6972&w=360&h=530" alt="" className="w-full aspect-[3/4] object-cover mb-2" />
+                                    data-aos="clip" src="https://images.prismic.io/inertia-website/Z73zUZ7c43Q3gNty_BC20240408-16-1699-BW.jpg?auto=format%2Ccompress&rect=0%2C64%2C4736%2C6972&w=360&h=530" alt="loading" title="Disrptive" className="w-full aspect-[3/4] object-cover mb-2" />
                             </div>
 
                             <div className="col-span-2 col-start-4 flex flex-col items-start mt-[19.5vw]">
@@ -270,11 +270,11 @@ const index = () => {
                                         <h2 className="font-medium leading-none">THOMAS VALENTE</h2>
                                         <p className="text-sm opacity-70 mb-3">Founder, Executive Creative Director</p>
                                     </div>
-                                    <img className=' w-4 invert-100 rotate-90' src="/icons/arrow_small.svg" alt="" />
+                                    <img className=' w-4 invert-100 rotate-90' src="/icons/arrow_small.svg" alt="loading" title="Disrptive" />
                                 </div>
                                 <img
                                     data-aos-anchor-placement="top-bottom"
-                                    data-aos="clip" src="https://images.prismic.io/inertia-website/Z73zS57c43Q3gNts_BC20240408-03-0407.jpg?auto=format%2Ccompress&rect=0%2C254%2C1366%2C1539&w=750&h=845" alt="" className="w-full aspect-[3/4] object-cover mb-2" />
+                                    data-aos="clip" src="https://images.prismic.io/inertia-website/Z73zS57c43Q3gNts_BC20240408-03-0407.jpg?auto=format%2Ccompress&rect=0%2C254%2C1366%2C1539&w=750&h=845" alt="loading" title="Disrptive" className="w-full aspect-[3/4] object-cover mb-2" />
                             </div>
 
                             <div className="col-span-1 col-start-6 flex flex-col items-start mt-[19.5vw]">
@@ -283,11 +283,11 @@ const index = () => {
                                         <h2 className="font-medium leading-none">GEMMA GARMAN</h2>
                                         <p className="text-sm opacity-70 mb-3">Senior Producer</p>
                                     </div>
-                                    <img className=' w-4 invert-100 rotate-90' src="/icons/arrow_small.svg" alt="" />
+                                    <img className=' w-4 invert-100 rotate-90' src="/icons/arrow_small.svg" alt="loading" title="Disrptive" />
                                 </div>
                                 <img
                                     data-aos-anchor-placement="top-bottom"
-                                    data-aos="clip" src="https://images.prismic.io/inertia-website/Z73zUJ7c43Q3gNtx_BC20240408-15-1597-BW.jpg?auto=format%2Ccompress&rect=1466%2C0%2C3217%2C4736&w=360&h=530" alt="" className="w-full aspect-[3/4] object-cover mb-2" />
+                                    data-aos="clip" src="https://images.prismic.io/inertia-website/Z73zUJ7c43Q3gNtx_BC20240408-15-1597-BW.jpg?auto=format%2Ccompress&rect=1466%2C0%2C3217%2C4736&w=360&h=530" alt="loading" title="Disrptive" className="w-full aspect-[3/4] object-cover mb-2" />
                             </div>
 
                             <div className="col-span-2 flex flex-col items-start mt-[-4.5vw] ">
@@ -296,11 +296,11 @@ const index = () => {
                                         <h2 className="font-medium leading-none">HENRY YEOMANS</h2>
                                         <p className="text-sm opacity-70 mb-3">Partner, Creative Director</p>
                                     </div>
-                                    <img className=' w-4 invert-100 rotate-90' src="/icons/arrow_small.svg" alt="" />
+                                    <img className=' w-4 invert-100 rotate-90' src="/icons/arrow_small.svg" alt="loading" title="Disrptive" />
                                 </div>
                                 <img
                                     data-aos-anchor-placement="top-bottom"
-                                    data-aos="clip" src="https://images.prismic.io/inertia-website/Z73zTJ7c43Q3gNtu_BC20240408-04-0653-BW.jpg?auto=format%2Ccompress&rect=2262%2C0%2C4204%2C4736&w=750&h=845" alt="" className="w-full aspect-[3/4] object-cover mb-2" />
+                                    data-aos="clip" src="https://images.prismic.io/inertia-website/Z73zTJ7c43Q3gNtu_BC20240408-04-0653-BW.jpg?auto=format%2Ccompress&rect=2262%2C0%2C4204%2C4736&w=750&h=845" alt="loading" title="Disrptive" className="w-full aspect-[3/4] object-cover mb-2" />
                             </div>
 
                             <div className="col-span-1 col-start-3 flex flex-col items-start   mt-[-4.5vw] ">
@@ -309,11 +309,11 @@ const index = () => {
                                         <h2 className="font-medium leading-none">JAIME BRAVO</h2>
                                         <p className="text-sm opacity-70 mb-3">Houdini Artist</p>
                                     </div>
-                                    <img className=' w-4 invert-100 rotate-90' src="/icons/arrow_small.svg" alt="" />
+                                    <img className=' w-4 invert-100 rotate-90' src="/icons/arrow_small.svg" alt="loading" title="Disrptive" />
                                 </div>
                                 <img
                                     data-aos-anchor-placement="top-bottom"
-                                    data-aos="clip" src="https://images.prismic.io/inertia-website/Z3-_NZbqstJ99O7G_JaimeBravo-HoudiniArtist.jpg?auto=format%2Ccompress&w=360&h=530" alt="" className="w-full aspect-[3/4] object-cover mb-2" />
+                                    data-aos="clip" src="https://images.prismic.io/inertia-website/Z3-_NZbqstJ99O7G_JaimeBravo-HoudiniArtist.jpg?auto=format%2Ccompress&w=360&h=530" alt="loading" title="Disrptive" className="w-full aspect-[3/4] object-cover mb-2" />
                             </div>
 
                             <div className="col-span-1 col-start-6 flex flex-col items-start  mt-[-4.5vw]  ">
@@ -322,11 +322,11 @@ const index = () => {
                                         <h2 className="font-medium leading-none">ELLIOT HARRIS</h2>
                                         <p className="text-sm opacity-70 mb-3">3D Artist</p>
                                     </div>
-                                    <img className=' w-4 invert-100 rotate-90' src="/icons/arrow_small.svg" alt="" />
+                                    <img className=' w-4 invert-100 rotate-90' src="/icons/arrow_small.svg" alt="loading" title="Disrptive" />
                                 </div>
                                 <img
                                     data-aos-anchor-placement="top-bottom"
-                                    data-aos="clip" src="https://images.prismic.io/inertia-website/Z73zS57c43Q3gNtr_BC20240408-02-0241-BW.jpg?auto=format,compress&rect=0,64,4736,6972&w=360&h=530" alt="" className="w-full aspect-[3/4] object-cover mb-2" />
+                                    data-aos="clip" src="https://images.prismic.io/inertia-website/Z73zS57c43Q3gNtr_BC20240408-02-0241-BW.jpg?auto=format,compress&rect=0,64,4736,6972&w=360&h=530" alt="loading" title="Disrptive" className="w-full aspect-[3/4] object-cover mb-2" />
                             </div>
                         </div>
                     </div>

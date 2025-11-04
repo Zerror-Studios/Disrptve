@@ -43,17 +43,18 @@ const Careers = () => {
             <SeoHeader meta={meta} />
 
             <div className="w-full h-[70vh] lg:h-screen prx_pren overflow-hidden">
-                <img className='w-full h-full object-cover brightness-90 prx_img' src="/images/career.jpg" alt="" />
+                <img className='w-full h-full object-cover brightness-90 prx_img' src="/images/career.jpg" alt="loading" title="Disrptive" />
             </div>
             <div id='career' className=" px-3 lg:px-5 py-14 lg:py-20 ">
                 <div className="w-full flex flex-col md:flex-row justify-between ">
-                    <h2 className='  uppercase text-4xl lg:text-7xl red'>openings</h2>
+                    <h1 className='  uppercase text-4xl lg:text-7xl red'>openings</h1>
                 </div>
                 <div className=" w-full">
                     <div className="my-20 ser_pren">
                         {JobOpenings.map((item, index) => (
                             <Link
                                 // scroll={false}
+                                title='link'
                                 href={`/career/${item.slug}`}
                                 key={index}
                                 className="group relative cursor-pointer transition-all duration-300 w-full h-20 lg:h-24 flex items-center justify-between"
@@ -69,7 +70,7 @@ const Careers = () => {
                                     <img
                                         className="w-4 -rotate-45 invert-100"
                                         src="/icons/arrow_small.svg"
-                                        alt=""
+                                        alt="loading" title="Disrptive"
                                     />
                                 </div>
                             </Link>

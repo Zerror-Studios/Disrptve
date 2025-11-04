@@ -39,7 +39,7 @@ const teamMembers = [
     {
         name: "Ajay Panchal",
         role: "Head of UI/UX",
-        img: "/images/teamMember/ajay.webp",
+        img: "/images/teamMember/ajay.jpg",
     },
     {
         name: "Ayush Panchal",
@@ -140,8 +140,8 @@ const About = () => {
         })
 
         gsap.from(".team_div", {
-            opacity:0,
-            stagger:0.1,
+            opacity: 0,
+            stagger: 0.1,
             scrollTrigger: {
                 trigger: ".team_div_paren",
                 start: "top bottom",
@@ -152,7 +152,7 @@ const About = () => {
             }
         })
 
-        
+
     });
 
     useEffect(() => {
@@ -169,20 +169,20 @@ const About = () => {
             <SeoHeader meta={meta} />
 
             <div className=" red_globe_bg w-full  z-[-2] h-screen top-[100vh] fixed center ">
-                <img className=' scale-[1.7] md:scale-100 w-full lg:w-[70vw] ' src="/gifs/globe.gif" alt="" />
+                <img className=' scale-[1.7] md:scale-100 w-full lg:w-[70vw] ' src="/gifs/globe.gif" alt="loading" title="Disrptive" />
             </div>
 
             <div className="  abt_her_prn w-full overflow-hidden relative  px-3  lg:px-5 text-4xl md:text-6xl lg:text-9xl uppercase flex-col h-[50vh] lg:h-screen center">
                 <div className="w-full">
                     <div className="flex her_txt_anim gap-4 lg:gap-10 whitespace-nowrap justify-between w-[80%] ">
-                        <h2>A</h2>
-                        <h2>strategy-led</h2>
+                        <h1>A</h1>
+                        <h1>strategy-led</h1>
                     </div>
                 </div>
                 <div className="w-full">
                     <div className="flex her_txt_anim  gap-4 lg:gap-10 whitespace-nowrap justify-between  w-full ">
-                        <h2>marketing</h2>
-                        <h2>agency.</h2>
+                        <h1>marketing</h1>
+                        <h1>agency.</h1>
                     </div>
                 </div>
             </div>
@@ -213,21 +213,21 @@ const About = () => {
                 <div className="w-full mb-14 mt-10 lg:hidden grid grid-cols-1 gap-y-12 gap-x-5 md:grid-cols-3">
                     <div className="  overflow-hidden space-y-2  w-full ">
                         <div className="w-full mb-2 aspect-square rounded-2xl overflow-hidden ">
-                            <img className='w-full  h-full  object-cover' src="/images/teamMember/ashish.webp" alt="" />
+                            <img className='w-full  h-full  object-cover' src="/images/teamMember/ashish.webp" alt="loading" title="Disrptive" />
                         </div>
                         <div className='red  leading-none flex items-center gap-3 font-semibold text-lg lg:text-lg'><h2>Ashish</h2></div>
                         <p className=' text-base  lg:text-xl leading-tight '>An actor and entrepreneur with an incredible network and a legacy in advertising—his father's agency, Art, was an icon of the 80s and 90s.</p>
                     </div>
                     <div className="  overflow-hidden space-y-2  w-full ">
                         <div className="w-full mb-2 aspect-square rounded-2xl overflow-hidden ">
-                            <img className='w-full  h-full  object-cover' src="/images/teamMember/kaushik.webp" alt="" />
+                            <img className='w-full  h-full  object-cover' src="/images/teamMember/kaushik.webp" alt="loading" title="Disrptive" />
                         </div>
                         <div className='red  leading-none flex items-center gap-3 font-semibold text-lg lg:text-lg'><h2>Kaushik</h2></div>
                         <p className=' text-base  lg:text-xl leading-tight '>The seasoned strategist, who merged his own successful agency of 10+ years into this new vision, bringing a deep understanding of what it takes to win.</p>
                     </div>
                     <div className="  overflow-hidden space-y-2  w-full ">
                         <div className="w-full mb-2 aspect-square rounded-2xl overflow-hidden ">
-                            <img className='w-full  h-full  object-cover' src="/images/teamMember/kanishq.webp" alt="" />
+                            <img className='w-full  h-full  object-cover' src="/images/teamMember/kanishq.webp" alt="loading" title="Disrptive" />
                         </div>
                         <div className='red  leading-none flex items-center gap-3 font-semibold text-lg lg:text-lg'><h2>Kanishq</h2></div>
                         <p className=' text-base  lg:text-xl leading-tight '>The new-gen, with a sharp eye for design, a knack for culture, and his own entrepreneurial grit.</p>
@@ -240,6 +240,7 @@ const About = () => {
                             className="w-full h-full object-cover"
                             src="/images/teamMember/ashish.webp"
                             alt="Ashish"
+                            title='Ashish pic'
                         />
                     </div>
                     <div className="crd_item crd_2 z-[6] absolute rotate-4 aspect-square w-[80%] rounded-2xl overflow-hidden">
@@ -247,6 +248,7 @@ const About = () => {
                             className="w-full h-full object-cover"
                             src="/images/teamMember/kaushik.webp"
                             alt="Kaushik"
+                            title='Kaushik pic'
                         />
                     </div>
                     <div className="crd_item crd_3 z-[2] absolute grayscale-100  aspect-square w-[80%] rounded-2xl overflow-hidden">
@@ -254,6 +256,7 @@ const About = () => {
                             className="w-full h-full object-cover"
                             src="/images/teamMember/kanishq.jpeg"
                             alt="Kanishq"
+                            title='Kanishq pic'
                         />
                     </div>
                 </div>
@@ -291,7 +294,7 @@ const About = () => {
 
             <div className=" conv_parent  w-full mb-14 lg:mb-20 flex flex-col md:flex-row gap-y-10 gap-x-10 items-stretch  px-3  lg:px-5 ">
                 <div className=" red_bx_ey w-full md:w-1/2 space-y-8 bg-black relative p-5 lg:p-8 flex flex-col justify-between h-full border border-[#D70000]">
-                    <img className='rotate-180 w-[35%] lg:w-[25%] absolute top-0 right-0' src="/gifs/blocks.gif" alt="" />
+                    <img className='rotate-180 w-[35%] lg:w-[25%] absolute top-0 right-0' src="/gifs/blocks.gif" alt="loading" title="Disrptive" />
                     <h2 className='  uppercase relative z-[1]  text-4xl  lg:text-7xl red leading-none'>From <br /> Conversation <br /> to Campaign</h2>
                     <h2 className=' text-xl lg:text-3xl '>That simple idea grew. Fast.</h2>
                     <p className=' text-base lg:text-xl  leading-tight'>Today, we're a full-fledged agency with a rapidly growing team. Our portfolio is our proof, having worked on everything from shaping the identity for a craft beer brand to running data-driven national campaigns. We've partnered with major celebrities to launch brands, managed complex photoshoots from start to finish, and even used AI to create visuals that were once impossible.</p>
@@ -301,7 +304,7 @@ const About = () => {
                         style={{ clipPath: "ellipse(46% 27% at 50% 50%)" }}
                         className=" absolute top-0 right-0"
                     >
-                        <img className=" w-[30vw] md:w-[20vw]" src="/gifs/redEye.gif" alt="" />
+                        <img className=" w-[30vw] md:w-[20vw]" src="/gifs/redEye.gif" alt="loading" title="Disrptive" />
                     </div>
                     <h2 className=' text-4xl  lg:text-7xl uppercase  text-black leading-none'>How we <br /> work</h2>
                     <p className=' text-base lg:text-xl  leading-tight'>Our process is simple. We listen more than we talk. We dive deep into your world to find the one thing that makes you special. Then we build a clear, honest plan and bring it to life with a team that’s genuinely passionate about what they do.</p>
@@ -311,14 +314,14 @@ const About = () => {
 
             <div className="w-full  overflow-hidden relative h-screen gap-y-10 center text-center flex-col">
                 <div className="absolute wave_bg top-0 left-0 z-[-2] w-full h-full center">
-                    <img className='w-full h-full object-cover' src="/gifs/work.gif" alt="" />
+                    <img className='w-full h-full object-cover' src="/gifs/work.gif" alt="loading" title="Disrptive" />
                 </div>
                 <h2 className='   text-4xl  lg:text-7xl uppercase'>Let's Build Something Great.</h2>
                 <div className="space-y-5 px-3 text-center w-full center flex-col">
                     <p className=' w-full md:w-[50%]  leading-none   text-xl  lg:text-3xl '>At the end of the day, we’re still driven by the spirit of that first conversation: a desire to do great work with good people. </p>
                     <p className=' w-full md:w-[50%]   leading-none   text-xl  lg:text-3xl'>If you’re building something you believe in, we’d love to have a conversation with you, too.</p>
                 </div>
-                <Link scroll={false} href="/contact">
+                <Link scroll={false} title='link' href="/contact">
                     <button className=' group relative flex items-center gap-1'>
                         <div className="w-full group-hover:w-0 transition-all duration-300  h-[1px] bg-white absolute bottom-0 right-0"></div>
                         <p className=' text-base md:text-xl group-hover:italic  '>WORK WITH US</p>
@@ -336,11 +339,12 @@ const About = () => {
                             className={`team_div flex w-full flex-col items-start `}
                         >
                             <div
-                                className=" w-full bg-[#D9D9D9]">
+                                className=" w-full aspect-[3/4] overflow-hidden bg-[#D9D9D9]">
                                 <img
                                     src={member.img}
                                     alt={member.name}
-                                    className="w-full grayscale-100 aspect-[3/4] object-cover"
+                                    title={member.name}
+                                    className="w-full h-full grayscale-100  object-cover"
                                 />
                             </div>
                             <div className="flex mt-2 lg:mt-4  w-full items-center justify-between">

@@ -206,7 +206,7 @@ const Services = () => {
                         </div>
                         <div className="space-y-4">
                             <p className='text-xl  leading-tight '>We’re a full-service agency, which means we can help from the first spark of an idea to the final, polished execution. Our work is broken down into these core areas.</p>
-                            <Link scroll={false} href="/services">
+                            <Link title='link' scroll={false} href="/services">
                                 <button className=' group relative red flex items-center gap-1'>
                                     <div className="w-full origin-right group-hover:w-0 transition-all duration-300  h-[1px] bgred absolute bottom-0 right-0"></div>
                                     <h3 className=' text-sm lg:text-lg  group-hover:italic uppercase '>Explore Now</h3>
@@ -248,7 +248,7 @@ const Services = () => {
                                 </div>
 
                                 <div className="aspect-video overflow-hidden shrink-0  w-full ">
-                                    <img className='w-full h-full object-cover' src={item.img} alt="" />
+                                    <img className='w-full h-full object-cover' src={item.img} alt="loading" title="Disrptive" />
                                 </div>
                             </div>
 
@@ -267,7 +267,7 @@ const Services = () => {
 
                                 <div className="flex flex-col-reverse justify-between h-full md:h-fit md:flex-row gap-4 md:gap-6">
                                     <div className=" shrink-0  h-[50%] md:h-[19vw] w-full md:w-[60%] ">
-                                        <img className='w-full h-full object-cover' src={item.img} alt="" />
+                                        <img className='w-full h-full object-cover' src={item.img} alt="loading" title="Disrptive" />
                                     </div>
                                     <div className=" flex w-full flex-col justify-between  font-semibold">
                                         <div className=" -translate-y-1.5 space-y-2">

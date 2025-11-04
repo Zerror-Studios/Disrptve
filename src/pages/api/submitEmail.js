@@ -108,7 +108,7 @@ export default async function handler(req, res) {
 
     const mailOptions = {
       from: process.env.NEXT_PUBLIC_EMAIL_USER,
-      to: ["bestscenebs01@gmail.com"],
+      to: ["team@disrptve.com"],
       subject: "New Contact Form Submission",
       html: `
         <html>

@@ -22,6 +22,21 @@ export default function App({ Component, pageProps }) {
     return () => clearTimeout(timeout);
   }, [router.asPath]);
 
+  useEffect(() => {
+    const elements = document.querySelectorAll("img[title], a[title]");
+    elements.forEach((el) => {
+      const title = el.getAttribute("title");
+      el.addEventListener("mouseenter", () => el.removeAttribute("title"));
+      el.addEventListener("mouseleave", () => el.setAttribute("title", title));
+    });
+    return () => {
+      elements.forEach((el) => {
+        el.replaceWith(el.cloneNode(true));
+      });
+    };
+  }, []);
+
+
   return (
     <LenisScroll>
       <Transition routeKey={router.asPath}>

@@ -6,6 +6,7 @@ import { useParams } from 'next/navigation';
 import { ProjectsData } from '@/store/ProjectsData';
 import ProjectImageSlider from '@/components/ui/ProjectImageSlider';
 import Link from 'next/link';
+import SeoHeader from '@/components/seo/SeoHeader';
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -134,11 +135,12 @@ const ProjectDetail = ({ project, currentIndex }) => {
 
     return (
         <>
+            <SeoHeader meta={meta} />
             <div className=" hidden md:block  fixed fixy_img_dcd z-[-1] top-0 left-0 w-full h-screen">
                 {project?.heroImg === "" ? (
-                    <img className='w-full h-full object-contain' src={project?.logo} alt="" />
+                    <img className='w-full h-full object-contain' src={project?.logo} alt="loading" title="Disrptive" />
                 ) : (
-                    <img className='w-full h-full object-cover' src={project?.heroImg} alt="" />
+                    <img className='w-full h-full object-cover' src={project?.heroImg} alt="loading" title="Disrptive" />
                 )}
             </div>
             <div className=" hidden md:block absolute overflow-hidden h-[100vh]  w-full top-0 left-0 z-[-1]">
@@ -148,7 +150,7 @@ const ProjectDetail = ({ project, currentIndex }) => {
                 <div className="w-full h-[185vh] ">
                     <div className="w-full h-[55vh] flex flex-col justify-end  ">
                         <div className=" w-full text-4xl lg:text-7xl font-semibold uppercase  py-4">
-                            <h3 className='pj_anim_txt opacity-0'>{project?.title}</h3>
+                            <h1 className='pj_anim_txt opacity-0'>{project?.title}</h1>
                         </div>
                         <div className=" border_animm w-0 border-b border-white"></div>
                     </div>
@@ -173,16 +175,16 @@ const ProjectDetail = ({ project, currentIndex }) => {
                 <div className=" hidden md:block main_pdcd trick_di w-full absolute bg-black h-24 -translate-y-24"></div>
                 <div className="  md:hidden w-full aspect-video">
                     {project?.heroImg === "" ? (
-                    <img className='w-full h-full object-contain' src={project?.logo} alt="" />
-                ) : (
-                    <img className='w-full h-full object-cover' src={project?.heroImg} alt="" />
-                )}
+                        <img className='w-full h-full object-contain' src={project?.logo} alt="loading" title="Disrptive" />
+                    ) : (
+                        <img className='w-full h-full object-cover' src={project?.heroImg} alt="loading" title="Disrptive" />
+                    )}
                 </div>
-                
+
 
                 <div className="md:hidden w-full px-3  lg:px-5 ">
                     <div className=" w-full text-4xl lg:text-7xl font-semibold uppercase  pt-6">
-                        <h3 className=' '>{project?.title}</h3>
+                        <h1 className=' '>{project?.title}</h1>
                     </div>
                     <div className="  w-full  md:w-1/2 flex items-center pt-2 gap-2">
                         <p className='  text-base uppercase leading-tight lg:text-xl  w-[100%]'>{project?.tagline}</p>
@@ -255,6 +257,7 @@ const ProjectDetail = ({ project, currentIndex }) => {
                                             <img
                                                 src={imgSrc}
                                                 alt={`project-image-${i}`}
+                                                title="Disrptive"
                                                 className="w-full h-full object-cover "
                                             />
                                         </div>
@@ -282,8 +285,9 @@ const ProjectDetail = ({ project, currentIndex }) => {
                 <div className="w-full font-light gap-5 text-xl lg:text-3xl border-t border-b h-10 lg:h-20 border-white/50 center uppercase flex justify-between">
                     {/* Prev */}
                     <Link
+                    title='link'
                         // scroll={false}
-                        href={`/projects/${ProjectsData[
+                        href={`/case-studies/${ProjectsData[
                             (currentIndex - 1 + ProjectsData.length) % ProjectsData.length
                         ]?.slug
                             }`}
@@ -300,8 +304,9 @@ const ProjectDetail = ({ project, currentIndex }) => {
 
                     {/* Next */}
                     <Link
+                    title='link'
                         // scroll={false}
-                        href={`/projects/${ProjectsData[
+                        href={`/case-studies/${ProjectsData[
                             (currentIndex + 1) % ProjectsData.length
                         ]?.slug
                             }`}
@@ -318,7 +323,7 @@ const ProjectDetail = ({ project, currentIndex }) => {
 
                 {/* <div className="w-full h-screen center">
                     <div className="w-[25%] h-[80%]">
-                        <img className='w-full h-full object-cover' src="/pr0201.webp" alt="" />
+                        <img className='w-full h-full object-cover' src="/pr0201.webp" alt="loading" title="Disrptive" />
                     </div>
                 </div> */}
 
@@ -354,3 +359,36 @@ export async function getServerSideProps(context) {
         },
     };
 }
+
+
+
+
+const meta = {
+    title: "Our Case Studies - Marketing Case Studies & Portfolio | DISRPTVE",
+    description:
+        "Explore our portfolio of successful brand campaigns, digital marketing projects, and creative excellence across industries.",
+    canonical: "https://disrptve.vercel.app/case-studies",
+    og: {
+        title: "Our Case Studies - Marketing Case Studies & Portfolio | DISRPTVE",
+        description:
+            "Explore our portfolio of successful brand campaigns, digital marketing projects, and creative excellence across industries.",
+        image: "https://disrptve.vercel.app/logo-og.png",
+        url: "https://disrptve.vercel.app/case-studies",
+        type: "website",
+        site_name: "DISRPTVE",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Our Case Studies - Marketing Case Studies & Portfolio | DISRPTVE",
+        description:
+            "Explore our portfolio of successful brand campaigns, digital marketing projects, and creative excellence across industries.",
+        image: "https://disrptve.vercel.app/logo-og.png",
+        site: "@disrptve",
+    },
+    robots: "index,follow",
+    keywords:
+        "marketing portfolio, case studies, brand campaigns, creative projects, marketing work, agency portfolio",
+    author: "DISRPTVE",
+    viewport: "width=device-width, initial-scale=1.0",
+    themeColor: "#000000",
+};

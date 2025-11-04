@@ -12,7 +12,7 @@ gsap.registerPlugin(CustomEase, SplitText, ScrollTrigger);
 
 const menuItems = [
   { name: "About", href: "/about" },
-  { name: "case studies", href: "/projects" },
+  { name: "case studies", href: "/case-studies" },
   { name: "services", href: "/services" },
   { name: "careers", href: "/career" },
   { name: "contact", href: "/contact" },
@@ -78,6 +78,7 @@ const Footer = () => {
           >
             {menuItems.map((item, i) => (
               <Link
+              title={item.name}
                 scroll={false}
                 key={i}
                 href={item.href}
@@ -98,22 +99,20 @@ const Footer = () => {
           <div className=" flex flex-col items-end text-end  gap-y-5 justify-end">
             <div className="   text-sm lg:text-xl">
               <p className='opacity-0'>
-                +91 97693 31076
               </p>
               <p className='opacity-0'>
-                +91 91672 10094
               </p>
               <p>team@disrptve.com</p>
             </div>
             <div className=" w-full justify-end flex">
               <div className="flex gap-4">
-                <a href="https://www.instagram.com/bedisrptve?igsh=MWw3enZqcWZnYmZkbQ==" target="_blank" >
+                <a title="link" href="https://www.instagram.com/bedisrptve?igsh=MWw3enZqcWZnYmZkbQ==" target="_blank" >
                   <div className="  size-12 group hover:bg-[#D70000] transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
                     <RiInstagramLine size={20} className='group-hover:opacity-0 transition-all duration-300  ' />
                     <RiInstagramFill size={20} className='absolute group-hover:opacity-100 text-[#000000] opacity-0 transition-all duration-300  ' />
                   </div>
                 </a>
-                <a href="https://www.linkedin.com/company/disrptve/" target="_blank">
+                <a title="link" href="https://www.linkedin.com/company/disrptve/" target="_blank">
                   <div className="  size-12 group hover:bg-[#D70000] transition-all duration-300 cursor-pointer rounded-full border border-white/20 center">
                     <RiLinkedinLine size={20} className='group-hover:opacity-0 transition-all duration-300  ' />
                     <RiLinkedinFill size={20} className='absolute group-hover:opacity-100 text-[#000000] opacity-0 transition-all duration-300  ' />
@@ -135,7 +134,7 @@ const Footer = () => {
               disrptve
             </h2>
           </div>
-          <img className=' absolute top-0 left-0 z-[-1] w-full h-full object-cover' src="/gifs/footerVid.gif" alt="" />
+          <img className=' absolute top-0 left-0 z-[-1] w-full h-full object-cover' src="/gifs/footerVid.gif" alt="loading" title="Disrptive" />
         </div>
       </div>
     </>

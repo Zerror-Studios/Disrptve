@@ -3,12 +3,14 @@ import Hero from '@/components/Home/Hero'
 import ImagePop from '@/components/Home/ImagePop'
 import Projects from '@/components/Home/Projects'
 import Services from '@/components/Home/Services'
+import SeoHeader from '@/components/seo/SeoHeader'
 import React from 'react'
 
 const Home = ({ meta }) => {
 
   return (
     <>
+      <SeoHeader meta={meta} />
       <Hero />
       <Services />
       <Projects />

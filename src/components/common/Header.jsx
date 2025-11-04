@@ -10,7 +10,7 @@ import Form from '../ui/Form';
 
 const menuItems = [
   { name: "About", href: "/about" },
-  { name: "case studies", href: "/projects" },
+  { name: "case studies", href: "/case-studies" },
   { name: "services", href: "/services" },
   { name: "careers", href: "/career" },
   { name: "contact", href: "/contact" },
@@ -131,13 +131,14 @@ const Header = () => {
         <div className="w-full flex absolute top-0 left-0 px-3 py-5 md:px-5 lg:py-11 justify-between ">
           <Link
             scroll={false}
+            title="Disrptive"
             href="/"
             onClick={closeMenu}
             className='cursor-pointer'>
-            <img className=' w-[35vw] md:w-[12vw] invert-100' src="/logo.png" alt="" />
+            <img className=' w-[35vw] md:w-[12vw] invert-100' src="/logo.png" alt="loading" title="Disrptive" />
           </Link>
           <div className=" opacity-0 flex justify-end cursor-pointer">
-            <img className='w-[50%] invert-100' src="/icons/close.svg" alt="" />
+            <img className='w-[50%] invert-100' src="/icons/close.svg" alt="loading" title="Disrptive" />
           </div>
         </div>
         <motion.div
@@ -152,6 +153,7 @@ const Header = () => {
                 scroll={false}
                 key={i}
                 href={item.href}
+                title={item.name}
                 onClick={closeMenu}
                 // onClick={() => { navigate(router, item.href), closeMenu() }}
                 className="group block  mt-2 lg:mt-4 font-semibold overflow-hidden cursor-pointer w-fit relative"
@@ -177,6 +179,7 @@ const Header = () => {
             {socailLinks.map((item, i) => (
               <a
                 href={item.href}
+                title={item.name}
                 key={i}
                 className="block text-end font-semibold w-fit cursor-pointer group relative overflow-hidden"
               >
@@ -202,6 +205,7 @@ const Header = () => {
           {socailLinks.map((item, i) => (
             <a
               href={item.href}
+              title={item.name}
               key={i}
               className="block text-end font-semibold w-fit cursor-pointer group relative overflow-hidden"
             >
@@ -222,7 +226,7 @@ const Header = () => {
             style={{ clipPath: "ellipse(46% 27% at 50% 50%)" }}
             className="  lg:hidden menu_gif opacity-0"
           >
-            <img className="w-[60vw] md:w-[20vw]" src="/gifs/redEye.gif" alt="" />
+            <img className="w-[60vw] md:w-[20vw]" src="/gifs/redEye.gif" alt="loading" title="Disrptive" />
           </div> */}
         </div>
 
@@ -230,7 +234,7 @@ const Header = () => {
           style={{ clipPath: "ellipse(46% 27% at 50% 50%)" }}
           className=" hidden lg:block menu_gif opacity-0 top-[15%]  absolute right-5"
         >
-          <img className="" src="/gifs/redEye.gif" alt="" />
+          <img className="" src="/gifs/redEye.gif" alt="loading" title="Disrptive" />
         </div> */}
 
 
@@ -243,10 +247,11 @@ const Header = () => {
       <div className=" header -translate-y-full flex fixed top-0 left-0 z-[15] w-full items-center justify-between px-3 md:px-5 py-5 lg:py-10">
         <Link
           scroll={false}
+          title="Disrptive"
           href="/"
           //  onClick={() => navigate(router, "/")}
           className='cursor-pointer'>
-          <img className={`  w-[35vw] md:w-[12vw] ${path === "/contact" ? "invert-0" : "invert-0"}`} src="/logo.png" alt="" />
+          <img className={`  w-[35vw] md:w-[12vw] ${path === "/contact" ? "invert-0" : "invert-0"}`} src="/logo.png" alt="loading" title="Disrptive" />
         </Link>
         <div className="flex items-center gap-7">
 
@@ -254,6 +259,7 @@ const Header = () => {
             path !== "/contact" && (
               <Link
                 scroll={false}
+                title="Disrptive"
                 // onClick={() => setOpenForm(true)}
                 href="/contact"
                 // onClick={() => navigate(router, "/contact")}
@@ -268,7 +274,7 @@ const Header = () => {
               </Link>
             )}
           <div className=" cursor-pointer opacity-0 ">
-            <img className={`${path === "/contact" ? "invert-100" : "invert-0"}`} src="/icons/menu.svg" alt="" />
+            <img className={`${path === "/contact" ? "invert-100" : "invert-0"}`} src="/icons/menu.svg" alt="loading" title="Disrptive" />
           </div>
         </div>
       </div>

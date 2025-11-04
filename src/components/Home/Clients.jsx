@@ -118,7 +118,7 @@ const Clients = () => {
                             >
                                 <h2 className='block w-fit '>OUR clients</h2>
                                 <div className=" size-6 lg:size-12 center ">
-                                    <img className="w-full" src="/icons/cut_blocks.svg" alt="" />
+                                    <img className="w-full" src="/icons/cut_blocks.svg" alt="loading" title="Disrptive" />
                                 </div>
                             </div>
                         ))}
@@ -139,12 +139,12 @@ const Clients = () => {
                                     <img
                                         className="client-icon grayscale-100 absolute z-[1] w-[90%] "
                                         src={item.icon}
-                                        alt=""
+                                        alt="loading" title="Disrptive"
                                     />
                                     <img
                                         className="client-img absolute w-full h-full object-cover opacity-0 "
                                         src="/images/clients/clientsBg.jpg"
-                                        alt=""
+                                        alt="loading" title="Disrptive"
                                     />
                                 </div>
                             ))}

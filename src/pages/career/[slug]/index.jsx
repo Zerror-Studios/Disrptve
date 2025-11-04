@@ -5,6 +5,7 @@ import { useGSAP } from '@gsap/react';
 import CareerForm from '@/components/ui/CareerForm';
 import { JobOpenings } from '@/store/JobOpenings';
 import { RiArrowRightUpLine } from '@remixicon/react';
+import SeoHeader from '@/components/seo/SeoHeader';
 gsap.registerPlugin(ScrollTrigger);
 
 const CareerDetail = ({ job }) => {
@@ -26,8 +27,9 @@ const CareerDetail = ({ job }) => {
 
     return (
         <>
+            <SeoHeader meta={meta} />
             <div className="px-3 lg:px-5 pt-32">
-                <h2 className='uppercase  text-4xl  lg:text-7xl'>{job?.title}</h2>
+                <h1 className='uppercase  text-4xl  lg:text-7xl'>{job?.title}</h1>
                 <div className=" carr_anim_border mt-4  w-0 border-t border-white "></div>
             </div>
             <div className=" flex pt-10 flex-col md:flex-row  md:gap-x-[10vw] px-3 lg:px-5">
@@ -41,23 +43,23 @@ const CareerDetail = ({ job }) => {
                             <div className=" w-full  text-base lg:text-xl  h-full grid gap-y-5  grid-cols-2 lg:grid-cols-3">
                                 <div className="">
                                     <h3 className=' uppercase opacity-50' >type</h3>
-                                    <p className='' >Full Time, Hybrid</p>
+                                    <p className='' >{job?.type}</p>
                                 </div>
                                 <div className="">
                                     <h3 className=' uppercase opacity-50' >location</h3>
-                                    <p className='' >Mumbai, India</p>
+                                    <p className='' >{job?.location}</p>
                                 </div>
                                 <div className="">
                                     <h3 className=' uppercase opacity-50' >Experience</h3>
-                                    <p className='' >2+ Years</p>
+                                    <p className='' >{job?.experience}</p>
                                 </div>
                                 <div className="">
                                     <h3 className=' uppercase opacity-50' >Working Hours</h3>
-                                    <p className='' >8 Hours</p>
+                                    <p className='' >{job?.workingHours}</p>
                                 </div>
                                 <div className="">
                                     <h3 className=' uppercase opacity-50' >salary</h3>
-                                    <p className='' >To Be Discussed..</p>
+                                    <p className='' >{job?.salary}</p>
                                 </div>
                             </div>
                         </div>
@@ -68,22 +70,12 @@ const CareerDetail = ({ job }) => {
                                 <h2 className='  text-xl  lg:text-3xl mb-2 md:mb-3 red   uppercase'>What We’re Looking For</h2>
                             </div>
                             <div className="   w-full h-full leading-tight space-y-2  text-base lg:text-xl">
-                                <div className="  flex gap-2">
-                                    <div className=' size-1.5 md:size-2 shrink-0  translate-y-2.5 bg-white' ></div>
-                                    <p>2–4 years of experience managing social media for brands.</p>
-                                </div>
-                                <div className="  flex gap-2">
-                                    <div className=' size-1.5 md:size-2 shrink-0  translate-y-2.5 bg-white' ></div>
-                                    <p>Strong grasp of Instagram, LinkedIn, Twitter/X, and emerging platforms.</p>
-                                </div>
-                                <div className="  flex gap-2">
-                                    <div className=' size-1.5 md:size-2 shrink-0  translate-y-2.5 bg-white' ></div>
-                                    <p>Creative mindset with the ability to write engaging, on-trend copy.</p>
-                                </div>
-                                <div className="  flex gap-2">
-                                    <div className=' size-1.5 md:size-2 shrink-0  translate-y-2.5 bg-white' ></div>
-                                    <p>Skilled in planning campaigns and building content calendars.</p>
-                                </div>
+                                {job?.lookingFor?.map((item, index) => (
+                                    <div key={index} className="  flex gap-2">
+                                        <div className=' size-1.5 md:size-2 shrink-0  translate-y-2.5 bg-white' ></div>
+                                        <p>{item}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -93,18 +85,12 @@ const CareerDetail = ({ job }) => {
                                 <h2 className='  text-xl  lg:text-3xl mb-2 md:mb-3 red uppercase'>What You’ll Do</h2>
                             </div>
                             <div className=" mt-3 leading-tight md:mt-0 space-y-2  w-full h-full text-base lg:text-xl">
-                                <div className="  flex gap-2">
-                                    <div className=' size-1.5 md:size-2 shrink-0  translate-y-2.5 bg-white' ></div>
-                                    <p>Own and grow brand voices across social platforms</p>
-                                </div>
-                                <div className="  flex gap-2">
-                                    <div className=' size-1.5 md:size-2 shrink-0  translate-y-2.5 bg-white' ></div>
-                                    <p>Create scroll-stopping content & campaigns</p>
-                                </div>
-                                <div className="  flex gap-2">
-                                    <div className=' size-1.5 md:size-2 shrink-0  translate-y-2.5 bg-white' ></div>
-                                    <p>Track, analyze, and optimize for performance</p>
-                                </div>
+                                {job?.responsibilities?.map((item, index) => (
+                                    <div key={index} className="  flex gap-2">
+                                        <div className=' size-1.5 md:size-2 shrink-0  translate-y-2.5 bg-white' ></div>
+                                        <p>{item}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -131,3 +117,34 @@ export async function getServerSideProps({ params }) {
 
     return { props: { job } };
 }
+
+
+const meta = {
+    title: "Careers at DISRPTVE - Join Our Marketing Agency Team",
+    description:
+        "Join DISRPTVE's creative team in Mumbai. Explore opportunities in brand strategy, digital marketing, design, and social media management.",
+    canonical: "https://disrptve.vercel.app/career",
+    og: {
+        title: "Careers at DISRPTVE - Join Our Marketing Agency Team",
+        description:
+            "Join DISRPTVE's creative team in Mumbai. Explore opportunities in brand strategy, digital marketing, design, and social media management.",
+        image: "https://disrptve.vercel.app/logo-og.png",
+        url: "https://disrptve.vercel.app/career",
+        type: "website",
+        site_name: "DISRPTVE",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Careers at DISRPTVE - Join Our Marketing Agency Team",
+        description:
+            "Join DISRPTVE's creative team in Mumbai. Explore opportunities in brand strategy, digital marketing, design, and social media management.",
+        image: "https://disrptve.vercel.app/logo-og.png",
+        site: "@disrptve",
+    },
+    robots: "index,follow",
+    keywords:
+        "marketing careers, agency jobs Mumbai, creative jobs, digital marketing careers, brand strategy jobs",
+    author: "DISRPTVE",
+    viewport: "width=device-width, initial-scale=1.0",
+    themeColor: "#000000",
+};

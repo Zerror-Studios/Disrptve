@@ -122,7 +122,7 @@ export default async function handler(req, res) {
 
     const mailOptions = {
       from: process.env.NEXT_PUBLIC_EMAIL_USER,
-      to: ["bestscenebs01@gmail.com"],
+      to: ["team@disrptve.com"],
       subject: "New Career Form Submission",
       html: `
         <div style="font-family:Arial,sans-serif;background:#f9f9f9;padding:20px;border-radius:8px;">
