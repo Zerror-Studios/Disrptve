@@ -1,42 +1,69 @@
-import Lenis from "lenis";
-import React, { useEffect } from "react";
-import AOS from "aos";
+"use client";
 
-const LenisScroll = ({ children }) => {
+import React, { useEffect, useRef } from "react";
+import Lenis from "lenis";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { usePathname, useSearchParams } from "next/navigation";
+
+export default function SmoothScroller({ children }) {
+  const lenis = useRef(null);
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
 
   useEffect(() => {
+    if (lenis.current) lenis.current.scrollTo(0, { immediate: true });
+  }, [pathname, searchParams]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: "ease-out",
+    });
+    
     if (window.innerWidth < 1024) return
-    const lenis = new Lenis({
+
+    const instance = new Lenis({
       duration: 1.5,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      smoothTouch: true,
       direction: "vertical",
       gestureDirection: "vertical",
-      smooth: true,
-      mouseMultiplier: 1,
-      smoothTouch: false,
-      touchMultiplier: 2,
+      wheelMultiplier: 0.8,
+      touchMultiplier: 1.2,
       infinite: false,
     });
 
-    window.lenis = lenis;
+    lenis.current = instance;
+    window.lenis = instance; // optional for debugging
 
-    lenis.on("scroll", ({ scroll }) => {
-    });
-
+    let frame;
     const raf = (time) => {
-      lenis.raf(time);
-      AOS.refresh();
-      requestAnimationFrame(raf);
+      instance.raf(time);
+      AOS.refresh(); // keep AOS synced with Lenis scroll
+      frame = requestAnimationFrame(raf);
     };
-    requestAnimationFrame(raf);
+    frame = requestAnimationFrame(raf);
+
+    // Handle resize updates
+    const handleResize = () => {
+      instance.resize();
+      AOS.refresh();
+    };
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      lenis.destroy();
+      cancelAnimationFrame(frame);
+      window.removeEventListener("resize", handleResize);
+      instance.destroy();
+      lenis.current = null;
       window.lenis = null;
     };
   }, []);
 
   return <>{children}</>;
-};
-
-export default LenisScroll;
+}

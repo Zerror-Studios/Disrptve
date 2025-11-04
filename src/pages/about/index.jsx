@@ -15,56 +15,41 @@ const teamMembers = [
         name: "Ashish Chowdhry",
         role: "Managing Director",
         img: "/images/teamMember/ashish.webp",
-        colSpan: "col-span-2",
-        extraClasses: "teams_div",
     },
     {
         name: "Kanishq Chhabria",
         role: "Chief Operating Officer",
         img: "/images/teamMember/kanishq.webp",
-        colSpan: "col-span-1 col-start-3",
     },
     {
         name: "Kaushik Sundararajan",
         role: "Chief Executive Officer",
         img: "/images/teamMember/kaushik.webp",
-        colSpan: "col-span-2 col-start-4",
-        extraClasses: "mt-[19.5vw]",
-    },
-    {
-        name: "Karan Adodra",
-        role: "Head of Content",
-        img: "/images/teamMember/karan.png",
-        colSpan: "col-span-1 col-start-6",
-        extraClasses: "mt-[19.5vw]",
-    },
-    {
-        name: "Rachit Rajguru",
-        role: "Head of Operations",
-        img: "/images/teamMember/rachit.webp",
-        colSpan: "col-span-2",
-        extraClasses: "mt-[-4.5vw]",
-    },
-    {
-        name: "Aayush Panchal",
-        role: "Head of Design",
-        img: "/images/teamMember/aayush.webp",
-        colSpan: "col-span-1 col-start-3",
-        extraClasses: "mt-[-4.5vw]",
     },
     {
         name: "Chetan Chopra",
         role: "Chief Business Officer",
         img: "/images/teamMember/chetan.jpeg",
-        colSpan: "col-span-2 col-start-4",
-        extraClasses: "mt-[15.5vw]",
     },
     {
-        name: "Ajay",
-        role: "Chief Business Officer",
-        // img: "/images/teamMember/chetan.jpeg",
-        colSpan: "col-span-1 col-start-6",
-        extraClasses: "mt-[-4.5vw]",
+        name: "Karan Adodra",
+        role: "Head of Content",
+        img: "/images/teamMember/karan.webp",
+    },
+    {
+        name: "Rachit Rajguru",
+        role: "Head of Operations",
+        img: "/images/teamMember/rachit.webp",
+    },
+    {
+        name: "Ayush Panchal",
+        role: "Head of Branding/ Packaging",
+        img: "/images/teamMember/aayush.webp",
+    },
+    {
+        name: "Ajay Panchal",
+        role: "Head of UI/UX",
+        img: "/images/teamMember/ajay.webp",
     },
 ];
 
@@ -153,6 +138,21 @@ const About = () => {
                 // markers: true
             }
         })
+
+        gsap.from(".team_div", {
+            opacity:0,
+            stagger:0.1,
+            scrollTrigger: {
+                trigger: ".team_div_paren",
+                start: "top bottom",
+                end: "bottom top",
+                // scrub: 0.4,
+                toggleActions: "play none none reverse",
+                // markers: true
+            }
+        })
+
+        
     });
 
     useEffect(() => {
@@ -329,16 +329,13 @@ const About = () => {
 
             <div className=" py-14 lg:py-28  px-3  lg:px-5 ">
                 <h2 className='   uppercase   text-lg  lg:text-2xl font-semibold mb-5 red'>our team</h2>
-                {/* for mobile */}
-                <div className="w-full lg:hidden grid grid-cols-2 items-stretch gap-y-10 md:grid-cols-4 gap-3 md:gap-x-5">
+                <div className="team_div_paren w-full grid grid-cols-2  items-stretch gap-y-10 md:grid-cols-4 gap-3 md:gap-x-5">
                     {teamMembers.map((member, i) => (
                         <div
                             key={i}
-                            className={` flex w-full flex-col items-start `}
+                            className={`team_div flex w-full flex-col items-start `}
                         >
                             <div
-                                data-aos-anchor-placement="top-bottom"
-                                data-aos="clip"
                                 className=" w-full bg-[#D9D9D9]">
                                 <img
                                     src={member.img}
@@ -346,46 +343,15 @@ const About = () => {
                                     className="w-full grayscale-100 aspect-[3/4] object-cover"
                                 />
                             </div>
-                            <div className="flex mt-2  w-full items-center justify-between">
+                            <div className="flex mt-2 lg:mt-4  w-full items-center justify-between">
                                 <div className=''>
-                                    <h3 className=" text-sm  uppercase leading-none">{member.name}</h3>
-                                    <p className="text-sm opacity-70 ">{member.role}</p>
+                                    <h3 className=" text-sm lg:text-xl  lg:font-semibold uppercase leading-none">{member.name}</h3>
+                                    <p className="text-sm lg:text-base opacity-70 ">{member.role}</p>
                                 </div>
                             </div>
                         </div>
                     ))}
                 </div>
-
-
-                {/* for desktop */}
-                <div className="w-full hidden lg:grid grid-cols-6 gap-5">
-                    {teamMembers.map((member, i) => (
-                        <div
-                            key={i}
-                            className={`${member.colSpan} flex  group w-full flex-col items-start ${member.extraClasses || ""}`}
-                        >
-                            <div className="flex   w-full items-center justify-between">
-                                <div className=''>
-                                    <h3 className=" text-xl  uppercase leading-none">{member.name}</h3>
-                                    <p className="text-base opacity-70 mb-3">{member.role}</p>
-                                </div>
-                            </div>
-                            <div className="w-full overflow-hidden block group-hover:rounded-xl transition-all duration-300 ">
-                                <div
-                                    data-aos-anchor-placement="top-bottom"
-                                    data-aos="clip"
-                                    className=" w-full overflow-hidden block bg-[#D9D9D9]">
-                                    <img
-                                        src={member.img}
-                                        alt={member.name}
-                                        className="w-full group-hover:scale-[1.05] transition-transform duration-300  grayscale-100 aspect-[3/4] object-cover"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
             </div>
 
 
