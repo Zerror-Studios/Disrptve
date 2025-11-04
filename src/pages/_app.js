@@ -36,7 +36,6 @@ export default function App({ Component, pageProps }) {
     };
   }, []);
 
-
   return (
     <LenisScroll>
       <Transition routeKey={router.asPath}>

@@ -1,10 +1,9 @@
-"use client";
 import React, { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import CustomEase from "gsap/dist/CustomEase";
 
-gsap.registerPlugin(ScrollTrigger, CustomEase);
+gsap.registerPlugin(CustomEase);
 CustomEase.create("ease-secondary", "0.16, 1, 0.35, 1");
 
 export default function Transition({ children, routeKey }) {
@@ -28,7 +27,6 @@ export default function Transition({ children, routeKey }) {
 
   const totalBlocks = grid.cols * grid.rows;
 
-  // 🔥 Core route transition logic
   useEffect(() => {
     if (!screenRef.current || !containerRef.current) return;
 
@@ -40,7 +38,7 @@ export default function Transition({ children, routeKey }) {
         gsap.set(blocksRef.current, { autoAlpha: 0 });
         gsap.to(blocksRef.current, {
           autoAlpha: 1,
-          duration: 0.3,
+          duration: 0.25,
           ease: "ease-secondary",
           stagger: { amount: 0.3, from: "random" },
           onComplete: resolve,
@@ -51,7 +49,7 @@ export default function Transition({ children, routeKey }) {
       new Promise((resolve) => {
         gsap.to(blocksRef.current, {
           autoAlpha: 0,
-          duration: 0.3,
+          duration: 0.25,
           ease: "ease-secondary",
           stagger: { amount: 0.3, from: "random" },
           onComplete: () => {
@@ -65,47 +63,45 @@ export default function Transition({ children, routeKey }) {
         });
       });
 
-    // 🔄 sequence:
-    // 1. fadeIn overlay
-    // 2. switch children AFTER fadeIn
-    // 3. fadeOut overlay
     fadeIn().then(() => {
-      // replace children only after overlay fully visible
       setDisplayChildren(children);
     });
   }, [routeKey]);
 
-  // 🔄 Once displayChildren updated → run fadeOut and scroll reset
-  useEffect(() => {
-    if (!screenRef.current) return;
-    const el = screenRef.current;
+useEffect(() => {
+  if (!screenRef.current) return;
 
-    requestAnimationFrame(() => {
-      const lenis = window.lenis;
-      if (lenis && typeof lenis.scrollTo === "function") {
-        lenis.scrollTo(0, { immediate: true });
-      } else {
-        window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-        document.documentElement.scrollTop = 0;
-        document.body.scrollTop = 0;
-      }
-    });
+  // Wait for a frame to ensure layout + repaint
+  requestAnimationFrame(() => {
+    // Try Lenis first
+    const lenis = window.lenis;
+    if (lenis && typeof lenis.scrollTo === "function") {
+      lenis.scrollTo(0, { immediate: true });
+    } else {
+      // Fallback for Safari / non-Lenis cases
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }
+  });
 
-    gsap.to(blocksRef.current, {
-      autoAlpha: 0,
-      duration: 0.25,
-      ease: "ease-secondary",
-      stagger: { amount: 0.3, from: "random" },
-      onComplete: () => {
-        gsap.to(el, {
-          autoAlpha: 0,
-          duration: 0.2,
-          ease: "ease-secondary",
-        });
-        ScrollTrigger.refresh();
-      },
-    });
-  }, [displayChildren]);
+  const el = screenRef.current;
+  gsap.to(blocksRef.current, {
+    autoAlpha: 0,
+    duration: 0.5,
+    ease: "ease-secondary",
+    stagger: { amount: 0.3, from: "random" },
+    onComplete: () => {
+      gsap.to(el, {
+        autoAlpha: 0,
+        duration: 0.2,
+        ease: "ease-secondary",
+      });
+      ScrollTrigger.refresh();
+    },
+  });
+}, [displayChildren]);
+
 
   return (
     <>
