@@ -205,7 +205,7 @@ const Projects = () => {
                                 return (
                                     <div key={project.id} className="w-full">
                                         <Link
-                                        title='link'
+                                            title='link'
                                             href={`/case-studies/${project.slug}`}
                                             className="group border border-[#8585855b] relative w-full flex items-end"
                                         >
@@ -300,7 +300,7 @@ const Projects = () => {
                                 return (
                                     <div key={project.id} className="w-full">
                                         <Link
-                                        title='link'
+                                            title='link'
                                             href={`/case-studies/${project.slug}`}
                                             className="group border border-[#8585855b] relative w-full flex items-end"
                                         >
@@ -349,7 +349,7 @@ const Projects = () => {
                                             <Link
                                                 key={p.id}
                                                 href={`/case-studies/${p.slug}`}
-                                            title='link'
+                                                title='link'
                                                 className="group border border-[#8585855b] relative w-1/2 flex items-end"
                                             >
                                                 <div className="flex  w-1/2 px-3 lg:px-5 py-5 items-end justify-between   transition-colors duration-300">
@@ -404,13 +404,13 @@ const meta = {
     title: "Our Case Studies - Marketing Case Studies & Portfolio | DISRPTVE",
     description:
         "Explore our portfolio of successful brand campaigns, digital marketing projects, and creative excellence across industries.",
-    canonical: "https://disrptve.vercel.app/case-studies",
+    canonical: "https://disrptve.com/case-studies",
     og: {
         title: "Our Case Studies - Marketing Case Studies & Portfolio | DISRPTVE",
         description:
             "Explore our portfolio of successful brand campaigns, digital marketing projects, and creative excellence across industries.",
-        image: "https://disrptve.vercel.app/logo-og.png",
-        url: "https://disrptve.vercel.app/case-studies",
+        image: "https://disrptve.com/logo-og.png",
+        url: "https://disrptve.com/case-studies",
         type: "website",
         site_name: "DISRPTVE",
     },
@@ -419,7 +419,7 @@ const meta = {
         title: "Our Case Studies - Marketing Case Studies & Portfolio | DISRPTVE",
         description:
             "Explore our portfolio of successful brand campaigns, digital marketing projects, and creative excellence across industries.",
-        image: "https://disrptve.vercel.app/logo-og.png",
+        image: "https://disrptve.com/logo-og.png",
         site: "@disrptve",
     },
     robots: "index,follow",

@@ -542,13 +542,13 @@ const meta = {
     title: "Marketing Services - Digital, Brand Strategy & AI Design",
     description:
         "Full-service marketing agency offering brand strategy, digital marketing, social media, web design, AI design, and political campaign services.",
-    canonical: "https://disrptve.vercel.app/services",
+    canonical: "https://disrptve.com/services",
     og: {
         title: "Marketing Services - Digital, Brand Strategy & AI Design",
         description:
             "Full-service marketing agency offering brand strategy, digital marketing, social media, web design, AI design, and political campaign services.",
-        image: "https://disrptve.vercel.app/logo-og.png",
-        url: "https://disrptve.vercel.app/services",
+        image: "https://disrptve.com/logo-og.png",
+        url: "https://disrptve.com/services",
         type: "website",
         site_name: "DISRPTVE",
     },
@@ -557,7 +557,7 @@ const meta = {
         title: "Marketing Services - Digital, Brand Strategy & AI Design",
         description:
             "Full-service marketing agency offering brand strategy, digital marketing, social media, web design, AI design, and political campaign services.",
-        image: "https://disrptve.vercel.app/logo-og.png",
+        image: "https://disrptve.com/logo-og.png",
         site: "@disrptve",
     },
     robots: "index,follow",

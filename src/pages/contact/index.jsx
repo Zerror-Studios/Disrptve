@@ -102,13 +102,13 @@ const meta = {
   title: "Contact DISRPTVE - Mumbai Marketing Agency | Get in Touch",
   description:
     "Contact DISRPTVE for strategy-led marketing solutions. Based in Mumbai, serving brands globally. Let's build something great together.",
-  canonical: "https://disrptve.vercel.app/contact",
+  canonical: "https://disrptve.com/contact",
   og: {
     title: "Contact DISRPTVE - Mumbai Marketing Agency | Get in Touch",
     description:
       "Contact DISRPTVE for strategy-led marketing solutions. Based in Mumbai, serving brands globally. Let's build something great together.",
-    image: "https://disrptve.vercel.app/logo-og.png",
-    url: "https://disrptve.vercel.app/contact",
+    image: "https://disrptve.com/logo-og.png",
+    url: "https://disrptve.com/contact",
     type: "website",
     site_name: "DISRPTVE",
   },
@@ -117,7 +117,7 @@ const meta = {
     title: "Contact DISRPTVE - Mumbai Marketing Agency | Get in Touch",
     description:
       "Contact DISRPTVE for strategy-led marketing solutions. Based in Mumbai, serving brands globally. Let's build something great together.",
-    image: "https://disrptve.vercel.app/logo-og.png",
+    image: "https://disrptve.com/logo-og.png",
     site: "@disrptve",
   },
   robots: "index,follow",

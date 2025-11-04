@@ -373,13 +373,13 @@ const meta = {
     title: "About DISRPTVE - Strategy-Led Marketing Agency Team",
     description:
         "Founded in 2023, DISRPTVE combines proven strategy, entertainment networks, and modern design to build brands that earn attention with interest.",
-    canonical: "https://disrptve.vercel.app/about",
+    canonical: "https://disrptve.com/about",
     og: {
         title: "About DISRPTVE - Strategy-Led Marketing Agency Team",
         description:
             "Founded in 2023, DISRPTVE combines proven strategy, entertainment networks, and modern design to build brands that earn attention with interest.",
-        image: "https://disrptve.vercel.app/logo-og.png",
-        url: "https://disrptve.vercel.app/about",
+        image: "https://disrptve.com/logo-og.png",
+        url: "https://disrptve.com/about",
         type: "website",
         site_name: "DISRPTVE",
     },
@@ -388,7 +388,7 @@ const meta = {
         title: "About DISRPTVE - Strategy-Led Marketing Agency Team",
         description:
             "Founded in 2023, DISRPTVE combines proven strategy, entertainment networks, and modern design to build brands that earn attention with interest.",
-        image: "https://disrptve.vercel.app/logo-og.png",
+        image: "https://disrptve.com/logo-og.png",
         site: "@disrptve",
     },
     robots: "index,follow",

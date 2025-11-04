@@ -93,13 +93,13 @@ const meta = {
     title: "Careers at DISRPTVE - Join Our Marketing Agency Team",
     description:
         "Join DISRPTVE's creative team in Mumbai. Explore opportunities in brand strategy, digital marketing, design, and social media management.",
-    canonical: "https://disrptve.vercel.app/career",
+    canonical: "https://disrptve.com/career",
     og: {
         title: "Careers at DISRPTVE - Join Our Marketing Agency Team",
         description:
             "Join DISRPTVE's creative team in Mumbai. Explore opportunities in brand strategy, digital marketing, design, and social media management.",
-        image: "https://disrptve.vercel.app/logo-og.png",
-        url: "https://disrptve.vercel.app/career",
+        image: "https://disrptve.com/logo-og.png",
+        url: "https://disrptve.com/career",
         type: "website",
         site_name: "DISRPTVE",
     },
@@ -108,7 +108,7 @@ const meta = {
         title: "Careers at DISRPTVE - Join Our Marketing Agency Team",
         description:
             "Join DISRPTVE's creative team in Mumbai. Explore opportunities in brand strategy, digital marketing, design, and social media management.",
-        image: "https://disrptve.vercel.app/logo-og.png",
+        image: "https://disrptve.com/logo-og.png",
         site: "@disrptve",
     },
     robots: "index,follow",

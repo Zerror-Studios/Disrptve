@@ -28,13 +28,13 @@ export async function getStaticProps() {
     title: "DISRPTVE - Strategy-Led Marketing Agency | Brand Growth",
     description:
       "We build brands that earn attention back, with interest. Full-service marketing agency specializing in brand strategy, digital marketing & creative excellence.",
-    canonical: "https://disrptve.vercel.app/",
+    canonical: "https://disrptve.com/",
     og: {
       title: "DISRPTVE - Strategy-Led Marketing Agency | Brand Growth",
       description:
         "We build brands that earn attention back, with interest. Full-service marketing agency specializing in brand strategy, digital marketing & creative excellence.",
-      image: "https://disrptve.vercel.app/logo-og.png",
-      url: "https://disrptve.vercel.app/",
+      image: "https://disrptve.com/logo-og.png",
+      url: "https://disrptve.com/",
       type: "website",
       site_name: "DISRPTVE",
     },
@@ -43,7 +43,7 @@ export async function getStaticProps() {
       title: "DISRPTVE - Strategy-Led Marketing Agency | Brand Growth",
       description:
         "We build brands that earn attention back, with interest. Full-service marketing agency specializing in brand strategy, digital marketing & creative excellence.",
-      image: "https://disrptve.vercel.app/logo-og.png",
+      image: "https://disrptve.com/logo-og.png",
       site: "@disrptve",
     },
     robots: "index,follow",

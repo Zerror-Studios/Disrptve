@@ -1,4 +1,4 @@
 export const Const = {
   Brand: "DISRPTVE",
-  ClientLink: "https://disrptve.vercel.app/",
+  ClientLink: "https://disrptve.com/",
 };

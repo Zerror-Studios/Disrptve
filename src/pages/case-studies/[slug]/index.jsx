@@ -285,7 +285,7 @@ const ProjectDetail = ({ project, currentIndex }) => {
                 <div className="w-full font-light gap-5 text-xl lg:text-3xl border-t border-b h-10 lg:h-20 border-white/50 center uppercase flex justify-between">
                     {/* Prev */}
                     <Link
-                    title='link'
+                        title='link'
                         // scroll={false}
                         href={`/case-studies/${ProjectsData[
                             (currentIndex - 1 + ProjectsData.length) % ProjectsData.length
@@ -304,7 +304,7 @@ const ProjectDetail = ({ project, currentIndex }) => {
 
                     {/* Next */}
                     <Link
-                    title='link'
+                        title='link'
                         // scroll={false}
                         href={`/case-studies/${ProjectsData[
                             (currentIndex + 1) % ProjectsData.length
@@ -367,13 +367,13 @@ const meta = {
     title: "Our Case Studies - Marketing Case Studies & Portfolio | DISRPTVE",
     description:
         "Explore our portfolio of successful brand campaigns, digital marketing projects, and creative excellence across industries.",
-    canonical: "https://disrptve.vercel.app/case-studies",
+    canonical: "https://disrptve.com/case-studies",
     og: {
         title: "Our Case Studies - Marketing Case Studies & Portfolio | DISRPTVE",
         description:
             "Explore our portfolio of successful brand campaigns, digital marketing projects, and creative excellence across industries.",
-        image: "https://disrptve.vercel.app/logo-og.png",
-        url: "https://disrptve.vercel.app/case-studies",
+        image: "https://disrptve.com/logo-og.png",
+        url: "https://disrptve.com/case-studies",
         type: "website",
         site_name: "DISRPTVE",
     },
@@ -382,7 +382,7 @@ const meta = {
         title: "Our Case Studies - Marketing Case Studies & Portfolio | DISRPTVE",
         description:
             "Explore our portfolio of successful brand campaigns, digital marketing projects, and creative excellence across industries.",
-        image: "https://disrptve.vercel.app/logo-og.png",
+        image: "https://disrptve.com/logo-og.png",
         site: "@disrptve",
     },
     robots: "index,follow",

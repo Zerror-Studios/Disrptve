@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Crawl-delay: 5
 
-Sitemap: https://disrptve.vercel.app/sitemap.xml
+Sitemap: https://disrptve.com/sitemap.xml
