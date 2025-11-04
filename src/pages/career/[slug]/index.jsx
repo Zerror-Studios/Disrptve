@@ -6,9 +6,15 @@ import CareerForm from '@/components/ui/CareerForm';
 import { JobOpenings } from '@/store/JobOpenings';
 import { RiArrowRightUpLine } from '@remixicon/react';
 import SeoHeader from '@/components/seo/SeoHeader';
+import { useParams } from 'next/navigation';
 gsap.registerPlugin(ScrollTrigger);
 
-const CareerDetail = ({ job }) => {
+const CareerDetail = () => {
+
+    const params = useParams()
+    const job = JobOpenings.find(
+        (job) => job.slug === params?.slug
+    );
 
     useGSAP(() => {
         gsap.utils.toArray(".carr_anim_border").forEach((border) => {
@@ -110,13 +116,13 @@ export default CareerDetail
 
 
 
-export async function getServerSideProps({ params }) {
-    const job = JobOpenings.find(
-        (job) => job.slug === params.slug
-    );
+// export async function getServerSideProps({ params }) {
+//     const job = JobOpenings.find(
+//         (job) => job.slug === params.slug
+//     );
 
-    return { props: { job } };
-}
+//     return { props: { job } };
+// }
 
 
 const meta = {
