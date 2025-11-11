@@ -241,7 +241,7 @@ export const ProjectsData = [
     id: 7,
     desc: "We worked with Tata to build excitement for the Harrier EV launch. Our team developed key elements of the launch strategy, edited the launch video, and created a wave of social media content.",
     title: "Tata EV - Harrier Launch",
-    slug: "tata-ev",
+    slug: "",
     tagline: "Driving the launch of an electric icon.",
     coverImg: "/images/projects/tata/coverImg.webp",
     heroImg: "/images/projects/tata/heroImg.webp",
@@ -549,5 +549,24 @@ export const ProjectsData = [
     industry: "Airlines and Aviation Industry ",
     Images: [],
   },
+  {
+    id: 22,
+    desc: "We partnered with Flipkart to deliver dynamic, on-brand social media creatives and campaign assets that amplified their digital presence and customer engagement.",
+    title: "Flipkart",
+    slug: "",
+    tagline: "Creative design support for India’s leading e-commerce platform.",
+    heroImg: "",
+    coverImg: "",
+    logo: "/images/projects/flipkart/logo.png",
+    websiteLink: "https://www.flipkart.com",
+    tags: ["Design", "Social Media Creatives", "Brand Campaigns"],
+    challenge:
+      "As one of India’s largest e-commerce platforms, Flipkart constantly runs multiple campaigns, sales, and promotions across regions and product categories. The challenge was to maintain brand consistency and creativity while meeting fast-paced campaign timelines.",
+    approach:
+      "Our team provided continuous creative design support, delivering high-impact visuals, motion graphics, and campaign assets tailored for Flipkart’s diverse audience. This agile design collaboration helped keep Flipkart’s digital presence fresh, engaging, and on-brand across all platforms.",
+    industry: "E-Commerce",
+    Images: [],
+  }
+
 
 ];
