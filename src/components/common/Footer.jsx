@@ -20,6 +20,7 @@ const menuItems = [
 
 const Footer = () => {
 
+  const currentYear = new Date().getFullYear();
   CustomEase.create("in-out-quint", "0.83,0,0.17,1");
 
   useGSAP(() => {
@@ -123,7 +124,7 @@ const Footer = () => {
           </div>
         </div>
         <div className=" translate-y-6  px-3 lg:px-5  text-xs lg:text-sm  w-full ">
-          <p className='  opacity-50 capitalize'>© 2025. All rights reserved.</p>
+          <p className='  opacity-50 capitalize'>© {currentYear}. All rights reserved.</p>
         </div>
         <div className="w-full   relative ">
           <div className="h-[20vw] relative  overflow-hidden  ">
